@@ -1,0 +1,25 @@
+(define (problem please_bring_the_volleyball_from_gym_0_and_the_water_bottle_from_bathroom_0_to_the_shelf_in_locker_room_1)
+    (:domain omnigibson)
+    (:objects
+        volleyball.n.02_1 - volleyball.n.02
+        water_bottle.n.01_1 - water_bottle.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom volleyball.n.02_1 gym_0)
+        (inroom water_bottle.n.01_1 bathroom_0)
+        (inroom shelf.n.01_1 locker_room_1)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?volleyball.n.02_1 ?shelf.n.01_1)
+            (inside ?water_bottle.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,24 @@
+(define (problem bring_towel_to_rack)
+    (:domain omnigibson)    (:objects
+        bath_towel.n.01_1 - bath_towel.n.01
+        shelf.n.01_1 - shelf.n.01
+        bicycle_rack.n.01_1 - bicycle_rack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bath_towel.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom bicycle_rack.n.01_1 bathroom_1)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?bath_towel.n.01_1 ?bicycle_rack.n.01_1)
+        )
+    )
+)
+

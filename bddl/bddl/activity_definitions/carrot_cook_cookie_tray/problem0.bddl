@@ -1,0 +1,35 @@
+(define (problem please_pick_up_the_carrot.n.03_from_the_reception_desk_in_the_kitchen_0_and_cook_it_using_the_oven.n.01_in_the_kitchen_0_then_pick_up_the_spice_cookie.n.01_from_the_shelf_in_the_kitchen_0_and_place_it_inside_the_tray.n.01_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        carrot.n.03_1 - carrot.n.03
+        spice_cookie.n.01_1 - spice_cookie.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        tray.n.01_1 - tray.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carrot.n.03_1 reception_desk.n.01_1)
+        (ontop spice_cookie.n.01_1 shelf.n.01_1)
+        (ontop tray.n.01_1 breakfast_table.n.01_1)
+        (not (toggled_on oven.n.01_1))
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom tray.n.01_1 dining_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?carrot.n.03_1)
+            (inside ?spice_cookie.n.01_1 ?tray.n.01_1)
+        )
+    )
+)

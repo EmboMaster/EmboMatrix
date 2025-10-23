@@ -1,0 +1,36 @@
+(define (problem go_to_the_living_room_0_pick_up_the_security_camera_from_the_sofa_and_put_the_security_camera_on_top_of_the_coffee_table_then_go_to_the_bedroom_0_toggle_on_the_air_conditioner_n_01_and_toggle_on_the_electric_mixer_n_01_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        security_camera.n.01_1 - security_camera.n.01
+        sofa.n.01_1 - sofa.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        electric_mixer.n.01_1 - electric_mixer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop security_camera.n.01_1 sofa.n.01_1)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom air_conditioner.n.01_1 bedroom_0)
+        (not 
+            (toggled_on air_conditioner.n.01_1)
+        )
+        (inroom electric_mixer.n.01_1 kitchen_0)
+        (not 
+            (toggled_on electric_mixer.n.01_1)
+        )
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?security_camera.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+            (toggled_on ?electric_mixer.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem pick_up_the_carafe.n.01_from_the_shelf_in_the_kitchen_0_and_go_to_the_dining_room_0_then_put_the_carafe.n.01_on_top_of_the_breakfast_table_in_the_dining_room_0_next_pick_up_the_wineglass.n.01_from_the_dining_room_0_console_table_and_put_it_on_top_of_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        carafe.n.01_1 - carafe.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        wineglass.n.01_1 - wineglass.n.01
+        shelf.n.01_1 - shelf.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carafe.n.01_1 shelf.n.01_1)
+        (ontop wineglass.n.01_1 console_table.n.01_1)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom console_table.n.01_1 dining_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?carafe.n.01_1 ?breakfast_table.n.01_1)
+            (ontop ?wineglass.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

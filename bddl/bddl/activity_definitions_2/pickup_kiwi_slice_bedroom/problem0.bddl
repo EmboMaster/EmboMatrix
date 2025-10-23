@@ -1,0 +1,26 @@
+(define (problem pick_up_the_kiwi.n.03_from_the_table_lamp_in_the_bedroom_0_and_slice_it_using_the_cleaver.n.01_on_the_booth_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 - kiwi.n.03
+        table_lamp.n.01_1 - table_lamp.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kiwi.n.03_1 table_lamp.n.01_1)
+        (ontop cleaver.n.01_1 booth.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (inroom booth.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?kiwi.n.03_1)
+        )
+    )
+)

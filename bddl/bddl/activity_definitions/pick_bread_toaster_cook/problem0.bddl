@@ -1,0 +1,33 @@
+(define (problem pick_up_the_bread_slice.n.01_from_the_alarm_clock_in_the_bedroom_0_and_place_it_inside_the_toaster_oven.n.01_on_the_desk_in_the_bedroom_0_then_cook_the_bread_slice.n.01_using_the_toaster_oven.n.01)
+    (:domain omnigibson)
+    (:objects
+        bread_slice.n.01_1 - bread_slice.n.01
+        alarm_clock.n.01_1 - alarm_clock.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bread_slice.n.01_1 alarm_clock.n.01_1)
+        (ontop toaster_oven.n.01_1 desk.n.01_1)
+        (not
+            (toggled_on toaster_oven.n.01_1)
+        )
+        (inroom alarm_clock.n.01_1 bedroom_0)
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom toaster_oven.n.01_1 bedroom_0)
+        (inroom bread_slice.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?bread_slice.n.01_1 ?toaster_oven.n.01_1)
+            (toggled_on ?toaster_oven.n.01_1)
+            (cooked ?bread_slice.n.01_1)
+        )
+    )
+)

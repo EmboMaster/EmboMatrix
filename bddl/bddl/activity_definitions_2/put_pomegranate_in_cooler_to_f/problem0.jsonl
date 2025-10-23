@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["pomegranate.n.02_1", "inside", "shopping_basket.n.01_1"], ["pomegranate.n.02_2", "inside", "shopping_basket.n.01_1"], ["pomegranate.n.02_3", "inside", "shopping_basket.n.01_1"], ["shopping_basket.n.01_1", "inroom", "break_room_0"], ["cooler.n.01_1", "inroom", "shared_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "break_room_0"]]}
+{"state": {"pomegranate.n.02": {"frozen": true}}, "relation": [["-", "?pomegranate.n.02", "pomegranate.n.02"], ["pomegranate.n.02", "inside", "cooler.n.01_1"]]}

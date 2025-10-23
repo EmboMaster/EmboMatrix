@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["scrub_brush.n.01_1", "inroom", "closet_0"], ["scrub_brush.n.01_2", "inroom", "closet_0"], ["mop_bucket.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "closet_0"]]}
+{"state": {"scrub_brush.n.01_1": {"soaked": true, "stained": false}, "scrub_brush.n.01_2": {"soaked": true, "stained": false}}, "relation": [["scrub_brush.n.01_1", "inside", "mop_bucket.n.01_1"], ["scrub_brush.n.01_2", "inside", "mop_bucket.n.01_1"]]}

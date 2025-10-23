@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_trampoline_leg_from_the_mat_in_the_exercise_room_0_and_put_it_inside_the_wardrobe.n.01_in_the_bedroom_0_then_toggle_on_the_table_lamp.n.01_in_the_bedroom_0_to_provide_light_for_the_grandmother)
+    (:domain omnigibson)
+    (:objects
+        trampoline_leg.n.01_1 - trampoline_leg.n.01
+        mat.n.03_1 - mat.n.03
+        wardrobe.n.01_1 - wardrobe.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop trampoline_leg.n.01_1 mat.n.03_1)
+        (inroom mat.n.03_1 exercise_room_0)
+        (inroom wardrobe.n.01_1 bedroom_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (not (toggled_on table_lamp.n.01_1))
+        (inroom floor.n.01_1 exercise_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?trampoline_leg.n.01_1 ?wardrobe.n.01_1)
+            (toggled_on ?table_lamp.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,33 @@
+(define (problem pick_up_the_notebook_from_the_desk_in_the_empty_room_0_and_put_it_on_top_of_the_conference_table_in_the_empty_room_0_toggle_on_the_projector.n.02_in_the_empty_room_0_for_the_brainstorming_session_pick_up_the_squeeze_bottle.n.01_from_the_shelf_in_the_corridor_0_and_place_it_on_top_of_the_conference_table_in_the_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        notebook.n.01_1 - notebook.n.01
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        projector.n.02_1 - projector.n.02
+        squeeze_bottle.n.01_1 - squeeze_bottle.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop notebook.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 empty_room_0)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom projector.n.02_1 empty_room_0)
+        (not (toggled_on projector.n.02_1))
+        (inside squeeze_bottle.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 corridor_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?notebook.n.01_1 ?conference_table.n.01_1)
+            (toggled_on ?projector.n.02_1)
+            (ontop ?squeeze_bottle.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

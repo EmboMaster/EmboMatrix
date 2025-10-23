@@ -1,0 +1,25 @@
+(define (problem go_to_storage_room_1_pick_up_the_backpack.n.01_from_the_floor_in_storage_room_1_go_to_garage_0_put_the_backpack.n.01_inside_the_car.n.01_open_the_car.n.01_close_the_car.n.01)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        car.n.01_1 - car.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop agent.n.01_1 floor.n.01_1)
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (not (open car.n.01_1))
+        (inroom floor.n.01_1 storage_room_1)
+        (inroom backpack.n.01_1 storage_room_1)
+        (inroom car.n.01_1 garage_0)
+    )
+
+    (:goal
+        (and
+            (inside ?backpack.n.01_1 ?car.n.01_1)
+            (not (open ?car.n.01_1))
+        )
+    )
+)

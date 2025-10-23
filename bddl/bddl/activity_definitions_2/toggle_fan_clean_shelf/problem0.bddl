@@ -1,0 +1,30 @@
+(define (problem toggle_on_the_ceiling_fan_and_clean_the_dusty_shelf_with_rag-0)
+    (:domain omnigibson)
+    (:objects
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        shelf.n.01_1 - shelf.n.01
+        rag.n.01_1 - rag.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on ceiling_fan.n.01_1))
+        (dusty shelf.n.01_1)
+        (inroom ceiling_fan.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 bedroom_0)
+        (inroom rag.n.01_1 bedroom_0)
+        (inroom sink.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ceiling_fan.n.01_1)
+            (not (dusty shelf.n.01_1))
+            (soaked rag.n.01_1)
+        )
+    )
+)

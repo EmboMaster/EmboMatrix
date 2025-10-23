@@ -1,0 +1,29 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_spinach.n.02_from_the_hutch.n.01_go_to_the_microwave.n.02_in_the_storage_room_0_open_the_microwave.n.02_put_the_spinach.n.02_inside_the_microwave.n.02_heat_the_spinach.n.02_close_the_microwave.n.02-for_me)
+    (:domain omnigibson)
+    (:objects
+        spinach.n.02_1 - spinach.n.02
+        hutch.n.01_1 - hutch.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside spinach.n.02_1 hutch.n.01_1)
+        (not (toggled_on microwave.n.02_1))
+        (not (open microwave.n.02_1))
+        (inroom hutch.n.01_1 storage_room_0)
+        (inroom microwave.n.02_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?spinach.n.02_1)
+            (inside ?spinach.n.02_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (not (open ?microwave.n.02_1))
+        )
+    )
+)

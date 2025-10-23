@@ -1,0 +1,25 @@
+(define (problem go_to_the_corridor_0_and_open_the_recycling_bin.n.01_to_check_its_contents_then_go_to_the_bathroom_0_and_close_the_window.n.01_after_ensuring_its_secure)
+    (:domain omnigibson)
+    (:objects
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom recycling_bin.n.01_1 corridor_0)
+        (inroom window.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (not (open recycling_bin.n.01_1))
+        (open window.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?recycling_bin.n.01_1)
+            (not (open ?window.n.01_1))
+        )
+    )
+)

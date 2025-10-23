@@ -1,0 +1,28 @@
+(define (problem Please_go_to_the_living_room_0_toggle_on_the_air_conditioner.n.01_and_pick_up_the_paperback_book_from_the_coffee_table_Then_take_the_paperback_book_to_the_pantry_room_0_and_place_it_on_top_of_the_shelf)
+    (:domain omnigibson)
+    (:objects
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        paperback_book.n.01_1 - paperback_book.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on air_conditioner.n.01_1))
+        (ontop paperback_book.n.01_1 coffee_table.n.01_1)
+        (inroom air_conditioner.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?air_conditioner.n.01_1)
+            (ontop ?paperback_book.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

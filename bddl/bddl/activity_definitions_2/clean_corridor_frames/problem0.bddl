@@ -1,0 +1,36 @@
+(define (problem go_to_storage_room_0_pick_up_the_scrub_brush.n.01_from_the_shelf_in_the_storage_room_0_go_to_corridor_0_clean_all_the_3_dusty_picture_frames_on_the_wall_in_the_corridor_0_put_the_scrub_brush.n.01_back_on_the_shelf_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        shelf.n.01_1 - shelf.n.01
+        picture_frame.n.01_1 picture_frame.n.01_2 picture_frame.n.01_3 - picture_frame.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop scrub_brush.n.01_1 shelf.n.01_1)
+        (dusty picture_frame.n.01_1)
+        (dusty picture_frame.n.01_2)
+        (dusty picture_frame.n.01_3)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom scrub_brush.n.01_1 storage_room_0)
+        (inroom sink.n.01_1 storage_room_0)
+        (inroom picture_frame.n.01_1 corridor_0)
+        (inroom picture_frame.n.01_2 corridor_0)
+        (inroom picture_frame.n.01_3 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?picture_frame.n.01_1))
+            (not (dusty ?picture_frame.n.01_2))
+            (not (dusty ?picture_frame.n.01_3))
+            (soaked ?scrub_brush.n.01_1)
+            (ontop ?scrub_brush.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

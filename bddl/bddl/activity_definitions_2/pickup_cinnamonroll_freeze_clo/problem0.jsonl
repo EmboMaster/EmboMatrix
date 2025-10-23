@@ -1,0 +1,2 @@
+{"state": {"cooler.n.01_1": {"open": false}}, "relation": [["cinnamon_roll.n.01_1", "ontop", "booth.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["booth.n.01_1", "inroom", "grocery_store_0"], ["cooler.n.01_1", "inroom", "grocery_store_0"], ["floor.n.01_1", "inroom", "grocery_store_0"]]}
+{"state": {"cinnamon_roll.n.01_1": {"frozen": true}, "cooler.n.01_1": {"open": false}}, "relation": [["cinnamon_roll.n.01_1", "inside", "cooler.n.01_1"]]}

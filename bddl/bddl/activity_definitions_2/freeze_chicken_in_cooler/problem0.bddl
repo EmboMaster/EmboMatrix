@@ -1,0 +1,26 @@
+(define (problem please_freeze_the_chicken.n.01_by_putting_it_inside_the_cooler.n.01_in_the_storage_room_0_and_ensure_the_cooler_door_is_closed_after_the_task-0)
+    (:domain omnigibson)
+    (:objects
+        chicken.n.01_1 - chicken.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom chicken.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (not (frozen chicken.n.01_1))
+        (open cooler.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?chicken.n.01_1)
+            (inside ?chicken.n.01_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

@@ -1,0 +1,27 @@
+(define (problem Please_pick_up_the_tea_bag.n.01_from_the_shelf_in_the_storage_room_0_put_it_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_then_place_the_frozen_tea_bag.n.01_inside_the_carafe.n.01_in_the_bathroom_0-0)
+    (:domain omnigibson)
+    (:objects
+        tea_bag.n.01_1 - tea_bag.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        carafe.n.01_1 - carafe.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop tea_bag.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (inroom carafe.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (frozen ?tea_bag.n.01_1)
+            (inside ?tea_bag.n.01_1 ?carafe.n.01_1)
+        )
+    )
+)

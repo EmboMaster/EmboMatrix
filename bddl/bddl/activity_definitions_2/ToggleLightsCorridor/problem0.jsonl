@@ -1,0 +1,2 @@
+{"state": {"icicle_lights.n.01_1": {"toggled_on": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["icicle_lights.n.01_1", "inroom", "corridor_0"], ["floor.n.01_1", "inroom", "corridor_0"]]}
+{"state": {"icicle_lights.n.01_1": {"toggled_on": false}}, "relation": []}

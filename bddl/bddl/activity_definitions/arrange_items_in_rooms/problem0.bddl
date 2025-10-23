@@ -1,0 +1,37 @@
+(define (problem arrange_items_in_rooms-0)
+    (:domain omnigibson)    (:objects
+        notebook.n.01_1 - notebook.n.01
+        shelf.n.01_1 - shelf.n.01
+        desk.n.01_1 - desk.n.01
+        charger.n.02_1 - charger.n.02
+        alarm_clock.n.01_1 - alarm_clock.n.01
+        sink.n.01_1 - sink.n.01
+        magazine.n.02_1 - magazine.n.02
+        bed.n.01_1 - bed.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop notebook.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bedroom_0)
+        (ontop charger.n.02_1 alarm_clock.n.01_1)
+        (inroom alarm_clock.n.01_1 bedroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (ontop magazine.n.02_1 bed.n.01_1)
+        (inroom bed.n.01_1 bedroom_0)
+        (inroom coffee_table.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?notebook.n.01_1 ?desk.n.01_1)
+            (nextto ?charger.n.02_1 ?sink.n.01_1)
+            (ontop ?magazine.n.02_1 ?coffee_table.n.01_1)
+        )
+    )
+)
+

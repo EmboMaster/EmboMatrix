@@ -1,0 +1,116 @@
+{
+  "llm_plans": "json:\n{\"action_sequence\": [{\"action\": \"move\", \"parameters\": {\"object_index\": 0}}, {\"action\": \"pick_up\", \"parameters\": {\"object_index\": 0}}, {\"action\": \"move\", \"parameters\": {\"object_index\": 3}}, {\"action\": \"place\", \"parameters\": {\"object_index\": 3, \"relation\": \"inside\"}}, {\"action\": \"move\", \"parameters\": {\"object_index\": 2}}, {\"action\": \"pick_up\", \"parameters\": {\"object_index\": 2}}, {\"action\": \"move\", \"parameters\": {\"object_index\": 1}}, {\"action\": \"place\", \"parameters\": {\"object_index\": 1, \"relation\": \"inside\"}}], \"plan\": \"Test plan: move and pick_up\"}",
+  "reward_dict": {
+    "action_sequence": [
+      {
+        "action": "move",
+        "parameters": {
+          "object_index": 0
+        }
+      },
+      {
+        "action": "pick_up",
+        "parameters": {
+          "object_index": 0
+        }
+      },
+      {
+        "action": "move",
+        "parameters": {
+          "object_index": 3
+        }
+      },
+      {
+        "action": "place",
+        "parameters": {
+          "object_index": 3,
+          "relation": "inside"
+        }
+      },
+      {
+        "action": "move",
+        "parameters": {
+          "object_index": 2
+        }
+      },
+      {
+        "action": "pick_up",
+        "parameters": {
+          "object_index": 2
+        }
+      },
+      {
+        "action": "move",
+        "parameters": {
+          "object_index": 1
+        }
+      },
+      {
+        "action": "place",
+        "parameters": {
+          "object_index": 1,
+          "relation": "inside"
+        }
+      }
+    ],
+    "reward": 12,
+    "llm_plan": {
+      "structured_plan": {
+        "action_sequence": [
+          {
+            "action": "move",
+            "parameters": {
+              "object_index": 0
+            }
+          },
+          {
+            "action": "pick_up",
+            "parameters": {
+              "object_index": 0
+            }
+          },
+          {
+            "action": "move",
+            "parameters": {
+              "object_index": 3
+            }
+          },
+          {
+            "action": "place",
+            "parameters": {
+              "object_index": 3,
+              "relation": "inside"
+            }
+          },
+          {
+            "action": "move",
+            "parameters": {
+              "object_index": 2
+            }
+          },
+          {
+            "action": "pick_up",
+            "parameters": {
+              "object_index": 2
+            }
+          },
+          {
+            "action": "move",
+            "parameters": {
+              "object_index": 1
+            }
+          },
+          {
+            "action": "place",
+            "parameters": {
+              "object_index": 1,
+              "relation": "inside"
+            }
+          }
+        ],
+        "plan": "Test plan: move and pick_up"
+      }
+    },
+    "done": 0.0
+  }
+}

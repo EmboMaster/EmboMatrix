@@ -1,0 +1,2 @@
+{"state": {"fairy_light.n.01_1": {"toggled_on": false}, "carton.n.02_1": {"open": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["fairy_light.n.01_1", "inroom", "empty_room_0"], ["carton.n.02_1", "inroom", "empty_room_0"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"fairy_light.n.01_1": {"toggled_on": true}, "carton.n.02_1": {"open": false}}, "relation": []}

@@ -1,0 +1,30 @@
+(define (problem please_slice_the_eggplant.n.01_using_the_table_knife.n.01_on_the_reception_desk_in_the_kitchen_0,_and_place_the_sliced_eggplant_into_the_mixing_bowl.n.01_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        eggplant.n.01_1 - eggplant.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop eggplant.n.01_1 reception_desk.n.01_1)
+        (ontop table_knife.n.01_1 reception_desk.n.01_1)
+        (ontop mixing_bowl.n.01_1 breakfast_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom mixing_bowl.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?eggplant.n.01_1)
+            (inside ?eggplant.n.01_1 ?mixing_bowl.n.01_1)
+        )
+    )
+)

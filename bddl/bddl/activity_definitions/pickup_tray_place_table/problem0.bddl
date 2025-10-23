@@ -1,0 +1,27 @@
+(define (problem please_pick_up_the_tray_from_the_reception_desk_in_the_kitchen_0_put_the_green_bean.n.01_on_the_tray_and_place_the_tray_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        tray.n.01_1 - tray.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        green_bean.n.01_1 - green_bean.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop tray.n.01_1 reception_desk.n.01_1) 
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom green_bean.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+    
+    (:goal
+        (and 
+            (ontop ?green_bean.n.01_1 ?tray.n.01_1)
+            (ontop ?tray.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

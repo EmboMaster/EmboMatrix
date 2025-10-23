@@ -1,0 +1,2 @@
+{"state": {"stove.n.01_1": {"toggled_on": false}}, "relation": [["frying_pan.n.01_1", "ontop", "booth.n.01_1"], ["sweet_corn.n.02_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["stove.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"sweet_corn.n.02_1": {"cooked": true}}, "relation": [["frying_pan.n.01_1", "ontop", "booth.n.01_1"]]}

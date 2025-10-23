@@ -1,0 +1,29 @@
+(define (problem please_toggle_on_the_projector.n.02_in_the_conference_hall_0_then_pick_up_the_laptop.n.01_from_the_pedestal_table_in_private_office_4_deliver_it_to_the_pedestal_table_in_meeting_room_0_and_place_it_there-0)
+    (:domain omnigibson)
+    (:objects
+        projector.n.02_1 - projector.n.02
+        laptop.n.01_1 - laptop.n.01
+        pedestal_table.n.01_1 pedestal_table.n.01_2 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom projector.n.02_1 conference_hall_0)
+        (not 
+            (toggled_on projector.n.02_1)
+        )
+        (ontop laptop.n.01_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 private_office_4)
+        (inroom pedestal_table.n.01_2 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_4)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?projector.n.02_1)
+            (ontop ?laptop.n.01_1 ?pedestal_table.n.01_2)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"router.n.02_1": {"toggled_on": false}, "backpack.n.01_1": {"open": false}}, "relation": [["router.n.02_1", "inroom", "bedroom_0"], ["backpack.n.01_1", "inroom", "closet_1"], ["water_bottle.n.01_1", "inroom", "closet_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bedroom_0"]]}
+{"state": {"router.n.02_1": {"toggled_on": true}, "backpack.n.01_1": {"open": true}}, "relation": [["water_bottle.n.01_1", "inside", "backpack.n.01_1"]]}

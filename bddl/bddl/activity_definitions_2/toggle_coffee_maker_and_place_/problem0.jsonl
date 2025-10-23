@@ -1,0 +1,2 @@
+{"state": {"coffee_maker.n.01_1": {"toggled_on": false}}, "relation": [["coffee_maker.n.01_1", "ontop", "reception_desk.n.01_1"], ["carafe.n.01_1", "inside", "dishwasher.n.01_1"], ["reception_desk.n.01_1", "inroom", "kitchen_0"], ["dishwasher.n.01_1", "inroom", "kitchen_0"], ["breakfast_table.n.01_1", "inroom", "dining_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"coffee_maker.n.01_1": {"toggled_on": true}}, "relation": [["carafe.n.01_1", "ontop", "breakfast_table.n.01_1"]]}

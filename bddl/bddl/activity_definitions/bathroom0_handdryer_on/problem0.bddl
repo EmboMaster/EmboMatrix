@@ -1,0 +1,21 @@
+(define (problem go_to_room_bathroom_0_toggle_on_appliance_hand_dryer.n.01_completion_criteria_appliance_hand_dryer.n.01_is_toggled_on_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        hand_dryer.n.01_1 - hand_dryer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on hand_dryer.n.01_1))
+        (inroom hand_dryer.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?hand_dryer.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_pepperoni.n.01_from_the_reception_desk_put_it_inside_the_microwave.n.02_toggle_on_the_microwave.n.02_and_heat_the_pepperoni.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        pepperoni.n.01_1 - pepperoni.n.01
+        microwave.n.02_1 - microwave.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pepperoni.n.01_1 reception_desk.n.01_1)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?pepperoni.n.01_1)
+            (inside ?pepperoni.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+        )
+    )
+)

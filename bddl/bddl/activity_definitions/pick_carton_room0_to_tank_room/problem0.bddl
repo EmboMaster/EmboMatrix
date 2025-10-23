@@ -1,0 +1,26 @@
+(define (problem Please_pick_up_the_carton.n.02_from_storage_room_0_and_put_it_inside_the_tank.n.02_in_storage_room_2_Then_close_the_tank.n.02_to_ensure_the_items_are_secured)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        tank.n.02_1 - tank.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom tank.n.02_1 storage_room_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (open tank.n.02_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?carton.n.02_1 ?tank.n.02_1)
+            (not
+                (open ?tank.n.02_1)
+            )
+        )
+    )
+)

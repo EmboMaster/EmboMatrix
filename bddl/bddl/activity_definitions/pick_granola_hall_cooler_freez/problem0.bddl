@@ -1,0 +1,24 @@
+(define (problem pick_up_the_granola_bar.n.01_from_the_wicker_basket.n.01_in_the_hall_arch_wood:empty_room_0_put_it_in_the_cooler.n.01_in_the_corridor_0_to_freeze_then_go_back_to_the_hall_arch_wood:empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        granola_bar.n.01_1 - granola_bar.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside granola_bar.n.01_1 wicker_basket.n.01_1)
+        (inroom wicker_basket.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?granola_bar.n.01_1)
+        )
+    )
+)

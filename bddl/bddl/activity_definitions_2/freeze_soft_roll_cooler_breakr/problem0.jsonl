@@ -1,0 +1,2 @@
+{"state": {"soft_roll.n.01_1": {"frozen": false}}, "relation": [["cooler.n.01_1", "inroom", "break_room_0"], ["soft_roll.n.01_1", "inroom", "break_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "break_room_0"]]}
+{"state": {"soft_roll.n.01_1": {"frozen": true}}, "relation": [["soft_roll.n.01_1", "inside", "cooler.n.01_1"]]}

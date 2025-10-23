@@ -1,0 +1,31 @@
+(define (problem open_the_oven_in_the_kitchen_pick_up_the_spinach_from_the_countertop_put_it_inside_the_oven_to_cook_it_after_cooking_pick_up_the_cooked_spinach_and_place_it_on_a_platter_on_the_breakfast_table_in_the_kitchen)
+    (:domain omnigibson)
+    (:objects
+        oven.n.01_1 - oven.n.01
+        spinach.n.02_1 - spinach.n.02
+        countertop.n.01_1 - countertop.n.01
+        platter.n.01_1 - platter.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open oven.n.01_1)) ; The oven is initially closed
+        (ontop spinach.n.02_1 countertop.n.01_1) ; Spinach is on the countertop
+        (ontop platter.n.01_1 breakfast_table.n.01_1) ; Platter is on the dining table
+        (inroom oven.n.01_1 kitchen_0) ; Oven is in the kitchen
+        (inroom countertop.n.01_1 kitchen_0) ; Countertop is in the kitchen
+        (inroom breakfast_table.n.01_1 kitchen_0) ; Dining table is in the kitchen
+        (inroom floor.n.01_1 kitchen_0) ; Floor is in the kitchen
+        (ontop agent.n.01_1 floor.n.01_1) ; Agent is on the floor
+    )
+
+    (:goal
+        (and
+            (open ?oven.n.01_1) ; Oven should be open
+            (cooked ?spinach.n.02_1) ; Spinach should be cooked
+            (ontop ?spinach.n.02_1 ?platter.n.01_1) ; Cooked spinach should be on the platter
+        )
+    )
+)

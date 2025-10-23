@@ -1,0 +1,22 @@
+(define (problem open_the_window.n.01_in_the_childs_room_0_to_let_fresh_air_in_then_close_the_window_after_five_minutes-0)
+    (:domain omnigibson)
+    (:objects
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open window.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom window.n.01_1 childs_room_0)
+        (inroom floor.n.01_1 childs_room_0)
+    )
+
+    (:goal
+        (not (open window.n.01_1))
+        (and
+            (not (open ?window.n.01_1))
+        )
+    )
+)

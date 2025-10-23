@@ -1,0 +1,23 @@
+(define (problem bring_watering_can_to_flower_bed-0)
+    (:domain omnigibson)    (:objects
+        watering_can.n.01_1 - watering_can.n.01
+        pet_bed.n.01_1 - pet_bed.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop watering_can.n.01_1 floor.n.01_1)
+        (inroom watering_can.n.01_1 utility_room_0)
+        (inroom pet_bed.n.01_1 garden_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?watering_can.n.01_1 ?pet_bed.n.01_1)
+        )
+    )
+)
+

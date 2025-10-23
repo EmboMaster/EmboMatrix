@@ -1,0 +1,2 @@
+{"state": {"backpack.n.01_1": {"open": false}}, "relation": [["backpack.n.01_1", "ontop", "shelf.n.01_1"], ["pomegranate.n.02_1", "ontop", "reception_desk.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["shelf.n.01_1", "inroom", "storage_room_0"], ["floor.n.01_1", "inroom", "storage_room_0"], ["reception_desk.n.01_1", "inroom", "kitchen_0"], ["desk.n.01_1", "inroom", "private_office_0"]]}
+{"state": {"backpack.n.01_1": {"open": false}}, "relation": [["backpack.n.01_1", "ontop", "desk.n.01_1"], ["pomegranate.n.02_1", "inside", "backpack.n.01_1"]]}

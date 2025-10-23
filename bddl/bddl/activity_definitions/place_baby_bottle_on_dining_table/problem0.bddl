@@ -1,0 +1,20 @@
+(define (problem place_baby_bottle_on_dining_table)
+    (:domain omnigibson)    (:objects
+        bottle__of__baby_oil.n.01_1 - bottle__of__baby_oil.n.01
+        countertop.n.01_1 - countertop.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bottle__of__baby_oil.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 dining_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    (:goal
+        (ontop ?bottle__of__baby_oil.n.01_1 ?breakfast_table.n.01_1)
+    )
+)
+

@@ -1,0 +1,26 @@
+(define (problem please_go_to_the_storage_room_0_and_pick_up_the_cooler.n.01_bring_it_to_the_pantry_room_0_and_place_it_on_the_shelf_in_the_pantry_room_0_then_pick_up_the_watermelon.n.02_from_the_shelf_in_the_pantry_room_0_and_put_it_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        cooler.n.01_1 - cooler.n.01
+        shelf.n.01_1 - shelf.n.01
+        watermelon.n.02_1 - watermelon.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom watermelon.n.02_1 pantry_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?cooler.n.01_1 ?shelf.n.01_1)
+            (inside ?watermelon.n.02_1 ?cooler.n.01_1)
+            (frozen ?watermelon.n.02_1)
+        )
+    )
+)

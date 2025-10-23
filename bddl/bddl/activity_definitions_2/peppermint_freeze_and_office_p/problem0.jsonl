@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["peppermint.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["cooler.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["console_table.n.01_1", "inroom", "private_office_0"], ["eames_chair.n.01_1", "inroom", "private_office_0"], ["floor.n.01_2", "inroom", "private_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"peppermint.n.01_1": {"frozen": true}}, "relation": [["peppermint.n.01_1", "ontop", "console_table.n.01_1"]]}

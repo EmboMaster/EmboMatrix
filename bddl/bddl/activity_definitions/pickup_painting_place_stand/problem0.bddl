@@ -1,0 +1,24 @@
+(define (problem please_pick_up_the_painting_from_the_wooden_spoon_in_the_hall_arch_wood:empty_room_0_and_place_it_on_the_plant_pot_stand_in_the_hall_arch_wood:empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        painting.n.01_1 - painting.n.01
+        wooden_spoon.n.02_1 - wooden_spoon.n.02
+        plant_pot_stand.n.01_1 - plant_pot_stand.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop painting.n.01_1 wooden_spoon.n.02_1)
+        (inroom wooden_spoon.n.02_1 empty_room_0)
+        (inroom plant_pot_stand.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?painting.n.01_1 ?plant_pot_stand.n.01_1)
+        )
+    )
+)

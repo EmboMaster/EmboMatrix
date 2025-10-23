@@ -1,0 +1,30 @@
+(define (problem pick_up_the_brussels_sprouts_n_01_from_the_countertop_in_the_playroom_0_cook_it_using_the_toaster_oven_n_01_and_place_it_inside_the_mixing_bowl_n_01_on_the_pedestal_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        brussels_sprouts.n.01_1 - brussels_sprouts.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        countertop.n.01_1 - countertop.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brussels_sprouts.n.01_1 countertop.n.01_1)
+        (not (toggled_on toaster_oven.n.01_1))
+        (ontop mixing_bowl.n.01_1 pedestal_table.n.01_1)
+        (inroom countertop.n.01_1 playroom_0)
+        (inroom toaster_oven.n.01_1 playroom_0)
+        (inroom pedestal_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?brussels_sprouts.n.01_1)
+            (inside ?brussels_sprouts.n.01_1 ?mixing_bowl.n.01_1)
+        )
+    )
+)

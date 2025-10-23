@@ -1,0 +1,28 @@
+(define (problem toggle_on_the_radiator.n.02_in_the_living_room_0_and_place_the_digital_camera.n.01_on_the_coffee_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        radiator.n.02_1 - radiator.n.02
+        digital_camera.n.01_1 - digital_camera.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not 
+            (toggled_on radiator.n.02_1)
+        )
+        (inroom radiator.n.02_1 living_room_0)
+        (inroom digital_camera.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?radiator.n.02_1)
+            (ontop ?digital_camera.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

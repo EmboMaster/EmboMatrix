@@ -1,0 +1,20 @@
+(define (problem childs_toy_to_toy_shelf-0)
+    (:domain omnigibson)    (:objects
+        toy_figure.n.01_1 - toy_figure.n.01
+        shelf_shelf.n.01_1 - shelf_shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop toy_figure.n.01_1 floor.n.01_1)
+        (inroom toy_figure.n.01_1 living_room_1)
+        (inroom shelf_shelf.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_1)
+    )
+    (:goal
+        (ontop ?toy_figure.n.01_1 ?shelf_shelf.n.01_1)
+    )
+)
+

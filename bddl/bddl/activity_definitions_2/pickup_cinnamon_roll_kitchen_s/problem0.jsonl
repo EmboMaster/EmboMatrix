@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cinnamon_roll.n.01_1", "ontop", "reception_desk.n.01_1"], ["table_knife.n.01_1", "ontop", "reception_desk.n.01_1"], ["chopping_board.n.01_1", "ontop", "reception_desk.n.01_1"], ["sink.n.01_1", "inroom", "bathroom_0"], ["reception_desk.n.01_1", "inroom", "kitchen_0"], ["chopping_board.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"cinnamon_roll.n.01_1": {"sliced": true}, "table_knife.n.01_1": {"stained": false}}, "relation": []}

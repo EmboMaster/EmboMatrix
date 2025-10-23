@@ -1,0 +1,31 @@
+(define (problem pick_up_the_cherry_tomato.n.02_from_the_reception_desk_in_break_room_0_put_it_inside_the_cooler.n.01_in_break_room_0_to_freeze_it_and_close_the_recycling_bin.n.01_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        cherry_tomato.n.02_1 - cherry_tomato.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cherry_tomato.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom recycling_bin.n.01_1 corridor_0)
+        (open recycling_bin.n.01_1)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?cherry_tomato.n.02_1)
+            (inside ?cherry_tomato.n.02_1 ?cooler.n.01_1)
+            (not
+                (open ?recycling_bin.n.01_1)
+            )
+        )
+    )
+)

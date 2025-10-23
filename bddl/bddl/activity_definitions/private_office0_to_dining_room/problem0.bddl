@@ -1,0 +1,32 @@
+(define (problem go_to_private_office_0_toggle_on_the_desktop_computer.n.01_on_the_desk_in_private_office_0_go_to_storage_room_2_pick_up_the_pencil_box.n.01_from_the_tray_in_storage_room_2_go_to_dining_room_0_place_the_pencil_box.n.01_on_the_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        desk.n.01_1 - desk.n.01
+        pencil_box.n.01_1 - pencil_box.n.01
+        tray.n.01_1 - tray.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop desktop_computer.n.01_1 desk.n.01_1)
+        (not 
+            (toggled_on desktop_computer.n.01_1)
+        )
+        (inside pencil_box.n.01_1 tray.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom tray.n.01_1 storage_room_2)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?desktop_computer.n.01_1)
+            (ontop ?pencil_box.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

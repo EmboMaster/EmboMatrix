@@ -1,0 +1,39 @@
+(define (problem please_slice_4_chives.n.01_using_the_table_knife.n.01_on_the_reception_desk_in_the_kitchen_0_and_place_the_sliced_chives_inside_the_saucepan.n.01_on_the_stove_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        chives.n.01_1 chives.n.01_2 chives.n.01_3 chives.n.01_4 - chives.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        saucepan.n.01_1 - saucepan.n.01
+        stove.n.01_1 - stove.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom chives.n.01_1 kitchen_0)
+        (inroom chives.n.01_2 kitchen_0)
+        (inroom chives.n.01_3 kitchen_0)
+        (inroom chives.n.01_4 kitchen_0)
+        (ontop table_knife.n.01_1 reception_desk.n.01_1)
+        (ontop saucepan.n.01_1 stove.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?chives.n.01_1)
+            (sliced ?chives.n.01_2)
+            (sliced ?chives.n.01_3)
+            (sliced ?chives.n.01_4)
+            (inside ?chives.n.01_1 ?saucepan.n.01_1)
+            (inside ?chives.n.01_2 ?saucepan.n.01_1)
+            (inside ?chives.n.01_3 ?saucepan.n.01_1)
+            (inside ?chives.n.01_4 ?saucepan.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"bouillon_cube.n.01_1": {"frozen": false}}, "relation": [["tray.n.01_1", "inroom", "storage_room_0"], ["bouillon_cube.n.01_1", "inroom", "pantry_room_0"], ["cooler.n.01_1", "inroom", "pantry_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_0"]]}
+{"state": {"bouillon_cube.n.01_1": {"frozen": true}}, "relation": [["bouillon_cube.n.01_1", "inside", "cooler.n.01_1"]]}

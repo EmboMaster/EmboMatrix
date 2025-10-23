@@ -1,0 +1,33 @@
+(define (problem pick_up_the_durian.n.02_from_the_reception_desk_in_the_kitchen_0_go_to_the_cooler.n.01_in_the_kitchen_0_put_the_durian.n.02_inside_the_cooler.n.01_pick_up_the_bread_slice.n.01_from_the_reception_desk_in_the_kitchen_0_heat_the_bread_slice.n.01_using_the_toaster_oven.n.01_in_the_kitchen_0_bring_the_heated_bread_slice.n.01_to_the_breakfast_table_in_the_dining_room_0_and_put_the_heated_bread_slice.n.01_on_top_of_the_breakfast_table_in_the_dining_room_0_for_me-0)
+    (:domain omnigibson)
+    (:objects
+        durian.n.02_1 - durian.n.02
+        bread_slice.n.01_1 - bread_slice.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop durian.n.02_1 reception_desk.n.01_1)
+        (ontop bread_slice.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom toaster_oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (not (toggled_on toaster_oven.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?durian.n.02_1 ?cooler.n.01_1)
+            (ontop ?bread_slice.n.01_1 ?breakfast_table.n.01_1)
+            (cooked ?bread_slice.n.01_1)
+        )
+    )
+)

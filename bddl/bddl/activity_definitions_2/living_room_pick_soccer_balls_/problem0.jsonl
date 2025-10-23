@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["soccer_ball.n.01_1", "inroom", "living_room_0"], ["soccer_ball.n.01_2", "inroom", "living_room_0"], ["soccer_ball.n.01_3", "inroom", "living_room_0"], ["wicker_basket.n.01_1", "inroom", "storage_room_1"], ["floor.n.01_1", "inroom", "living_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {}, "relation": [["-", "?soccer_ball.n.01", "soccer_ball.n.01"], ["soccer_ball.n.01", "inside", "wicker_basket.n.01_1"]]}

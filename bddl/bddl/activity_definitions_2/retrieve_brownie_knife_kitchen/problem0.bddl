@@ -1,0 +1,27 @@
+(define (problem retrieve_the_brownie.n.03_and_the_table_knife.n.01_from_the_kitchenette_booth_in_the_shared_office_0_slice_the_brownie.n.03_into_pieces_and_place_them_neatly_on_the_platter_in_the_meeting_room_0)
+    (:domain omnigibson)
+    (:objects
+        brownie.n.03_1 - brownie.n.03
+        table_knife.n.01_1 - table_knife.n.01
+        platter.n.01_1 - platter.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brownie.n.03_1 booth.n.01_1)
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 shared_office_0)
+        (inroom platter.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?brownie.n.03_1)
+            (ontop ?brownie.n.03_1 ?platter.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,27 @@
+(define (problem bring_the_sponge_from_the_shelf_in_grocery_store_0_to_the_sink_in_bathroom_0_and_the_mop_bucket_from_corridor_0_to_the_same_sink)
+    (:domain omnigibson)
+    (:objects
+        shelf.n.01_1 - shelf.n.01
+        sponge.n.01_1 - sponge.n.01
+        sink.n.01_1 - sink.n.01
+        mop_bucket.n.01_1 - mop_bucket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop sponge.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom mop_bucket.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (inside ?sponge.n.01_1 ?sink.n.01_1)
+            (inside ?mop_bucket.n.01_1 ?sink.n.01_1)
+        )
+    )
+)

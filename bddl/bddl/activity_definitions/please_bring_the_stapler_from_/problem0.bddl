@@ -1,0 +1,31 @@
+(define (problem please_bring_the_stapler_from_the_desk_in_shared_office_0_to_the_shelf_in_break_room_0_and_the_notebook_from_the_cabinet_base_in_break_room_0_to_the_periodic_table_in_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        stapler.n.01_1 - stapler.n.01
+        desk.n.01_1 - desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        notebook.n.01_1 - notebook.n.01
+        cabinet_base.n.01_1 - cabinet_base.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop stapler.n.01_1 desk.n.01_1)
+        (ontop notebook.n.01_1 cabinet_base.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom periodic_table.n.01_1 shared_office_0)
+        (inroom shelf.n.01_1 break_room_0)
+        (inroom cabinet_base.n.01_1 break_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?stapler.n.01_1 ?shelf.n.01_1)
+            (ontop ?notebook.n.01_1 ?periodic_table.n.01_1)
+        )
+    )
+)

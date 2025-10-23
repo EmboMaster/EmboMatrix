@@ -1,0 +1,25 @@
+(define (problem go_to_the_lobby_0_pick_up_the_gourd.n.02_from_the_console_table_and_put_it_inside_the_cooler.n.01_in_the_copy_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        gourd.n.02_1 - gourd.n.02
+        console_table.n.01_1 - console_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop gourd.n.02_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 lobby_0)
+        (inroom cooler.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 lobby_0)
+    )
+
+    (:goal
+        (and
+            (inside ?gourd.n.02_1 ?cooler.n.01_1)
+            (frozen ?gourd.n.02_1)
+        )
+    )
+)

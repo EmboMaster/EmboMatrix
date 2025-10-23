@@ -1,0 +1,30 @@
+(define (problem pick_up_the_pea_pod.n.01_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it_then_pick_up_the_pizza_box.n.01_from_the_cooler.n.01_and_put_it_on_top_of_the_shelf_in_the_bathroom_0-0)
+    (:domain omnigibson)
+    (:objects
+        pea_pod.n.01_1 - pea_pod.n.01
+        pizza_box.n.01_1 - pizza_box.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop pea_pod.n.01_1 reception_desk.n.01_1)
+        (inside pizza_box.n.01_1 cooler.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (frozen ?pea_pod.n.01_1)
+            (inside ?pea_pod.n.01_1 ?cooler.n.01_1)
+            (ontop ?pizza_box.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_chocolate_chip_cookie.n.01_from_the_coffee_table_in_the_living_room_0_and_put_it_inside_the_cooler.n.01_in_the_storage_room_0_to_freeze_it._Then,_toggle_on_the_vacuum.n.04_near_the_sofa_in_the_living_room_0_to_clean_the_area.)
+    (:domain omnigibson)
+    (:objects
+        chocolate_chip_cookie.n.01_1 - chocolate_chip_cookie.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        vacuum.n.04_1 - vacuum.n.04
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_chip_cookie.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom vacuum.n.04_1 living_room_0)
+        (not (toggled_on vacuum.n.04_1))
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?chocolate_chip_cookie.n.01_1)
+            (toggled_on ?vacuum.n.04_1)
+        )
+    )
+)

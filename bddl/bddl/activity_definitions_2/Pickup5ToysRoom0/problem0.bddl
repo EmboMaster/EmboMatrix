@@ -1,0 +1,31 @@
+(define (problem Pick_up_all_5_toy_figures_from_the_floor_in_playroom_0_and_place_them_inside_the_wicker_basket.n.01_in_child's_room_0)
+    (:domain omnigibson)
+    (:objects
+        toy_figure.n.01_1 toy_figure.n.01_2 toy_figure.n.01_3 toy_figure.n.01_4 toy_figure.n.01_5 - toy_figure.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop toy_figure.n.01_1 floor.n.01_1)
+        (ontop toy_figure.n.01_2 floor.n.01_1)
+        (ontop toy_figure.n.01_3 floor.n.01_1)
+        (ontop toy_figure.n.01_4 floor.n.01_1)
+        (ontop toy_figure.n.01_5 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+        (inroom wicker_basket.n.01_1 childs_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (ontop toy_figure.n.01_1 floor.n.01_1)
+        (and
+            (inside ?toy_figure.n.01_1 ?wicker_basket.n.01_1)
+            (inside ?toy_figure.n.01_2 ?wicker_basket.n.01_1)
+            (inside ?toy_figure.n.01_3 ?wicker_basket.n.01_1)
+            (inside ?toy_figure.n.01_4 ?wicker_basket.n.01_1)
+            (inside ?toy_figure.n.01_5 ?wicker_basket.n.01_1)
+        )
+    )
+)

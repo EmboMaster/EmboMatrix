@@ -1,0 +1,2 @@
+{"state": {"printer.n.03_1": {"toggled_on": true}}, "relation": [["printer.n.03_1", "inroom", "meeting_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "meeting_room_0"]]}
+{"state": {"printer.n.03_1": {"toggled_on": false}}, "relation": []}

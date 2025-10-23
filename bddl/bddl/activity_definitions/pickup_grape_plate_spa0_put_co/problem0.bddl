@@ -1,0 +1,25 @@
+(define (problem pick_up_the_grape.n.01_from_the_plate.n.04_in_the_spa_0_and_put_the_grape.n.01_inside_the_cooler.n.01_in_the_spa_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        grape.n.01_1 - grape.n.01
+        plate.n.04_1 - plate.n.04
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop grape.n.01_1 plate.n.04_1)
+        (inroom plate.n.04_1 spa_0)
+        (inroom cooler.n.01_1 spa_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 spa_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?grape.n.01_1 ?cooler.n.01_1)
+            (frozen ?grape.n.01_1)
+        )
+    )
+)

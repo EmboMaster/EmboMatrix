@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_lime.n.06_from_the_booth_in_break_room_0_and_put_it_inside_the_cooler.n.01_in_break_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        lime.n.06_1 - lime.n.06
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lime.n.06_1 booth.n.01_1)
+        (inroom booth.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 break_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?lime.n.06_1)
+            (inside ?lime.n.06_1 ?cooler.n.01_1)
+        )
+    )
+)

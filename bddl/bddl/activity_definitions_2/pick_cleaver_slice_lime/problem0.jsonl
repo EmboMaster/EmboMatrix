@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cleaver.n.01_1", "ontop", "countertop.n.01_1"], ["lime.n.06_1", "ontop", "conference_table.n.01_1"], ["lime.n.06_2", "ontop", "conference_table.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["countertop.n.01_1", "inroom", "empty_room_0"], ["conference_table.n.01_1", "inroom", "empty_room_0"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"lime.n.06_1": {"sliced": true}, "lime.n.06_2": {"sliced": true}}, "relation": []}

@@ -1,0 +1,50 @@
+(define (problem Clean_all_5_dusty_plates_on_the_conference_table_in_the_dining_room_0_using_the_scrub_brush.n.01_then_place_the_cleaned_plates_back_on_the_conference_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        plate.n.04_1 plate.n.04_2 plate.n.04_3 plate.n.04_4 plate.n.04_5 - plate.n.04
+        conference_table.n.01_1 - conference_table.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty plate.n.04_1)
+        (dusty plate.n.04_2)
+        (dusty plate.n.04_3)
+        (dusty plate.n.04_4)
+        (dusty plate.n.04_5)
+        (ontop plate.n.04_1 conference_table.n.01_1)
+        (ontop plate.n.04_2 conference_table.n.01_1)
+        (ontop plate.n.04_3 conference_table.n.01_1)
+        (ontop plate.n.04_4 conference_table.n.01_1)
+        (ontop plate.n.04_5 conference_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom conference_table.n.01_1 dining_room_0)
+        (inroom plate.n.04_1 dining_room_0)
+        (inroom plate.n.04_2 dining_room_0)
+        (inroom plate.n.04_3 dining_room_0)
+        (inroom plate.n.04_4 dining_room_0)
+        (inroom plate.n.04_5 dining_room_0)
+        (inroom scrub_brush.n.01_1 dining_room_0)
+        (inroom sink.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?plate.n.04_1))
+            (not (dusty ?plate.n.04_2))
+            (not (dusty ?plate.n.04_3))
+            (not (dusty ?plate.n.04_4))
+            (not (dusty ?plate.n.04_5))
+            (ontop ?plate.n.04_1 ?conference_table.n.01_1)
+            (ontop ?plate.n.04_2 ?conference_table.n.01_1)
+            (ontop ?plate.n.04_3 ?conference_table.n.01_1)
+            (ontop ?plate.n.04_4 ?conference_table.n.01_1)
+            (ontop ?plate.n.04_5 ?conference_table.n.01_1)
+            (soaked ?scrub_brush.n.01_1)
+        )
+    )
+)

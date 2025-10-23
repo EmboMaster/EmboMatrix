@@ -1,0 +1,39 @@
+(define (problem Pick_up_the_mug_from_the_reception_desk_in_the_lobby_0_and_place_it_on_the_conference_table_in_the_conference_hall_0._Then_go_to_the_shared_office_0_toggle_off_the_air_conditioner.n.01_and_close_the_window.n.01_to_ensure_the_room_stays_warm)
+    (:domain omnigibson)
+    (:objects
+        mug.n.04_1 - mug.n.04
+        reception_desk.n.01_1 - reception_desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        window.n.01_1 - window.n.01
+        floor.n.01_1 floor.n.01_2 floor.n.01_3 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mug.n.04_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 lobby_0)
+        (inroom mug.n.04_1 lobby_0)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (toggled_on air_conditioner.n.01_1)
+        (inroom air_conditioner.n.01_1 shared_office_0)
+        (open window.n.01_1)
+        (inroom window.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 lobby_0)
+        (inroom floor.n.01_2 conference_hall_0)
+        (inroom floor.n.01_3 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?mug.n.04_1 ?conference_table.n.01_1)
+            (not
+                (toggled_on ?air_conditioner.n.01_1)
+            )
+            (not
+                (open ?window.n.01_1)
+            )
+        )
+    )
+)

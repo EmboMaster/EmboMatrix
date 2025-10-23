@@ -1,0 +1,32 @@
+(define (problem pick_up_the_auricularia.n.01_from_the_countertop_in_the_empty_room_0_and_put_it_inside_the_electric_cauldron.n.01_in_the_empty_room_0_toggle_on_the_espresso_machine.n.01_in_the_corridor_0_to_make_coffee_after_cooking_pick_up_the_auricularia.n.01_from_the_electric_cauldron.n.01_and_place_it_on_top_of_the_tray.n.01_in_the_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        auricularia.n.01_1 - auricularia.n.01
+        countertop.n.01_1 - countertop.n.01
+        electric_cauldron.n.01_1 - electric_cauldron.n.01
+        espresso_machine.n.01_1 - espresso_machine.n.01
+        tray.n.01_1 - tray.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop auricularia.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 empty_room_0)
+        (inroom electric_cauldron.n.01_1 empty_room_0)
+        (inroom tray.n.01_1 empty_room_0)
+        (inroom espresso_machine.n.01_1 corridor_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on electric_cauldron.n.01_1))
+        (not (toggled_on espresso_machine.n.01_1))
+    )
+
+    (:goal
+        (and
+            (cooked ?auricularia.n.01_1)
+            (ontop ?auricularia.n.01_1 ?tray.n.01_1)
+            (toggled_on ?espresso_machine.n.01_1)
+        )
+    )
+)

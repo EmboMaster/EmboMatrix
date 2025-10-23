@@ -1,0 +1,20 @@
+(define (problem bring_bread_to_dining_table-0)
+    (:domain omnigibson)    (:objects
+        bread_slice.n.01_1 - bread_slice.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+
+    (:init
+        (inroom bread_slice.n.01_1 pantry_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+
+    (:goal
+        (inside ?bread_slice.n.01_1 ?breakfast_table.n.01_1)
+    )
+)
+

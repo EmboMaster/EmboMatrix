@@ -1,0 +1,29 @@
+(define (problem Pick_up_the_butter_cookie.n.01_from_the_breakfast_table_in_the_dining_room_0_and_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it._Then_toggle_on_the_coffee_maker.n.01_in_the_kitchen_0_to_prepare_coffee.-0)
+    (:domain omnigibson)
+    (:objects
+        butter_cookie.n.01_1 - butter_cookie.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop butter_cookie.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (not (toggled_on coffee_maker.n.01_1))
+        (inroom coffee_maker.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?butter_cookie.n.01_1)
+            (inside ?butter_cookie.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?coffee_maker.n.01_1)
+        )
+    )
+)

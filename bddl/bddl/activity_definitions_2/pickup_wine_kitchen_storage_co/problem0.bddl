@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_wine_bottle.n.01_from_the_countertop_in_the_kitchen_0_go_to_the_storage_room_1_and_place_it_inside_the_cooler.n.01_to_freeze-0)
+    (:domain omnigibson)
+    (:objects
+        wine_bottle.n.01_1 - wine_bottle.n.01
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop wine_bottle.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?wine_bottle.n.01_1)
+            (inside ?wine_bottle.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

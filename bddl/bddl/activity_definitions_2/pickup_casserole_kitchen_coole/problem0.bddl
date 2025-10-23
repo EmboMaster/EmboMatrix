@@ -1,0 +1,25 @@
+(define (problem pick_up_the_casserole.n.02_from_the_kitchen_0_booth_put_it_inside_the_cooler.n.01_in_the_kitchen_0_and_ensure_it_is_frozen-0)
+    (:domain omnigibson)
+    (:objects
+        casserole.n.02_1 - casserole.n.02
+        cooler.n.01_1 - cooler.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop casserole.n.02_1 booth.n.01_1)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?casserole.n.02_1 ?cooler.n.01_1)
+            (frozen ?casserole.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"security_camera.n.01_1": {"toggled_on": false}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["security_camera.n.01_1", "inroom", "grocery_store_0"], ["floor.n.01_1", "inroom", "grocery_store_0"]]}
+{"state": {"security_camera.n.01_1": {"toggled_on": true}}, "relation": []}

@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_carton.n.02_from_the_shelf_in_the_storage_room_0_go_to_the_utility_room_0_and_place_it_inside_the_clothes_dryer.n.01_then_toggle_on_the_clothes_dryer.n.01)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside carton.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom clothes_dryer.n.01_1 utility_room_0)
+        (not 
+            (toggled_on clothes_dryer.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?carton.n.02_1 ?clothes_dryer.n.01_1)
+            (toggled_on ?clothes_dryer.n.01_1)
+        )
+    )
+)

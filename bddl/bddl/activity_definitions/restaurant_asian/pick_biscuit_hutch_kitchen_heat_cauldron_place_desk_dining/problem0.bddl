@@ -1,0 +1,32 @@
+(define (problem pick_up_the_biscuit.n.01_from_the_hutch_in_the_kitchen_0_heat_it_using_the_electric_cauldron.n.01_in_the_kitchen_0_and_place_it_on_the_reception_desk_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        biscuit.n.01_1 - biscuit.n.01
+        hutch.n.01_1 - hutch.n.01
+        electric_cauldron.n.01_1 - electric_cauldron.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+
+    (:init 
+        (inside biscuit.n.01_1 hutch.n.01_1)
+        (inroom hutch.n.01_1 kitchen_0)
+        (inroom electric_cauldron.n.01_1 kitchen_0)
+        (not (toggled_on electric_cauldron.n.01_1))
+        (inroom reception_desk.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal 
+        (and 
+            (ontop ?biscuit.n.01_1 ?reception_desk.n.01_1)
+            (hot ?biscuit.n.01_1)
+            (forall 
+                (?electric_cauldron.n.01 - electric_cauldron.n.01)
+                (not (toggled_on ?electric_cauldron.n.01))
+            )
+        )
+    )
+)

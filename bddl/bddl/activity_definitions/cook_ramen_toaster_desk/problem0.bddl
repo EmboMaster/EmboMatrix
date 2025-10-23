@@ -1,0 +1,29 @@
+(define (problem cook_the_ramen_using_the_toaster_oven_in_the_kitchen_and_place_it_on_the_desk)
+    (:domain omnigibson)
+    (:objects
+        ramen.n.01_1 - ramen.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (inside ramen.n.01_1 toaster_oven.n.01_1)
+        (inroom toaster_oven.n.01_1 kitchen_0)
+        (inroom desk.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on toaster_oven.n.01_1)
+        )
+    )
+
+    (:goal 
+        (and 
+            (cooked ramen.n.01_1)
+            (ontop ramen.n.01_1 desk.n.01_1)
+            (toggled_on toaster_oven.n.01_1)
+        )
+    )
+)

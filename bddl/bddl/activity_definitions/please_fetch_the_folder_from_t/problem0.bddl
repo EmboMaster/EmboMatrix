@@ -1,0 +1,29 @@
+(define (problem please_fetch_the_folder_from_the_desk_in_private_office_0_to_the_conference_table_in_meeting_room_0_and_the_calculator_from_the_tray_in_private_office_2_to_the_desk_in_private_office_1)
+    (:domain omnigibson)
+    (:objects
+        desk.n.01_1 - desk.n.01
+        folder.n.02_1 - folder.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        calculator.n.02_1 - calculator.n.02
+        tray.n.01_1 - tray.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 desk.n.01_1)
+        (inside calculator.n.02_1 tray.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom tray.n.01_1 private_office_2)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?folder.n.02_1 ?conference_table.n.01_1)
+            (ontop ?calculator.n.02_1 ?desk.n.01_1)
+        )
+    )
+)

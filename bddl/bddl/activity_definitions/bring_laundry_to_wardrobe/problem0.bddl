@@ -1,0 +1,21 @@
+(define (problem bring_laundry_to_wardrobe-0)
+    (:domain omnigibson)    (:objects
+        basket.n.03_1 - basket.n.03
+        wardrobe.n.01_1 - wardrobe.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside basket.n.03_1 wardrobe.n.01_1)
+        (inroom basket.n.03_1 utility_room_0)
+        (inroom wardrobe.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (inside ?basket.n.03_1 ?wardrobe.n.01_1)
+    )
+)
+

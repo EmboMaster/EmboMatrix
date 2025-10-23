@@ -1,0 +1,24 @@
+(define (problem place_book_on_desk_in_daughter_room-0)
+    (:domain omnigibson)    (:objects
+        shelf.n.01_1 - shelf.n.01
+        paperback_book.n.01_1 - paperback_book.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop paperback_book.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 closet_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 closet_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?paperback_book.n.01_1 ?desk.n.01_1)
+        )
+    )
+)
+

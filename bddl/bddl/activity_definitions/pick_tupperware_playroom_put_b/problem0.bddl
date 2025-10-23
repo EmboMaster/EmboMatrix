@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_tupperware.n.01_from_the_playroom_0_put_the_green_bean.n.01_inside_it_and_place_the_tupperware.n.01_on_the_desk_in_the_childs_room_0)
+    (:domain omnigibson)
+    (:objects
+        tupperware.n.01_1 - tupperware.n.01
+        green_bean.n.01_1 - green_bean.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom tupperware.n.01_1 playroom_0)
+        (inroom green_bean.n.01_1 playroom_0)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?green_bean.n.01_1 ?tupperware.n.01_1)
+            (ontop ?tupperware.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

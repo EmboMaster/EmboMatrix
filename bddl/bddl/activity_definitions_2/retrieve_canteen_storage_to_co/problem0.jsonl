@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["canteen.n.01_1", "inroom", "storage_room_0"], ["cooler.n.01_1", "inroom", "utility_room_0"], ["floor.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"canteen.n.01_1": {"frozen": true}}, "relation": [["canteen.n.01_1", "inside", "cooler.n.01_1"]]}

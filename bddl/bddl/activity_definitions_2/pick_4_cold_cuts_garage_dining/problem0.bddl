@@ -1,0 +1,32 @@
+(define (problem please_pick_up_all_4_cold_cuts_from_the_cooler_in_the_garage_go_to_the_console_table_in_the_dining_room_and_put_them_inside_the_mixing_bowl_on_the_counter-0)
+    (:domain omnigibson)
+    (:objects
+        cold_cuts.n.01_1 cold_cuts.n.01_2 cold_cuts.n.01_3 cold_cuts.n.01_4 - cold_cuts.n.01
+        cooler.n.01_1 - cooler.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside cold_cuts.n.01_1 cooler.n.01_1)
+        (inside cold_cuts.n.01_2 cooler.n.01_1)
+        (inside cold_cuts.n.01_3 cooler.n.01_1)
+        (inside cold_cuts.n.01_4 cooler.n.01_1)
+        (inroom cooler.n.01_1 garage_0)
+        (ontop mixing_bowl.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 garage_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?cold_cuts.n.01_1 ?mixing_bowl.n.01_1)
+            (inside ?cold_cuts.n.01_2 ?mixing_bowl.n.01_1)
+            (inside ?cold_cuts.n.01_3 ?mixing_bowl.n.01_1)
+            (inside ?cold_cuts.n.01_4 ?mixing_bowl.n.01_1)
+        )
+    )
+)

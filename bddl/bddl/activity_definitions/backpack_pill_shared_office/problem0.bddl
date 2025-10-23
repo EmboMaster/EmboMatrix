@@ -1,0 +1,28 @@
+(define (problem Please_open_the_backpack.n.01_on_the_desk_in_the_bathroom_0_and_put_the_pill_bottle.n.01_inside_it_Then_bring_the_backpack.n.01_to_the_interns_desk_in_the_shared_office_0_and_place_it_on_top_of_the_desk)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        pill_bottle.n.01_1 - pill_bottle.n.01
+        desk.n.01_1 desk.n.01_2 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop backpack.n.01_1 desk.n.01_1)
+        (ontop pill_bottle.n.01_1 desk.n.01_1)
+        (not (open backpack.n.01_1))
+        (inroom desk.n.01_1 bathroom_0)
+        (inroom desk.n.01_2 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+    
+    (:goal
+        (and
+            (open ?backpack.n.01_1)
+            (inside ?pill_bottle.n.01_1 ?backpack.n.01_1)
+            (ontop ?backpack.n.01_1 ?desk.n.01_2)
+        )
+    )
+)

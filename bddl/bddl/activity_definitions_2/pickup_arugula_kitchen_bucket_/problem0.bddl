@@ -1,0 +1,30 @@
+(define (problem pick_up_2_arugula.n.02_from_the_booth_in_the_kitchen_0_and_put_them_in_the_bucket.n.01_in_the_bathroom_0_then_soak_them-0)
+    (:domain omnigibson)
+    (:objects
+        arugula.n.02_1 arugula.n.02_2 - arugula.n.02
+        booth.n.01_1 - booth.n.01
+        bucket.n.01_1 - bucket.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop arugula.n.02_1 booth.n.01_1)
+        (ontop arugula.n.02_2 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom bucket.n.01_1 bathroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?arugula.n.02_1 ?bucket.n.01_1)
+            (inside ?arugula.n.02_2 ?bucket.n.01_1)
+            (soaked ?arugula.n.02_1)
+            (soaked ?arugula.n.02_2)
+        )
+    )
+)

@@ -1,0 +1,32 @@
+(define (problem please_pick_up_the_nectarine_n_02_from_the_coffee_table_in_the_living_room_0_go_to_the_kitchen_0_and_put_it_inside_the_cooler_n_01_to_freeze_it_then_pick_up_the_goblet_n_01_from_the_shelf_in_the_dining_room_0_and_place_it_on_the_booth_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        nectarine.n.02_1 - nectarine.n.02
+        coffee_table.n.01_1 - coffee_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        goblet.n.01_1 - goblet.n.01
+        shelf.n.01_1 - shelf.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop nectarine.n.02_1 coffee_table.n.01_1)
+        (ontop goblet.n.01_1 shelf.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?nectarine.n.02_1)
+            (inside ?nectarine.n.02_1 ?cooler.n.01_1)
+            (ontop ?goblet.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

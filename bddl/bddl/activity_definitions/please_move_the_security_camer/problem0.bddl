@@ -1,0 +1,34 @@
+(define (problem please_move_the_security_camera_from_the_sofa_in_the_living_room_0_and_the_sandals_from_the_floor_in_the_entryway_0_to_the_bed_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        security_camera.n.01_1 - security_camera.n.01
+        sofa.n.01_1 - sofa.n.01
+        sandal.n.01_1 sandal.n.01_2 - sandal.n.01
+        bed.n.01_1 - bed.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop security_camera.n.01_1 sofa.n.01_1)
+        (ontop sandal.n.01_1 floor.n.01_1)
+        (ontop sandal.n.01_2 floor.n.01_1)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom security_camera.n.01_1 living_room_0)
+        (inroom floor.n.01_1 entryway_0)
+        (inroom sandal.n.01_1 entryway_0)
+        (inroom sandal.n.01_2 entryway_0)
+        (inroom bed.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?security_camera.n.01_1 ?bed.n.01_1)
+            (forall
+                (?sandal.n.01 - sandal.n.01)
+                (ontop ?sandal.n.01 ?bed.n.01_1)
+            )
+        )
+    )
+)

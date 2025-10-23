@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["desk_phone.n.01_1", "ontop", "desk.n.01_1"], ["desk.n.01_1", "inroom", "private_office_0"], ["coffee_table.n.01_1", "inroom", "living_room_1"], ["floor.n.01_1", "inroom", "private_office_0"], ["floor.n.01_2", "inroom", "living_room_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"desk_phone.n.01_1": {"toggled_on": true}}, "relation": [["desk_phone.n.01_1", "ontop", "coffee_table.n.01_1"]]}

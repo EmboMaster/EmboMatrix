@@ -1,0 +1,38 @@
+(define (problem pick_up_the_mug_from_the_desk_in_shared_office_0_and_put_it_on_top_of_the_console_table_in_break_room_0_then_toggle_off_the_space_heater.n.01_located_in_shared_office_0_and_open_the_recycling_bin.n.01_in_break_room_0_to_dispose_of_the_notepad)
+    (:domain omnigibson)
+    (:objects
+        mug.n.04_1 - mug.n.04
+        desk.n.01_1 - desk.n.01
+        console_table.n.01_1 - console_table.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        notepad.n.01_1 - notepad.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mug.n.04_1 desk.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (toggled_on space_heater.n.01_1)
+        (inside notepad.n.01_1 recycling_bin.n.01_1)
+        (not
+            (open recycling_bin.n.01_1)
+        )
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom space_heater.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (inroom console_table.n.01_1 break_room_0)
+        (inroom recycling_bin.n.01_1 break_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?mug.n.04_1 ?console_table.n.01_1)
+            (not
+                (toggled_on ?space_heater.n.01_1)
+            )
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

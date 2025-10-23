@@ -1,0 +1,32 @@
+(define (problem slice_potato_and_put_in_stockpot_on_shelf_in_storage_room-0)
+    (:domain omnigibson)
+    (:objects
+        potato.n.01_1 - potato.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        booth.n.01_1 - booth.n.01
+        stockpot.n.01_1 - stockpot.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop potato.n.01_1 booth.n.01_1)
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (ontop stockpot.n.01_1 shelf.n.01_1)
+        (inroom booth.n.01_1 utility_room_0)
+        (inroom table_knife.n.01_1 utility_room_0)
+        (inroom potato.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom stockpot.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?potato.n.01_1)
+            (inside ?potato.n.01_1 ?stockpot.n.01_1)
+        )
+    )
+)

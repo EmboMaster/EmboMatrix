@@ -1,0 +1,25 @@
+(define (problem go_to_empty_room_0_pick_up_the_scone.n.01_from_the_pedestal_table_put_the_scone.n.01_inside_the_cooler.n.01_in_empty_room_0_and_confirm_it_is_frozen-0)
+    (:domain omnigibson)
+    (:objects
+        scone.n.01_1 - scone.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop scone.n.01_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?scone.n.01_1 ?cooler.n.01_1)
+            (frozen ?scone.n.01_1)
+        )
+    )
+)

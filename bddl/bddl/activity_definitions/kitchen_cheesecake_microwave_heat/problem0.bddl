@@ -1,0 +1,30 @@
+(define (problem please_go_to_the_kitchen_0_pick_up_the_cheesecake.n.01_from_the_booth_and_put_it_inside_the_microwave.n.02_then_close_the_microwave.n.02_and_heat_the_cheesecake.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        cheesecake.n.01_1 - cheesecake.n.01
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop cheesecake.n.01_1 booth.n.01_1)
+        (open microwave.n.02_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?cheesecake.n.01_1 ?microwave.n.02_1)
+            (not 
+                (open ?microwave.n.02_1)
+            )
+            (hot ?cheesecake.n.01_1)
+            (toggled_on ?microwave.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"carpet_sweeper.n.01_1": {"stained": true}}, "relation": [["vacuum.n.04_1", "ontop", "shelf.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["shelf.n.01_1", "inroom", "corridor_0"], ["vacuum.n.04_1", "inroom", "corridor_0"], ["sink.n.01_1", "inroom", "corridor_0"], ["carpet_sweeper.n.01_1", "inroom", "private_office_1"], ["desk.n.01_1", "inroom", "private_office_1"], ["floor.n.01_1", "inroom", "corridor_0"]]}
+{"state": {"carpet_sweeper.n.01_1": {"stained": false}}, "relation": [["vacuum.n.04_1", "ontop", "shelf.n.01_1"]]}

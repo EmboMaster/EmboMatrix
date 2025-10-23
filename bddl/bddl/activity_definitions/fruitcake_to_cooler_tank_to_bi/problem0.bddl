@@ -1,0 +1,30 @@
+(define (problem pick_up_the_fruitcake.n.02_from_the_shelf_in_the_empty_room_0_and_put_it_inside_the_cooler.n.01_in_the_empty_room_0_to_freeze_it_then_pick_up_the_tank.n.02_from_the_floor_in_the_empty_room_0_and_store_it_inside_the_recycling_bin.n.01_in_the_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        fruitcake.n.02_1 - fruitcake.n.02
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        tank.n.02_1 - tank.n.02
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop fruitcake.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (ontop tank.n.02_1 floor.n.01_1)
+        (inroom recycling_bin.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?fruitcake.n.02_1)
+            (inside ?fruitcake.n.02_1 ?cooler.n.01_1)
+            (inside ?tank.n.02_1 ?recycling_bin.n.01_1)
+        )
+    )
+)

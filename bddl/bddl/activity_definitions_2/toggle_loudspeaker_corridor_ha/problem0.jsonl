@@ -1,0 +1,2 @@
+{"state": {"loudspeaker.n.01_1": {"toggled_on": false}}, "relation": [["loudspeaker.n.01_1", "inroom", "corridor_0"], ["pallet.n.02_1", "ontop", "floor.n.01_2"], ["pallet.n.02_1", "inroom", "empty_room_0"], ["conference_table.n.01_1", "inroom", "empty_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"], ["floor.n.01_2", "inroom", "empty_room_0"]]}
+{"state": {"loudspeaker.n.01_1": {"toggled_on": true}}, "relation": [["pallet.n.02_1", "ontop", "conference_table.n.01_1"]]}

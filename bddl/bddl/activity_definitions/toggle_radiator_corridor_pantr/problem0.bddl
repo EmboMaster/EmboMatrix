@@ -1,0 +1,30 @@
+(define (problem Please_toggle_on_the_radiator.n.02_in_the_corridor_0_go_to_the_pantry_room_0_pick_up_the_liquid_carton.n.01_from_the_shelf_and_place_it_inside_the_cooler_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        radiator.n.02_1 - radiator.n.02
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on radiator.n.02_1)
+        )
+        (inside liquid_carton.n.01_1 shelf.n.01_1)
+        (inroom radiator.n.02_1 corridor_0)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?radiator.n.02_1)
+            (inside ?liquid_carton.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

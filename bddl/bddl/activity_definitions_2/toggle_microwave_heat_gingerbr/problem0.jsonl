@@ -1,0 +1,2 @@
+{"state": {"microwave.n.02_1": {"toggled_on": false}}, "relation": [["gingerbread.n.01_1", "inside", "saucepan.n.01_1"], ["saucepan.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["microwave.n.02_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"microwave.n.02_1": {"toggled_on": true}, "gingerbread.n.01_1": {"cooked": true}}, "relation": [["gingerbread.n.01_1", "inside", "saucepan.n.01_1"]]}

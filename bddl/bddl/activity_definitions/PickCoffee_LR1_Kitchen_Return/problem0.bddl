@@ -1,0 +1,26 @@
+(define (problem Please_pick_up_the_coffee_cup_from_the_coffee_table_in_living_room_1_go_to_the_kitchen_heat_the_coffee_cup_using_the_espresso_machine_in_the_kitchen_and_place_the_heated_coffee_cup_back_on_the_coffee_table_in_living_room_1-0)
+    (:domain omnigibson)
+    (:objects
+        coffee_cup.n.01_1 - coffee_cup.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        espresso_machine.n.01_1 - espresso_machine.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop coffee_cup.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_1)
+        (inroom espresso_machine.n.01_1 kitchen_0)
+        (not (toggled_on espresso_machine.n.01_1))
+        (inroom floor.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?coffee_cup.n.01_1 ?coffee_table.n.01_1)
+            (hot ?coffee_cup.n.01_1)
+        )
+    )
+)

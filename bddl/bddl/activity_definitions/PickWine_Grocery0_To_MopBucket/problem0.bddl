@@ -1,0 +1,24 @@
+(define (problem Please_pick_up_the_wine_bottle_from_the_console_table_in_grocery_store_0_and_put_it_inside_the_mop_bucket_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        wine_bottle.n.01_1 - wine_bottle.n.01
+        mop_bucket.n.01_1 - mop_bucket.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop wine_bottle.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 grocery_store_0)
+        (inroom mop_bucket.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?wine_bottle.n.01_1 ?mop_bucket.n.01_1)
+        )
+    )
+)

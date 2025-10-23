@@ -1,0 +1,2 @@
+{"state": {"spirit_lamp.n.01_1": {"toggled_on": false}}, "relation": [["projector.n.02_1", "ontop", "coffee_table.n.01_1"], ["spirit_lamp.n.01_1", "ontop", "console_table.n.01_1"], ["coffee_table.n.01_1", "inroom", "living_room_0"], ["console_table.n.01_1", "inroom", "living_room_0"], ["shelf.n.01_1", "inroom", "storage_room_0"], ["floor.n.01_1", "inroom", "living_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"spirit_lamp.n.01_1": {"toggled_on": true}}, "relation": [["projector.n.02_1", "ontop", "shelf.n.01_1"]]}

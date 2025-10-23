@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["toolbox.n.01_1", "ontop", "floor.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"], ["desk.n.01_1", "inroom", "shared_office_0"]]}
+{"state": {}, "relation": [["toolbox.n.01_1", "under", "desk.n.01_1"]]}

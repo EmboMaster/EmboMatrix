@@ -1,0 +1,25 @@
+(define (problem pick_up_the_sweet_corn.n.02_from_the_breakfast_table_in_the_dining_room_0_go_to_the_kitchen_0_and_put_the_sweet_corn.n.02_inside_the_cooler.n.01_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        sweet_corn.n.02_1 - sweet_corn.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop sweet_corn.n.02_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?sweet_corn.n.02_1)
+            (inside ?sweet_corn.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

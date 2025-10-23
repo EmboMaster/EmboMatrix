@@ -1,0 +1,2 @@
+{"state": {"air_conditioner.n.01_1": {"toggled_on": false}}, "relation": [["rag.n.01_1", "ontop", "floor.n.01_1"], ["air_conditioner.n.01_1", "inroom", "exercise_room_0"], ["dish_rack.n.01_1", "inroom", "bathroom_0"], ["floor.n.01_1", "inroom", "exercise_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"air_conditioner.n.01_1": {"toggled_on": true}}, "relation": [["rag.n.01_1", "ontop", "dish_rack.n.01_1"]]}

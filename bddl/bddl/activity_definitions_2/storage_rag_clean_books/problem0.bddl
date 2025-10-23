@@ -1,0 +1,37 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_rag.n.01_from_the_shelf_go_to_the_television_room_0_clean_all_3_dusty_books_on_the_table_and_place_the_rag.n.01_back_on_the_shelf_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        shelf.n.01_1 - shelf.n.01
+        paperback_book.n.01_1 paperback_book.n.01_2 paperback_book.n.01_3 - paperback_book.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside rag.n.01_1 shelf.n.01_1)
+        (dusty paperback_book.n.01_1)
+        (dusty paperback_book.n.01_2)
+        (dusty paperback_book.n.01_3)
+        (ontop paperback_book.n.01_1 coffee_table.n.01_1)
+        (ontop paperback_book.n.01_2 coffee_table.n.01_1)
+        (ontop paperback_book.n.01_3 coffee_table.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom coffee_table.n.01_1 television_room_0)
+        (inroom sink.n.01_1 television_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+    
+    (:goal
+        (and
+            (soaked ?rag.n.01_1)
+            (not (dusty ?paperback_book.n.01_1))
+            (not (dusty ?paperback_book.n.01_2))
+            (not (dusty ?paperback_book.n.01_3))
+            (inside ?rag.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

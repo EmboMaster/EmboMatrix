@@ -1,0 +1,28 @@
+(define (problem head_to_the_playroom_0_pick_up_the_phonograph_records_from_the_flat_bench_and_put_them_on_top_of_the_piano_then_go_to_the_living_room_0_and_toggle_on_the_vacuum.n.04_to_clean_the_carpets-0)
+    (:domain omnigibson)
+    (:objects
+        phonograph_record.n.01_1 - phonograph_record.n.01
+        flat_bench.n.02_1 - flat_bench.n.02
+        piano.n.01_1 - piano.n.01
+        vacuum.n.04_1 - vacuum.n.04
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop phonograph_record.n.01_1 flat_bench.n.02_1)
+        (inroom flat_bench.n.02_1 playroom_0)
+        (inroom piano.n.01_1 playroom_0)
+        (inroom vacuum.n.04_1 living_room_0)
+        (not (toggled_on vacuum.n.04_1))
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?phonograph_record.n.01_1 ?piano.n.01_1)
+            (toggled_on ?vacuum.n.04_1)
+        )
+    )
+)

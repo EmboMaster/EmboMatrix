@@ -1,0 +1,28 @@
+(define (problem go_to_locker_room_0_and_pick_up_the_soccer_ball_from_the_bench_then_go_to_gym_0_and_put_the_soccer_ball_on_top_of_the_dish_rack_after_that_toggle_on_the_air_conditioner.n.01_in_gym_0_to_ensure_the_room_is_properly_cooled_for_training-0)
+    (:domain omnigibson)
+    (:objects
+        soccer_ball.n.01_1 - soccer_ball.n.01
+        bench.n.01_1 - bench.n.01
+        dish_rack.n.01_1 - dish_rack.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop soccer_ball.n.01_1 bench.n.01_1)
+        (inroom bench.n.01_1 locker_room_0)
+        (inroom dish_rack.n.01_1 gym_0)
+        (inroom air_conditioner.n.01_1 gym_0)
+        (not (toggled_on air_conditioner.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 locker_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?soccer_ball.n.01_1 ?dish_rack.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

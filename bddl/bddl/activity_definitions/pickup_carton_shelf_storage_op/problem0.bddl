@@ -1,0 +1,31 @@
+(define (problem pick_up_the_carton_from_the_shelf_in_storage_room_0_open_the_carton_and_place_the_bag_of_brussels_sprouts_inside_the_microwave_n_02_in_the_television_room_0_then_toggle_on_the_microwave_n_02_to_heat_the_brussels_sprouts)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        brussels_sprouts.n.01_1 - brussels_sprouts.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside carton.n.02_1 shelf.n.01_1)
+        (inside brussels_sprouts.n.01_1 carton.n.02_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom microwave.n.02_1 television_room_0)
+        (not (toggled_on microwave.n.02_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?brussels_sprouts.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (hot ?brussels_sprouts.n.01_1)
+        )
+    )
+)

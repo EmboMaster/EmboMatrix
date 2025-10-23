@@ -1,0 +1,2 @@
+{"state": {"pepperoni.n.01_1": {"frozen": true}}, "relation": [["pepperoni.n.01_1", "inside", "cooler.n.01_1"], ["frying_pan.n.01_1", "ontop", "reception_desk.n.01_1"], ["cooler.n.01_1", "inroom", "break_room_0"], ["reception_desk.n.01_1", "inroom", "break_room_0"], ["floor.n.01_1", "inroom", "break_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"pepperoni.n.01_1": {"frozen": false}}, "relation": [["pepperoni.n.01_1", "inside", "frying_pan.n.01_1"]]}

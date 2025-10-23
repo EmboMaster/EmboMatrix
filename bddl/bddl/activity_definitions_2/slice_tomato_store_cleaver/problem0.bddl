@@ -1,0 +1,29 @@
+(define (problem Pick_up_the_cleaver.n.01_from_the_booth_in_the_storage_room_1_and_slice_the_beefsteak_tomato.n.01_on_the_chopping_board_in_the_dining_room_0._After_slicing,_place_the_cleaver.n.01_back_on_the_booth_in_the_storage_room_1.)
+    (:domain omnigibson)
+    (:objects
+        cleaver.n.01_1 - cleaver.n.01
+        booth.n.01_1 - booth.n.01
+        beefsteak_tomato.n.01_1 - beefsteak_tomato.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cleaver.n.01_1 booth.n.01_1)
+        (ontop beefsteak_tomato.n.01_1 chopping_board.n.01_1)
+        (inroom booth.n.01_1 storage_room_1)
+        (inroom cleaver.n.01_1 storage_room_1)
+        (inroom chopping_board.n.01_1 dining_room_0)
+        (inroom beefsteak_tomato.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?beefsteak_tomato.n.01_1)
+            (ontop ?cleaver.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

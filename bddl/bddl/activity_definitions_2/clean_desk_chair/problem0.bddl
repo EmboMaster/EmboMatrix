@@ -1,0 +1,30 @@
+(define (problem clean_the_dusty_desk_using_a_rag_in_private_office_0_and_then_clean_the_stained_straight_chair_using_the_same_rag_in_conference_hall_0)
+    (:domain omnigibson)
+    (:objects
+        desk.n.01_1 - desk.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        rag.n.01_1 - rag.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty desk.n.01_1)
+        (stained straight_chair.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom straight_chair.n.01_1 conference_hall_0)
+        (inroom rag.n.01_1 private_office_0)
+        (inroom sink.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_0)
+    )
+
+    (:goal
+        (and
+            (soaked rag.n.01_1)
+            (not (dusty desk.n.01_1))
+            (not (stained straight_chair.n.01_1))
+        )
+    )
+)

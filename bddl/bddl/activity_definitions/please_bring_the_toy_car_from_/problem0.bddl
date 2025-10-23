@@ -1,0 +1,25 @@
+(define (problem please_bring_the_toy_car_from_the_playroom_0_and_the_paperback_book_from_the_childs_room_0_to_the_shelf_in_the_childs_room_1)
+    (:domain omnigibson)
+    (:objects
+        toy_car.n.01_1 - toy_car.n.01
+        paperback_book.n.01_1 - paperback_book.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom toy_car.n.01_1 playroom_0)
+        (inroom paperback_book.n.01_1 childs_room_0)
+        (inroom shelf.n.01_1 childs_room_1)
+        (inroom floor.n.01_1 childs_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?toy_car.n.01_1 ?shelf.n.01_1)
+            (inside ?paperback_book.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

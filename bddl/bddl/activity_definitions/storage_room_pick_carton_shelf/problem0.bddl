@@ -1,0 +1,31 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_carton.n.02_from_the_shelf_then_bring_the_carton.n.02_to_the_dining_room_0_and_put_it_on_top_of_the_breakfast_table_afterward_toggle_on_the_dishwasher.n.01_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        dishwasher.n.01_1 - dishwasher.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom dishwasher.n.01_1 kitchen_0)
+        (not 
+            (toggled_on dishwasher.n.01_1)
+        )
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (ontop ?carton.n.02_1 ?breakfast_table.n.01_1)
+            (toggled_on ?dishwasher.n.01_1)
+        )
+    )
+)

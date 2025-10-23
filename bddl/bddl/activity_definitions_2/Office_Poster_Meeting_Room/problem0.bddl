@@ -1,0 +1,25 @@
+(define (problem Go_to_shared_office_0_pick_up_the_poster_from_the_desk_and_bring_it_to_meeting_room_0_Place_it_on_the_conference_table)
+    (:domain omnigibson)
+    (:objects
+        poster.n.01_1 - poster.n.01
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop poster.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (ontop poster.n.01_1 desk.n.01_1)
+        (and
+            (ontop ?poster.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

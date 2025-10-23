@@ -1,0 +1,24 @@
+(define (problem Please_pick_up_the_pitcher_from_the_console_table_in_the_kitchen_0_carry_it_to_the_dining_room_0_and_place_it_on_the_breakfast_table_for_the_family_meal)
+    (:domain omnigibson)
+    (:objects
+        pitcher.n.02_1 - pitcher.n.02
+        console_table.n.01_1 - console_table.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pitcher.n.02_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?pitcher.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

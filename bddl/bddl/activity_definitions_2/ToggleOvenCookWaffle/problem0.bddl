@@ -1,0 +1,28 @@
+(define (problem Toggle_on_the_oven.n.01_in_kitchen_0_then_cook_the_waffle.n.01_on_the_reception_desk_for_me)
+    (:domain omnigibson)
+    (:objects
+        oven.n.01_1 - oven.n.01
+        waffle.n.01_1 - waffle.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop waffle.n.01_1 reception_desk.n.01_1)
+        (not (toggled_on oven.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom waffle.n.01_1 kitchen_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (ontop waffle.n.01_1 reception_desk.n.01_1)
+        (and
+            (cooked waffle.n.01_1)
+            (toggled_on oven.n.01_1)
+        )
+    )
+)

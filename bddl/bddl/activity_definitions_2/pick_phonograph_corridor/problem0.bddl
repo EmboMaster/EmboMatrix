@@ -1,0 +1,25 @@
+(define (problem pick_up_the_phonograph_record.n.01_from_the_shelf_in_grocery_store_0_and_place_it_on_top_of_the_booth_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        phonograph_record.n.01_1 - phonograph_record.n.01
+        shelf.n.01_1 - shelf.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop phonograph_record.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom booth.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (ontop phonograph_record.n.01_1 shelf.n.01_1)
+        (and
+            (ontop ?phonograph_record.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

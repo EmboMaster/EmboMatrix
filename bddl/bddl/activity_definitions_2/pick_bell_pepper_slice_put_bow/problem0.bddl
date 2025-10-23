@@ -1,0 +1,30 @@
+(define (problem pick_up_the_bell_pepper_from_the_booth_in_the_kitchen_0_slice_it_using_the_table_knife.n.01_on_the_chopping_board_in_the_kitchen_0_and_put_the_sliced_bell_pepper_inside_the_mixing_bowl.n.01_on_the_booth_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        bell_pepper.n.02_1 - bell_pepper.n.02
+        booth.n.01_1 - booth.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bell_pepper.n.02_1 booth.n.01_1)
+        (ontop table_knife.n.01_1 chopping_board.n.01_1)
+        (ontop mixing_bowl.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom mixing_bowl.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?bell_pepper.n.02_1)
+            (inside ?bell_pepper.n.02_1 ?mixing_bowl.n.01_1)
+        )
+    )
+)

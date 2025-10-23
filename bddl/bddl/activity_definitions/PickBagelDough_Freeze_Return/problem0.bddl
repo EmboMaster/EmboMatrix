@@ -1,0 +1,27 @@
+(define (problem Please_pick_up_the_bagel_dough.n.01_from_the_shelf_in_the_bedroom_1_go_to_the_storage_room_0_put_it_inside_the_cooler.n.01_to_freeze_it_then_return_to_the_bedroom_1_and_place_the_frozen_dough_on_the_desk-0)
+    (:domain omnigibson)
+    (:objects
+        bagel_dough.n.01_1 - bagel_dough.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside bagel_dough.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bedroom_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?bagel_dough.n.01_1)
+            (ontop ?bagel_dough.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

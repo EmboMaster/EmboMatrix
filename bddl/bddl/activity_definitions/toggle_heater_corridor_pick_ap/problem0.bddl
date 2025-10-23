@@ -1,0 +1,29 @@
+(define (problem please_toggle_on_the_space_heater.n.01_in_the_corridor_0_to_warm_the_area_for_the_grandmother_then_pick_up_the_apple.n.01_from_the_storage_room_1_and_place_it_inside_the_cooler.n.01_in_the_storage_room_1_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        apple.n.01_1 - apple.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not 
+            (toggled_on space_heater.n.01_1)
+        )
+        (inroom space_heater.n.01_1 corridor_0)
+        (inroom apple.n.01_1 storage_room_1)
+        (inroom cooler.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?space_heater.n.01_1)
+            (inside ?apple.n.01_1 ?cooler.n.01_1)
+            (frozen ?apple.n.01_1)
+        )
+    )
+)

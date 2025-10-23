@@ -1,0 +1,28 @@
+(define (problem go_to_the_playroom_0_pick_up_the_muffin.n.01_from_the_flat_bench_in_the_playroom_0_then_go_to_the_utility_room_0_put_the_muffin.n.01_inside_the_microwave.n.02_toggle_on_the_microwave.n.02_and_heat_the_muffin.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        muffin.n.01_1 - muffin.n.01
+        flat_bench.n.02_1 - flat_bench.n.02
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop muffin.n.01_1 flat_bench.n.02_1)
+        (inroom flat_bench.n.02_1 playroom_0)
+        (inroom muffin.n.01_1 playroom_0)
+        (inroom microwave.n.02_1 utility_room_0)
+        (not (toggled_on microwave.n.02_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+    
+    (:goal
+        (and
+            (cooked ?muffin.n.01_1)
+            (toggled_on ?microwave.n.02_1)
+            (inside ?muffin.n.01_1 ?microwave.n.02_1)
+        )
+    )
+)

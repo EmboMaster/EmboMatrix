@@ -1,0 +1,27 @@
+(define (problem please_toggle_on_the_soap_dispenser_in_the_bathroom_0_pick_up_the_tray_from_the_bar_in_the_bar_0_and_place_the_tray_on_the_board_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        tray.n.01_1 - tray.n.01
+        bar.n.02_1 - bar.n.02
+        board.n.02_1 - board.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom soap_dispenser.n.01_1 bathroom_0)
+        (ontop tray.n.01_1 bar.n.02_1)
+        (inroom bar.n.02_1 bar_0)
+        (inroom board.n.02_1 dining_room_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?soap_dispenser.n.01_1)
+            (ontop ?tray.n.01_1 ?board.n.02_1)
+        )
+    )
+)

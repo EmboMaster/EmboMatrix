@@ -1,0 +1,28 @@
+(define (problem go_to_playroom_0_pick_up_the_tupperware.n.01_from_the_shelf_then_put_the_tupperware.n.01_inside_the_wicker_basket.n.01_in_storage_room_0_afterward_go_to_bathroom_0_and_toggle_on_the_soap_dispenser.n.01)
+    (:domain omnigibson)
+    (:objects
+        tupperware.n.01_1 - tupperware.n.01
+        shelf.n.01_1 - shelf.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tupperware.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 playroom_0)
+        (inroom wicker_basket.n.01_1 storage_room_0)
+        (not (toggled_on soap_dispenser.n.01_1))
+        (inroom soap_dispenser.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?tupperware.n.01_1 ?wicker_basket.n.01_1)
+            (toggled_on ?soap_dispenser.n.01_1)
+        )
+    )
+)

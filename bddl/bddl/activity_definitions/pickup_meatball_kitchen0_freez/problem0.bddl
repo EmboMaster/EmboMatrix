@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_meatball.n.01_from_the_reception_desk_in_kitchen_0_put_it_inside_the_cooler.n.01_in_storage_room_2_to_freeze_and_close_the_recycling_bin.n.01_in_storage_room_2_for_tidiness)
+    (:domain omnigibson)
+    (:objects
+        meatball.n.01_1 - meatball.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop meatball.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 storage_room_2)
+        (inroom recycling_bin.n.01_1 storage_room_2)
+        (open recycling_bin.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?meatball.n.01_1)
+            (inside ?meatball.n.01_1 ?cooler.n.01_1)
+            (not (open ?recycling_bin.n.01_1))
+        )
+    )
+)

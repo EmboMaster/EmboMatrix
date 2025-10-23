@@ -1,0 +1,25 @@
+(define (problem go_to_room_sauna_0_toggle_on_the_table_lamp.n.01_go_to_room_locker_room_0_open_the_backpack.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        backpack.n.01_1 - backpack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom table_lamp.n.01_1 sauna_0)
+        (not (toggled_on table_lamp.n.01_1))
+        (inroom backpack.n.01_1 locker_room_0)
+        (not (open backpack.n.01_1))
+        (inroom floor.n.01_1 sauna_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (open ?backpack.n.01_1)
+        )
+    )
+)

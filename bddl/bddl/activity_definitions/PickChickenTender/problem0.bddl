@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_chicken_tender.n.01_from_the_reception_desk_in_bathroom_1_put_it_inside_the_cooler.n.01_in_corridor_0_to_freeze_it_and_then_place_it_back_on_the_reception_desk_in_bathroom_1)
+    (:domain omnigibson)
+    (:objects
+        chicken_tender.n.01_1 - chicken_tender.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chicken_tender.n.01_1 reception_desk.n.01_1) ; Chicken tender is on the counter in bathroom_1.
+        (inroom reception_desk.n.01_1 bathroom_1)          ; Counter is in bathroom_1.
+        (inroom cooler.n.01_1 corridor_0)           ; Cooler is in corridor_0.
+        (ontop agent.n.01_1 floor.n.01_1)           ; Agent starts on the floor.
+        (inroom floor.n.01_1 bathroom_1)            ; The floor is in bathroom_1.
+    )
+
+    (:goal
+        (and
+            (frozen ?chicken_tender.n.01_1)         ; Chicken tender must be frozen.
+            (ontop ?chicken_tender.n.01_1 ?reception_desk.n.01_1) ; Chicken tender must be on the counter in bathroom_1.
+        )
+    )
+)

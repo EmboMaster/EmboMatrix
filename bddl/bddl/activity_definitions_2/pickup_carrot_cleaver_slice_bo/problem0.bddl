@@ -1,0 +1,25 @@
+(define (problem pick_up_the_carrot.n.03_and_the_cleaver.n.01_from_the_utility_room_0_slice_the_carrot.n.03_into_pieces_and_leave_them_on_the_booth_in_the_utility_room_0)
+    (:domain omnigibson)
+    (:objects
+        carrot.n.03_1 - carrot.n.03
+        cleaver.n.01_1 - cleaver.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom carrot.n.03_1 utility_room_0)
+        (inroom cleaver.n.01_1 utility_room_0)
+        (inroom booth.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+    
+    (:goal
+        (and
+            (sliced carrot.n.03_1)
+            (ontop carrot.n.03_1 booth.n.01_1)
+        )
+    )
+)

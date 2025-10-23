@@ -1,0 +1,29 @@
+(define (problem go_to_the_closet_0_pick_up_the_scarf_from_the_shelf_in_the_closet_0_and_put_it_on_top_of_the_clothes_dryer.n.01_in_the_utility_room_0_then_toggle_on_the_jukebox.n.01_in_the_exercise_room_0_to_play_music_while_assisting_with_exercise-0)
+    (:domain omnigibson)
+    (:objects
+        scarf.n.01_1 - scarf.n.01
+        shelf.n.01_1 - shelf.n.01
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        jukebox.n.01_1 - jukebox.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop scarf.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 closet_0)
+        (inroom scarf.n.01_1 closet_0)
+        (inroom clothes_dryer.n.01_1 utility_room_0)
+        (inroom jukebox.n.01_1 exercise_room_0)
+        (not (toggled_on jukebox.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 closet_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?scarf.n.01_1 ?clothes_dryer.n.01_1)
+            (toggled_on ?jukebox.n.01_1)
+        )
+    )
+)

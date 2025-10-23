@@ -1,0 +1,38 @@
+(define (problem go_to_the_shared_office_0_pick_up_the_bay_leaf.n.01_from_the_conference_table_go_to_the_lobby_0_put_the_bay_leaf.n.01_inside_the_cooler.n.01_to_freeze_it_go_to_the_private_office_1_open_the_laptop.n.01_on_the_desk_go_to_the_meeting_room_0_toggle_on_the_coffee_maker.n.01_to_start_brewing_coffee_for_me)
+    (:domain omnigibson)
+    (:objects
+        bay_leaf.n.01_1 - bay_leaf.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        laptop.n.01_1 - laptop.n.01
+        desk.n.01_1 - desk.n.01
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bay_leaf.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 shared_office_0)
+        (inroom bay_leaf.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 lobby_0)
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_1)
+        (inroom laptop.n.01_1 private_office_1)
+        (inroom coffee_maker.n.01_1 meeting_room_0)
+        (not
+            (toggled_on coffee_maker.n.01_1)
+        )
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?bay_leaf.n.01_1)
+            (inside ?bay_leaf.n.01_1 ?cooler.n.01_1)
+            (open ?laptop.n.01_1)
+            (toggled_on ?coffee_maker.n.01_1)
+        )
+    )
+)

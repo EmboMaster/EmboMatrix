@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_raw_egg_from_the_console_table_in_the_kitchen_0_put_it_inside_the_pressure_cooker_n_01_in_the_kitchen_0_toggle_on_the_pressure_cooker_n_01_and_cook_the_raw_egg)
+    (:domain omnigibson)
+    (:objects
+        raw_egg.n.01_1 - raw_egg.n.01
+        console_table.n.01_1 - console_table.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop raw_egg.n.01_1 console_table.n.01_1)
+        (not 
+            (toggled_on pressure_cooker.n.01_1)
+        )
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom pressure_cooker.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?raw_egg.n.01_1 ?pressure_cooker.n.01_1)
+            (toggled_on ?pressure_cooker.n.01_1)
+            (cooked ?raw_egg.n.01_1)
+        )
+    )
+)

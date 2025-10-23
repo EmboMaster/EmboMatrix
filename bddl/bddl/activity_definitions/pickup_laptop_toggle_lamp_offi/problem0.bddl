@@ -1,0 +1,36 @@
+(define (problem please_pick_up_the_laptop_from_the_desk_in_the_private_office_0_open_the_laptop_and_place_it_on_top_of_the_folder_on_the_shelf_in_the_private_office_0_then_toggle_on_the_table_lamp.n.01_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        laptop.n.01_1 - laptop.n.01
+        desk.n.01_1 - desk.n.01
+        folder.n.02_1 - folder.n.02
+        shelf.n.01_1 - shelf.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (ontop folder.n.02_1 shelf.n.01_1)
+        (not 
+            (open laptop.n.01_1)
+        )
+        (not 
+            (toggled_on table_lamp.n.01_1)
+        )
+        (inroom desk.n.01_1 private_office_0)
+        (inroom shelf.n.01_1 private_office_0)
+        (inroom table_lamp.n.01_1 private_office_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (open ?laptop.n.01_1)
+            (ontop ?laptop.n.01_1 ?folder.n.02_1)
+            (toggled_on ?table_lamp.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,27 @@
+(define (problem please_take_the_pair_of_gym_shoes_from_entryway_0_and_the_umbrella_from_closet_2_to_the_bicycle_rack_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        gym_shoe.n.01_1 gym_shoe.n.01_2 - gym_shoe.n.01
+        umbrella.n.01_1 - umbrella.n.01
+        bicycle_rack.n.01_1 - bicycle_rack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom gym_shoe.n.01_1 entryway_0)
+        (inroom gym_shoe.n.01_2 entryway_0)
+        (inroom umbrella.n.01_1 closet_2)
+        (inroom bicycle_rack.n.01_1 corridor_0)
+        (inroom floor.n.01_1 entryway_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?gym_shoe.n.01_1 ?bicycle_rack.n.01_1)
+            (ontop ?gym_shoe.n.01_2 ?bicycle_rack.n.01_1)
+            (ontop ?umbrella.n.01_1 ?bicycle_rack.n.01_1)
+        )
+    )
+)

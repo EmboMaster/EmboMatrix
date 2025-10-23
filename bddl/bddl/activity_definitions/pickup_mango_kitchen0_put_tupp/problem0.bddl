@@ -1,0 +1,30 @@
+(define (problem pick_up_the_mango_from_the_reception_desk_in_the_kitchen_0_put_it_inside_the_tupperware_on_the_shelf_in_the_kitchen_0_and_then_cook_the_mango_using_the_stove_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        mango.n.02_1 - mango.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        shelf.n.01_1 - shelf.n.01
+        stove.n.01_1 - stove.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mango.n.02_1 reception_desk.n.01_1)
+        (ontop tupperware.n.01_1 shelf.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?mango.n.02_1 ?tupperware.n.01_1)
+            (cooked ?mango.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem go_to_room_break_room_0_pick_up_the_walnut.n.01_from_the_booth_put_the_walnut.n.01_inside_the_rice_cooker.n.01_toggle_on_appliance_rice_cooker.n.01_go_to_room_shared_office_0_toggle_on_appliance_facsimile.n.02)
+    (:domain omnigibson)
+    (:objects
+        walnut.n.01_1 - walnut.n.01
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        facsimile.n.02_1 - facsimile.n.02
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop walnut.n.01_1 booth.n.01_1)
+        (not (toggled_on rice_cooker.n.01_1))
+        (not (toggled_on facsimile.n.02_1))
+        (inroom booth.n.01_1 break_room_0)
+        (inroom rice_cooker.n.01_1 break_room_0)
+        (inroom facsimile.n.02_1 shared_office_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?walnut.n.01_1 ?rice_cooker.n.01_1)
+            (toggled_on ?rice_cooker.n.01_1)
+            (toggled_on ?facsimile.n.02_1)
+        )
+    )
+)

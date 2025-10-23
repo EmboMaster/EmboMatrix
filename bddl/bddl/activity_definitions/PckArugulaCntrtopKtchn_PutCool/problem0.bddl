@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_arugula_from_the_countertop_in_the_kitchen_0_and_put_it_inside_the_cooler_in_the_storage_room_0_then_pick_up_the_saucepot_from_the_shelf_in_the_storage_room_0_and_place_it_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        arugula.n.02_1 - arugula.n.02
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        saucepot.n.01_1 - saucepot.n.01
+        shelf.n.01_1 - shelf.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (ontop arugula.n.02_1 countertop.n.01_1)
+        (ontop saucepot.n.01_1 shelf.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal 
+        (and 
+            (inside ?arugula.n.02_1 ?cooler.n.01_1)
+            (ontop ?saucepot.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

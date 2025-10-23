@@ -1,0 +1,2 @@
+{"state": {"lab_exhaust_hood.n.01_1": {"toggled_on": false}, "oven.n.01_1": {"open": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["enchilada.n.01_1", "inroom", "kitchen_0"], ["oven.n.01_1", "inroom", "kitchen_0"], ["lab_exhaust_hood.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"lab_exhaust_hood.n.01_1": {"toggled_on": true}, "oven.n.01_1": {"open": false}}, "relation": [["enchilada.n.01_1", "inside", "oven.n.01_1"]]}

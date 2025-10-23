@@ -1,0 +1,29 @@
+(define (problem please_toggle_on_the_space_heater.n.01_in_the_bedroom_0_then_go_to_the_bathroom_0_and_open_the_recycling_bin.n.01)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not 
+            (toggled_on space_heater.n.01_1)
+        )
+        (not 
+            (open recycling_bin.n.01_1)
+        )
+        (inroom space_heater.n.01_1 bedroom_0)
+        (inroom recycling_bin.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and 
+            (toggled_on ?space_heater.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

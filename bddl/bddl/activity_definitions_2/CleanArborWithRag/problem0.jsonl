@@ -1,0 +1,2 @@
+{"state": {"arbor.n.03_1": {"dusty": true}}, "relation": [["rag.n.01_1", "ontop", "pedestal_table.n.01_1"], ["sink.n.01_1", "nextto", "arbor.n.03_1"], ["sink.n.01_1", "inroom", "corridor_0"], ["arbor.n.03_1", "inroom", "closet_0"], ["pedestal_table.n.01_1", "inroom", "corridor_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"]]}
+{"state": {"rag.n.01_1": {"soaked": true}, "arbor.n.03_1": {"dusty": false}}, "relation": [["rag.n.01_1", "ontop", "pedestal_table.n.01_1"]]}

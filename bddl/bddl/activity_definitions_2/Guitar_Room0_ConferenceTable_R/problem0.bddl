@@ -1,0 +1,25 @@
+(define (problem pick_up_the_guitar_from_the_stand_in_the_empty_room_0_and_place_it_on_the_conference_table_in_the_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        guitar.n.01_1 - guitar.n.01
+        stand.n.04_1 - stand.n.04
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop guitar.n.01_1 stand.n.04_1)
+        (inroom stand.n.04_1 empty_room_0)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (ontop guitar.n.01_1 stand.n.04_1)
+        (and
+            (ontop ?guitar.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

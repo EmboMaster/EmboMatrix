@@ -1,0 +1,31 @@
+(define (problem Please_clean_the_stained_floor_in_the_bathroom_0_using_the_scrub_brush.n.01_located_in_the_empty_room_0_and_then_clean_the_dusty_chair_in_the_empty_room_0_using_the_rag.n.01_from_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        rag.n.01_1 - rag.n.01
+        floor.n.01_1 - floor.n.01
+        armchair.n.01_1 - armchair.n.01
+        sink.n.01_1 - sink.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom scrub_brush.n.01_1 empty_room_0)
+        (inroom rag.n.01_1 bathroom_0)
+        (inroom armchair.n.01_1 empty_room_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (stained floor.n.01_1)
+        (dusty armchair.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (soaked ?scrub_brush.n.01_1)
+            (not (stained ?floor.n.01_1))
+            (soaked ?rag.n.01_1)
+            (not (dusty ?armchair.n.01_1))
+        )
+    )
+)

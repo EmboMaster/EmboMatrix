@@ -1,0 +1,28 @@
+(define (problem Please_pick_up_the_liquid_carton.n.01_from_the_breakfast_table_in_the_living_room_0_and_put_it_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_it_Then_go_to_the_playroom_0_and_toggle_on_the_jukebox.n.01_to_play_music_for_the_daughter_for_me)
+    (:domain omnigibson)
+    (:objects
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        jukebox.n.01_1 - jukebox.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop liquid_carton.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 living_room_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (inroom jukebox.n.01_1 playroom_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?liquid_carton.n.01_1)
+            (inside ?liquid_carton.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?jukebox.n.01_1)
+        )
+    )
+)

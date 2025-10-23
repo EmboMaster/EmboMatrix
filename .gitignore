@@ -1,0 +1,119 @@
+*.pyc
+*.gif
+*.usd
+*.pyd
+*.pkl
+*.gif
+*.so
+*.egg-info/
+.DS_Store
+*.pth
+src/
+pw
+*.o
+*.ipynb
+*.mp4
+*.ipynb_checkpoints/
+*.out
+npz/
+docs/
+*.npy
+dev/transfer.c
+*.jpg
+*.png
+*.bmp
+*.bak
+*.zip
+.*.swp
+IL_data/
+data_collector_logs/
+docs/apidoc
+models
+# vscode
+.vscode/
+*log*
+data-0325/
+data-*/
+
+#huge pretrained model
+google
+google/
+# omnigibson/shengyin
+# Physics
+physics/*.txt
+physics/*.json
+# Physics assets
+physics/models
+methods/RoboticsDiffusionTransformer/ckpts
+# bddl/bddl/
+omnigibson/result0304/
+*/events*
+0_VRDemoSettings.txt
+
+omnigibson/plannerdemo/simulation_tools/posecache_0502/
+
+# VR
+# This is the folder where the pyd files get put after setup.py builds gibson
+Release
+
+cnn_policy*
+*ppo_policy*
+checkpoint
+*.log
+*.log.*
+*.model.*
+examples/train/models/
+
+omnigibson/shengyin/*.txt
+
+omnigibson/plannerdemo/logs
+
+log_*/
+baselines/
+aws/
+monitor_*
+comparison/
+0.monitor.csvpaper/
+0.monitor.csv
+
+cvpr/
+gibson/cpp-household
+
+*.idea*
+
+# Plotting
+examples/scripts/plot*
+
+# Models
+nav_models
+
+gibson/assets
+*.pdf
+.cache
+notebook
+build
+dist
+omnigibson.egg-info
+
+# Directories used for QC pipeline
+omnigibson/utils/data_utils/mesh_decimation/collision
+omnigibson/utils/data_utils/mesh_decimation/visual
+omnigibson/utils/data_utils/mesh_decimation/final_videos
+
+# libcryptopp
+omnigibson/render/mesh_renderer/libcryptopp.so.8.6
+
+# Coverage
+.coverage
+coverage.xml
+
+# Doc
+docs/reference
+site/
+
+# Tests of examples
+omnigibson/results/
+omnigibson/plannerdemo/simulation_tools/posecache*/
+omnigibson_data.tar.gz
+data*
+omnigibson/data/

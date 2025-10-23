@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_pomegranate.n.02_from_the_shopping_basket_in_the_living_room_0_go_to_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        pomegranate.n.02_1 - pomegranate.n.02
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside pomegranate.n.02_1 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 living_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?pomegranate.n.02_1)
+            (inside ?pomegranate.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

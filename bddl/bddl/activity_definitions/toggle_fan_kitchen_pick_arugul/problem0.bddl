@@ -1,0 +1,30 @@
+(define (problem please_toggle_on_the_electric_fan.n.01_in_the_kitchen_0,_and_pick_up_the_arugula.n.02_from_the_cooler.n.01_in_the_kitchen_0_and_place_it_on_top_of_the_booth_in_the_kitchen_0-0)
+    (:domain omnigibson)
+    (:objects
+        electric_fan.n.01_1 - electric_fan.n.01
+        arugula.n.02_1 - arugula.n.02
+        cooler.n.01_1 - cooler.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on electric_fan.n.01_1))
+        (inside arugula.n.02_1 cooler.n.01_1)
+        (frozen arugula.n.02_1)
+        (inroom electric_fan.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?electric_fan.n.01_1)
+            (ontop ?arugula.n.02_1 ?booth.n.01_1)
+            (frozen ?arugula.n.02_1)
+        )
+    )
+)

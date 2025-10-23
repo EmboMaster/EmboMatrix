@@ -1,0 +1,29 @@
+(define (problem Pick_up_the_rag.n.01_from_the_shelf_in_the_storage_room_1_and_clean_the_dusty_television_in_the_living_room_0._Then,_place_the_rag.n.01_back_on_the_same_shelf_in_the_storage_room_1.)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        shelf.n.01_1 - shelf.n.01
+        magazine.n.02_1 - magazine.n.02
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rag.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_1)
+        (inroom sink.n.01_1 storage_room_1)
+        (dusty magazine.n.02_1)
+        (inroom magazine.n.02_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?magazine.n.02_1))
+            (soaked ?rag.n.01_1)
+            (ontop ?rag.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

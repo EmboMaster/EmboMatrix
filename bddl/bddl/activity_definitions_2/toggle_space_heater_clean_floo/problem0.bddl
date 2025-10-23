@@ -1,0 +1,27 @@
+(define (problem toggle_on_the_space_heater_in_the_corridor_0_and_then_clean_the_dusty_floor_in_the_corridor_0_with_the_vacuum.n.04)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        vacuum.n.04_1 - vacuum.n.04
+        agent.n.01_1 - agent.n.01
+        sink.n.01_1 - sink.n.01
+    )
+
+    (:init
+        (not (toggled_on space_heater.n.01_1))
+        (dusty floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom space_heater.n.01_1 corridor_0)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom vacuum.n.04_1 corridor_0)
+        (inroom sink.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?space_heater.n.01_1)
+            (not (dusty ?floor.n.01_1))
+        )
+    )
+)

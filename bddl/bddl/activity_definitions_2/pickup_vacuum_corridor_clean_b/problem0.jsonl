@@ -1,0 +1,2 @@
+{"state": {"floor.n.01_2": {"stained": true}}, "relation": [["vacuum.n.04_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"], ["floor.n.01_2", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"floor.n.01_2": {"stained": false}}, "relation": []}

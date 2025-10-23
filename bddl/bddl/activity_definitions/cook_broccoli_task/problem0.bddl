@@ -1,0 +1,30 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_broccoli.n.02_from_the_countertop_place_it_inside_the_electric_cauldron.n.01_near_the_stove.n.01_toggle_on_the_stove.n.01_cook_the_broccoli.n.02_using_the_stove.n.01_and_return_to_the_dining_room_0_to_place_the_cooked_broccoli.n.02_on_the_breakfast_table)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        countertop.n.01_1 - countertop.n.01
+        electric_cauldron.n.01_1 - electric_cauldron.n.01
+        stove.n.01_1 - stove.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop broccoli.n.02_1 countertop.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom electric_cauldron.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?broccoli.n.02_1)
+            (ontop ?broccoli.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem Please_pick_up_the_chocolate_biscuit.n.01_from_the_desk_in_bedroom_1,_go_to_the_storage_room_0,_and_put_the_chocolate_biscuit.n.01_inside_the_cooler.n.01_to_freeze_it._After_that,_close_the_cooler.n.01_to_ensure_the_freezing_process_is_secure.)
+    (:domain omnigibson)
+    (:objects
+        chocolate_biscuit.n.01_1 - chocolate_biscuit.n.01
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_biscuit.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (open cooler.n.01_1)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chocolate_biscuit.n.01_1 ?cooler.n.01_1)
+            (frozen ?chocolate_biscuit.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

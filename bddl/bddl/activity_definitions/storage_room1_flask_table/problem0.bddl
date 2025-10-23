@@ -1,0 +1,30 @@
+(define (problem go_to_storage_room_1_open_the_backpack_n_01_pick_up_the_erlenmeyer_flask_n_01_from_inside_the_backpack_n_01_close_the_backpack_n_01_and_place_the_erlenmeyer_flask_n_01_on_the_coffee_table_in_the_living_room_1-0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        erlenmeyer_flask.n.01_1 - erlenmeyer_flask.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom backpack.n.01_1 storage_room_1)
+        (inroom coffee_table.n.01_1 living_room_1)
+        (inroom floor.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inside erlenmeyer_flask.n.01_1 backpack.n.01_1)
+        (not 
+            (open backpack.n.01_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (ontop ?erlenmeyer_flask.n.01_1 ?coffee_table.n.01_1)
+            (not
+                (open ?backpack.n.01_1)
+            )
+        )
+    )
+)

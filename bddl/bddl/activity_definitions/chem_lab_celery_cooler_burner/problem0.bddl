@@ -1,0 +1,29 @@
+(define (problem go_to_room_chemistry_lab_0_pick_up_the_celery.n.02_from_the_mixing_bowl.n.01_and_put_it_inside_the_cooler.n.01_in_chemistry_lab_0_then_toggle_on_the_burner.n.02_in_chemistry_lab_0)
+    (:domain omnigibson)
+    (:objects
+        celery.n.02_1 - celery.n.02
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        cooler.n.01_1 - cooler.n.01
+        burner.n.02_1 - burner.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside celery.n.02_1 mixing_bowl.n.01_1)
+        (inroom mixing_bowl.n.01_1 chemistry_lab_0)
+        (inroom cooler.n.01_1 chemistry_lab_0)
+        (inroom burner.n.02_1 chemistry_lab_0)
+        (inroom floor.n.01_1 chemistry_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on burner.n.02_1))
+    )
+    
+    (:goal
+        (and
+            (inside ?celery.n.02_1 ?cooler.n.01_1)
+            (frozen ?celery.n.02_1)
+            (toggled_on ?burner.n.02_1)
+        )
+    )
+)

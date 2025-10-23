@@ -1,0 +1,25 @@
+(define (problem freeze_the_peach.n.03_by_putting_it_inside_the_cooler.n.01_in_the_storage_room_1_and_then_bring_the_frozen_peach.n.03_to_the_childs_room_1_and_place_it_on_the_desk)
+    (:domain omnigibson)
+    (:objects
+        peach.n.03_1 - peach.n.03
+        cooler.n.01_1 - cooler.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom peach.n.03_1 storage_room_1)
+        (inroom cooler.n.01_1 storage_room_1)
+        (inroom desk.n.01_1 childs_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?peach.n.03_1)
+            (ontop ?peach.n.03_1 ?desk.n.01_1)
+        )
+    )
+)

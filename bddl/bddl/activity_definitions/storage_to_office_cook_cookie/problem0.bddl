@@ -1,0 +1,35 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_carton.n.02_from_the_shelf_and_open_the_carton.n.02_then_go_to_the_television_room_0_pick_up_the_chocolate_cookie_dough.n.01_from_the_board_and_bring_it_to_the_private_office_0_put_the_chocolate_cookie_dough.n.01_inside_the_oven.n.01_and_cook_the_chocolate_cookie_dough.n.01_using_the_oven.n.01)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        chocolate_cookie_dough.n.01_1 - chocolate_cookie_dough.n.01
+        board.n.02_1 - board.n.02
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (ontop chocolate_cookie_dough.n.01_1 board.n.02_1)
+        (not (open carton.n.02_1))
+        (not (toggled_on oven.n.01_1))
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom board.n.02_1 television_room_0)
+        (inroom chocolate_cookie_dough.n.01_1 television_room_0)
+        (inroom oven.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (cooked ?chocolate_cookie_dough.n.01_1)
+            (inside ?chocolate_cookie_dough.n.01_1 ?oven.n.01_1)
+            (toggled_on ?oven.n.01_1)
+        )
+    )
+)

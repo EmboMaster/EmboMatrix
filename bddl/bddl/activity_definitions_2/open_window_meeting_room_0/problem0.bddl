@@ -1,0 +1,22 @@
+(define (problem open_the_window.n.01_in_meeting_room_0)
+    (:domain omnigibson)
+    (:objects
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open window.n.01_1))
+        (inroom window.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (not (open window.n.01_1))
+        (and
+            (open window.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_2_stained_dress_shirts_from_the_floor_in_the_childs_room_0_put_them_inside_the_washer.n.03_in_the_utility_room_0_and_toggle_on_the_washer.n.03)
+    (:domain omnigibson)
+    (:objects
+        dress_shirt.n.01_1 dress_shirt.n.01_2 - dress_shirt.n.01
+        washer.n.03_1 - washer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (stained dress_shirt.n.01_1)
+        (stained dress_shirt.n.01_2)
+        (ontop dress_shirt.n.01_1 floor.n.01_1)
+        (ontop dress_shirt.n.01_2 floor.n.01_1)
+        (inroom floor.n.01_1 childs_room_0)
+        (inroom washer.n.03_1 utility_room_0)
+        (not (toggled_on washer.n.03_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?dress_shirt.n.01_1 ?washer.n.03_1)
+            (inside ?dress_shirt.n.01_2 ?washer.n.03_1)
+            (toggled_on ?washer.n.03_1)
+        )
+    )
+)

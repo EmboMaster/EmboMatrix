@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_rag_from_the_bicycle_rack_in_the_exercise_room_0_go_to_the_bathroom_0_and_place_the_rag_on_top_of_the_countertop_Then_toggle_on_the_room_light_n_01_in_the_bathroom_0_to_ensure_visibility_for_cleaning)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        bicycle_rack.n.01_1 - bicycle_rack.n.01
+        countertop.n.01_1 - countertop.n.01
+        room_light.n.01_1 - room_light.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rag.n.01_1 bicycle_rack.n.01_1)
+        (inroom bicycle_rack.n.01_1 exercise_room_0)
+        (inroom countertop.n.01_1 bathroom_0)
+        (inroom room_light.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 exercise_room_0)
+        (not 
+            (toggled_on room_light.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (ontop ?rag.n.01_1 ?countertop.n.01_1)
+            (toggled_on ?room_light.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,33 @@
+(define (problem pick_up_the_three_dusty_hardbacks_from_the_conference_table_in_the_hall_train_station_and_clean_them_using_the_vacuum.n.04_in_the_hall_train_station_ensure_all_hardbacks_are_dust_free_when_finished)
+    (:domain omnigibson)
+    (:objects
+        hardback.n.01_1 hardback.n.01_2 hardback.n.01_3 - hardback.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        vacuum.n.04_1 - vacuum.n.04
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty hardback.n.01_1)
+        (dusty hardback.n.01_2)
+        (dusty hardback.n.01_3)
+        (ontop hardback.n.01_1 conference_table.n.01_1)
+        (ontop hardback.n.01_2 conference_table.n.01_1)
+        (ontop hardback.n.01_3 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom vacuum.n.04_1 empty_room_0)
+        (inroom sink.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?hardback.n.01_1))
+            (not (dusty ?hardback.n.01_2))
+            (not (dusty ?hardback.n.01_3))
+        )
+    )
+)

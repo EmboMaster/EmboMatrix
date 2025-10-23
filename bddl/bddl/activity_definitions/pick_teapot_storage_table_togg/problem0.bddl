@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_teapot.n.01_from_the_storage_room_0_place_it_on_top_of_the_breakfast_table_in_the_dining_room_0_and_toggle_on_the_thermostat.n.01_in_the_living_room_0_for_a_comfortable_temperature)
+    (:domain omnigibson)
+    (:objects
+        teapot.n.01_1 - teapot.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        thermostat.n.01_1 - thermostat.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom teapot.n.01_1 storage_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom thermostat.n.01_1 living_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on thermostat.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (ontop ?teapot.n.01_1 ?breakfast_table.n.01_1)
+            (toggled_on ?thermostat.n.01_1)
+        )
+    )
+)

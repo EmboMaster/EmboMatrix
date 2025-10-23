@@ -1,0 +1,2 @@
+{"state": {"shelf_baseboard.n.01_1": {"dusty": true}}, "relation": [["rag.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["shelf_baseboard.n.01_1", "inroom", "lobby_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"rag.n.01_1": {"soaked": true}, "shelf_baseboard.n.01_1": {"dusty": false}}, "relation": []}

@@ -1,0 +1,31 @@
+(define (problem please_collect_the_textbook_from_the_desk_in_bedroom_1_and_the_pair_of_sunglasses_from_the_shelf_in_living_room_0_and_place_them_on_the_table_lamp_in_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        textbook.n.01_1 - textbook.n.01
+        desk.n.01_1 - desk.n.01
+        sunglasses.n.02_1 - sunglasses.n.02
+        shelf.n.01_1 - shelf.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop textbook.n.01_1 desk.n.01_1)
+        (ontop sunglasses.n.02_1 shelf.n.01_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (inroom textbook.n.01_1 bedroom_1)
+        (inroom shelf.n.01_1 living_room_0)
+        (inroom sunglasses.n.02_1 living_room_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?textbook.n.01_1 ?table_lamp.n.01_1)
+            (ontop ?sunglasses.n.02_1 ?table_lamp.n.01_1)
+        )
+    )
+)

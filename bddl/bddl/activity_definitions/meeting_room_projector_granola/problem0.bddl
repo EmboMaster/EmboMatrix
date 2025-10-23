@@ -1,0 +1,29 @@
+(define (problem go_to_the_meeting_room_0_toggle_on_the_projector.n.02_go_to_the_conference_hall_0_pick_up_the_granola_bar.n.01_from_the_conference_table_go_to_the_shared_office_0_and_heat_the_granola_bar.n.01_using_the_toaster_oven.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        projector.n.02_1 - projector.n.02
+        granola_bar.n.01_1 - granola_bar.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom projector.n.02_1 meeting_room_0)
+        (ontop granola_bar.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (inroom toaster_oven.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 meeting_room_0)
+        (not (toggled_on projector.n.02_1))
+        (not (hot granola_bar.n.01_1))
+    )
+
+    (:goal
+        (and
+            (toggled_on ?projector.n.02_1)
+            (hot ?granola_bar.n.01_1)
+        )
+    )
+)

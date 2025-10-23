@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_tortilla.n.01_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_kitchen_0._Then_pick_up_the_pitcher.n.02_from_the_shelf_in_the_bar_0_and_place_it_on_top_of_the_breakfast_table_in_the_dining_room_0.)
+    (:domain omnigibson)
+    (:objects
+        tortilla.n.01_1 - tortilla.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        pitcher.n.02_1 - pitcher.n.02
+        shelf.n.01_1 - shelf.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tortilla.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop pitcher.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bar_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?tortilla.n.01_1 ?cooler.n.01_1)
+            (ontop ?pitcher.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

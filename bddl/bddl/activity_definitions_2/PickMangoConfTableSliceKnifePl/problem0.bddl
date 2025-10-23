@@ -1,0 +1,34 @@
+(define (problem Pick_up_the_mango.n.02_from_the_conference_table_in_conference_hall_0_slice_the_mango.n.02_using_the_conference_table_knife.n.01_on_the_booth_in_copy_room_0_and_place_the_sliced_mango.n.02_inside_the_casserole.n.02_on_the_shelf_in_private_office_1)
+    (:domain omnigibson)
+    (:objects
+        mango.n.02_1 - mango.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        booth.n.01_1 - booth.n.01
+        casserole.n.02_1 - casserole.n.02
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mango.n.02_1 conference_table.n.01_1)
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (ontop casserole.n.02_1 shelf.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (inroom mango.n.02_1 conference_hall_0)
+        (inroom floor.n.01_1 conference_hall_0)
+        (inroom booth.n.01_1 copy_room_0)
+        (inroom table_knife.n.01_1 copy_room_0)
+        (inroom shelf.n.01_1 private_office_1)
+        (inroom casserole.n.02_1 private_office_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?mango.n.02_1)
+            (inside ?mango.n.02_1 ?casserole.n.02_1)
+        )
+    )
+)

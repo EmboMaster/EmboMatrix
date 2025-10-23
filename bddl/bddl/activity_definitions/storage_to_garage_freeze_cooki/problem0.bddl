@@ -1,0 +1,25 @@
+(define (problem go_to_storage_room_0_pick_up_the_butter_cookie.n.01_from_the_shelf_bring_it_to_the_garage_0_put_the_butter_cookie.n.01_inside_the_cooler.n.01_to_freeze-0)
+    (:domain omnigibson)
+    (:objects
+        butter_cookie.n.01_1 - butter_cookie.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop butter_cookie.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?butter_cookie.n.01_1)
+            (inside ?butter_cookie.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

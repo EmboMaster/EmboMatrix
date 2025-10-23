@@ -1,0 +1,28 @@
+(define (problem go_to_break_room_0_pick_up_the_hamburger_bun.n.01_from_the_booth_put_the_hamburger_bun.n.01_inside_the_toaster_oven.n.01_toggle_on_toaster_oven.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        hamburger_bun.n.01_1 - hamburger_bun.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop hamburger_bun.n.01_1 booth.n.01_1)
+        (not 
+            (toggled_on toaster_oven.n.01_1)
+        )
+        (inroom booth.n.01_1 break_room_0)
+        (inroom toaster_oven.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?hamburger_bun.n.01_1 ?toaster_oven.n.01_1)
+            (toggled_on ?toaster_oven.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"vase.n.01_1": {"dusty": true}}, "relation": [["vase.n.01_1", "ontop", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "living_room_0"], ["vase.n.01_1", "inroom", "living_room_0"], ["scrub_brush.n.01_1", "inroom", "storage_room_0"], ["sink.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "living_room_0"]]}
+{"state": {"vase.n.01_1": {"dusty": false}, "scrub_brush.n.01_1": {"soaked": true}}, "relation": [["vase.n.01_1", "ontop", "shelf.n.01_1"]]}

@@ -1,0 +1,33 @@
+(define (problem please_pick_up_the_raw_egg.n.01_from_the_reception_desk_in_the_kitchen_0_cook_it_using_the_oven.n.01_in_the_kitchen_0_and_place_the_cooked_egg_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        raw_egg.n.01_1 - raw_egg.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        oven.n.01_1 - oven.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop raw_egg.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on oven.n.01_1)
+        )
+        (not
+            (cooked raw_egg.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (cooked ?raw_egg.n.01_1)
+            (ontop ?raw_egg.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

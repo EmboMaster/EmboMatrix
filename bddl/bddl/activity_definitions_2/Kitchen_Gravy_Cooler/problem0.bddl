@@ -1,0 +1,25 @@
+(define (problem please_go_to_the_kitchen_0_and_pick_up_the_gravy_boat_from_the_reception_desk_then_place_it_inside_the_cooler_in_the_pantry_room_0)
+    (:domain omnigibson)
+    (:objects
+        gravy_boat.n.01_1 - gravy_boat.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop gravy_boat.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 pantry_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (ontop gravy_boat.n.01_1 reception_desk.n.01_1)
+        (and
+            (inside ?gravy_boat.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

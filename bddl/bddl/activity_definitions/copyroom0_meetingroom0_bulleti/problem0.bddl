@@ -1,0 +1,28 @@
+(define (problem go_to_room_copy_room_0_toggle_on_appliance_printer.n.03_pick_up_the_information_bulletin_from_the_pedestal_table_in_copy_room_0_go_to_room_meeting_room_0_place_the_information_bulletin_on_top_of_the_desk_in_meeting_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        printer.n.03_1 - printer.n.03
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        desk.n.01_1 - desk.n.01
+        information_bulletin.n.01_1 - information_bulletin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on printer.n.03_1))
+        (ontop information_bulletin.n.01_1 pedestal_table.n.01_1)
+        (inroom printer.n.03_1 copy_room_0)
+        (inroom pedestal_table.n.01_1 copy_room_0)
+        (inroom desk.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?printer.n.03_1)
+            (ontop ?information_bulletin.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

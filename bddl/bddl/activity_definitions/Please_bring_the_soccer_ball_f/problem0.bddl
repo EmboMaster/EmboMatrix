@@ -1,0 +1,30 @@
+(define (problem Please_bring_the_soccer_ball_from_the_floor_in_the_living_room_0_to_the_storage_organizer_in_the_storage_room_0_and_the_liquid_carton_from_the_fridge_in_the_kitchen_0_to_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        soccer_ball.n.01_1 - soccer_ball.n.01
+        storage_organizer.n.01_1 - storage_organizer.n.01
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        cooler.n.01_1 - cooler.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop soccer_ball.n.01_1 floor.n.01_1)
+        (inroom soccer_ball.n.01_1 living_room_0)
+        (inroom storage_organizer.n.01_1 storage_room_0)
+        (inside liquid_carton.n.01_1 cooler.n.01_1)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?soccer_ball.n.01_1 ?storage_organizer.n.01_1)
+            (ontop ?liquid_carton.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

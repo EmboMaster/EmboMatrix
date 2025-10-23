@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_rag.n.01_from_the_shelf_in_locker_room_0_soak_it_in_the_sink_in_bathroom_0_and_use_it_to_clean_the_stained_bench_in_gym_0)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        shelf.n.01_1 - shelf.n.01
+        sink.n.01_1 - sink.n.01
+        bench.n.01_1 - bench.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rag.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 locker_room_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom bench.n.01_1 gym_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 locker_room_0)
+        (stained bench.n.01_1)
+    )
+
+    (:goal
+        (and
+            (soaked ?rag.n.01_1)
+            (not (stained ?bench.n.01_1))
+        )
+    )
+)

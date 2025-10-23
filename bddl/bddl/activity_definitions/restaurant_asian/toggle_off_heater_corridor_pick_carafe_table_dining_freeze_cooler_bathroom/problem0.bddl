@@ -1,0 +1,38 @@
+(define (problem toggle_off_the_space_heater.n.01_in_the_corridor_0_pick_up_the_carafe.n.01_from_the_conference_table_in_the_dining_room_0_and_frozen_it_using_the_cooler.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        carafe.n.01_1 - carafe.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (toggled_on space_heater.n.01_1)
+        (ontop carafe.n.01_1 conference_table.n.01_1)
+        (not 
+            (toggled_on cooler.n.01_1)
+        )
+        (inroom space_heater.n.01_1 corridor_0)
+        (inroom conference_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal 
+        (and 
+            (not 
+                (toggled_on ?space_heater.n.01_1)
+            )
+            (inside ?carafe.n.01_1 ?cooler.n.01_1)
+            (frozen ?carafe.n.01_1)
+            (exists 
+                (?cooler.n.01 - cooler.n.01)
+                (toggled_on ?cooler.n.01)
+            )
+        )
+    )
+)

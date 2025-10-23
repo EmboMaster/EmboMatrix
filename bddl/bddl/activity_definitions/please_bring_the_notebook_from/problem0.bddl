@@ -1,0 +1,25 @@
+(define (problem please_bring_the_notebook_from_bedroom_0_and_the_pen_from_closet_0_to_the_desk_in_corridor_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        notebook.n.01_1 - notebook.n.01
+        pen.n.01_1 - pen.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom notebook.n.01_1 bedroom_0)
+        (inroom pen.n.01_1 closet_0)
+        (inroom desk.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?notebook.n.01_1 ?desk.n.01_1)
+            (ontop ?pen.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

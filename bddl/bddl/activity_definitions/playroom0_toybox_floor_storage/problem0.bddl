@@ -1,0 +1,22 @@
+(define (problem go_to_playroom_0_pick_up_the_toy_box.n.01_from_the_floor_in_the_playroom_0_go_to_storage_room_3_and_put_the_toy_box.n.01_inside_the_shelf_in_the_storage_room_3-0)
+    (:domain omnigibson)
+    (:objects
+        toy_box.n.01_1 - toy_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop toy_box.n.01_1 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+        (inroom shelf.n.01_1 storage_room_3)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?toy_box.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

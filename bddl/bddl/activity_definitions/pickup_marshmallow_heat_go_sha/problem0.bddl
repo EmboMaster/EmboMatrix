@@ -1,0 +1,36 @@
+(define (problem pick_up_the_marshmallow.n.01_from_the_countertop_in_break_room_0_and_put_it_inside_the_microwave.n.02_toggle_on_the_microwave.n.02_to_heat_the_marshmallow.n.01_then_go_to_shared_office_0_pick_up_the_laptop.n.01_from_the_graphic_designer’s_desk_and_place_it_on_top_of_the_arbor.n.03_in_the_same_room)
+    (:domain omnigibson)
+    (:objects
+        marshmallow.n.01_1 - marshmallow.n.01
+        countertop.n.01_1 - countertop.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        laptop.n.01_1 - laptop.n.01
+        desk.n.01_1 - desk.n.01
+        arbor.n.03_1 - arbor.n.03
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop marshmallow.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 break_room_0)
+        (inroom microwave.n.02_1 break_room_0)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom arbor.n.03_1 shared_office_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?marshmallow.n.01_1)
+            (inside ?marshmallow.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (ontop ?laptop.n.01_1 ?arbor.n.03_1)
+        )
+    )
+)

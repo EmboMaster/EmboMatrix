@@ -1,0 +1,30 @@
+(define (problem pick_up_all_2_stained_plate_items_from_the_bathroom_and_clean_them_using_the_sink_in_the_same_room_then_place_them_back_on_the_booth-0)
+    (:domain omnigibson)
+    (:objects
+        plate.n.04_1 plate.n.04_2 - plate.n.04
+        sink.n.01_1 - sink.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (stained plate.n.04_1)
+        (stained plate.n.04_2)
+        (inroom plate.n.04_1 bathroom_0)
+        (inroom plate.n.04_2 bathroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom booth.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (stained ?plate.n.04_1))
+            (not (stained ?plate.n.04_2))
+            (ontop ?plate.n.04_1 ?booth.n.01_1)
+            (ontop ?plate.n.04_2 ?booth.n.01_1)
+        )
+    )
+)

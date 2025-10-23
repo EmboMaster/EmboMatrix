@@ -1,0 +1,32 @@
+(define (problem toggle_on_the_monitor.n.04_on_the_desk_in_the_bedroom_0_and_pick_up_the_virginia_ham.n.01_from_the_plate.n.04_on_the_breakfast_table.n.01_in_the_bedroom_0_slice_the_virginia_ham.n.01_using_the_cleaver.n.01_on_the_same_table)
+    (:domain omnigibson)
+    (:objects
+        monitor.n.04_1 - monitor.n.04
+        desk.n.01_1 - desk.n.01
+        virginia_ham.n.01_1 - virginia_ham.n.01
+        plate.n.04_1 - plate.n.04
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop monitor.n.04_1 desk.n.01_1)
+        (not (toggled_on monitor.n.04_1))
+        (ontop plate.n.04_1 breakfast_table.n.01_1)
+        (ontop virginia_ham.n.01_1 plate.n.04_1)
+        (ontop cleaver.n.01_1 breakfast_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom breakfast_table.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?monitor.n.04_1)
+            (sliced ?virginia_ham.n.01_1)
+        )
+    )
+)

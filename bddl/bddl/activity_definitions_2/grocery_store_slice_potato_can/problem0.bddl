@@ -1,0 +1,33 @@
+(define (problem go_to_grocery_store_0_pick_up_the_potato.n.01_from_the_booth_slice_it_using_the_table_knife.n.01_on_the_chopping_board_in_grocery_store_0_and_place_the_sliced_pieces_inside_the_canister.n.02_on_the_same_booth)
+    (:domain omnigibson)
+    (:objects
+        potato.n.01_1 - potato.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        canister.n.02_1 - canister.n.02
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop potato.n.01_1 booth.n.01_1)
+        (ontop chopping_board.n.01_1 booth.n.01_1)
+        (ontop table_knife.n.01_1 chopping_board.n.01_1)
+        (ontop canister.n.02_1 booth.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom potato.n.01_1 grocery_store_0)
+        (inroom table_knife.n.01_1 grocery_store_0)
+        (inroom chopping_board.n.01_1 grocery_store_0)
+        (inroom canister.n.02_1 grocery_store_0)
+        (inroom booth.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?potato.n.01_1)
+            (inside ?potato.n.01_1 ?canister.n.02_1)
+        )
+    )
+)

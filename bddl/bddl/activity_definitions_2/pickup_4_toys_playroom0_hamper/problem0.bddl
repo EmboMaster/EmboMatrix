@@ -1,0 +1,31 @@
+(define (problem pick_up_all_4_toy_figures_scattered_on_the_floor_in_the_playroom_0_and_put_them_inside_the_hamper.n.02_near_the_wall_in_the_playroom_0)
+    (:domain omnigibson)
+    (:objects
+        toy_figure.n.01_1 toy_figure.n.01_2 toy_figure.n.01_3 toy_figure.n.01_4 - toy_figure.n.01
+        hamper.n.02_1 - hamper.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop toy_figure.n.01_1 floor.n.01_1)
+        (ontop toy_figure.n.01_2 floor.n.01_1)
+        (ontop toy_figure.n.01_3 floor.n.01_1)
+        (ontop toy_figure.n.01_4 floor.n.01_1)
+        (inroom toy_figure.n.01_1 playroom_0)
+        (inroom toy_figure.n.01_2 playroom_0)
+        (inroom toy_figure.n.01_3 playroom_0)
+        (inroom toy_figure.n.01_4 playroom_0)
+        (inroom hamper.n.02_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?toy_figure.n.01_1 hamper.n.02_1)
+            (inside ?toy_figure.n.01_2 hamper.n.02_1)
+            (inside ?toy_figure.n.01_3 hamper.n.02_1)
+            (inside ?toy_figure.n.01_4 hamper.n.02_1)
+        )
+    )
+)

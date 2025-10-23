@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_french_fries.n.02_from_the_reception_desk_in_the_infirmary_0_and_put_them_inside_the_cooler.n.01_in_the_corridor_2_to_freeze_them-0)
+    (:domain omnigibson)
+    (:objects
+        french_fries.n.02_1 - french_fries.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop french_fries.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 infirmary_0)
+        (inroom cooler.n.01_1 corridor_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 infirmary_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?french_fries.n.02_1 ?cooler.n.01_1)
+            (frozen ?french_fries.n.02_1)
+        )
+    )
+)

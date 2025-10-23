@@ -1,0 +1,37 @@
+(define (problem go_to_private_office_0_toggle_on_the_desktop_computer.n.01_on_the_desk_in_private_office_0_go_to_storage_room_0_pick_up_the_french_fries.n.02_from_the_shelf.n.01_in_the_storage_room_0_go_to_television_room_0_heat_the_french_fries.n.02_using_the_microwave.n.02_in_the_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        desk.n.01_1 - desk.n.01
+        french_fries.n.02_1 - french_fries.n.02
+        shelf.n.01_1 - shelf.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop desktop_computer.n.01_1 desk.n.01_1)
+        (not 
+            (toggled_on desktop_computer.n.01_1)
+        )
+        (inside french_fries.n.02_1 shelf.n.01_1)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom desk.n.01_1 private_office_0)
+        (inroom desktop_computer.n.01_1 private_office_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom french_fries.n.02_1 storage_room_0)
+        (inroom microwave.n.02_1 television_room_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?desktop_computer.n.01_1)
+            (hot ?french_fries.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem Please_go_to_locker_room_0_open_the_backpack.n.01_on_the_bench_near_the_west_side_retrieve_the_canteen_from_inside_it_and_place_the_canteen_inside_the_cooler.n.01_located_near_the_east_wall_of_locker_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        canteen.n.01_1 - canteen.n.01
+        bench.n.01_1 - bench.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 bench.n.01_1)
+        (inside canteen.n.01_1 backpack.n.01_1)
+        (inroom backpack.n.01_1 locker_room_0)
+        (inroom bench.n.01_1 locker_room_0)
+        (inroom cooler.n.01_1 locker_room_0)
+        (inroom floor.n.01_1 locker_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?backpack.n.01_1)
+            (inside ?canteen.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem go_to_the_shared_office_0_pick_up_the_ramen.n.01_from_the_desk_bring_it_to_the_microwave.n.02_in_the_shared_office_0_and_heat_it_then_pick_up_the_heated_ramen.n.01_and_deliver_it_to_the_private_office_3_placing_it_on_the_pedestal_table-0)
+    (:domain omnigibson)
+    (:objects
+        ramen.n.01_1 - ramen.n.01
+        desk.n.01_1 - desk.n.01
+        microwave.n.02_1 - microwave.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop ramen.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom microwave.n.02_1 shared_office_0)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom pedestal_table.n.01_1 private_office_3)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (hot ?ramen.n.01_1)
+            (ontop ?ramen.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

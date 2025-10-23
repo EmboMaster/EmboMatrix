@@ -1,0 +1,37 @@
+(define (problem go_to_the_meeting_room_0_and_clean_all_4_dusty_desks_using_the_rag.n.01_on_the_shelf_in_the_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        desk.n.01_1 desk.n.01_2 desk.n.01_3 desk.n.01_4 - desk.n.01
+        rag.n.01_1 - rag.n.01
+        shelf.n.01_1 - shelf.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rag.n.01_1 shelf.n.01_1)
+        (dusty desk.n.01_1)
+        (dusty desk.n.01_2)
+        (dusty desk.n.01_3)
+        (dusty desk.n.01_4)
+        (inroom desk.n.01_1 meeting_room_0)
+        (inroom desk.n.01_2 meeting_room_0)
+        (inroom desk.n.01_3 meeting_room_0)
+        (inroom desk.n.01_4 meeting_room_0)
+        (inroom shelf.n.01_1 shared_office_0)
+        (inroom sink.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (dusty desk.n.01_1))
+            (not (dusty desk.n.01_2))
+            (not (dusty desk.n.01_3))
+            (not (dusty desk.n.01_4))
+            (soaked rag.n.01_1)
+        )
+    )
+)

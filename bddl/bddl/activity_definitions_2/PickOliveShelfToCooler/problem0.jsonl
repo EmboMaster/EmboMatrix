@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["olive.n.04_1", "ontop", "shelf.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["shelf.n.01_1", "inroom", "grocery_store_0"], ["cooler.n.01_1", "inroom", "grocery_store_0"], ["floor.n.01_1", "inroom", "grocery_store_0"]]}
+{"state": {"olive.n.04_1": {"frozen": true}}, "relation": [["olive.n.04_1", "inside", "cooler.n.01_1"]]}

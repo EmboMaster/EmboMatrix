@@ -1,0 +1,26 @@
+(define (problem please_go_to_the_bathroom_0_pick_up_the_soap_dispenser.n.01_from_the_urinal.n.01_and_put_it_inside_the_bucket.n.01_near_the_bathtub-0)
+    (:domain omnigibson)
+    (:objects
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        urinal.n.01_1 - urinal.n.01
+        bucket.n.01_1 - bucket.n.01
+        bathtub.n.01_1 - bathtub.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop soap_dispenser.n.01_1 urinal.n.01_1)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom bucket.n.01_1 bathroom_0)
+        (inroom bathtub.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?soap_dispenser.n.01_1 ?bucket.n.01_1)
+        )
+    )
+)

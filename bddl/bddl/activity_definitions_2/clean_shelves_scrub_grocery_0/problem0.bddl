@@ -1,0 +1,28 @@
+(define (problem clean_the_dusty_shelves_using_the_scrub_brush_from_the_storage_organizer_in_the_grocery_store_0)
+    (:domain omnigibson)
+    (:objects
+        shelf.n.01_1 - shelf.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        storage_organizer.n.01_1 - storage_organizer.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty shelf.n.01_1)
+        (ontop scrub_brush.n.01_1 storage_organizer.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom storage_organizer.n.01_1 grocery_store_0)
+        (inroom sink.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (dusty shelf.n.01_1))
+            (soaked scrub_brush.n.01_1)
+        )
+    )
+)

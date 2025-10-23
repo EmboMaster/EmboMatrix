@@ -1,0 +1,26 @@
+(define (problem please_toggle_on_the_air_conditioner.n.01_in_chemistry_lab_0_pick_up_the_specimen_bottle.n.01_from_the_chemistry_lab_0_and_put_it_on_top_of_the_desk_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        specimen_bottle.n.01_1 - specimen_bottle.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on air_conditioner.n.01_1))
+        (inroom air_conditioner.n.01_1 chemistry_lab_0)
+        (inroom specimen_bottle.n.01_1 chemistry_lab_0)
+        (inroom desk.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 chemistry_lab_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?air_conditioner.n.01_1)
+            (ontop ?specimen_bottle.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

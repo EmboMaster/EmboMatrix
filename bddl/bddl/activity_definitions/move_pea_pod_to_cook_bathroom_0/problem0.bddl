@@ -1,0 +1,33 @@
+(define (problem go_to_room_empty_room_0_toggle_off_the_desktop_computer.n.01_on_the_desk_in_empty_room_0_pick_up_the_pea_pod.n.01_from_the_bowl_in_empty_room_0_go_to_room_bathroom_0_put_the_pea_pod.n.01_inside_the_electric_cauldron.n.01_in_bathroom_0_cook_the_pea_pod.n.01_in_the_electric_cauldron.n.01_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        desk.n.01_1 - desk.n.01
+        pea_pod.n.01_1 - pea_pod.n.01
+        bowl.n.01_1 - bowl.n.01
+        electric_cauldron.n.01_1 - electric_cauldron.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (toggled_on desktop_computer.n.01_1)
+        (ontop desktop_computer.n.01_1 desk.n.01_1)
+        (inside pea_pod.n.01_1 bowl.n.01_1)
+        (inroom desk.n.01_1 empty_room_0)
+        (inroom bowl.n.01_1 empty_room_0)
+        (inroom electric_cauldron.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on electric_cauldron.n.01_1))
+    )
+    
+    (:goal
+        (and
+            (not (toggled_on ?desktop_computer.n.01_1))
+            (inside ?pea_pod.n.01_1 ?electric_cauldron.n.01_1)
+            (cooked ?pea_pod.n.01_1)
+            (toggled_on ?electric_cauldron.n.01_1)
+        )
+    )
+)

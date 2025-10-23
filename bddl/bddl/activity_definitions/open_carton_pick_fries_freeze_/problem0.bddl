@@ -1,0 +1,27 @@
+(define (problem open_the_carton.n.02_from_the_storage_room_0_pick_up_the_french_fries.n.02_from_the_carton.n.02_freeze_it_by_placing_it_inside_the_cooler.n.01_in_the_storage_room_0_and_close_the_carton.n.02_afterward)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        cooler.n.01_1 - cooler.n.01
+        french_fries.n.02_1 - french_fries.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open carton.n.02_1))
+        (inside french_fries.n.02_1 carton.n.02_1)
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (open ?carton.n.02_1))
+            (inside ?french_fries.n.02_1 ?cooler.n.01_1)
+            (frozen ?french_fries.n.02_1)
+        )
+    )
+)

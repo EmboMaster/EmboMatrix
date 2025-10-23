@@ -1,0 +1,2 @@
+{"state": {"window.n.01_1": {"dusty": true, "open": true}}, "relation": [["window.n.01_1", "inroom", "private_office_0"], ["scrub_brush.n.01_1", "inroom", "private_office_0"], ["sink.n.01_1", "inroom", "private_office_0"], ["floor.n.01_1", "inroom", "private_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"scrub_brush.n.01_1": {"soaked": true}, "window.n.01_1": {"dusty": false, "open": false}}, "relation": []}

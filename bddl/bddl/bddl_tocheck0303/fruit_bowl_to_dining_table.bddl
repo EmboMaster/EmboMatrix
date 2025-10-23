@@ -1,0 +1,20 @@
+(define (problem fruit_bowl_to_dining_table-0)
+    (:domain omnigibson)    (:objects
+        bowl.n.01_1 - bowl.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bowl.n.01_1 breakfast_table.n.01_1)
+        (inroom bowl.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+    (:goal
+        (ontop ?bowl.n.01_1 ?breakfast_table.n.01_1)
+    )
+)
+

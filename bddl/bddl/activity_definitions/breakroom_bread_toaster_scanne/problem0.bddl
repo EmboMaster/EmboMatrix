@@ -1,0 +1,37 @@
+(define (problem go_to_break_room_0_pick_up_the_bread_slice.n.01_from_the_conference_table_in_break_room_0_put_the_bread_slice.n.01_inside_the_toaster_oven.n.01_in_break_room_0_close_toaster_oven.n.01_cook_bread_slice.n.01_in_toaster_oven.n.01_go_to_shared_office_0_pick_up_the_scanner.n.02_from_the_shelf_in_shared_office_0_toggle_off_scanner.n.02-0)
+    (:domain omnigibson)
+    (:objects
+        bread_slice.n.01_1 - bread_slice.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        scanner.n.02_1 - scanner.n.02
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bread_slice.n.01_1 conference_table.n.01_1)
+        (open toaster_oven.n.01_1)
+        (not (toggled_on toaster_oven.n.01_1))
+        (ontop scanner.n.02_1 shelf.n.01_1)
+        (toggled_on scanner.n.02_1)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom toaster_oven.n.01_1 break_room_0)
+        (inroom bread_slice.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (inroom shelf.n.01_1 shared_office_0)
+        (inroom scanner.n.02_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?bread_slice.n.01_1)
+            (inside ?bread_slice.n.01_1 ?toaster_oven.n.01_1)
+            (not (open ?toaster_oven.n.01_1))
+            (toggled_on ?toaster_oven.n.01_1)
+            (not (toggled_on ?scanner.n.02_1))
+        )
+    )
+)

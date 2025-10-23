@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["kiwi.n.03_1", "ontop", "floor.n.01_1"], ["cooler.n.01_1", "inroom", "break_room_0"], ["floor.n.01_1", "inroom", "break_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"kiwi.n.03_1": {"frozen": true}}, "relation": [["kiwi.n.03_1", "ontop", "floor.n.01_1"], ["kiwi.n.03_1", "inside", "cooler.n.01_1"]]}

@@ -1,0 +1,38 @@
+(define (problem please_bring_the_vase_from_the_shelf_in_storage_room_0_to_the_coffee_table_in_living_room_0_and_bring_the_textbook_from_the_desk_in_private_office_0_to_the_sofa_in_living_room_1_and_bring_the_bowl_from_the_booth_in_kitchen_0_to_the_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        vase.n.01_1 - vase.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        textbook.n.01_1 - textbook.n.01
+        desk.n.01_1 - desk.n.01
+        sofa.n.01_1 - sofa.n.01
+        bowl.n.01_1 - bowl.n.01
+        booth.n.01_1 - booth.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop vase.n.01_1 shelf.n.01_1)
+        (ontop textbook.n.01_1 desk.n.01_1)
+        (ontop bowl.n.01_1 booth.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom sofa.n.01_1 living_room_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?vase.n.01_1 ?coffee_table.n.01_1)
+            (inside ?textbook.n.01_1 ?sofa.n.01_1)
+            (inside ?bowl.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

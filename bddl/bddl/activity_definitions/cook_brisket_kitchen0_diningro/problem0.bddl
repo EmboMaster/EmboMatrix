@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_brisket_from_the_countertop_in_kitchen_0_and_cook_it_using_the_rice_cooker_in_kitchen_0_after_cooking_pick_up_the_brisket_and_place_it_on_the_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        brisket.n.01_1 - brisket.n.01
+        countertop.n.01_1 - countertop.n.01
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop brisket.n.01_1 countertop.n.01_1)
+        (not 
+            (toggled_on rice_cooker.n.01_1)
+        )
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom rice_cooker.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (cooked ?brisket.n.01_1)
+            (ontop ?brisket.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

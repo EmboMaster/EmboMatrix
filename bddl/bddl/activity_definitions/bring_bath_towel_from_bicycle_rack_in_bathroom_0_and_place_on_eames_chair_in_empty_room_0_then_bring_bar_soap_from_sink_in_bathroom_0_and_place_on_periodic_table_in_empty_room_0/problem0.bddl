@@ -1,0 +1,31 @@
+(define (problem bring_bath_towel_from_bicycle_rack_in_bathroom_0_and_place_on_eames_chair_in_empty_room_0_then_bring_bar_soap_from_sink_in_bathroom_0_and_place_on_periodic_table_in_empty_room_0)
+    (:domain omnigibson)    
+    (:objects
+        bath_towel.n.01_1 - bath_towel.n.01
+        bicycle_rack.n.01_1 - bicycle_rack.n.01
+        eames_chair.n.01_1 - eames_chair.n.01
+        bar_soap.n.01_1 - bar_soap.n.01
+        sink.n.01_1 - sink.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+
+    (:init
+        (ontop bath_towel.n.01_1 bicycle_rack.n.01_1)
+        (ontop bar_soap.n.01_1 sink.n.01_1)
+        (inroom bicycle_rack.n.01_1 bathroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom eames_chair.n.01_1 empty_room_0)
+        (inroom periodic_table.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?bath_towel.n.01_1 ?eames_chair.n.01_1)
+            (ontop ?bar_soap.n.01_1 ?periodic_table.n.01_1)
+        )
+    )
+)

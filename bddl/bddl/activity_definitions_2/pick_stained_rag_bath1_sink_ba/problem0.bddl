@@ -1,0 +1,28 @@
+(define (problem Please_pick_up_the_stained_rag.n.01_from_the_floor_in_the_bathroom_1_and_soak_it_in_the_sink.n.01_in_the_bathroom_0_Then_dry_it_using_the_clothes_dryer.n.01_in_the_closet_1)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        sink.n.01_1 - sink.n.01
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (stained rag.n.01_1)
+        (ontop rag.n.01_1 floor.n.01_1)
+        (inroom rag.n.01_1 bathroom_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom clothes_dryer.n.01_1 closet_1)
+        (not (toggled_on clothes_dryer.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (soaked ?rag.n.01_1)
+            (inside ?rag.n.01_1 ?clothes_dryer.n.01_1)
+            (toggled_on ?clothes_dryer.n.01_1)
+        )
+    )
+)

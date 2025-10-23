@@ -1,0 +1,30 @@
+(define (problem go_to_the_pantry_room_0_pick_up_the_pizza_dough_from_the_shelf_in_the_pantry_room_0_go_to_the_kitchen_0_put_the_pizza_dough_inside_the_cooler_in_the_kitchen_0_to_freeze_it_then_go_to_the_living_room_0_pick_up_the_wine_bottle_on_the_coffee_table_in_the_living_room_0_and_put_the_wine_bottle_inside_the_cooler_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        pizza_dough.n.01_1 - pizza_dough.n.01
+        wine_bottle.n.01_1 - wine_bottle.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop pizza_dough.n.01_1 shelf.n.01_1)
+        (ontop wine_bottle.n.01_1 coffee_table.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+    
+    (:goal
+        (and
+            (frozen ?pizza_dough.n.01_1)
+            (inside ?pizza_dough.n.01_1 ?cooler.n.01_1)
+            (inside ?wine_bottle.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

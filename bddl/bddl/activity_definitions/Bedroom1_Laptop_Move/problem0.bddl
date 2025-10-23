@@ -1,0 +1,27 @@
+(define (problem Please_go_to_bedroom_1_open_the_laptop.n.01_on_the_desk_then_close_it_and_place_it_on_the_shelf_in_the_living_room_0_Make_sure_it_is_positioned_neatly-0)
+    (:domain omnigibson)
+    (:objects
+        laptop.n.01_1 - laptop.n.01
+        desk.n.01_1 - desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (inroom shelf.n.01_1 living_room_0)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not
+                (open ?laptop.n.01_1)
+            )
+            (ontop ?laptop.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

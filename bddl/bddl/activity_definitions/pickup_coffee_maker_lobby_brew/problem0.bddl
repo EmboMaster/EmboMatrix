@@ -1,0 +1,25 @@
+(define (problem pick_up_the_coffee_maker.n.01_from_the_booth_in_meeting_room_0_go_to_lobby_0_and_place_it_on_top_of_the_breakfast_table_then_toggle_on_the_coffee_maker.n.01_for_brewing_coffee_for_visitors)
+    (:domain omnigibson)
+    (:objects
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        booth.n.01_1 - booth.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop coffee_maker.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 meeting_room_0)
+        (inroom breakfast_table.n.01_1 lobby_0)
+        (inroom floor.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?coffee_maker.n.01_1 ?breakfast_table.n.01_1)
+            (toggled_on ?coffee_maker.n.01_1)
+        )
+    )
+)

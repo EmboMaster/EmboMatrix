@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_cinnamon_roll.n.01_from_the_booth_in_the_kitchen_0_cook_it_using_the_pressure_cooker.n.01_in_the_kitchen_0_and_place_it_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        cinnamon_roll.n.01_1 - cinnamon_roll.n.01
+        booth.n.01_1 - booth.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        stove.n.01_1 - stove.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cinnamon_roll.n.01_1 booth.n.01_1)
+        (ontop pressure_cooker.n.01_1 stove.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom pressure_cooker.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?cinnamon_roll.n.01_1)
+            (ontop ?cinnamon_roll.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

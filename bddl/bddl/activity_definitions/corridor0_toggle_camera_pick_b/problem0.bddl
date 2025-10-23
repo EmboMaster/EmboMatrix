@@ -1,0 +1,27 @@
+(define (problem please_go_to_the_corridor_0_and_toggle_on_the_security_camera.n.01_then_pick_up_the_water_bottle.n.01_from_the_floor_in_the_corridor_0_and_put_it_inside_the_mop_bucket.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        security_camera.n.01_1 - security_camera.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        mop_bucket.n.01_1 - mop_bucket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (inroom security_camera.n.01_1 corridor_0)
+        (ontop water_bottle.n.01_1 floor.n.01_1)
+        (inroom mop_bucket.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on security_camera.n.01_1)
+        )
+    )
+
+    (:goal 
+        (and 
+            (toggled_on ?security_camera.n.01_1)
+            (inside ?water_bottle.n.01_1 ?mop_bucket.n.01_1)
+        )
+    )
+)

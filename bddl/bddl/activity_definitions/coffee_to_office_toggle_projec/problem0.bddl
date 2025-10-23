@@ -1,0 +1,30 @@
+(define (problem pick_up_the_coffee_cup_from_the_reception_desk_in_the_break_room_0_and_put_it_on_top_of_the_desk_in_the_shared_office_0_then_toggle_on_the_projector_in_the_shared_office_0_to_assist_the_project_manager-0)
+    (:domain omnigibson)
+    (:objects
+        coffee_cup.n.01_1 - coffee_cup.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        desk.n.01_1 - desk.n.01
+        projector.n.02_1 - projector.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop coffee_cup.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom projector.n.02_1 shared_office_0)
+        (not 
+            (toggled_on projector.n.02_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 break_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?coffee_cup.n.01_1 ?desk.n.01_1)
+            (toggled_on ?projector.n.02_1)
+        )
+    )
+)

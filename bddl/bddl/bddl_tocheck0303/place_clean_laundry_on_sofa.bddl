@@ -1,0 +1,22 @@
+(define (problem place_clean_laundry_on_sofa-0)
+    (:domain omnigibson)    (:objects
+        ironing_board.n.01_1 - ironing_board.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside ironing_board.n.01_1 utility_room_0)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?ironing_board.n.01_1 ?sofa.n.01_1)
+        )
+    )
+)
+

@@ -1,0 +1,2 @@
+{"state": {"router.n.02_1": {"toggled_on": true}}, "relation": [["router.n.02_1", "inroom", "dining_room_0"], ["shelf.n.01_1", "inroom", "dining_room_0"], ["window.n.01_1", "inroom", "dining_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "dining_room_0"], ["shelf.n.01_1", "nextto", "window.n.01_1"]]}
+{"state": {"router.n.02_1": {"toggled_on": false}}, "relation": [["router.n.02_1", "ontop", "shelf.n.01_1"]]}

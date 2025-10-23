@@ -1,0 +1,30 @@
+(define (problem please_toggle_on_the_router.n.02_in_the_private_office_0_pick_up_the_mail_from_the_mailbox.n.01_in_the_corridor_0_and_place_the_mail_on_the_coffee_table_in_the_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        router.n.02_1 - router.n.02
+        mail.n.04_1 - mail.n.04
+        mailbox.n.01_1 - mailbox.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on router.n.02_1)
+        )
+        (inside mail.n.04_1 mailbox.n.01_1)
+        (inroom router.n.02_1 private_office_0)
+        (inroom mailbox.n.01_1 corridor_0)
+        (inroom coffee_table.n.01_1 television_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?router.n.02_1)
+            (ontop ?mail.n.04_1 ?coffee_table.n.01_1)
+        )
+    )
+)

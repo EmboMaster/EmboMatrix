@@ -1,0 +1,29 @@
+(define (problem fetch_the_security_camera_from_the_sofa_in_television_room_0_and_the_notebook_from_the_tray_in_corridor_0_to_the_table_lamp_in_bedroom_1)
+    (:domain omnigibson)
+    (:objects
+        security_camera.n.01_1 - security_camera.n.01
+        sofa.n.01_1 - sofa.n.01
+        notebook.n.01_1 - notebook.n.01
+        tray.n.01_1 - tray.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop security_camera.n.01_1 sofa.n.01_1)
+        (inside notebook.n.01_1 tray.n.01_1)
+        (inroom sofa.n.01_1 television_room_0)
+        (inroom tray.n.01_1 corridor_0)
+        (inroom table_lamp.n.01_1 bedroom_1)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?security_camera.n.01_1 ?table_lamp.n.01_1)
+            (ontop ?notebook.n.01_1 ?table_lamp.n.01_1)
+        )
+    )
+)

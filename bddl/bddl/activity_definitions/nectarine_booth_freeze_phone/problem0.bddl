@@ -1,0 +1,29 @@
+(define (problem pick_up_the_nectarine.n.02_from_the_booth_in_utility_room_0_go_to_storage_room_1_and_place_it_inside_the_cooler.n.01_to_freeze_it_then_go_to_bedroom_0_toggle_on_the_desk_phone.n.01_and_ensure_it_is_functioning)
+    (:domain omnigibson)
+    (:objects
+        nectarine.n.02_1 - nectarine.n.02
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        desk_phone.n.01_1 - desk_phone.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop nectarine.n.02_1 booth.n.01_1)
+        (inroom booth.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 storage_room_1)
+        (not (toggled_on desk_phone.n.01_1))
+        (inroom desk_phone.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?nectarine.n.02_1)
+            (inside ?nectarine.n.02_1 ?cooler.n.01_1)
+            (toggled_on ?desk_phone.n.01_1)
+        )
+    )
+)

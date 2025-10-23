@@ -1,0 +1,2 @@
+{"state": {"desktop_computer.n.01_1": {"toggled_on": false}, "window.n.01_1": {"open": false}}, "relation": [["desktop_computer.n.01_1", "inroom", "bedroom_1"], ["window.n.01_1", "inroom", "living_room_0"], ["floor.n.01_1", "inroom", "bedroom_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"desktop_computer.n.01_1": {"toggled_on": true}, "window.n.01_1": {"open": true}}, "relation": []}

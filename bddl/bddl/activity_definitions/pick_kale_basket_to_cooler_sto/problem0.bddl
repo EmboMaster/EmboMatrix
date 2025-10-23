@@ -1,0 +1,25 @@
+(define (problem pick_up_the_kale.n.03_from_the_shopping_basket.n.01_in_grocery_store_0_and_put_it_inside_the_cooler.n.01_in_grocery_store_0)
+    (:domain omnigibson)
+    (:objects
+        kale.n.03_1 - kale.n.03
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside kale.n.03_1 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 grocery_store_0)
+        (inroom cooler.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?kale.n.03_1 ?cooler.n.01_1)
+            (frozen ?kale.n.03_1)
+        )
+    )
+)

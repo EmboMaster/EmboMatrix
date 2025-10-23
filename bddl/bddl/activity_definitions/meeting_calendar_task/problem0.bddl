@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_meeting_calendar_from_the_desk_in_shared_office_0_and_place_it_on_the_pedestal_table_in_meeting_room_0_then_open_the_laptop.n.01_on_the_pedestal_table_in_meeting_room_0_for_the_team_discussion)
+    (:domain omnigibson)
+    (:objects
+        calendar.n.01_1 - calendar.n.01
+        desk.n.01_1 - desk.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        laptop.n.01_1 - laptop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop calendar.n.01_1 desk.n.01_1)
+        (ontop laptop.n.01_1 pedestal_table.n.01_1)
+        (not (open laptop.n.01_1))
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom calendar.n.01_1 shared_office_0)
+        (inroom pedestal_table.n.01_1 meeting_room_0)
+        (inroom laptop.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?calendar.n.01_1 ?pedestal_table.n.01_1)
+            (open ?laptop.n.01_1)
+        )
+    )
+)

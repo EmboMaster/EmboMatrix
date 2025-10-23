@@ -1,0 +1,35 @@
+(define (problem slice_2_apples_on_the_arbor_in_the_bedroom_0_using_the_table_knife.n.01_and_clean_the_arbor_after_slicing_using_the_scrub_brush_from_the_shelf_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        apple.n.01_1 apple.n.01_2 - apple.n.01
+        arbor.n.03_1 - arbor.n.03
+        table_knife.n.01_1 - table_knife.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        shelf.n.01_1 - shelf.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop apple.n.01_1 arbor.n.03_1)
+        (ontop apple.n.01_2 arbor.n.03_1)
+        (ontop table_knife.n.01_1 arbor.n.03_1)
+        (ontop scrub_brush.n.01_1 shelf.n.01_1)
+        (stained arbor.n.03_1)
+        (inroom arbor.n.03_1 bedroom_0)
+        (inroom shelf.n.01_1 bedroom_0)
+        (inroom sink.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?apple.n.01_1)
+            (sliced ?apple.n.01_2)
+            (not (stained ?arbor.n.03_1))
+            (soaked ?scrub_brush.n.01_1)
+        )
+    )
+)

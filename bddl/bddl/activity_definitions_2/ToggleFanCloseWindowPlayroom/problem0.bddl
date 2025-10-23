@@ -1,0 +1,26 @@
+(define (problem Toggle_on_the_ceiling_fan.n.01_in_the_playroom_0_and_close_the_window.n.01)
+    (:domain omnigibson)
+    (:objects
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on ceiling_fan.n.01_1))
+        (open window.n.01_1)
+        (inroom ceiling_fan.n.01_1 playroom_0)
+        (inroom window.n.01_1 playroom_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (not (toggled_on ceiling_fan.n.01_1))
+        (and
+            (toggled_on ?ceiling_fan.n.01_1)
+            (not (open ?window.n.01_1))
+        )
+    )
+)

@@ -1,0 +1,35 @@
+(define (problem please_clean_the_stained_chair_and_the_dusty_coffee_table_in_the_living_room_0_using_the_rag.n.01_then_toggle_on_the_space_heater.n.01_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        straight_chair.n.01_1 - straight_chair.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        rag.n.01_1 - rag.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (stained straight_chair.n.01_1)
+        (dusty coffee_table.n.01_1)
+        (not (soaked rag.n.01_1))
+        (not (toggled_on space_heater.n.01_1))
+        (inroom straight_chair.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom rag.n.01_1 living_room_0)
+        (inroom space_heater.n.01_1 living_room_0)
+        (inroom sink.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (not (stained ?straight_chair.n.01_1))
+            (not (dusty ?coffee_table.n.01_1))
+            (soaked ?rag.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

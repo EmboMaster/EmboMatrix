@@ -1,0 +1,2 @@
+{"state": {"mirror.n.01_1": {"dusty": true}}, "relation": [["rag.n.01_1", "inside", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "empty_room_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["mirror.n.01_1", "inroom", "bathroom_0"], ["floor.n.01_1", "inroom", "empty_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"rag.n.01_1": {"soaked": true}, "mirror.n.01_1": {"dusty": false}}, "relation": []}

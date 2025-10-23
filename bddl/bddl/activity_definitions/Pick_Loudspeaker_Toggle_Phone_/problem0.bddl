@@ -1,0 +1,29 @@
+(define (problem Please_pick_up_the_loudspeaker.n.01_from_the_desk_in_the_empty_room_0_and_toggle_it_on_for_relaxation._Then,_pick_up_the_desk_phone.n.01_from_the_pedestal_table_in_the_empty_room_0_and_place_it_on_the_shelf.n.01_in_the_same_room_to_organize_the_space.)
+    (:domain omnigibson)
+    (:objects
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        desk.n.01_1 - desk.n.01
+        desk_phone.n.01_1 - desk_phone.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop loudspeaker.n.01_1 desk.n.01_1)
+        (ontop desk_phone.n.01_1 pedestal_table.n.01_1)
+        (inroom desk.n.01_1 empty_room_0)
+        (inroom pedestal_table.n.01_1 empty_room_0)
+        (inroom shelf.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?loudspeaker.n.01_1)
+            (ontop ?desk_phone.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

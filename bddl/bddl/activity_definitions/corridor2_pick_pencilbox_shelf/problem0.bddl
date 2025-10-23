@@ -1,0 +1,24 @@
+(define (problem go_to_corridor_2_pick_up_the_pencil_box.n.01_from_the_shelf_and_put_the_pencil_box.n.01_inside_the_litter_box.n.01_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        pencil_box.n.01_1 - pencil_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        litter_box.n.01_1 - litter_box.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pencil_box.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 corridor_2)
+        (inroom litter_box.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_2)
+    )
+
+    (:goal
+        (and
+            (inside ?pencil_box.n.01_1 ?litter_box.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"coffee_cup.n.01_1": {"stained": true}}, "relation": [["coffee_cup.n.01_1", "inside", "sink.n.01_1"], ["sink.n.01_1", "inroom", "bathroom_0"], ["shelf.n.01_1", "inroom", "bathroom_0"], ["floor.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"coffee_cup.n.01_1": {"stained": false}}, "relation": [["coffee_cup.n.01_1", "ontop", "shelf.n.01_1"]]}

@@ -1,0 +1,32 @@
+(define (problem Please_bring_the_tissue_dispenser_from_the_booth_in_the_bathroom_0_and_the_soccer_ball_from_the_floor_near_the_bed_in_the_bedroom_0_to_the_bicycle_rack_in_the_bathroom_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        tissue_dispenser.n.01_1 - tissue_dispenser.n.01
+        booth.n.01_1 - booth.n.01
+        soccer_ball.n.01_1 - soccer_ball.n.01
+        bed.n.01_1 - bed.n.01
+        bicycle_rack.n.01_1 - bicycle_rack.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tissue_dispenser.n.01_1 booth.n.01_1)
+        (ontop soccer_ball.n.01_1 floor.n.01_2)
+        (inroom booth.n.01_1 bathroom_0)
+        (inroom tissue_dispenser.n.01_1 bathroom_0)
+        (inroom bicycle_rack.n.01_1 bathroom_0)
+        (inroom bed.n.01_1 bedroom_0)
+        (inroom soccer_ball.n.01_1 bedroom_0)
+        (inroom floor.n.01_2 bedroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?tissue_dispenser.n.01_1 ?bicycle_rack.n.01_1)
+            (inside ?soccer_ball.n.01_1 ?bicycle_rack.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,34 @@
+(define (problem pick_up_the_carton.n.02_from_the_pedestal_table_in_the_corridor_0_open_it_and_put_all_2_apricot.n.02_inside_the_carton.n.02_in_the_corridor_0_close_the_carton.n.02_and_return_it_to_the_pedestal_table_in_the_corridor_0-0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        apricot.n.02_1 apricot.n.02_2 - apricot.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 pedestal_table.n.01_1)
+        (inroom carton.n.02_1 corridor_0)
+        (ontop apricot.n.02_1 floor.n.01_1)
+        (ontop apricot.n.02_2 floor.n.01_1)
+        (inroom apricot.n.02_1 corridor_0)
+        (inroom apricot.n.02_2 corridor_0)
+        (inroom pedestal_table.n.01_1 corridor_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (open carton.n.02_1))
+    )
+
+    (:goal
+        (and
+            (ontop ?carton.n.02_1 ?pedestal_table.n.01_1)
+            (not (open ?carton.n.02_1))
+            (forall
+                (?apricot.n.02 - apricot.n.02)
+                (inside ?apricot.n.02 ?carton.n.02_1)
+            )
+        )
+    )
+)

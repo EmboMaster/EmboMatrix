@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_radish_from_the_reception_desk_in_the_kitchen_0_and_place_it_inside_the_pressure_cooker_in_the_kitchen_0_then_toggle_on_the_pressure_cooker_in_the_kitchen_0_to_cook_the_radish)
+    (:domain omnigibson)
+    (:objects
+        radish.n.01_1 - radish.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop radish.n.01_1 reception_desk.n.01_1)
+        (not 
+            (toggled_on pressure_cooker.n.01_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom pressure_cooker.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?radish.n.01_1 ?pressure_cooker.n.01_1)
+            (toggled_on ?pressure_cooker.n.01_1)
+            (cooked ?radish.n.01_1)
+        )
+    )
+)

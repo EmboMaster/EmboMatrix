@@ -1,0 +1,2 @@
+{"state": {"dehumidifier.n.01_1": {"toggled_on": false}, "carton.n.02_1": {"open": false}}, "relation": [["bread_slice.n.01_1", "inside", "carton.n.02_1"], ["dehumidifier.n.01_1", "inroom", "bathroom_0"], ["bucket.n.01_1", "inroom", "bathroom_0"], ["carton.n.02_1", "inroom", "empty_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bathroom_0"]]}
+{"state": {"dehumidifier.n.01_1": {"toggled_on": true}, "carton.n.02_1": {"open": true}}, "relation": [["bread_slice.n.01_1", "inside", "bucket.n.01_1"]]}

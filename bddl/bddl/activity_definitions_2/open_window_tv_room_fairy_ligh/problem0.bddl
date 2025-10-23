@@ -1,0 +1,25 @@
+(define (problem open_the_window.n.01_in_the_television_room_0_for_ventilation_pick_up_the_fairy_light.n.01_from_the_closet_0_and_toggle_it_on_to_decorate_the_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        window.n.01_1 - window.n.01
+        fairy_light.n.01_1 - fairy_light.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom window.n.01_1 television_room_0)
+        (inroom fairy_light.n.01_1 closet_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 television_room_0)
+        (not (open window.n.01_1))
+        (not (toggled_on fairy_light.n.01_1))
+    )
+
+    (:goal
+        (and
+            (open ?window.n.01_1)
+            (toggled_on ?fairy_light.n.01_1)
+        )
+    )
+)

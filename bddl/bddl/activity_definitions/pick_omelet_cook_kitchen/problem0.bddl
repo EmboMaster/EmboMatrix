@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_omelet.n.01_from_the_countertop_in_the_kitchen_0_open_the_oven.n.01_in_the_kitchen_0_cook_the_omelet.n.01_in_the_oven.n.01_then_close_the_oven.n.01_to_finish_cooking)
+    (:domain omnigibson)
+    (:objects
+        omelet.n.01_1 - omelet.n.01
+        countertop.n.01_1 - countertop.n.01
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop omelet.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on oven.n.01_1))
+        (not (open oven.n.01_1))
+    )
+    
+    (:goal
+        (and
+            (cooked ?omelet.n.01_1)
+            (inside ?omelet.n.01_1 ?oven.n.01_1)
+            (not (open ?oven.n.01_1))
+            (toggled_on ?oven.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"table_lamp.n.01_1": {"toggled_on": false}, "icicle_lights.n.01_1": {"toggled_on": true}}, "relation": [["table_lamp.n.01_1", "inroom", "private_office_1"], ["icicle_lights.n.01_1", "inroom", "conference_hall_0"], ["floor.n.01_1", "inroom", "private_office_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"table_lamp.n.01_1": {"toggled_on": true}, "icicle_lights.n.01_1": {"toggled_on": false}}, "relation": []}

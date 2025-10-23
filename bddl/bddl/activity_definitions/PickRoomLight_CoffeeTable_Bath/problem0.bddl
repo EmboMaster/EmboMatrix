@@ -1,0 +1,24 @@
+(define (problem Pick_up_the_room_light.n.01_from_the_coffee_table_in_the_bathroom_0_go_to_corridor_0_and_place_the_room_light.n.01_on_top_of_the_cabinet_base_in_the_closet_0)
+    (:domain omnigibson)
+    (:objects
+        room_light.n.01_1 - room_light.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        cabinet_base.n.01_1 - cabinet_base.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop room_light.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 bathroom_0)
+        (inroom cabinet_base.n.01_1 closet_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?room_light.n.01_1 ?cabinet_base.n.01_1)
+        )
+    )
+)

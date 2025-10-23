@@ -1,0 +1,28 @@
+(define (problem toggle_on_printer_pickup_document_and_place_on_shelf)
+    (:domain omnigibson)
+    (:objects
+        printer.n.03_1 - printer.n.03
+        legal_document.n.01_1 - legal_document.n.01
+        desk.n.01_1 - desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on printer.n.03_1))
+        (ontop legal_document.n.01_1 desk.n.01_1)
+        (inroom printer.n.03_1 private_office_0)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom shelf.n.01_1 living_room_1)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?printer.n.03_1)
+            (ontop ?legal_document.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

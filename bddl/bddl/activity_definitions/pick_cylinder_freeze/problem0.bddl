@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_graduated_cylinder.n.01_from_the_booth_in_the_utility_room_0_go_to_storage_room_0_and_put_it_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        graduated_cylinder.n.01_1 - graduated_cylinder.n.01
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop graduated_cylinder.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?graduated_cylinder.n.01_1 ?cooler.n.01_1)
+            (frozen ?graduated_cylinder.n.01_1)
+        )
+    )
+)

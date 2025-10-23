@@ -1,0 +1,29 @@
+(define (problem pick_up_the_liquid_carton.n.01_from_the_reception_desk_in_break_room_0_go_to_shared_office_0_and_put_the_liquid_carton.n.01_on_top_of_the_desk_then_toggle_on_the_router.n.02_in_shared_office_0_to_ensure_the_internet_connection_is_active_for_the_team_meeting-0)
+    (:domain omnigibson)
+    (:objects
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        desk.n.01_1 - desk.n.01
+        router.n.02_1 - router.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop liquid_carton.n.01_1 reception_desk.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom liquid_carton.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom router.n.02_1 shared_office_0)
+        (not (toggled_on router.n.02_1))
+    )
+
+    (:goal
+        (and
+            (ontop ?liquid_carton.n.01_1 ?desk.n.01_1)
+            (toggled_on ?router.n.02_1)
+        )
+    )
+)

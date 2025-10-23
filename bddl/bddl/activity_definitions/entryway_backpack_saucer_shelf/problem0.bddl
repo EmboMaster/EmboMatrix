@@ -1,0 +1,35 @@
+(define (problem go_to_the_entryway_0_pick_up_the_backpack_n_01_from_the_floor_open_it_and_put_the_saucer_n_02_from_the_entryway_0_inside_then_close_the_backpack_n_01_and_place_it_on_the_shelf_in_the_entryway_0_finally_toggle_on_the_hand_dryer_n_01_in_the_bathroom_0_to_dry_the_family_s_rag)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        saucer.n.02_1 - saucer.n.02
+        shelf.n.01_1 - shelf.n.01
+        hand_dryer.n.01_1 - hand_dryer.n.01
+        rag.n.01_1 - rag.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (inroom backpack.n.01_1 entryway_0)
+        (inroom saucer.n.02_1 entryway_0)
+        (inroom shelf.n.01_1 entryway_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom hand_dryer.n.01_1 bathroom_0)
+        (not (toggled_on hand_dryer.n.01_1))
+        (inroom rag.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 entryway_0)
+    )
+    
+    (:goal 
+        (and 
+            (not 
+                (open ?backpack.n.01_1)
+            )
+            (inside ?saucer.n.02_1 ?backpack.n.01_1)
+            (ontop ?backpack.n.01_1 ?shelf.n.01_1)
+            (toggled_on ?hand_dryer.n.01_1)
+        )
+    )
+)

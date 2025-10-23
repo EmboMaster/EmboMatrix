@@ -1,0 +1,29 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_biscuit_dough.n.01_from_the_packing_box.n.02_in_the_storage_room_0_and_put_the_biscuit_dough.n.01_inside_the_cooler.n.01_in_the_storage_room_0_to_freeze_it_then_go_to_the_private_office_0_toggle_on_the_coffee_maker.n.01_in_the_private_office_0_to_make_coffee_for_me)
+    (:domain omnigibson)
+    (:objects
+        biscuit_dough.n.01_1 - biscuit_dough.n.01
+        packing_box.n.02_1 - packing_box.n.02
+        cooler.n.01_1 - cooler.n.01
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside biscuit_dough.n.01_1 packing_box.n.02_1)
+        (inroom packing_box.n.02_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom coffee_maker.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (not (toggled_on coffee_maker.n.01_1))
+    )
+
+    (:goal
+        (and
+            (inside ?biscuit_dough.n.01_1 ?cooler.n.01_1)
+            (frozen ?biscuit_dough.n.01_1)
+            (toggled_on ?coffee_maker.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem bring_the_backpack_from_the_bench_in_the_entryway_0_to_the_garden_pedestal_table_in_the_garden_0_pick_up_the_mango_from_the_garden_pedestal_table_in_the_garden_0_and_freeze_it_in_the_cooler_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        bench.n.01_1 - bench.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        mango.n.02_1 - mango.n.02
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 bench.n.01_1)
+        (ontop mango.n.02_1 pedestal_table.n.01_1)
+        (inroom bench.n.01_1 entryway_0)
+        (inroom pedestal_table.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 entryway_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?backpack.n.01_1 ?pedestal_table.n.01_1)
+            (frozen ?mango.n.02_1)
+            (inside ?mango.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cleaver.n.01_1", "ontop", "shelf.n.01_1"], ["lemon.n.01_1", "ontop", "booth.n.01_1"], ["lemon.n.01_2", "ontop", "booth.n.01_1"], ["shelf.n.01_1", "inroom", "locker_room_0"], ["booth.n.01_1", "inroom", "spa_0"], ["floor.n.01_1", "inroom", "locker_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"lemon.n.01_1": {"sliced": true}, "lemon.n.01_2": {"sliced": true}}, "relation": []}

@@ -1,0 +1,2 @@
+{"state": {"ceiling_fan.n.01_1": {"toggled_on": false}, "shelf.n.01_1": {"dusty": true}}, "relation": [["ceiling_fan.n.01_1", "inroom", "living_room_0"], ["shelf.n.01_1", "inroom", "bedroom_0"], ["rag.n.01_1", "inroom", "bedroom_0"], ["sink.n.01_1", "inroom", "bedroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bedroom_0"]]}
+{"state": {"ceiling_fan.n.01_1": {"toggled_on": true}, "shelf.n.01_1": {"dusty": false}, "rag.n.01_1": {"soaked": true}}, "relation": []}

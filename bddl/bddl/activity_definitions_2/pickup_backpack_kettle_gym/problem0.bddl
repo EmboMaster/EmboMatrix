@@ -1,0 +1,26 @@
+(define (problem Pick_up_the_backpack.n.01_from_the_floor_in_corridor_0_open_it_place_the_electric_kettle.n.01_from_the_corner_of_gym_0_inside_the_backpack_and_close_the_backpack.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (inroom backpack.n.01_1 corridor_0)
+        (inroom electric_kettle.n.01_1 gym_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (inside ?electric_kettle.n.01_1 ?backpack.n.01_1)
+            (not
+                (open ?backpack.n.01_1)
+            )
+        )
+    )
+)

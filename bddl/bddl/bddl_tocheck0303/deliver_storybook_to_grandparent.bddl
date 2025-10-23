@@ -1,0 +1,22 @@
+(define (problem deliver_storybook_to_grandparent)
+    (:domain omnigibson)    (:objects
+        comic_book.n.01_1 - comic_book.n.01
+        grandfather_clock.n.01_1 - grandfather_clock.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom comic_book.n.01_1 living_room_0)
+        (inroom grandfather_clock.n.01_1 living_room_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (grasped ?comic_book.n.01_1 ?grandfather_clock.n.01_1)
+        )
+    )
+)
+

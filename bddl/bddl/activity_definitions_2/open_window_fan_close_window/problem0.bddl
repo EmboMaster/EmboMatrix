@@ -1,0 +1,26 @@
+(define (problem open_the_window.n.01_in_the_living_room_0_toggle_on_the_ceiling_fan.n.01_in_the_living_room_0_and_close_the_window.n.01_afterward)
+    (:domain omnigibson)
+    (:objects
+        window.n.01_1 - window.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open window.n.01_1)) ; The window is closed initially
+        (not (toggled_on ceiling_fan.n.01_1)) ; The ceiling fan is toggled off initially
+        (ontop agent.n.01_1 floor.n.01_1) ; The agent is on the floor
+        (inroom floor.n.01_1 living_room_0) ; The floor is in the living room
+        (inroom window.n.01_1 living_room_0) ; The window is in the living room
+        (inroom ceiling_fan.n.01_1 living_room_0) ; The ceiling fan is in the living room
+    )
+
+    (:goal
+        (and
+            (open ?window.n.01_1) ; The window should be open
+            (toggled_on ?ceiling_fan.n.01_1) ; The ceiling fan should be toggled on
+            (not (open ?window.n.01_1)) ; The window should be closed afterward
+        )
+    )
+)

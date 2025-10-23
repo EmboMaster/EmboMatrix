@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_turkey_leg.n.01_from_the_shelf_in_storage_room_0_carry_it_to_the_garage_0_and_put_it_inside_the_cooler.n.01_to_freeze_it_then_close_the_cooler.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        turkey_leg.n.01_1 - turkey_leg.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside turkey_leg.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?turkey_leg.n.01_1)
+            (inside ?turkey_leg.n.01_1 ?cooler.n.01_1)
+            (not 
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

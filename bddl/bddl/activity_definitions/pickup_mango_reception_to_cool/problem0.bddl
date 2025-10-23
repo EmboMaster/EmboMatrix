@@ -1,0 +1,26 @@
+(define (problem pick_up_the_mango.n.02_from_the_reception_desk_in_chemistry_lab_0_go_to_corridor_1_and_put_the_mango.n.02_inside_the_cooler.n.01_to_freeze_it_then_return_to_chemistry_lab_0)
+    (:domain omnigibson)
+    (:objects
+        mango.n.02_1 - mango.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop mango.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 chemistry_lab_0)
+        (inroom cooler.n.01_1 corridor_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 chemistry_lab_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?mango.n.02_1 ?cooler.n.01_1)
+            (frozen ?mango.n.02_1)
+            (ontop ?agent.n.01_1 ?floor.n.01_1)
+        )
+    )
+)

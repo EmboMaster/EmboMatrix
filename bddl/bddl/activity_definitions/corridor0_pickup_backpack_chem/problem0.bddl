@@ -1,0 +1,29 @@
+(define (problem go_to_room_corridor_0_pick_up_the_backpack.n.01_from_the_floor_in_the_corridor_0_go_to_room_chemistry_lab_0_put_the_backpack.n.01_on_top_of_the_desk_in_the_chemistry_lab_0_open_the_carton.n.02_on_the_reception_desk_in_the_chemistry_lab_0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        carton.n.02_1 - carton.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (ontop carton.n.02_1 reception_desk.n.01_1)
+        (inroom backpack.n.01_1 corridor_0)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom reception_desk.n.01_1 chemistry_lab_0)
+        (inroom desk.n.01_1 chemistry_lab_0)
+        (inroom carton.n.02_1 chemistry_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?backpack.n.01_1 ?desk.n.01_1)
+            (open ?carton.n.02_1)
+        )
+    )
+)

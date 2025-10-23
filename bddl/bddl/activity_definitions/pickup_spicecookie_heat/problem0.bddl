@@ -1,0 +1,29 @@
+(define (problem pick_up_the_spice_cookie.n.01_from_the_conference_table_in_break_room_0_and_heat_it_in_the_microwave.n.02_in_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        spice_cookie.n.01_1 - spice_cookie.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop spice_cookie.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom microwave.n.02_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+    )
+
+    (:goal
+        (and
+            (inside ?spice_cookie.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (hot ?spice_cookie.n.01_1)
+        )
+    )
+)

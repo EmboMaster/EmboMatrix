@@ -1,0 +1,22 @@
+(define (problem bring_shampoo_bottle_to_sink-0)
+    (:domain omnigibson)    (:objects
+        shampoo__bottle.n.01_1 - shampoo__bottle.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop shampoo__bottle.n.01_1 floor.n.01_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?shampoo__bottle.n.01_1 ?sink.n.01_1)
+        )
+    )
+)
+

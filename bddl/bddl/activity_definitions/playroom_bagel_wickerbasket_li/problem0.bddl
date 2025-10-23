@@ -1,0 +1,35 @@
+(define (problem go_to_room_playroom_0_pick_up_the_bagel.n.01_from_the_floor_in_playroom_0_put_the_bagel.n.01_inside_the_wicker_basket.n.01_in_playroom_0_go_to_room_living_room_0_toggle_on_the_loudspeaker.n.01_in_living_room_0_pick_up_the_phonograph_record.n.01_from_the_shelf_in_living_room_0_put_the_phonograph_record.n.01_on_top_of_the_pedestal_table_in_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        bagel.n.01_1 - bagel.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        phonograph_record.n.01_1 - phonograph_record.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bagel.n.01_1 floor.n.01_1)
+        (inroom wicker_basket.n.01_1 playroom_0)
+        (inroom loudspeaker.n.01_1 living_room_0)
+        (not
+            (toggled_on loudspeaker.n.01_1)
+        )
+        (ontop phonograph_record.n.01_1 shelf.n.01_1)
+        (inroom pedestal_table.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 living_room_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?bagel.n.01_1 ?wicker_basket.n.01_1)
+            (toggled_on ?loudspeaker.n.01_1)
+            (ontop ?phonograph_record.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem please_go_to_the_bathroom_0_toggle_on_the_dehumidifier_n_01_near_the_showerhead_n_01_and_ensure_the_showerhead_n_01_is_toggled_off)
+    (:domain omnigibson)
+    (:objects
+        dehumidifier.n.01_1 - dehumidifier.n.01
+        showerhead.n.01_1 - showerhead.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (toggled_on dehumidifier.n.01_1)
+        )
+        (toggled_on showerhead.n.01_1)
+        (inroom dehumidifier.n.01_1 bathroom_0) 
+        (inroom showerhead.n.01_1 bathroom_0) 
+        (inroom floor.n.01_1 bathroom_0) 
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?dehumidifier.n.01_1)
+            (not 
+                (toggled_on ?showerhead.n.01_1)
+            )
+        )
+    )
+)

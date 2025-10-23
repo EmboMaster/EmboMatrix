@@ -1,0 +1,29 @@
+(define (problem pick_up_the_salmon.n.03_from_the_booth_in_bedroom_1_and_put_it_inside_the_microwave.n.02_in_bathroom_0_then_heat_the_salmon.n.03_using_the_microwave.n.02-0)
+    (:domain omnigibson)
+    (:objects
+        salmon.n.03_1 - salmon.n.03
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop salmon.n.03_1 booth.n.01_1)
+        (inroom booth.n.01_1 bedroom_1)
+        (inroom microwave.n.02_1 bathroom_0)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_1)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?salmon.n.03_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (cooked ?salmon.n.03_1)
+        )
+    )
+)

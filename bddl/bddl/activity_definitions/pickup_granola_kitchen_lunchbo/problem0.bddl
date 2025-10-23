@@ -1,0 +1,33 @@
+(define (problem pick_up_the_granola_bar.n.01_from_the_table_lamp_in_bedroom_1_go_to_the_kitchen_area_in_corridor_0_heat_it_using_the_microwave.n.02_and_place_the_heated_granola_bar.n.01_inside_the_lunch_box.n.01_on_the_reception_desk_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        granola_bar.n.01_1 - granola_bar.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        microwave.n.02_1 - microwave.n.02
+        lunch_box.n.01_1 - lunch_box.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop granola_bar.n.01_1 table_lamp.n.01_1)
+        (inroom table_lamp.n.01_1 bedroom_1)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom microwave.n.02_1 corridor_0)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom lunch_box.n.01_1 corridor_0)
+        (ontop lunch_box.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (hot ?granola_bar.n.01_1)
+            (inside ?granola_bar.n.01_1 ?lunch_box.n.01_1)
+        )
+    )
+)

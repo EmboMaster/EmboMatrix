@@ -1,0 +1,27 @@
+(define (problem please_pick_up_the_mixing_bowl_from_the_reception_desk_in_the_kitchen_0_put_the_parsley_inside_the_mixing_bowl_and_place_it_on_the_breakfast_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        parsley.n.02_1 - parsley.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mixing_bowl.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom parsley.n.02_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?parsley.n.02_1 ?mixing_bowl.n.01_1)
+            (ontop ?mixing_bowl.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

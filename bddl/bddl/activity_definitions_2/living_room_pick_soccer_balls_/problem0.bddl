@@ -1,0 +1,27 @@
+(define (problem go_to_the_living_room_0_pick_up_all_the_3_soccer_balls_from_the_floor_and_put_them_inside_the_wicker_basket.n.01_in_the_storage_room_1-0)
+    (:domain omnigibson)
+    (:objects
+        soccer_ball.n.01_1 soccer_ball.n.01_2 soccer_ball.n.01_3 - soccer_ball.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom soccer_ball.n.01_1 living_room_0)
+        (inroom soccer_ball.n.01_2 living_room_0)
+        (inroom soccer_ball.n.01_3 living_room_0)
+        (inroom wicker_basket.n.01_1 storage_room_1)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (forall
+                (?soccer_ball.n.01 - soccer_ball.n.01)
+                (inside ?soccer_ball.n.01 wicker_basket.n.01_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,25 @@
+(define (problem Please_pick_up_the_space_heater.n.01_from_the_hutch_in_the_corridor_0_toggle_it_on_and_place_it_near_the_sofa_in_the_living_room_0_for_the_young_son_for_me)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        hutch.n.01_1 - hutch.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside space_heater.n.01_1 hutch.n.01_1)
+        (inroom hutch.n.01_1 corridor_0)
+        (inroom sofa.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?space_heater.n.01_1)
+            (under ?space_heater.n.01_1 ?sofa.n.01_1)
+        )
+    )
+)

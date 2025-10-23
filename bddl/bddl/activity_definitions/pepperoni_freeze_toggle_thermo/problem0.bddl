@@ -1,0 +1,29 @@
+(define (problem pick_up_the_pepperoni.n.01_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_it_then_toggle_on_the_thermostat.n.01_in_the_living_room_0_to_ensure_the_room_is_comfortable_for_the_children_to_play)
+    (:domain omnigibson)
+    (:objects
+        pepperoni.n.01_1 - pepperoni.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        thermostat.n.01_1 - thermostat.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pepperoni.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (not (toggled_on thermostat.n.01_1))
+        (inroom thermostat.n.01_1 living_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?pepperoni.n.01_1)
+            (inside ?pepperoni.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?thermostat.n.01_1)
+        )
+    )
+)

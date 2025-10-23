@@ -1,0 +1,25 @@
+(define (problem pick_up_the_liquid_carton.n.01_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_keep_it_fresh)
+    (:domain omnigibson)
+    (:objects
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop liquid_carton.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?liquid_carton.n.01_1 ?cooler.n.01_1)
+            (frozen ?liquid_carton.n.01_1)
+        )
+    )
+)

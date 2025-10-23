@@ -1,0 +1,27 @@
+(define (problem please_go_to_the_storage_room_0_and_pick_up_the_quiche.n.02_from_the_reception_desk.then_go_to_the_utility_room_0_and_put_the_quiche.n.02_inside_the_microwave.n.02.toggle_on_the_microwave.n.02_to_heat_the_quiche.n.02.after_heating_toggle_off_the_microwave.n.02_and_return_the_quiche.n.02_to_the_reception_desk_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        quiche.n.02_1 - quiche.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop quiche.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 storage_room_0)
+        (inroom microwave.n.02_1 utility_room_0)
+        (not (toggled_on microwave.n.02_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+    
+    (:goal
+        (and
+            (cooked ?quiche.n.02_1)
+            (not (toggled_on ?microwave.n.02_1))
+            (ontop ?quiche.n.02_1 ?reception_desk.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,36 @@
+(define (problem open_the_carton.n.02_on_the_shelf_in_the_dining_room_0_then_pick_up_the_goblet.n.01_from_the_conference_table_in_the_corridor_0_and_place_it_on_top_of_the_reception_desk_in_the_kitchen_0_then_toggle_off_the_electric_mixer.n.01_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        goblet.n.01_1 - goblet.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        electric_mixer.n.01_1 - electric_mixer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (closed carton.n.02_1)
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (ontop goblet.n.01_1 conference_table.n.01_1)
+        (ontop electric_mixer.n.01_1 reception_desk.n.01_1)
+        (not (toggled_on electric_mixer.n.01_1))
+        (inroom shelf.n.01_1 dining_room_0)
+        (inroom conference_table.n.01_1 corridor_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom electric_mixer.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (grasped ?goblet.n.01_1 agent.n.01_1)
+            (ontop ?goblet.n.01_1 ?reception_desk.n.01_1)
+            (not (toggled_on ?electric_mixer.n.01_1))
+        )
+    )
+)

@@ -1,0 +1,33 @@
+(define (problem go_to_room_kitchen_0_pick_up_the_dumpling.n.01_from_the_hutch_in_kitchen_0_heat_the_dumpling.n.01_using_the_stove.n.01_in_kitchen_0_pick_up_the_casserole.n.02_from_the_reception_desk_in_kitchen_0_put_the_casserole.n.02_inside_the_cooler.n.01_in_kitchen_0_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        dumpling.n.01_1 - dumpling.n.01
+        casserole.n.02_1 - casserole.n.02
+        stove.n.01_1 - stove.n.01
+        hutch.n.01_1 - hutch.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside dumpling.n.01_1 hutch.n.01_1)
+        (ontop casserole.n.02_1 reception_desk.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (inroom hutch.n.01_1 kitchen_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?dumpling.n.01_1)
+            (frozen ?casserole.n.02_1)
+            (inside ?casserole.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,25 @@
+(define (problem pick_up_the_kiwi_from_shelf_in_pantry_room_0_go_to_kitchen_0_and_freeze_it_by_placing_it_inside_the_cooler.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 - kiwi.n.03
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside kiwi.n.03_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?kiwi.n.03_1)
+            (inside ?kiwi.n.03_1 ?cooler.n.01_1)
+        )
+    )
+)

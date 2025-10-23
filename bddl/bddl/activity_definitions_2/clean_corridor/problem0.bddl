@@ -1,0 +1,27 @@
+(define (problem go_to_the_corridor_0_pick_up_the_mop_bucket_and_clean_the_corridor_floor_to_remove_any_dust_or_stains-0)
+    (:domain omnigibson)
+    (:objects
+        bucket.n.01_1 - bucket.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop bucket.n.01_1 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (stained floor.n.01_1)
+        (dusty floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom bucket.n.01_1 corridor_0)
+        (inroom sink.n.01_1 corridor_0)
+    )
+    
+    (:goal
+        (and
+            (soaked bucket.n.01_1)
+            (not (stained ?floor.n.01_1))
+            (not (dusty ?floor.n.01_1))
+        )
+    )
+)

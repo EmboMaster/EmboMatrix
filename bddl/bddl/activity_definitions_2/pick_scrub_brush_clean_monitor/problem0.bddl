@@ -1,0 +1,36 @@
+(define (problem please_pick_up_the_scrub_brush.n.01_from_the_shelf_in_corridor_1_and_clean_all_2_dusty_monitors_on_the_desks_in_computer_lab_0)
+    (:domain omnigibson)
+    (:objects
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        shelf.n.01_1 - shelf.n.01
+        monitor.n.04_1 monitor.n.04_2 - monitor.n.04
+        desk.n.01_1 desk.n.01_2 - desk.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside scrub_brush.n.01_1 shelf.n.01_1)
+        (ontop monitor.n.04_1 desk.n.01_1)
+        (ontop monitor.n.04_2 desk.n.01_2)
+        (dusty monitor.n.04_1)
+        (dusty monitor.n.04_2)
+        (inroom shelf.n.01_1 corridor_1)
+        (inroom floor.n.01_1 corridor_1)
+        (inroom desk.n.01_1 computer_lab_0)
+        (inroom desk.n.01_2 computer_lab_0)
+        (inroom monitor.n.04_1 computer_lab_0)
+        (inroom monitor.n.04_2 computer_lab_0)
+        (inroom sink.n.01_1 computer_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (soaked scrub_brush.n.01_1)
+            (not (dusty monitor.n.04_1))
+            (not (dusty monitor.n.04_2))
+        )
+    )
+)

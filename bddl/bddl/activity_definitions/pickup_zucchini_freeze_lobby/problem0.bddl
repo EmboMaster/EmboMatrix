@@ -1,0 +1,27 @@
+(define (problem pick_up_the_zucchini.n.02_from_the_pedestal_table_in_shared_office_0_put_it_inside_the_cooler.n.01_in_the_lobby_0_to_freeze_it_and_then_place_the_frozen_zucchini_on_the_reception_desk_in_the_lobby_0)
+    (:domain omnigibson)
+    (:objects
+        zucchini.n.02_1 - zucchini.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop zucchini.n.02_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 lobby_0)
+        (inroom reception_desk.n.01_1 lobby_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?zucchini.n.02_1)
+            (ontop ?zucchini.n.02_1 ?reception_desk.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,27 @@
+(define (problem Pick_up_the_snapper.n.02_from_the_hutch_1_in_the_corridor_0_go_to_the_storage_room_0_and_put_it_inside_the_cooler.n.01_to_freeze_it_Then_close_the_cooler.n.01_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        snapper.n.02_1 - snapper.n.02
+        hutch.n.01_1 - hutch.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside snapper.n.02_1 hutch.n.01_1)
+        (inroom hutch.n.01_1 corridor_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (open cooler.n.01_1))
+    )
+
+    (:goal
+        (and
+            (inside ?snapper.n.02_1 ?cooler.n.01_1)
+            (frozen ?snapper.n.02_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

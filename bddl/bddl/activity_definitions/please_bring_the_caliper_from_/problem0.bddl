@@ -1,0 +1,27 @@
+(define (problem please_bring_the_caliper_from_the_biology_lab_0_to_the_periodic_table_in_the_corridor_0_and_the_glass_lantern_from_the_bathroom_0_to_the_shelf_in_the_biology_lab_0)
+    (:domain omnigibson)
+    (:objects
+        caliper.n.01_1 - caliper.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        glass_lantern.n.01_1 - glass_lantern.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom caliper.n.01_1 biology_lab_0)
+        (inroom periodic_table.n.01_1 corridor_0)
+        (inroom glass_lantern.n.01_1 bathroom_0)
+        (inroom shelf.n.01_1 biology_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?caliper.n.01_1 ?periodic_table.n.01_1)
+            (ontop ?glass_lantern.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

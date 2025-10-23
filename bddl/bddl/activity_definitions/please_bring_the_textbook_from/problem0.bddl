@@ -1,0 +1,29 @@
+(define (problem please_bring_the_textbook_from_the_shelf_in_the_playroom_0_and_the_broom_from_the_shelf_side_in_the_utility_room_0_to_the_storage_organizer_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        textbook.n.01_1 - textbook.n.01
+        shelf.n.01_1 - shelf.n.01
+        broom.n.01_1 - broom.n.01
+        shelf_side.n.01_1 - shelf_side.n.01
+        storage_organizer.n.01_1 - storage_organizer.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+
+    (:init
+        (ontop textbook.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 playroom_0)
+        (ontop broom.n.01_1 shelf_side.n.01_1)
+        (inroom shelf_side.n.01_1 utility_room_0)
+        (inroom storage_organizer.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?textbook.n.01_1 ?storage_organizer.n.01_1)
+            (inside ?broom.n.01_1 ?storage_organizer.n.01_1)
+        )
+    )
+)

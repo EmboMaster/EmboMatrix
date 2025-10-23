@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["table_lamp.n.01_1", "ontop", "desk.n.01_1"], ["veal.n.01_1", "inside", "shelf.n.01_1"], ["frying_pan.n.01_1", "ontop", "desk.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["desk.n.01_1", "inroom", "bedroom_0"], ["shelf.n.01_1", "inroom", "bedroom_0"], ["cleaver.n.01_1", "inroom", "bedroom_0"], ["frying_pan.n.01_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"]]}
+{"state": {"table_lamp.n.01_1": {"toggled_on": true}, "veal.n.01_1": {"sliced": true}}, "relation": [["veal.n.01_1", "ontop", "frying_pan.n.01_1"]]}

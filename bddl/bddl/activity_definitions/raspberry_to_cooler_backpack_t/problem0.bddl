@@ -1,0 +1,29 @@
+(define (problem Pick_up_the_raspberry.n.02_from_the_shopping_basket_in_the_kitchen_0_and_go_to_the_cooler.n.01_in_the_pantry_room_0_to_freeze_it_Then_head_to_the_corridor_0_and_pick_up_the_backpack.n.01_from_the_floor_Deliver_it_to_the_living_room_0_and_place_it_on_top_of_the_coffee_table)
+    (:domain omnigibson)
+    (:objects
+        raspberry.n.02_1 - raspberry.n.02
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        backpack.n.01_1 - backpack.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside raspberry.n.02_1 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 pantry_room_0)
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?raspberry.n.02_1)
+            (ontop ?backpack.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

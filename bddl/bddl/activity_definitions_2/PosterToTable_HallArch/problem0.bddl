@@ -1,0 +1,23 @@
+(define (problem Pick_up_the_poster_from_the_floor_in_the_corridor_0_and_put_it_on_top_of_the_conference_table_in_the_hall_arch_wood:empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        poster.n.01_1 - poster.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop poster.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (ontop poster.n.01_1 floor.n.01_1)
+        (and
+            (ontop ?poster.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

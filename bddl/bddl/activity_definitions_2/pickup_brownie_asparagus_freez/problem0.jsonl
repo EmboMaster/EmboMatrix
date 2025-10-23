@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["brownie.n.03_1", "ontop", "breakfast_table.n.01_1"], ["asparagus.n.02_1", "ontop", "breakfast_table.n.01_1"], ["breakfast_table.n.01_1", "inroom", "dining_room_0"], ["floor.n.01_1", "inroom", "dining_room_0"], ["cooler.n.01_1", "inroom", "garage_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"brownie.n.03_1": {"frozen": true}, "asparagus.n.02_1": {"frozen": true}}, "relation": []}

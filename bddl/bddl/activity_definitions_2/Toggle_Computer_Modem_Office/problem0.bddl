@@ -1,0 +1,26 @@
+(define (problem Toggle_on_the_desktop_computer_in_the_private_office_0_and_ensure_the_modem_is_also_toggled_on)
+    (:domain omnigibson)
+    (:objects
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        modem.n.01_1 - modem.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on desktop_computer.n.01_1))
+        (not (toggled_on modem.n.01_1))
+        (inroom desktop_computer.n.01_1 private_office_0)
+        (inroom modem.n.01_1 private_office_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (not (toggled_on desktop_computer.n.01_1))
+        (and
+            (toggled_on ?desktop_computer.n.01_1)
+            (toggled_on ?modem.n.01_1)
+        )
+    )
+)

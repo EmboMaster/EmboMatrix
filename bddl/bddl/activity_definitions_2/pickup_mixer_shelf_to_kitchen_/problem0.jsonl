@@ -1,0 +1,2 @@
+{"state": {"electric_mixer.n.01_1": {"toggled_on": false}}, "relation": [["electric_mixer.n.01_1", "ontop", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "storage_room_0"], ["countertop.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_0"]]}
+{"state": {"electric_mixer.n.01_1": {"toggled_on": true}}, "relation": [["electric_mixer.n.01_1", "ontop", "countertop.n.01_1"]]}

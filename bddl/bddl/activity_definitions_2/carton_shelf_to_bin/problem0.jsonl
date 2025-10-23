@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["carton.n.02_1", "ontop", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "pantry_room_0"], ["recycling_bin.n.01_1", "inroom", "utility_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "pantry_room_0"]]}
+{"state": {}, "relation": [["carton.n.02_1", "inside", "recycling_bin.n.01_1"]]}

@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["butternut_squash.n.01_1", "ontop", "serving_cart.n.01_1"], ["cleaver.n.01_1", "ontop", "serving_cart.n.01_1"], ["bowl.n.01_1", "ontop", "sink.n.01_1"], ["serving_cart.n.01_1", "inroom", "empty_room_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"butternut_squash.n.01_1": {"sliced": true}}, "relation": [["butternut_squash.n.01_1", "inside", "bowl.n.01_1"]]}

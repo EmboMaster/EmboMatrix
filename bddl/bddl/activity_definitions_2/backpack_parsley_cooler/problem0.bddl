@@ -1,0 +1,28 @@
+(define (problem open_the_backpack.n.01_on_the_bed_in_the_bedroom_0_take_out_the_parsley.n.02_from_inside_and_put_the_parsley.n.02_inside_the_cooler.n.01_in_the_bedroom_0_to_keep_it_fresh)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        parsley.n.02_1 - parsley.n.02
+        cooler.n.01_1 - cooler.n.01
+        bed.n.01_1 - bed.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 bed.n.01_1)
+        (inside parsley.n.02_1 backpack.n.01_1)
+        (inroom cooler.n.01_1 bedroom_0)
+        (inroom bed.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?backpack.n.01_1)
+            (inside ?parsley.n.02_1 ?cooler.n.01_1)
+            (frozen ?parsley.n.02_1)
+        )
+    )
+)

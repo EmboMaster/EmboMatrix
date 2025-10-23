@@ -1,0 +1,34 @@
+(define (problem go_to_the_pantry_room_0_pick_up_the_bagel.n.01_from_the_pantry_shelf_and_bring_it_to_the_kitchen_0_put_the_bagel.n.01_inside_the_pressure_cooker.n.01_toggle_on_the_pressure_cooker.n.01_and_cook_the_bagel.n.01_then_go_to_the_living_room_0_pick_up_the_security_camera.n.01_from_the_coffee_table_and_bring_it_to_the_corridor_0_place_the_security_camera.n.01_on_top_of_the_console_table_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        bagel.n.01_1 - bagel.n.01
+        shelf.n.01_1 - shelf.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        security_camera.n.01_1 - security_camera.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside bagel.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (not (toggled_on pressure_cooker.n.01_1))
+        (inroom pressure_cooker.n.01_1 kitchen_0)
+        (ontop security_camera.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom console_table.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?bagel.n.01_1)
+            (inside ?bagel.n.01_1 ?pressure_cooker.n.01_1)
+            (toggled_on ?pressure_cooker.n.01_1)
+            (ontop ?security_camera.n.01_1 ?console_table.n.01_1)
+        )
+    )
+)

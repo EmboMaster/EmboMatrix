@@ -1,0 +1,27 @@
+(define (problem please_fetch_the_pet_bed_from_the_sofa_in_the_living_room_0_and_the_board_game_from_the_floor_in_the_childs_room_0_and_place_them_on_the_bed_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        pet_bed.n.01_1 - pet_bed.n.01
+        sofa.n.01_1 - sofa.n.01
+        board_game.n.01_1 - board_game.n.01
+        bed.n.01_1 - bed.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pet_bed.n.01_1 sofa.n.01_1)
+        (ontop board_game.n.01_1 floor.n.01_1)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom floor.n.01_1 childs_room_0)
+        (inroom bed.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?pet_bed.n.01_1 ?bed.n.01_1)
+            (ontop ?board_game.n.01_1 ?bed.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem go_to_storage_room_0_pick_up_the_pear.n.01_from_the_pedestal_table_in_storage_room_0_put_the_pear.n.01_inside_the_cooler.n.01_in_storage_room_0_and_make_sure_the_cooler.n.01_is_closed_for_me-0)
+    (:domain omnigibson)
+    (:objects
+        pear.n.01_1 - pear.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pear.n.01_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (open cooler.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?pear.n.01_1 ?cooler.n.01_1)
+            (not 
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

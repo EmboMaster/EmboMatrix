@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["textbook.n.01_1", "ontop", "sofa.n.01_1"], ["textbook.n.01_2", "ontop", "sofa.n.01_1"], ["textbook.n.01_3", "ontop", "sofa.n.01_1"], ["sofa.n.01_1", "inroom", "living_room_1"], ["desk.n.01_1", "inroom", "private_office_0"], ["floor.n.01_1", "inroom", "living_room_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {}, "relation": [["textbook.n.01_1", "ontop", "desk.n.01_1"], ["textbook.n.01_2", "ontop", "desk.n.01_1"], ["textbook.n.01_3", "ontop", "desk.n.01_1"]]}

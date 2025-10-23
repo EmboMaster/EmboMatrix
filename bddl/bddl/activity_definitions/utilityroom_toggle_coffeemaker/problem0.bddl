@@ -1,0 +1,36 @@
+(define (problem go_to_the_utility_room_0_toggle_on_the_coffee_maker.n.01_and_heat_the_green_bean.n.01_in_the_toaster_oven.n.01_then_pick_up_the_mint.n.04_from_the_reception_desk_in_the_utility_room_0_and_put_it_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        green_bean.n.01_1 - green_bean.n.01
+        mint.n.04_1 - mint.n.04
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        cooler.n.01_1 - cooler.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on coffee_maker.n.01_1))
+        (inside green_bean.n.01_1 toaster_oven.n.01_1)
+        (not (cooked green_bean.n.01_1))
+        (ontop mint.n.04_1 reception_desk.n.01_1)
+        (inroom coffee_maker.n.01_1 utility_room_0)
+        (inroom toaster_oven.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on coffee_maker.n.01_1)
+            (cooked ?green_bean.n.01_1)
+            (inside ?green_bean.n.01_1 ?toaster_oven.n.01_1)
+            (inside ?mint.n.04_1 ?cooler.n.01_1)
+            (frozen ?mint.n.04_1)
+        )
+    )
+)

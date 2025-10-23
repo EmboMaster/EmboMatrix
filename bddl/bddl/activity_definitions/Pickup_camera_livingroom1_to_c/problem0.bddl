@@ -1,0 +1,32 @@
+(define (problem Pick_up_the_digital_camera.n.01_from_the_coffee_table_in_living_room_1_go_to_corridor_0_and_place_it_on_the_console_table_in_corridor_0_Then_pick_up_the_mango.n.02_from_the_breakfast_table_in_dining_room_0_and_put_it_inside_the_cooler.n.01_in_kitchen_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        digital_camera.n.01_1 - digital_camera.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        mango.n.02_1 - mango.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop digital_camera.n.01_1 coffee_table.n.01_1)
+        (ontop mango.n.02_1 breakfast_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom console_table.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?digital_camera.n.01_1 ?console_table.n.01_1)
+            (frozen ?mango.n.02_1)
+            (inside ?mango.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

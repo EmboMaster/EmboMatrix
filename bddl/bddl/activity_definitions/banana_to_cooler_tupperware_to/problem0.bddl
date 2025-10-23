@@ -1,0 +1,32 @@
+(define (problem please_pick_up_the_banana.n.02_from_the_reception_desk_in_the_utility_room_0_and_put_it_inside_the_cooler.n.01_in_the_storage_room_0_to_freeze_it_then_pick_up_the_tupperware.n.01_from_the_shelf_in_the_utility_room_0_and_place_it_on_top_of_the_piano_in_the_playroom_0)
+    (:domain omnigibson)
+    (:objects
+        banana.n.02_1 - banana.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        shelf.n.01_1 - shelf.n.01
+        piano.n.01_1 - piano.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop banana.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inside tupperware.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 utility_room_0)
+        (inroom piano.n.01_1 playroom_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?banana.n.02_1)
+            (inside ?banana.n.02_1 ?cooler.n.01_1)
+            (ontop ?tupperware.n.01_1 ?piano.n.01_1)
+        )
+    )
+)

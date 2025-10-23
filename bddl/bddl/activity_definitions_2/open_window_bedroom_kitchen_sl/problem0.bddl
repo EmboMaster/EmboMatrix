@@ -1,0 +1,33 @@
+(define (problem open_the_window_in_the_bedroom_go_to_the_kitchen_pick_up_the_celery_from_the_countertop_slice_it_using_the_cleaver_on_the_chopping_board_and_put_the_sliced_celery_into_the_tupperware_on_the_console_table-0)
+    (:domain omnigibson)
+    (:objects
+        window.n.01_1 - window.n.01
+        celery.n.02_1 - celery.n.02
+        cleaver.n.01_1 - cleaver.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom window.n.01_1 bedroom_0)
+        (not (open window.n.01_1))
+        (ontop celery.n.02_1 console_table.n.01_1)
+        (ontop cleaver.n.01_1 console_table.n.01_1)
+        (ontop chopping_board.n.01_1 console_table.n.01_1)
+        (ontop tupperware.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (open ?window.n.01_1)
+            (sliced ?celery.n.02_1)
+            (inside ?celery.n.02_1 ?tupperware.n.01_1)
+        )
+    )
+)

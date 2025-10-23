@@ -1,0 +1,26 @@
+(define (problem bring_fruit_basket_to_dining_table-0)
+    (:domain omnigibson)    (:objects
+        basket.n.03_1 - basket.n.03
+        box__of__fruit.n.01_1 box__of__fruit.n.01_2 box__of__fruit.n.01_3 - box__of__fruit.n.01
+        booth.n.01_1 - booth.n.01
+        table.n.02_1 - table.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop basket.n.03_1 booth.n.01_1)
+        (inside box__of__fruit.n.01_1 basket.n.03_1)
+        (inside box__of__fruit.n.01_2 basket.n.03_1)
+        (inside box__of__fruit.n.01_3 basket.n.03_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom table.n.02_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (inside ?basket.n.03_1 ?table.n.02_1)
+    )
+)
+

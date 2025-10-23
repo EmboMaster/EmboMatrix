@@ -1,0 +1,33 @@
+(define (problem go_to_the_grocery_store_0_pick_up_the_waffle.n.01_from_the_conference_table_and_bring_it_to_the_stove.n.01_in_the_grocery_store_0_toggle_on_the_stove.n.01_cook_the_waffle.n.01_and_place_the_cooked_waffle_on_top_of_the_mixing_bowl.n.01_in_the_grocery_store_0_toggle_off_the_stove.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        waffle.n.01_1 - waffle.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        stove.n.01_1 - stove.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop waffle.n.01_1 conference_table.n.01_1)
+        (not 
+            (toggled_on stove.n.01_1)
+        )
+        (inroom conference_table.n.01_1 grocery_store_0)
+        (inroom stove.n.01_1 grocery_store_0)
+        (inroom mixing_bowl.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (cooked ?waffle.n.01_1)
+            (ontop ?waffle.n.01_1 ?mixing_bowl.n.01_1)
+            (not 
+                (toggled_on ?stove.n.01_1)
+            )
+        )
+    )
+)

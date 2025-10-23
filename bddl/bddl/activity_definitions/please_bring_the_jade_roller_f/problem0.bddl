@@ -1,0 +1,29 @@
+(define (problem please_bring_the_jade_roller_from_corridor_1_and_the_pair_of_socks_from_locker_room_0_to_the_bench_in_locker_room_1_for_me)
+    (:domain omnigibson)
+    (:objects
+        jade_roller.n.01_1 - jade_roller.n.01
+        sock.n.01_1 sock.n.01_2 - sock.n.01
+        bench.n.01_1 - bench.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom jade_roller.n.01_1 corridor_1)
+        (inroom sock.n.01_1 locker_room_0)
+        (inroom sock.n.01_2 locker_room_0)
+        (inroom bench.n.01_1 locker_room_1)
+        (inroom floor.n.01_1 corridor_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?jade_roller.n.01_1 ?bench.n.01_1)
+            (forall
+                (?sock.n.01 - sock.n.01)
+                (ontop ?sock.n.01 ?bench.n.01_1)
+            )
+        )
+    )
+)

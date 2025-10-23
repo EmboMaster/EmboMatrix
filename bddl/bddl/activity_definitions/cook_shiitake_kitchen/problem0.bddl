@@ -1,0 +1,35 @@
+(define (problem pick_up_the_shiitake_from_the_booth_in_the_kitchen_0_open_the_rice_cooker_in_the_kitchen_0_cook_the_shiitake_inside_the_rice_cooker_in_the_kitchen_0_and_close_the_rice_cooker_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        shiitake.n.01_1 - shiitake.n.01
+        booth.n.01_1 - booth.n.01
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop shiitake.n.01_1 booth.n.01_1)
+        (not 
+            (open rice_cooker.n.01_1)
+        )
+        (not 
+            (toggled_on rice_cooker.n.01_1)
+        )
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom rice_cooker.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked shiitake.n.01_1)
+            (inside shiitake.n.01_1 rice_cooker.n.01_1)
+            (toggled_on rice_cooker.n.01_1)
+            (not 
+                (open rice_cooker.n.01_1)
+            )
+        )
+    )
+)

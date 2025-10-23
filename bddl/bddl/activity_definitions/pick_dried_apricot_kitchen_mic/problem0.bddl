@@ -1,0 +1,27 @@
+(define (problem Please_pick_up_the_dried_apricot.n.01_from_the_booth_in_the_pantry_room_0_go_to_the_kitchen_0_and_put_it_inside_the_microwave.n.02_Then_toggle_on_the_microwave.n.02_to_heat_the_dried_apricot.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        dried_apricot.n.01_1 - dried_apricot.n.01
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop dried_apricot.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 pantry_room_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+        (not (toggled_on microwave.n.02_1))
+    )
+
+    (:goal
+        (and
+            (inside ?dried_apricot.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (hot ?dried_apricot.n.01_1)
+        )
+    )
+)

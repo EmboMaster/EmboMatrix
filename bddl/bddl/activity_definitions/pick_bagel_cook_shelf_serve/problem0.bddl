@@ -1,0 +1,30 @@
+(define (problem pick_up_the_bagel_dough.n.01_from_the_shelf_in_the_grocery_store_0_go_to_the_grocery_store_0's_oven.n.01_cook_the_bagel_dough.n.01_in_the_oven.n.01_for_10_minutes_and_place_the_cooked_bagel_on_the_serving_cart_in_the_grocery_store_0)
+    (:domain omnigibson)
+    (:objects
+        bagel_dough.n.01_1 - bagel_dough.n.01
+        shelf.n.01_1 - shelf.n.01
+        oven.n.01_1 - oven.n.01
+        serving_cart.n.01_1 - serving_cart.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bagel_dough.n.01_1 shelf.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on oven.n.01_1)
+        )
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom oven.n.01_1 grocery_store_0)
+        (inroom serving_cart.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?bagel_dough.n.01_1)
+            (ontop ?bagel_dough.n.01_1 ?serving_cart.n.01_1)
+        )
+    )
+)

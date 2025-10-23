@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_bread_slice.n.01_from_the_console_table_in_the_kitchen_0_and_put_it_inside_the_toaster_oven.n.01_in_the_kitchen_0_then_toggle_on_the_toaster_oven.n.01_in_the_kitchen_0_to_heat_the_bread_slice.n.01)
+    (:domain omnigibson)
+    (:objects
+        bread_slice.n.01_1 - bread_slice.n.01
+        console_table.n.01_1 - console_table.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bread_slice.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom toaster_oven.n.01_1 kitchen_0)
+        (not 
+            (toggled_on toaster_oven.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?bread_slice.n.01_1 ?toaster_oven.n.01_1)
+            (toggled_on ?toaster_oven.n.01_1)
+            (cooked ?bread_slice.n.01_1)
+        )
+    )
+)

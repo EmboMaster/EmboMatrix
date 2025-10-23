@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_prosciutto_from_the_wicker_basket_in_the_shared_office_0_and_put_it_inside_the_cooler_in_the_break_room_0_to_freeze_it_then_pick_up_the_coffee_maker_from_the_reception_desk_in_the_break_room_0_and_toggle_it_on)
+    (:domain omnigibson)
+    (:objects
+        prosciutto.n.01_1 - prosciutto.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (inside prosciutto.n.01_1 wicker_basket.n.01_1)
+        (inroom wicker_basket.n.01_1 shared_office_0)
+        (ontop coffee_maker.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?prosciutto.n.01_1)
+            (toggled_on ?coffee_maker.n.01_1)
+        )
+    )
+)

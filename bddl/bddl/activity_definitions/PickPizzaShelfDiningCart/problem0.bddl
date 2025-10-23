@@ -1,0 +1,25 @@
+(define (problem Please_pick_up_the_pizza_box.n.01_from_the_shelf_in_the_kitchen_0_go_to_the_dining_room_0_and_place_the_pizza_box.n.01_on_the_serving_cart_near_the_entrance_of_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        pizza_box.n.01_1 - pizza_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        serving_cart.n.01_1 - serving_cart.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop pizza_box.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom serving_cart.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom floor.n.01_2 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?pizza_box.n.01_1 ?serving_cart.n.01_1)
+        )
+    )
+)

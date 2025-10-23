@@ -1,0 +1,26 @@
+(define (problem Please_pick_up_the_water_bottle_from_the_shelf.n.01_in_corridor_1_and_place_it_on_top_of_the_vending_machine.n.01_in_corridor_2_Then_toggle_on_the_vending_machine.n.01_to_dispense_snacks_for_the_students)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        shelf.n.01_1 - shelf.n.01
+        vending_machine.n.01_1 - vending_machine.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop water_bottle.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 corridor_1)
+        (inroom vending_machine.n.01_1 corridor_2)
+        (not (toggled_on vending_machine.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?water_bottle.n.01_1 ?vending_machine.n.01_1)
+            (toggled_on ?vending_machine.n.01_1)
+        )
+    )
+)

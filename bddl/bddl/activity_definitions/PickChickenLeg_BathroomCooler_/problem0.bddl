@@ -1,0 +1,31 @@
+(define (problem Pick_up_the_chicken_leg.n.01_from_the_platter.n.01_in_the_empty_room_0_go_to_the_bathroom_0_and_put_it_inside_the_cooler.n.01_in_the_bathroom_0_to_freeze_it_then_toggle_off_the_space_heater.n.01_in_the_bathroom_0_if_it_is_on)
+    (:domain omnigibson)
+    (:objects
+        chicken_leg.n.01_1 - chicken_leg.n.01
+        platter.n.01_1 - platter.n.01
+        cooler.n.01_1 - cooler.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside chicken_leg.n.01_1 platter.n.01_1)
+        (inroom platter.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (inroom space_heater.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+        (toggled_on space_heater.n.01_1) ; Assuming it starts toggled on
+    )
+
+    (:goal
+        (and
+            (frozen ?chicken_leg.n.01_1)
+            (inside ?chicken_leg.n.01_1 ?cooler.n.01_1)
+            (not
+                (toggled_on ?space_heater.n.01_1)
+            )
+        )
+    )
+)

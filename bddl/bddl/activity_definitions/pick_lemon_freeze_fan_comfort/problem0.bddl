@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_lemon.n.01_from_the_shelf.n.01_in_the_kitchen_0_put_the_lemon.n.01_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it_and_then_toggle_on_the_ceiling_fan.n.01_in_the_dining_room_0_to_ensure_guest_comfort)
+    (:domain omnigibson)
+    (:objects
+        lemon.n.01_1 - lemon.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lemon.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom ceiling_fan.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?lemon.n.01_1 ?cooler.n.01_1)
+            (frozen ?lemon.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+        )
+    )
+)

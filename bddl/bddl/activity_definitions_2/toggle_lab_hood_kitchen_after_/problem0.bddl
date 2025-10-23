@@ -1,0 +1,30 @@
+(define (problem toggle_on_the_lab_exhaust_hood_n_01_in_the_kitchen_0_after_placing_the_enchilada_n_01_in_the_oven_n_01_and_closing_it)
+    (:domain omnigibson)
+    (:objects
+        enchilada.n.01_1 - enchilada.n.01
+        oven.n.01_1 - oven.n.01
+        lab_exhaust_hood.n.01_1 - lab_exhaust_hood.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on lab_exhaust_hood.n.01_1))
+        (not (inside enchilada.n.01_1 oven.n.01_1))
+        (open oven.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom enchilada.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom lab_exhaust_hood.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (not (toggled_on lab_exhaust_hood.n.01_1))
+        (and
+            (inside ?enchilada.n.01_1 ?oven.n.01_1)
+            (not (open ?oven.n.01_1))
+            (toggled_on ?lab_exhaust_hood.n.01_1)
+        )
+    )
+)

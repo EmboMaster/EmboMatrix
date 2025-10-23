@@ -1,0 +1,31 @@
+(define (problem please_bring_the_magazine_from_the_coffee_table_in_the_living_room_0_and_the_bar_soap_from_the_sink_in_the_bathroom_0_to_the_reception_desk_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        magazine.n.02_1 - magazine.n.02
+        coffee_table.n.01_1 - coffee_table.n.01
+        bar_soap.n.01_1 - bar_soap.n.01
+        sink.n.01_1 - sink.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop magazine.n.02_1 coffee_table.n.01_1)
+        (ontop bar_soap.n.01_1 sink.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom magazine.n.02_1 living_room_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom bar_soap.n.01_1 bathroom_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?magazine.n.02_1 ?reception_desk.n.01_1)
+            (ontop ?bar_soap.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

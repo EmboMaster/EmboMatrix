@@ -1,0 +1,2 @@
+{"state": {"digital_camera.n.01_1": {"toggled_on": false}}, "relation": [["digital_camera.n.01_1", "ontop", "conference_table.n.01_1"], ["conference_table.n.01_1", "inroom", "empty_room_0"], ["backpack.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"digital_camera.n.01_1": {"toggled_on": true}}, "relation": [["digital_camera.n.01_1", "inside", "backpack.n.01_1"]]}

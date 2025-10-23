@@ -1,0 +1,22 @@
+(define (problem please_go_to_the_storage_room_0_and_pick_up_the_cooler_then_move_to_the_kitchen_related_space_in_the_utility_room_0_pick_up_the_cantaloup_from_the_reception_desk_and_freeze_it_by_placing_it_inside_the_cooler-0)
+    (:domain omnigibson)
+    (:objects
+        cooler.n.01_1 - cooler.n.01
+        cantaloup.n.02_1 - cantaloup.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (ontop cantaloup.n.02_1 reception_desk.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (frozen ?cantaloup.n.02_1)
+    )
+)

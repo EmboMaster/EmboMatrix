@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["backpack.n.01_1", "ontop", "floor.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["backpack.n.01_1", "inroom", "corridor_0"], ["water_glass.n.02_1", "inroom", "living_room_1"]]}
+{"state": {"backpack.n.01_1": {"open": true}}, "relation": [["backpack.n.01_1", "ontop", "floor.n.01_1"], ["water_glass.n.02_1", "inside", "backpack.n.01_1"]]}

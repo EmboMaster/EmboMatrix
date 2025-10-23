@@ -1,0 +1,31 @@
+(define (problem toggle_on_the_lab_exhaust_hood.n.01_in_the_biology_lab_0_then_pick_up_the_artichoke.n.02_from_the_pedestal_table_in_the_corridor_1_and_put_it_inside_the_cooler.n.01_in_the_biology_lab_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        lab_exhaust_hood.n.01_1 - lab_exhaust_hood.n.01
+        artichoke.n.02_1 - artichoke.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on lab_exhaust_hood.n.01_1)
+        )
+        (ontop artichoke.n.02_1 pedestal_table.n.01_1)
+        (inroom lab_exhaust_hood.n.01_1 biology_lab_0)
+        (inroom cooler.n.01_1 biology_lab_0)
+        (inroom pedestal_table.n.01_1 corridor_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 biology_lab_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?lab_exhaust_hood.n.01_1)
+            (inside ?artichoke.n.02_1 ?cooler.n.01_1)
+            (frozen ?artichoke.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,38 @@
+(define (problem go_to_bedroom_1_pick_up_the_vacuum.n.04_from_the_corner_near_the_wardrobe_in_the_bedroom_1_and_clean_all_three_dusty_mats_on_the_floor_in_the_bedroom_1)
+    (:domain omnigibson)
+    (:objects
+        vacuum.n.04_1 - vacuum.n.04
+        mat.n.03_1 mat.n.03_2 mat.n.03_3 - mat.n.03
+        wardrobe.n.01_1 - wardrobe.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop vacuum.n.04_1 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (ontop mat.n.03_1 floor.n.01_1)
+        (ontop mat.n.03_2 floor.n.01_1)
+        (ontop mat.n.03_3 floor.n.01_1)
+        (nextto vacuum.n.04_1 wardrobe.n.01_1)
+        (dusty mat.n.03_1)
+        (dusty mat.n.03_2)
+        (dusty mat.n.03_3)
+        (inroom vacuum.n.04_1 bedroom_1)
+        (inroom wardrobe.n.01_1 bedroom_1)
+        (inroom mat.n.03_1 bedroom_1)
+        (inroom mat.n.03_2 bedroom_1)
+        (inroom mat.n.03_3 bedroom_1)
+        (inroom floor.n.01_1 bedroom_1)
+        (inroom sink.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty mat.n.03_1))
+            (not (dusty mat.n.03_2))
+            (not (dusty mat.n.03_3))
+        )
+    )
+)

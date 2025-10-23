@@ -1,0 +1,2 @@
+{"state": {"stove.n.01_1": {"toggled_on": false}}, "relation": [["stove.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"stove.n.01_1": {"toggled_on": true}}, "relation": []}

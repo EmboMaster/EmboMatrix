@@ -1,0 +1,28 @@
+(define (problem pick_up_the_lunch_box.n.01_from_the_shelf_in_corridor_1_and_put_it_inside_the_cooler.n.01_in_biology_lab_0_then_close_the_cooler.n.01_in_biology_lab_0)
+    (:domain omnigibson)
+    (:objects
+        lunch_box.n.01_1 - lunch_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lunch_box.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 corridor_1)
+        (open cooler.n.01_1)
+        (inroom cooler.n.01_1 biology_lab_0)
+        (inroom floor.n.01_1 corridor_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?lunch_box.n.01_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,32 @@
+(define (problem pick_up_2_briskets_from_the_reception_desk_in_the_kitchen_0_and_put_them_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_them_then_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        brisket.n.01_1 brisket.n.01_2 - brisket.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brisket.n.01_1 reception_desk.n.01_1)
+        (ontop brisket.n.01_2 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (open cooler.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?brisket.n.01_1 ?cooler.n.01_1)
+            (inside ?brisket.n.01_2 ?cooler.n.01_1)
+            (frozen ?brisket.n.01_1)
+            (frozen ?brisket.n.01_2)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

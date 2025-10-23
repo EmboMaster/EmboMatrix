@@ -1,0 +1,2 @@
+{"state": {"microphone.n.01_1": {"toggled_on": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["microphone.n.01_1", "inroom", "television_room_0"]]}
+{"state": {"microphone.n.01_1": {"toggled_on": false}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"]]}

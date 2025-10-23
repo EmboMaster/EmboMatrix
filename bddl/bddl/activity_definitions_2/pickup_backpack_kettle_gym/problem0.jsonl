@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["backpack.n.01_1", "ontop", "floor.n.01_1"], ["backpack.n.01_1", "inroom", "corridor_0"], ["electric_kettle.n.01_1", "inroom", "gym_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"]]}
+{"state": {"backpack.n.01_1": {"open": false}}, "relation": [["electric_kettle.n.01_1", "inside", "backpack.n.01_1"]]}

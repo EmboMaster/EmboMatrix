@@ -1,0 +1,2 @@
+{"state": {"desk.n.01_1": {"dusty": true}, "straight_chair.n.01_1": {"stained": true}}, "relation": [["desk.n.01_1", "inroom", "private_office_0"], ["straight_chair.n.01_1", "inroom", "conference_hall_0"], ["rag.n.01_1", "inroom", "private_office_0"], ["sink.n.01_1", "inroom", "private_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "private_office_0"]]}
+{"state": {"rag.n.01_1": {"soaked": true}, "desk.n.01_1": {"dusty": false}, "straight_chair.n.01_1": {"stained": false}}, "relation": []}

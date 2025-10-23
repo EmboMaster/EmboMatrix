@@ -1,0 +1,29 @@
+(define (problem pick_up_the_pomegranate.n.02_from_the_wicker_basket_on_the_reception_desk_in_the_kitchen_0_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it_and_then_place_the_frozen_pomegranate_on_the_coffee_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        pomegranate.n.02_1 - pomegranate.n.02
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside pomegranate.n.02_1 wicker_basket.n.01_1)
+        (ontop wicker_basket.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?pomegranate.n.02_1)
+            (ontop ?pomegranate.n.02_1 ?coffee_table.n.01_1)
+        )
+    )
+)

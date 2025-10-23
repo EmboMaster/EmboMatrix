@@ -1,0 +1,30 @@
+(define (problem Go_to_corridor_0_pick_up_the_rag.n.01_from_the_small_table_and_bring_it_to_closet_0_Use_the_rag.n.01_to_clean_the_dusty_arbor.n.03_in_closet_0_Once_done_return_the_rag.n.01_to_the_small_table_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        arbor.n.03_1 - arbor.n.03
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rag.n.01_1 pedestal_table.n.01_1)
+        (dusty arbor.n.03_1)
+        (nextto sink.n.01_1 arbor.n.03_1)
+        (inroom sink.n.01_1 corridor_0)
+        (inroom arbor.n.03_1 closet_0)
+        (inroom pedestal_table.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (soaked ?rag.n.01_1)
+            (not (dusty ?arbor.n.03_1))
+            (ontop ?rag.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,31 @@
+(define (problem go_to_storage_room_0_pick_up_the_shoulder_bag.n.01_from_the_shelf_in_storage_room_0_go_to_living_room_0_place_the_shoulder_bag.n.01_on_the_coffee_table_in_living_room_0_go_to_utility_room_0_toggle_on_the_watering_can.n.01_on_the_drying_rack_in_utility_room_0)
+    (:domain omnigibson)
+    (:objects
+        shoulder_bag.n.01_1 - shoulder_bag.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        drying_rack.n.01_1 - drying_rack.n.01
+        watering_can.n.01_1 - watering_can.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop shoulder_bag.n.01_1 shelf.n.01_1)
+        (ontop watering_can.n.01_1 drying_rack.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom shoulder_bag.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom drying_rack.n.01_1 utility_room_0)
+        (inroom watering_can.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?shoulder_bag.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?watering_can.n.01_1)
+        )
+    )
+)

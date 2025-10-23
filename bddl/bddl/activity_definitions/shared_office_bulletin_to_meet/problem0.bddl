@@ -1,0 +1,24 @@
+(define (problem go_to_the_shared_office_0_pick_up_the_information_bulletin_from_the_conference_table_in_the_shared_office_0_and_bring_it_to_the_meeting_room_0_place_it_on_top_of_the_main_meeting_conference_table)
+    (:domain omnigibson)
+    (:objects
+        information_bulletin.n.01_1 - information_bulletin.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        conference_table.n.01_2 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop information_bulletin.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 shared_office_0)
+        (inroom conference_table.n.01_2 meeting_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?information_bulletin.n.01_1 ?conference_table.n.01_2)
+        )
+    )
+)

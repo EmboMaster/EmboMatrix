@@ -1,0 +1,27 @@
+(define (problem pick_up_the_broccoli.n.02_from_the_shelf_in_the_grocery_store_0_and_put_it_inside_the_rice_cooker.n.01_in_the_grocery_store_0_toggle_on_the_rice_cooker.n.01_in_the_grocery_store_0_to_cook_the_broccoli.n.02-0)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        shelf.n.01_1 - shelf.n.01
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop broccoli.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom rice_cooker.n.01_1 grocery_store_0)
+        (not (toggled_on rice_cooker.n.01_1))
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?broccoli.n.02_1 ?rice_cooker.n.01_1)
+            (toggled_on ?rice_cooker.n.01_1)
+            (cooked ?broccoli.n.02_1)
+        )
+    )
+)

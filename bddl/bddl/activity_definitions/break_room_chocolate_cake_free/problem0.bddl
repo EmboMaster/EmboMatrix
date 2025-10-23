@@ -1,0 +1,32 @@
+(define (problem go_to_the_break_room_0_pick_up_the_chocolate_cake.n.01_from_the_reception_desk_in_the_break_room_0_and_put_it_inside_the_cooler.n.01_in_the_break_room_0_to_freeze_it_pick_up_the_bowl.n.01_from_the_shelf_in_the_break_room_0_and_place_it_on_top_of_the_pedestal_table_in_the_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cake.n.01_1 - chocolate_cake.n.01
+        cooler.n.01_1 - cooler.n.01
+        bowl.n.01_1 - bowl.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cake.n.01_1 reception_desk.n.01_1)
+        (ontop bowl.n.01_1 shelf.n.01_1)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom shelf.n.01_1 break_room_0)
+        (inroom pedestal_table.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?chocolate_cake.n.01_1)
+            (inside ?chocolate_cake.n.01_1 ?cooler.n.01_1)
+            (ontop ?bowl.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

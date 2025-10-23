@@ -1,0 +1,25 @@
+(define (problem please_bring_the_ice_cream_cone_from_locker_room_0_and_the_backpack_from_bathroom_0_to_the_bench_in_corridor_1)
+    (:domain omnigibson)
+    (:objects
+        ice_cream_cone.n.01_1 - ice_cream_cone.n.01
+        backpack.n.01_1 - backpack.n.01
+        bench.n.01_1 - bench.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom ice_cream_cone.n.01_1 locker_room_0)
+        (inroom backpack.n.01_1 bathroom_0)
+        (inroom bench.n.01_1 corridor_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?ice_cream_cone.n.01_1 ?bench.n.01_1)
+            (ontop ?backpack.n.01_1 ?bench.n.01_1)
+        )
+    )
+)

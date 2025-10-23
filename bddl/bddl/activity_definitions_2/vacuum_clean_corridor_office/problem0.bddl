@@ -1,0 +1,31 @@
+(define (problem pick_up_the_vacuum.n.04_from_the_equipment_shelf_in_the_corridor_0_go_to_the_private_office_1_and_clean_the_stained_carpet_sweeper_near_the_desk_return_the_vacuum_to_the_equipment_shelf_after_cleaning)
+    (:domain omnigibson)
+    (:objects
+        vacuum.n.04_1 - vacuum.n.04
+        shelf.n.01_1 - shelf.n.01
+        carpet_sweeper.n.01_1 - carpet_sweeper.n.01
+        desk.n.01_1 - desk.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop vacuum.n.04_1 shelf.n.01_1)
+        (stained carpet_sweeper.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 corridor_0)
+        (inroom vacuum.n.04_1 corridor_0)
+        (inroom sink.n.01_1 corridor_0)
+        (inroom carpet_sweeper.n.01_1 private_office_1)
+        (inroom desk.n.01_1 private_office_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (not (stained carpet_sweeper.n.01_1))
+            (ontop vacuum.n.04_1 shelf.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["butter_cookie.n.01_1", "ontop", "conference_table.n.01_1"], ["conference_table.n.01_1", "inroom", "lobby_0"], ["cooler.n.01_1", "inroom", "shared_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "lobby_0"]]}
+{"state": {"butter_cookie.n.01_1": {"frozen": true}}, "relation": [["butter_cookie.n.01_1", "inside", "cooler.n.01_1"]]}

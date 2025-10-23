@@ -1,0 +1,33 @@
+(define (problem please_pick_up_the_taco_from_the_reception_desk_in_the_kitchen_0_and_cook_it_in_the_oven_in_the_kitchen_0_once_cooked_place_the_taco_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        taco.n.02_1 - taco.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        oven.n.01_1 - oven.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop taco.n.02_1 reception_desk.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (cooked taco.n.02_1)
+        )
+        (not 
+            (toggled_on oven.n.01_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+    )
+    
+    (:goal 
+        (and 
+            (cooked ?taco.n.02_1)
+            (ontop ?taco.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

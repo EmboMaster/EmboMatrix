@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["table_knife.n.01_1", "ontop", "booth.n.01_1"], ["chopping_board.n.01_1", "ontop", "desk.n.01_1"], ["mango.n.02_1", "ontop", "chopping_board.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["booth.n.01_1", "inroom", "bedroom_0"], ["chopping_board.n.01_1", "inroom", "bedroom_0"], ["desk.n.01_1", "inroom", "bedroom_0"], ["mango.n.02_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"]]}
+{"state": {"mango.n.02_1": {"sliced": true}}, "relation": []}

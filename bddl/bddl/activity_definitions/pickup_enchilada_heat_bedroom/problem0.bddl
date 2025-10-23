@@ -1,0 +1,30 @@
+(define (problem pick_up_the_enchilada.n.01_from_the_shelf_in_the_storage_room_0_put_it_inside_the_microwave.n.02_in_the_utility_room_0_heat_it_and_then_pick_it_up_and_place_it_on_the_breakfast_table_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        enchilada.n.01_1 - enchilada.n.01
+        shelf.n.01_1 - shelf.n.01
+        microwave.n.02_1 - microwave.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop enchilada.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom microwave.n.02_1 utility_room_0)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom breakfast_table.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?enchilada.n.01_1 ?breakfast_table.n.01_1)
+            (cooked ?enchilada.n.01_1)
+        )
+    )
+)

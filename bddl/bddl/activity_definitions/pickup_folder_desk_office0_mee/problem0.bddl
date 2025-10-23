@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_folder_from_the_desk_in_private_office_0_then_go_to_meeting_room_0_and_put_the_folder_on_top_of_the_conference_table_after_that_toggle_on_the_projector.n.02_located_in_meeting_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        projector.n.02_1 - projector.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop folder.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom projector.n.02_1 meeting_room_0)
+        (not 
+            (toggled_on projector.n.02_1)
+        )
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?folder.n.02_1 ?conference_table.n.01_1)
+            (toggled_on ?projector.n.02_1)
+        )
+    )
+)

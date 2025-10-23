@@ -1,0 +1,25 @@
+(define (problem go_to_hall_arch_wood_pick_up_the_edible_cookie_dough.n.01_from_the_wicker_basket.n.01_bring_it_to_empty_room_0_and_put_the_edible_cookie_dough.n.01_inside_the_cooler.n.01_to_freeze_it_for_later_use-0)
+    (:domain omnigibson)
+    (:objects
+        edible_cookie_dough.n.01_1 - edible_cookie_dough.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside edible_cookie_dough.n.01_1 wicker_basket.n.01_1)
+        (inroom wicker_basket.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?edible_cookie_dough.n.01_1)
+            (inside ?edible_cookie_dough.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

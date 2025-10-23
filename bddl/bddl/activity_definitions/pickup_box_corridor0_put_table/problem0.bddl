@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_packing_box.n.02_from_the_hallway_in_corridor_0_and_put_it_on_top_of_the_pedestal_table_in_empty_room_0_then_toggle_on_the_space_heater.n.01_near_the_east_pillar_in_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        packing_box.n.02_1 - packing_box.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom packing_box.n.02_1 corridor_0)
+        (inroom pedestal_table.n.01_1 empty_room_0)
+        (inroom space_heater.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on space_heater.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (ontop ?packing_box.n.02_1 ?pedestal_table.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

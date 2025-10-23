@@ -1,0 +1,24 @@
+(define (problem please_pick_up_the_nativity_figurine_from_the_table_lamp_in_the_bedroom_0_and_place_it_on_the_desk_in_the_bedroom_0-0)
+    (:domain omnigibson)
+    (:objects
+        nativity_figurine.n.01_1 - nativity_figurine.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop nativity_figurine.n.01_1 table_lamp.n.01_1)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?nativity_figurine.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

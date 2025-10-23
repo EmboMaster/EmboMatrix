@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_mango.n.02_from_the_countertop_in_the_kitchen_0_put_it_inside_the_microwave.n.02_in_the_kitchen_0_and_heat_it_using_the_microwave.n.02_Then_toggle_the_oven.n.01_in_the_kitchen_0_off_to_ensure_it_is_not_left_running-0)
+    (:domain omnigibson)
+    (:objects
+        mango.n.02_1 - mango.n.02
+        countertop.n.01_1 - countertop.n.01
+        microwave.n.02_1 - microwave.n.02
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mango.n.02_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (not (toggled_on microwave.n.02_1))
+        (toggled_on oven.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?mango.n.02_1 ?microwave.n.02_1)
+            (hot ?mango.n.02_1)
+            (not (toggled_on ?oven.n.01_1))
+        )
+    )
+)

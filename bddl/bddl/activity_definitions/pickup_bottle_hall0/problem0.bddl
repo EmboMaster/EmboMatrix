@@ -1,0 +1,24 @@
+(define (problem pick_up_water_bottle_from_the_console_board_in_conference_hall_0_and_put_it_on_the_board_in_conference_hall_0)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        console_table.n.01_1 - console_table.n.01
+        board.n.02_1 - board.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop water_bottle.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 conference_hall_0)
+        (inroom board.n.02_1 conference_hall_0)
+        (inroom floor.n.01_1 conference_hall_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?water_bottle.n.01_1 ?board.n.02_1)
+        )
+    )
+)

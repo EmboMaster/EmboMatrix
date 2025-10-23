@@ -1,0 +1,27 @@
+(define (problem go_to_empty_room_0_toggle_on_the_jukebox.n.01_in_the_empty_room_0_pick_up_the_punching_bag.n.02_from_the_ground_in_the_empty_room_0_put_the_punching_bag.n.02_on_top_of_the_toy_box.n.01_in_the_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        jukebox.n.01_1 - jukebox.n.01
+        punching_bag.n.02_1 - punching_bag.n.02
+        toy_box.n.01_1 - toy_box.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on jukebox.n.01_1))
+        (ontop punching_bag.n.02_1 floor.n.01_1)
+        (inroom jukebox.n.01_1 empty_room_0)
+        (inroom punching_bag.n.02_1 empty_room_0)
+        (inroom toy_box.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?jukebox.n.01_1)
+            (ontop ?punching_bag.n.02_1 ?toy_box.n.01_1)
+        )
+    )
+)

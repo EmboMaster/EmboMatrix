@@ -1,0 +1,24 @@
+(define (problem In_meeting_room_0,_pick_up_the_mug_from_the_conference_table,_go_to_lobby_0,_and_place_the_mug_on_top_of_the_reception_desk-0)
+    (:domain omnigibson)
+    (:objects
+        mug.n.04_1 - mug.n.04
+        conference_table.n.01_1 - conference_table.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop mug.n.04_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom reception_desk.n.01_1 lobby_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 meeting_room_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?mug.n.04_1 ?reception_desk.n.01_1)
+        )
+    )
+)

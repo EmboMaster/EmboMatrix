@@ -1,0 +1,27 @@
+(define (problem Please_pick_up_the_cookie_dough_from_the_shelf_in_the_storage_room_0_and_put_it_inside_the_cooler_n_01_in_the_storage_room_1_to_freeze_it_Then_close_the_cooler_n_01_to_ensure_it_stays_frozen)
+    (:domain omnigibson)
+    (:objects
+        cookie_dough.n.01_1 - cookie_dough.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cookie_dough.n.01_1 shelf.n.01_1)
+        (open cooler.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?cookie_dough.n.01_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+            (frozen ?cookie_dough.n.01_1)
+        )
+    )
+)

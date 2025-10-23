@@ -1,0 +1,27 @@
+(define (problem go_to_empty_room_0_pick_up_the_carton.n.02_from_the_floor_in_empty_room_0_open_the_carton.n.02_pick_up_the_granola_bar.n.01_from_inside_it_and_put_the_granola_bar.n.01_inside_the_backpack.n.01_in_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        granola_bar.n.01_1 - granola_bar.n.01
+        backpack.n.01_1 - backpack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 floor.n.01_1)
+        (inside granola_bar.n.01_1 carton.n.02_1)
+        (inroom backpack.n.01_1 empty_room_0)
+        (inroom carton.n.02_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (open carton.n.02_1))
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?granola_bar.n.01_1 ?backpack.n.01_1)
+        )
+    )
+)

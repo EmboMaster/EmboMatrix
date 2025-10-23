@@ -1,0 +1,27 @@
+(define (problem go_to_room_infirmary_0_pick_up_the_water_bottle.n.01_from_the_shelf_put_it_inside_the_cooler.n.01_to_freeze_and_after_freezing_place_it_on_top_of_the_table_lamp_in_infirmary_0)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop water_bottle.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 infirmary_0)
+        (inroom cooler.n.01_1 infirmary_0)
+        (inroom table_lamp.n.01_1 infirmary_0)
+        (inroom floor.n.01_1 infirmary_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (frozen ?water_bottle.n.01_1)
+            (ontop ?water_bottle.n.01_1 ?table_lamp.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,32 @@
+(define (problem please_go_to_the_corridor_2_pick_up_the_tupperware_from_the_shelf_and_place_it_on_top_of_the_reception_desk_in_the_bathroom_0_after_that_open_the_laptop.n.01_on_the_reception_desk_in_the_bathroom_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        tupperware.n.01_1 - tupperware.n.01
+        shelf.n.01_1 - shelf.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        laptop.n.01_1 - laptop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tupperware.n.01_1 shelf.n.01_1)
+        (ontop laptop.n.01_1 reception_desk.n.01_1)
+        (not
+            (open laptop.n.01_1)
+        )
+        (inroom shelf.n.01_1 corridor_2)
+        (inroom tupperware.n.01_1 corridor_2)
+        (inroom floor.n.01_1 corridor_2)
+        (inroom reception_desk.n.01_1 bathroom_0)
+        (inroom laptop.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?tupperware.n.01_1 ?reception_desk.n.01_1)
+            (open ?laptop.n.01_1)
+        )
+    )
+)

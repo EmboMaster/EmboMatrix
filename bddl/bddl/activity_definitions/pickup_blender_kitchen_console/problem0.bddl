@@ -1,0 +1,26 @@
+(define (problem pick_up_the_blender.n.01_from_the_bar_0_put_it_on_top_of_the_console_table_in_the_kitchen_0_and_toggle_on_the_ceiling_fan.n.01_in_the_bar_0_to_improve_the_airflow_for_the_bartenders-0)
+    (:domain omnigibson)
+    (:objects
+        blender.n.01_1 - blender.n.01
+        console_table.n.01_1 - console_table.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom blender.n.01_1 bar_0)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom ceiling_fan.n.01_1 bar_0)
+        (not (toggled_on ceiling_fan.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bar_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?blender.n.01_1 ?console_table.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem toggle_on_the_loudspeaker.n.01_in_the_corridor_0_then_go_to_the_hall_arch_wood:empty_room_0_and_pick_up_the_pallet_from_the_floor_place_the_pallet_on_top_of_the_conference_table_in_the_same_room-0)
+    (:domain omnigibson)
+    (:objects
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        pallet.n.02_1 - pallet.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on loudspeaker.n.01_1))
+        (inroom loudspeaker.n.01_1 corridor_0)
+        (ontop pallet.n.02_1 floor.n.01_2)
+        (inroom pallet.n.02_1 empty_room_0)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom floor.n.01_2 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?loudspeaker.n.01_1)
+            (ontop ?pallet.n.02_1 ?conference_table.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,22 @@
+(define (problem bring_soap_to_shower_shelf)
+    (:domain omnigibson)    (:objects
+        bar_soap.n.01_1 - bar_soap.n.01
+        sink.n.01_1 - sink.n.01
+        shower_stall.n.01_1 - shower_stall.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bar_soap.n.01_1 sink.n.01_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom shower_stall.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (inside ?bar_soap.n.01_1 ?shower_stall.n.01_1)
+    )
+)
+

@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["chanterelle.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "empty_room_0"], ["cooler.n.01_1", "inroom", "corridor_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"chanterelle.n.01_1": {"frozen": true}}, "relation": [["chanterelle.n.01_1", "inside", "cooler.n.01_1"]]}

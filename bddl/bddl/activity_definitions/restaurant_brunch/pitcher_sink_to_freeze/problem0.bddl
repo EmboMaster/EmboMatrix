@@ -1,0 +1,29 @@
+(define (problem bring_the_pitcher_from_sink_in_bathroom_0_to_cooler_in_kitchen_0_and_freeze_it_there)
+    (:domain omnigibson)
+    (:objects
+        pitcher.n.02_1 - pitcher.n.02
+        sink.n.01_1 - sink.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (inside pitcher.n.02_1 sink.n.01_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (not 
+            (toggled_on cooler.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal 
+        (and 
+            (inside ?pitcher.n.02_1 ?cooler.n.01_1)
+            (frozen ?pitcher.n.02_1)
+            (toggled_on ?cooler.n.01_1)
+        )
+    )
+)

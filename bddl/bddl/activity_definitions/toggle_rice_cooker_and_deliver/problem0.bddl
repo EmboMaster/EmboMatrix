@@ -1,0 +1,27 @@
+(define (problem toggle_on_the_rice_cooker.n.01_in_corridor_0_and_cook_the_tortilla.n.01_once_the_cooking_is_complete_toggle_off_the_rice_cooker.n.01_and_deliver_the_cooked_tortilla.n.01_to_the_fathers_desk_in_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        tortilla.n.01_1 - tortilla.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom rice_cooker.n.01_1 corridor_0)
+        (not (toggled_on rice_cooker.n.01_1))
+        (inroom tortilla.n.01_1 corridor_0)
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?tortilla.n.01_1)
+            (ontop ?tortilla.n.01_1 ?desk.n.01_1)
+            (not (toggled_on ?rice_cooker.n.01_1))
+        )
+    )
+)

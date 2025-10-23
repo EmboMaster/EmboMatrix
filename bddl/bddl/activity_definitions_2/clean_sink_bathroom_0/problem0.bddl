@@ -1,0 +1,24 @@
+(define (problem go_to_the_bathroom_0_and_clean_the_sink.n.01_using_the_rag.n.01_from_the_bathroom_0_ensuring_it_is_free_of_stains)
+    (:domain omnigibson)
+    (:objects
+        sink.n.01_1 - sink.n.01
+        rag.n.01_1 - rag.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (stained sink.n.01_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom rag.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (soaked ?rag.n.01_1)
+            (not (stained ?sink.n.01_1))
+        )
+    )
+)

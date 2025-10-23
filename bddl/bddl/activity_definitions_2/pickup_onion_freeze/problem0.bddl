@@ -1,0 +1,26 @@
+(define (problem pick_up_the_green_onion.n.01_from_the_reception_desk_in_the_kitchen_0_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it_and_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        green_onion.n.01_1 - green_onion.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop green_onion.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?green_onion.n.01_1)
+            (inside ?green_onion.n.01_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

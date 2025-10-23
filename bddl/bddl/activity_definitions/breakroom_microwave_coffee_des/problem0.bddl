@@ -1,0 +1,34 @@
+(define (problem go_to_the_break_room_0_open_the_microwave.n.02_heat_the_roll_dough.n.01_inside_it_then_close_the_microwave.n.02_afterward_pick_up_the_coffee_cup.n.01_from_the_conference_table_in_the_break_room_0_and_bring_it_to_the_desk_in_the_shared_office_0-0)
+    (:domain omnigibson)
+    (:objects
+        microwave.n.02_1 - microwave.n.02
+        roll_dough.n.01_1 - roll_dough.n.01
+        coffee_cup.n.01_1 - coffee_cup.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside roll_dough.n.01_1 microwave.n.02_1)
+        (not (cooked roll_dough.n.01_1))
+        (not (toggled_on microwave.n.02_1))
+        (ontop coffee_cup.n.01_1 conference_table.n.01_1)
+        (inroom microwave.n.02_1 break_room_0)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?roll_dough.n.01_1)
+            (inside ?roll_dough.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (not (open ?microwave.n.02_1))
+            (ontop ?coffee_cup.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

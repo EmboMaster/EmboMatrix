@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_olive.n.04_from_the_shelf_in_the_grocery_store_0_then_go_to_the_cooler.n.01_in_the_grocery_store_0_Put_the_olive.n.04_inside_the_cooler.n.01_and_ensure_it_is_placed_properly_to_freeze)
+    (:domain omnigibson)
+    (:objects
+        olive.n.04_1 - olive.n.04
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop olive.n.04_1 shelf.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom cooler.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (inside ?olive.n.04_1 ?cooler.n.01_1)
+            (frozen ?olive.n.04_1)
+        )
+    )
+)

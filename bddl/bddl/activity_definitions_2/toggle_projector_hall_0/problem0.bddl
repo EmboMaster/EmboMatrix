@@ -1,0 +1,21 @@
+(define (problem Please_toggle_on_the_projector.n.02_in_the_conference_hall_0_and_ensure_it_is_functioning_for_the_presentation-0)
+    (:domain omnigibson)
+    (:objects
+        projector.n.02_1 - projector.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom projector.n.02_1 conference_hall_0)
+        (inroom floor.n.01_1 conference_hall_0)
+        (not (toggled_on projector.n.02_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?projector.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_biscuit.n.01_from_the_countertop_in_the_private_office_0_go_to_the_kitchen_0_open_the_cooler.n.01_and_put_the_biscuit.n.01_inside_the_cooler.n.01_to_freeze_it_then_go_to_the_bathroom_0_and_toggle_on_the_hand_dryer.n.01_for_the_mother’s_convenience)
+    (:domain omnigibson)
+    (:objects
+        biscuit.n.01_1 - biscuit.n.01
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        hand_dryer.n.01_1 - hand_dryer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop biscuit.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 private_office_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom hand_dryer.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?biscuit.n.01_1)
+            (inside ?biscuit.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?hand_dryer.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,31 @@
+(define (problem Please_pick_up_the_kiwi.n.03_from_the_desk_in_bedroom_1_go_to_closet_1_and_put_the_kiwi.n.03_inside_the_cooler.n.01_in_closet_1_Then_pick_up_the_teapot.n.01_from_the_shelf_in_closet_1_and_place_it_on_top_of_the_pedestal_table_in_bathroom_1)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 - kiwi.n.03
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        teapot.n.01_1 - teapot.n.01
+        shelf.n.01_1 - shelf.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kiwi.n.03_1 desk.n.01_1)
+        (inside teapot.n.01_1 shelf.n.01_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (inroom shelf.n.01_1 closet_1)
+        (inroom cooler.n.01_1 closet_1)
+        (inroom pedestal_table.n.01_1 bathroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_1)
+    )
+
+    (:goal
+        (and
+            (inside ?kiwi.n.03_1 ?cooler.n.01_1)
+            (ontop ?teapot.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

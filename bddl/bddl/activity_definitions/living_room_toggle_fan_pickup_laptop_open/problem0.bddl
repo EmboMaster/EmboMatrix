@@ -1,0 +1,29 @@
+(define (problem go_to_the_living_room_1_and_toggle_on_the_ceiling_fan.n.01_then_pick_up_the_laptop.n.01_from_the_shelf_in_the_living_room_1_and_open_the_laptop.n.01_on_the_coffee_table_in_the_living_room_1)
+    (:domain omnigibson)
+    (:objects
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        laptop.n.01_1 - laptop.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on ceiling_fan.n.01_1))
+        (ontop laptop.n.01_1 shelf.n.01_1)
+        (inroom ceiling_fan.n.01_1 living_room_1)
+        (inroom shelf.n.01_1 living_room_1)
+        (inroom coffee_table.n.01_1 living_room_1)
+        (inroom floor.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?ceiling_fan.n.01_1)
+            (ontop ?laptop.n.01_1 ?coffee_table.n.01_1)
+            (open ?laptop.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,32 @@
+(define (problem Pick_up_the_broccoli.n.02_from_the_countertop_in_the_kitchen_0_put_it_in_the_cooler.n.01_to_freeze_it_then_close_the_cooler.n.01_and_proceed_to_the_private_office_0_to_toggle_on_the_electric_fan.n.01)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        electric_fan.n.01_1 - electric_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop broccoli.n.02_1 countertop.n.01_1)
+        (open cooler.n.01_1)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom electric_fan.n.01_1 private_office_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?broccoli.n.02_1)
+            (inside ?broccoli.n.02_1 ?cooler.n.01_1)
+            (not 
+                (open ?cooler.n.01_1)
+            )
+            (toggled_on ?electric_fan.n.01_1)
+        )
+    )
+)

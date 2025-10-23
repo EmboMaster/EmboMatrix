@@ -1,0 +1,25 @@
+(define (problem go_to_closet_0_pick_up_arepa.n.01_from_the_shelf_in_closet_0_go_to_bathroom_0_put_arepa.n.01_inside_the_cooler.n.01_in_bathroom_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        arepa.n.01_1 - arepa.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop arepa.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 closet_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 closet_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?arepa.n.01_1 ?cooler.n.01_1)
+            (frozen ?arepa.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem Please_pick_up_the_table_lamp.n.01_from_the_storage_organizer_in_the_corridor_0_toggle_it_on_and_place_it_on_the_console_table_in_the_dining_room_0_for_better_lighting_during_dinner_service-0)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        storage_organizer.n.01_1 - storage_organizer.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop table_lamp.n.01_1 storage_organizer.n.01_1)
+        (inroom storage_organizer.n.01_1 corridor_0)
+        (inroom console_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (not 
+            (toggled_on table_lamp.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (ontop ?table_lamp.n.01_1 ?console_table.n.01_1)
+        )
+    )
+)

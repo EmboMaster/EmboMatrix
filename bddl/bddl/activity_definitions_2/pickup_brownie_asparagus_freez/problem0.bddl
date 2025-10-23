@@ -1,0 +1,27 @@
+(define (problem pick_up_the_brownie.n.03_and_the_asparagus.n.02_from_the_breakfast_table_in_the_dining_room_0_place_them_inside_the_cooler.n.01_in_the_garage_0_and_ensure_they_are_frozen)
+    (:domain omnigibson)
+    (:objects
+        brownie.n.03_1 - brownie.n.03
+        asparagus.n.02_1 - asparagus.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brownie.n.03_1 breakfast_table.n.01_1)
+        (ontop asparagus.n.02_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?brownie.n.03_1)
+            (frozen ?asparagus.n.02_1)
+        )
+    )
+)

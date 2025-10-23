@@ -1,0 +1,20 @@
+(define (problem please_pick_up_the_ashtray.n.01_from_the_living_room_0_go_to_the_bathroom_0_and_place_it_inside_the_shelf.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        ashtray.n.01_1 - ashtray.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom ashtray.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (inside ?ashtray.n.01_1 ?shelf.n.01_1)
+    )
+)

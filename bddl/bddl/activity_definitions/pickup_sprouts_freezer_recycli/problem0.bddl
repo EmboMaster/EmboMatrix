@@ -1,0 +1,32 @@
+(define (problem please_pick_up_the_brussels_sprouts.n.01_from_the_countertop_in_the_kitchen_0_and_put_them_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_them_then_pick_up_the_recycling_bin.n.01_from_the_corner_in_the_bathroom_0_and_place_it_next_to_the_urinal_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        brussels_sprouts.n.01_1 - brussels_sprouts.n.01
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        urinal.n.01_1 - urinal.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brussels_sprouts.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop recycling_bin.n.01_1 floor.n.01_2)
+        (inroom recycling_bin.n.01_1 bathroom_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom floor.n.01_2 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?brussels_sprouts.n.01_1)
+            (inside ?brussels_sprouts.n.01_1 ?cooler.n.01_1)
+            (under ?recycling_bin.n.01_1 ?urinal.n.01_1)
+        )
+    )
+)

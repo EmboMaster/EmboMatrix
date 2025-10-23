@@ -1,0 +1,29 @@
+(define (problem please_bring_a_comb_from_the_tray_in_bedroom_1_and_a_wallet_from_the_top_shelf_in_closet_0_to_the_booth_in_bathroom_1_for_me)
+    (:domain omnigibson)
+    (:objects
+        comb.n.01_1 - comb.n.01
+        tray.n.01_1 - tray.n.01
+        wallet.n.01_1 - wallet.n.01
+        shelf.n.01_1 - shelf.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside comb.n.01_1 tray.n.01_1)
+        (ontop wallet.n.01_1 shelf.n.01_1)
+        (inroom tray.n.01_1 bedroom_1)
+        (inroom shelf.n.01_1 closet_0)
+        (inroom booth.n.01_1 bathroom_1)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?comb.n.01_1 ?booth.n.01_1)
+            (ontop ?wallet.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

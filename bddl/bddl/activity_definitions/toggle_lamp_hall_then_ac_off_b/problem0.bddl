@@ -1,0 +1,30 @@
+(define (problem toggle_on_the_table_lamp_in_hall_arch_wood_empty_room_0_then_go_to_bathroom_0_and_toggle_off_the_air_conditioner)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not 
+            (toggled_on table_lamp.n.01_1)
+        )
+        (toggled_on air_conditioner.n.01_1)
+        (inroom table_lamp.n.01_1 empty_room_0)
+        (inroom air_conditioner.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (inroom floor.n.01_2 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (not
+                (toggled_on ?air_conditioner.n.01_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem go_to_corridor_0_and_toggle_on_the_radiator.n.02_located_next_to_the_wall_then_pick_up_the_basil.n.03_from_the_grocery_store_0_and_put_it_inside_the_tank.n.02_located_in_bathroom_0_near_the_urinal-0)
+    (:domain omnigibson)
+    (:objects
+        radiator.n.02_1 - radiator.n.02
+        basil.n.03_1 - basil.n.03
+        tank.n.02_1 - tank.n.02
+        urinal.n.01_1 - urinal.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom radiator.n.02_1 corridor_0)
+        (inroom basil.n.03_1 grocery_store_0)
+        (inroom tank.n.02_1 bathroom_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on radiator.n.02_1)
+        )
+    )
+
+    (:goal
+        (and
+            (toggled_on ?radiator.n.02_1)
+            (inside ?basil.n.03_1 ?tank.n.02_1)
+        )
+    )
+)

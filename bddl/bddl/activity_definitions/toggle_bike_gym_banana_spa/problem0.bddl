@@ -1,0 +1,30 @@
+(define (problem toggle_on_the_exercise_bike_in_the_gym_0_then_go_to_the_cooler_n_01_in_the_locker_room_0_pick_up_the_banana_n_02_from_inside_the_cooler_n_01_and_bring_it_to_the_mixing_bowl_n_01_in_the_spa_1)
+    (:domain omnigibson)
+    (:objects
+        exercise_bike.n.01_1 - exercise_bike.n.01
+        cooler.n.01_1 - cooler.n.01
+        banana.n.02_1 - banana.n.02
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not
+            (toggled_on exercise_bike.n.01_1)
+        )
+        (inside banana.n.02_1 cooler.n.01_1)
+        (inroom exercise_bike.n.01_1 gym_0)
+        (inroom cooler.n.01_1 locker_room_0)
+        (inroom mixing_bowl.n.01_1 spa_1)
+        (inroom floor.n.01_1 gym_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?exercise_bike.n.01_1)
+            (inside ?banana.n.02_1 ?mixing_bowl.n.01_1)
+        )
+    )
+)

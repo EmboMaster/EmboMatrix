@@ -1,0 +1,30 @@
+(define (problem pick_up_the_chili.n.02_from_the_shopping_basket_in_shared_office_0_put_it_inside_the_oven.n.01_in_shared_office_0_and_cook_it_then_pick_up_the_cooked_chili.n.02_and_place_it_on_the_shelf_baseboard_in_private_office_2)
+    (:domain omnigibson)
+    (:objects
+        chili.n.02_1 - chili.n.02
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        oven.n.01_1 - oven.n.01
+        shelf_baseboard.n.01_1 - shelf_baseboard.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside chili.n.02_1 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 shared_office_0)
+        (inroom oven.n.01_1 shared_office_0)
+        (not 
+            (toggled_on oven.n.01_1)
+        )
+        (inroom shelf_baseboard.n.01_1 private_office_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?chili.n.02_1)
+            (ontop ?chili.n.02_1 ?shelf_baseboard.n.01_1)
+        )
+    )
+)

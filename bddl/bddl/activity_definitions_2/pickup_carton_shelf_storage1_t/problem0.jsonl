@@ -1,0 +1,2 @@
+{"state": {"recycling_bin.n.01_1": {"open": true}}, "relation": [["carton.n.02_1", "ontop", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "storage_room_1"], ["recycling_bin.n.01_1", "inroom", "corridor_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_1"]]}
+{"state": {"recycling_bin.n.01_1": {"open": false}}, "relation": [["carton.n.02_1", "inside", "recycling_bin.n.01_1"]]}

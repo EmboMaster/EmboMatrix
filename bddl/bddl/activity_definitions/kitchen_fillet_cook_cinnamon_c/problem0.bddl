@@ -1,0 +1,36 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_fillet.n.02_from_the_reception_desk_cook_it_on_the_stove.n.01_then_pick_up_the_cinnamon_roll.n.01_from_the_pedestal_table_and_put_it_inside_the_cooler.n.01_in_the_storage_room_1)
+    (:domain omnigibson)
+    (:objects
+        fillet.n.02_1 - fillet.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        stove.n.01_1 - stove.n.01
+        cinnamon_roll.n.01_1 - cinnamon_roll.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop fillet.n.02_1 reception_desk.n.01_1) 
+        (ontop cinnamon_roll.n.01_1 pedestal_table.n.01_1) 
+        (not 
+            (toggled_on stove.n.01_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0) 
+        (inroom stove.n.01_1 kitchen_0) 
+        (inroom pedestal_table.n.01_1 kitchen_0) 
+        (inroom cooler.n.01_1 storage_room_1) 
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom floor.n.01_2 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (cooked ?fillet.n.02_1)
+            (frozen ?cinnamon_roll.n.01_1)
+            (inside ?cinnamon_roll.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

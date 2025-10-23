@@ -1,0 +1,22 @@
+(define (problem place_bottle_of_water)
+    (:domain omnigibson)    (:objects
+        bottle__of__water.n.01_1 - bottle__of__water.n.01
+        electric_refrigerator.n.01_1 - electric_refrigerator.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside bottle__of__water.n.01_1 electric_refrigerator.n.01_1)
+        (inroom electric_refrigerator.n.01_1 bedroom_0)
+        (inroom breakfast_table.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (ontop ?bottle__of__water.n.01_1 ?breakfast_table.n.01_1)
+    )
+)
+

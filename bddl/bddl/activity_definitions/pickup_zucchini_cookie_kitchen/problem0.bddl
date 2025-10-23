@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_zucchini.n.02_and_the_sugar_cookie_dough.n.01_from_the_reception_desk_in_the_kitchen_0_cook_the_zucchini.n.02_using_the_burner.n.02_in_the_kitchen_0_and_place_the_cooked_zucchini.n.02_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        zucchini.n.02_1 - zucchini.n.02
+        sugar_cookie_dough.n.01_1 - sugar_cookie_dough.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        burner.n.02_1 - burner.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop zucchini.n.02_1 reception_desk.n.01_1)
+        (ontop sugar_cookie_dough.n.01_1 reception_desk.n.01_1)
+        (not (toggled_on burner.n.02_1))
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom burner.n.02_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?zucchini.n.02_1)
+            (ontop ?zucchini.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

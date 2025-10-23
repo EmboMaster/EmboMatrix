@@ -1,0 +1,31 @@
+(define (problem toggle_on_the_jukebox_in_the_dining_room_0_then_pick_up_the_water_bottle_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_cooler_n_01_to_freeze-0)
+    (:domain omnigibson)
+    (:objects
+        jukebox.n.01_1 - jukebox.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        cooler.n.01_1 - cooler.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not 
+            (toggled_on jukebox.n.01_1)
+        )
+        (ontop water_bottle.n.01_1 reception_desk.n.01_1)
+        (inroom jukebox.n.01_1 dining_room_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?jukebox.n.01_1)
+            (frozen ?water_bottle.n.01_1)
+            (inside ?water_bottle.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

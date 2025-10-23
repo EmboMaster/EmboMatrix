@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["paperback_book.n.01_1", "ontop", "arbor.n.03_1"], ["arbor.n.03_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"], ["shelf.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["floor.n.01_2", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {}, "relation": [["paperback_book.n.01_1", "ontop", "shelf.n.01_1"]]}

@@ -1,0 +1,29 @@
+(define (problem pick_up_the_chicken_leg.n.01_from_the_desk_in_the_office_large_and_heat_it_using_the_microwave.n.02_in_the_office_large-0)
+    (:domain omnigibson)
+    (:objects
+        chicken_leg.n.01_1 - chicken_leg.n.01
+        desk.n.01_1 - desk.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop chicken_leg.n.01_1 desk.n.01_1)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom desk.n.01_1 corridor_2)
+        (inroom microwave.n.02_1 corridor_2)
+        (inroom floor.n.01_1 corridor_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (cooked ?chicken_leg.n.01_1)
+            (toggled_on ?microwave.n.02_1)
+            (inside ?chicken_leg.n.01_1 ?microwave.n.02_1)
+        )
+    )
+)

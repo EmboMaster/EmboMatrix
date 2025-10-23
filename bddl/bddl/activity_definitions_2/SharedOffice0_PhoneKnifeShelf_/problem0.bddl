@@ -1,0 +1,28 @@
+(define (problem Go_to_the_shared_office_0_pick_up_the_desk_phone.n.01_from_the_table_knife_and_place_it_on_the_top_shelf_of_the_bookcase_in_the_shared_office_0_Then_toggle_on_the_exercise_bike.n.01_in_the_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        desk_phone.n.01_1 - desk_phone.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        bookcase.n.01_1 - bookcase.n.01
+        exercise_bike.n.01_1 - exercise_bike.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop desk_phone.n.01_1 table_knife.n.01_1)
+        (not (toggled_on exercise_bike.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom table_knife.n.01_1 shared_office_0)
+        (inroom bookcase.n.01_1 shared_office_0)
+        (inroom exercise_bike.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?desk_phone.n.01_1 ?bookcase.n.01_1)
+            (toggled_on ?exercise_bike.n.01_1)
+        )
+    )
+)

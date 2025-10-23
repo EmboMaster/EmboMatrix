@@ -1,0 +1,24 @@
+(define (problem Go_to_the_corridor_2_and_pick_up_the_folder.n.02_from_the_shelf.n.01_then_bring_it_to_the_bathroom_0_and_put_it_ontop_of_the_reception_desk-0)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        shelf.n.01_1 - shelf.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 corridor_2)
+        (inroom reception_desk.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 corridor_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?folder.n.02_1 ?reception_desk.n.01_1)
+        )
+    )
+)

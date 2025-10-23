@@ -1,0 +1,33 @@
+(define (problem go_to_dining_room_0_pick_up_the_empty_tray_from_the_conference_table_in_the_dining_room_0_go_to_kitchen_0_put_the_empty_tray_on_top_of_the_reception_desk_in_the_kitchen_0_pick_up_the_biscuit_n_01_from_the_reception_desk_in_the_kitchen_0_cook_the_biscuit_n_01_on_the_stove_n_01_in_the_kitchen_0_pick_up_the_cooked_biscuit_n_01_from_the_stove_n_01_in_the_kitchen_0_go_to_dining_room_0_put_the_cooked_biscuit_n_01_on_top_of_the_serving_conference_table_in_the_dining_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        tray.n.01_1 - tray.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        serving_cart.n.01_1 - serving_cart.n.01
+        biscuit.n.01_1 - biscuit.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        stove.n.01_1 - stove.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tray.n.01_1 conference_table.n.01_1)
+        (ontop biscuit.n.01_1 reception_desk.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (inroom conference_table.n.01_1 dining_room_0)
+        (inroom serving_cart.n.01_1 dining_room_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?tray.n.01_1 ?reception_desk.n.01_1)
+            (cooked ?biscuit.n.01_1)
+            (ontop ?biscuit.n.01_1 ?serving_cart.n.01_1)
+        )
+    )
+)

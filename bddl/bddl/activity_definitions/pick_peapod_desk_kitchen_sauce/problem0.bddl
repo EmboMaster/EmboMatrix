@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_pea_pod.n.01_from_the_reception_desk_in_the_kitchen_0_place_it_inside_the_saucepan.n.01_and_heat_it_using_the_microwave.n.02)
+    (:domain omnigibson)
+    (:objects
+        pea_pod.n.01_1 - pea_pod.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        saucepan.n.01_1 - saucepan.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pea_pod.n.01_1 reception_desk.n.01_1)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom saucepan.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?pea_pod.n.01_1 ?saucepan.n.01_1)
+            (toggled_on ?microwave.n.02_1)
+            (cooked ?pea_pod.n.01_1)
+        )
+    )
+)

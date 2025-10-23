@@ -1,0 +1,2 @@
+{"state": {"table_lamp.n.01_1": {"toggled_on": false}, "soap_dispenser.n.01_1": {"toggled_on": true}}, "relation": [["table_lamp.n.01_1", "ontop", "console_table.n.01_1"], ["console_table.n.01_1", "inroom", "living_room_0"], ["soap_dispenser.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "living_room_0"]]}
+{"state": {"table_lamp.n.01_1": {"toggled_on": true}, "soap_dispenser.n.01_1": {"toggled_on": false}}, "relation": []}

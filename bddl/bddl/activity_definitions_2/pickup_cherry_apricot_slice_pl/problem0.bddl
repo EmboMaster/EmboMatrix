@@ -1,0 +1,35 @@
+(define (problem pick_up_the_cherry.n.03_and_the_apricot.n.02_from_the_farm_stand_in_grocery_store_0_slice_them_using_the_cleaver.n.01_on_the_chopping_board_in_grocery_store_0_and_place_the_sliced_pieces_into_the_casserole.n.02_on_the_same_booth)
+    (:domain omnigibson)
+    (:objects
+        cherry.n.03_1 - cherry.n.03
+        apricot.n.02_1 - apricot.n.02
+        cleaver.n.01_1 - cleaver.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        casserole.n.02_1 - casserole.n.02
+        farm_stand.n.01_1 - farm_stand.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cherry.n.03_1 farm_stand.n.01_1)
+        (ontop apricot.n.02_1 farm_stand.n.01_1)
+        (ontop cleaver.n.01_1 booth.n.01_1)
+        (ontop chopping_board.n.01_1 booth.n.01_1)
+        (ontop casserole.n.02_1 booth.n.01_1)
+        (inroom farm_stand.n.01_1 grocery_store_0)
+        (inroom booth.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?cherry.n.03_1)
+            (sliced ?apricot.n.02_1)
+            (inside ?cherry.n.03_1 ?casserole.n.02_1)
+            (inside ?apricot.n.02_1 ?casserole.n.02_1)
+        )
+    )
+)

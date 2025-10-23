@@ -1,0 +1,26 @@
+(define (problem please_bring_the_sandals_from_bathroom_1_and_the_pillow_from_bedroom_0_to_the_sofa_in_corridor_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        sandal.n.01_1 sandal.n.01_2 - sandal.n.01
+        pillow.n.01_1 - pillow.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom sandal.n.01_1 bathroom_1)
+        (inroom sandal.n.01_2 bathroom_1)
+        (inroom pillow.n.01_1 bedroom_0)
+        (inroom sofa.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+    (:goal
+        (and
+            (inside ?sandal.n.01_1 ?sofa.n.01_1)
+            (inside ?sandal.n.01_2 ?sofa.n.01_1)
+            (inside ?pillow.n.01_1 ?sofa.n.01_1)
+        )
+    )
+)

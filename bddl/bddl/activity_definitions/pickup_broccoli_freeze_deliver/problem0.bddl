@@ -1,0 +1,27 @@
+(define (problem please_pick_up_the_broccoli.n.02_from_the_storage_shelf_in_bar_0_put_it_inside_the_cooler.n.01_in_bar_0_to_freeze_it_then_deliver_the_frozen_broccoli.n.02_to_the_countertop_in_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        countertop.n.01_1 - countertop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside broccoli.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bar_0)
+        (inroom cooler.n.01_1 bar_0)
+        (inroom floor.n.01_1 bar_0)
+        (inroom countertop.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (frozen ?broccoli.n.02_1)
+            (ontop ?broccoli.n.02_1 ?countertop.n.01_1)
+        )
+    )
+)

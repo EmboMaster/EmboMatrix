@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_chocolate_cake_from_the_bed_in_the_childs_room_0_and_place_it_inside_the_lunch_box_in_the_playroom_0_then_go_to_the_garden_0_and_toggle_on_the_grill_to_heat_the_garden_space_for_family_outdoor_seating)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cake.n.01_1 - chocolate_cake.n.01
+        bed.n.01_1 - bed.n.01
+        lunch_box.n.01_1 - lunch_box.n.01
+        grill.n.02_1 - grill.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cake.n.01_1 bed.n.01_1)
+        (inroom bed.n.01_1 childs_room_0)
+        (inroom lunch_box.n.01_1 playroom_0)
+        (inroom grill.n.02_1 garden_0)
+        (not 
+            (toggled_on grill.n.02_1)
+        )
+        (inroom floor.n.01_1 childs_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chocolate_cake.n.01_1 ?lunch_box.n.01_1)
+            (toggled_on ?grill.n.02_1)
+        )
+    )
+)

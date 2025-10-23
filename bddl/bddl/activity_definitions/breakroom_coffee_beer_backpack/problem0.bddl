@@ -1,0 +1,30 @@
+(define (problem go_to_break_room_0_toggle_on_the_coffee_maker.n.01_pick_up_the_beer_glass.n.01_from_the_reception_desk_and_place_it_inside_the_backpack.n.01_in_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        beer_glass.n.01_1 - beer_glass.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        backpack.n.01_1 - backpack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not 
+            (toggled_on coffee_maker.n.01_1)
+        )
+        (ontop beer_glass.n.01_1 reception_desk.n.01_1)
+        (inroom coffee_maker.n.01_1 break_room_0)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (inroom backpack.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?coffee_maker.n.01_1)
+            (inside ?beer_glass.n.01_1 ?backpack.n.01_1)
+        )
+    )
+)

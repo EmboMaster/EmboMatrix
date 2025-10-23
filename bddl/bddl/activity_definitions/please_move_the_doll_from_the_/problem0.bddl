@@ -1,0 +1,25 @@
+(define (problem please_move_the_doll_from_the_childs_room_1_and_the_notebook_from_the_closet_0_to_the_desk_in_the_playroom_0)
+    (:domain omnigibson)
+    (:objects
+        doll.n.01_1 - doll.n.01
+        notebook.n.01_1 - notebook.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom doll.n.01_1 childs_room_1)
+        (inroom notebook.n.01_1 closet_0)
+        (inroom desk.n.01_1 playroom_0)
+        (inroom floor.n.01_1 childs_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?doll.n.01_1 ?desk.n.01_1)
+            (ontop ?notebook.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

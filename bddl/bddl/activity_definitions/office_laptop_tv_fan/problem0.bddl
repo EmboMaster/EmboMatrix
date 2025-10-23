@@ -1,0 +1,25 @@
+(define (problem please_go_to_the_private_office_0_and_open_the_laptop.n.01_for_the_mother_then_head_to_the_television_room_0_and_toggle_on_the_ceiling_fan.n.01_for_the_father)
+    (:domain omnigibson)
+    (:objects
+        laptop.n.01_1 - laptop.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open laptop.n.01_1))
+        (not (toggled_on ceiling_fan.n.01_1))
+        (inroom laptop.n.01_1 private_office_0)
+        (inroom ceiling_fan.n.01_1 television_room_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?laptop.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+        )
+    )
+)

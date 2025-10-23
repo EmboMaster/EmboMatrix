@@ -1,0 +1,29 @@
+(define (problem pick_up_the_chili.n.02_from_the_coffee_table_in_shared_office_0_and_put_it_inside_the_cooler.n.01_in_meeting_room_0_then_open_the_recycling_bin.n.01_near_the_desk_in_private_office_1)
+    (:domain omnigibson)
+    (:objects
+        chili.n.02_1 - chili.n.02
+        coffee_table.n.01_1 - coffee_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chili.n.02_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 meeting_room_0)
+        (inroom recycling_bin.n.01_1 private_office_1)
+        (inroom desk.n.01_1 private_office_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (inside ?chili.n.02_1 ?cooler.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem go_to_biology_lab_0_pick_up_the_test_tube.n.01_from_the_lab_exhaust_hood_in_the_biology_lab_0_go_to_corridor_0_put_the_test_tube.n.01_inside_the_recycling_bin.n.01_in_the_corridor_0_close_the_recycling_bin.n.01_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        test_tube.n.01_1 - test_tube.n.01
+        lab_exhaust_hood.n.01_1 - lab_exhaust_hood.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop test_tube.n.01_1 lab_exhaust_hood.n.01_1)
+        (inroom lab_exhaust_hood.n.01_1 biology_lab_0)
+        (inroom recycling_bin.n.01_1 corridor_0)
+        (open recycling_bin.n.01_1)
+        (inroom floor.n.01_1 biology_lab_0)
+        (inroom floor.n.01_2 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?test_tube.n.01_1 ?recycling_bin.n.01_1)
+            (not
+                (open ?recycling_bin.n.01_1)
+            )
+        )
+    )
+)

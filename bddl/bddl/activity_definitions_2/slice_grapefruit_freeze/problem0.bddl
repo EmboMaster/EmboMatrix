@@ -1,0 +1,32 @@
+(define (problem pick_up_the_grapefruit.n.02_from_the_countertop_in_the_kitchen_0_and_slice_it_on_the_chopping_board_using_the_cleaver.n.01_after_slicing_place_the_sliced_grapefruit.n.02_in_the_cooler.n.01_in_the_storage_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        grapefruit.n.02_1 - grapefruit.n.02
+        countertop.n.01_1 - countertop.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop grapefruit.n.02_1 countertop.n.01_1)
+        (ontop chopping_board.n.01_1 countertop.n.01_1)
+        (ontop cleaver.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom cleaver.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?grapefruit.n.02_1)
+            (inside ?grapefruit.n.02_1 ?cooler.n.01_1)
+            (frozen ?grapefruit.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,27 @@
+(define (problem please_fetch_the_soccer_ball_from_the_toy_box_in_the_television_room_0_and_the_water_bottle_from_the_table_lamp_in_bedroom_0_and_place_them_on_the_floor_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        toy_box.n.01_1 - toy_box.n.01
+        soccer_ball.n.01_1 - soccer_ball.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside soccer_ball.n.01_1 toy_box.n.01_1)
+        (ontop water_bottle.n.01_1 table_lamp.n.01_1)
+        (inroom toy_box.n.01_1 television_room_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?soccer_ball.n.01_1 ?floor.n.01_1)
+            (ontop ?water_bottle.n.01_1 ?floor.n.01_1)
+        )
+    )
+)

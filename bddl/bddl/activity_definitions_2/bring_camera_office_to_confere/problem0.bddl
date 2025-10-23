@@ -1,0 +1,26 @@
+(define (problem bring_the_digital_camera.n.01_from_the_private_office_1_and_put_it_on_the_conference_table_in_the_conference_hall_0_then_toggle_on_the_monitor.n.04_in_the_same_room_for_the_meeting)
+    (:domain omnigibson)
+    (:objects
+        digital_camera.n.01_1 - digital_camera.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        monitor.n.04_1 - monitor.n.04
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom digital_camera.n.01_1 private_office_1)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (inroom monitor.n.04_1 conference_hall_0)
+        (not (toggled_on monitor.n.04_1))
+        (inroom floor.n.01_1 private_office_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?digital_camera.n.01_1 ?conference_table.n.01_1)
+            (toggled_on ?monitor.n.04_1)
+        )
+    )
+)

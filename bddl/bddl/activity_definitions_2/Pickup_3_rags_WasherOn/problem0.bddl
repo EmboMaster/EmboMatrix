@@ -1,0 +1,28 @@
+(define (problem Pick_up_all_3_dirty_rags_from_the_floor_in_the_bathroom_0_place_them_inside_the_washer.n.03_in_the_bathroom_1_and_toggle_on_the_washer.n.03)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 rag.n.01_2 rag.n.01_3 - rag.n.01
+        washer.n.03_1 - washer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop rag.n.01_1 floor.n.01_1)
+        (ontop rag.n.01_2 floor.n.01_1)
+        (ontop rag.n.01_3 floor.n.01_1)
+        (not (toggled_on washer.n.03_1))
+        (inroom floor.n.01_1 bathroom_0)
+        (inroom washer.n.03_1 bathroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?rag.n.01_1 ?washer.n.03_1)
+            (inside ?rag.n.01_2 ?washer.n.03_1)
+            (inside ?rag.n.01_3 ?washer.n.03_1)
+            (toggled_on ?washer.n.03_1)
+        )
+    )
+)

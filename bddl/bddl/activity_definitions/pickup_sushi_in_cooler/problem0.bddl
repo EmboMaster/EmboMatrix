@@ -1,0 +1,25 @@
+(define (problem pick_up_sushi_from_countertop_put_inside_cooler_and_ensure_frozen)
+    (:domain omnigibson)
+    (:objects
+        sushi.n.01_1 - sushi.n.01
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop sushi.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?sushi.n.01_1 ?cooler.n.01_1)
+            (frozen ?sushi.n.01_1)
+        )
+    )
+)

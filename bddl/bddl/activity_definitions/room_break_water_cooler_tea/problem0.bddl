@@ -1,0 +1,32 @@
+(define (problem go_to_room_break_room_0_pick_up_the_water_bottle.n.01_from_the_booth_put_the_water_bottle.n.01_inside_the_cooler.n.01_to_freeze_it_then_pick_up_the_teapot.n.01_from_the_shelf_put_the_teapot.n.01_on_top_of_the_coffee_maker.n.01_to_prepare_tea-0)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        teapot.n.01_1 - teapot.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop water_bottle.n.01_1 booth.n.01_1)
+        (ontop teapot.n.01_1 shelf.n.01_1)
+        (inroom booth.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom shelf.n.01_1 break_room_0)
+        (inroom coffee_maker.n.01_1 break_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?water_bottle.n.01_1)
+            (inside ?water_bottle.n.01_1 ?cooler.n.01_1)
+            (ontop ?teapot.n.01_1 ?coffee_maker.n.01_1)
+        )
+    )
+)

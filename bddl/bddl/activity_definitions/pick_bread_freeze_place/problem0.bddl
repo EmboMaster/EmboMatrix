@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_bread_slice.n.01_from_the_platter.n.01_on_the_booth_in_television_room_0_freeze_the_bread_slice.n.01_inside_the_cooler.n.01_in_bathroom_0_and_place_the_frozen_bread_slice.n.01_inside_the_carton.n.02_on_the_shelf_in_closet_0)
+    (:domain omnigibson)
+    (:objects
+        bread_slice.n.01_1 - bread_slice.n.01
+        platter.n.01_1 - platter.n.01
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bread_slice.n.01_1 platter.n.01_1)
+        (ontop platter.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 television_room_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 closet_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 television_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?bread_slice.n.01_1)
+            (inside ?bread_slice.n.01_1 ?carton.n.02_1)
+        )
+    )
+)

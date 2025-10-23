@@ -1,0 +1,28 @@
+(define (problem Open_the_laptop.n.01_on_the_desk_in_private_office_2_and_bring_the_charger_from_the_tray_in_shared_office_0._Place_the_charger_next_to_the_laptop.n.01_on_the_desk_in_private_office_2.)
+    (:domain omnigibson)
+    (:objects
+        laptop.n.01_1 - laptop.n.01
+        charger.n.02_1 - charger.n.02
+        desk.n.01_1 - desk.n.01
+        tray.n.01_1 - tray.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (not (open laptop.n.01_1))
+        (inside charger.n.02_1 tray.n.01_1)
+        (inroom desk.n.01_1 private_office_2)
+        (inroom tray.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_2)
+    )
+
+    (:goal
+        (and
+            (open ?laptop.n.01_1)
+            (ontop ?charger.n.02_1 ?desk.n.01_1)
+        )
+    )
+)

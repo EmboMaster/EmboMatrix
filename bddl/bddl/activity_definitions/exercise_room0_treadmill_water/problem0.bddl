@@ -1,0 +1,26 @@
+(define (problem go_to_exercise_room_0_toggle_on_the_treadmill_n_01_pick_up_the_water_bottle_from_the_corner_in_exercise_room_0_go_to_corridor_0_put_the_water_bottle_on_top_of_the_conference_table_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        treadmill.n.01_1 - treadmill.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on treadmill.n.01_1))
+        (inroom treadmill.n.01_1 exercise_room_0)
+        (inroom water_bottle.n.01_1 exercise_room_0)
+        (inroom conference_table.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 exercise_room_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?treadmill.n.01_1)
+            (ontop ?water_bottle.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

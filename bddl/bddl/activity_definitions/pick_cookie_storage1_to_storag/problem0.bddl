@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_chocolate_chip_cookie.n.01_from_the_shelf_in_storage_room_1_go_to_storage_room_0_put_the_chocolate_chip_cookie.n.01_inside_the_cooler.n.01_and_ensure_the_cooler.n.01_is_closed-0)
+    (:domain omnigibson)
+    (:objects
+        chocolate_chip_cookie.n.01_1 - chocolate_chip_cookie.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_chip_cookie.n.01_1 shelf.n.01_1)
+        (open cooler.n.01_1)
+        (inroom shelf.n.01_1 storage_room_1)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chocolate_chip_cookie.n.01_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

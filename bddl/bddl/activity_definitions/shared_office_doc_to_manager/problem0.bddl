@@ -1,0 +1,24 @@
+(define (problem go_to_the_shared_office_0_pick_up_the_legal_document_from_the_desk_and_deliver_it_to_the_project_manager's_conference_table_in_the_meeting_room_0)
+    (:domain omnigibson)
+    (:objects
+        legal_document.n.01_1 - legal_document.n.01
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop legal_document.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?legal_document.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

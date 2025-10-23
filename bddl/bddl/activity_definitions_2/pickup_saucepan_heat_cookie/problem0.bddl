@@ -1,0 +1,32 @@
+(define (problem pick_up_the_saucepan.n.01_from_the_shelf.n.01_in_the_kitchen_0_and_heat_the_sugar_cookie.n.01_using_the_microwave.n.02_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        saucepan.n.01_1 - saucepan.n.01
+        shelf.n.01_1 - shelf.n.01
+        sugar_cookie.n.01_1 - sugar_cookie.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop saucepan.n.01_1 shelf.n.01_1)
+        (inside sugar_cookie.n.01_1 microwave.n.02_1)
+        (not (toggled_on microwave.n.02_1))
+        (not (cooked sugar_cookie.n.01_1))
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (ontop saucepan.n.01_1 shelf.n.01_1)
+        (and
+            (not (ontop ?saucepan.n.01_1 ?shelf.n.01_1))
+            (cooked ?sugar_cookie.n.01_1)
+            (inside ?sugar_cookie.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+        )
+    )
+)

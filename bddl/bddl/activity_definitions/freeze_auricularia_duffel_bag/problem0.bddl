@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_auricularia.n.01_from_the_wicker_basket_in_the_pantry_room_0_put_it_inside_the_cooler.n.01_in_the_pantry_room_0_to_freeze_it_and_then_pick_up_the_duffel_bag.n.01_from_the_shelf_in_the_storage_room_0_and_place_it_on_the_floor_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        auricularia.n.01_1 - auricularia.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        duffel_bag.n.01_1 - duffel_bag.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (inside auricularia.n.01_1 wicker_basket.n.01_1)
+        (inroom wicker_basket.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 pantry_room_0)
+        (ontop duffel_bag.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?auricularia.n.01_1)
+            (inside ?auricularia.n.01_1 ?cooler.n.01_1)
+            (ontop ?duffel_bag.n.01_1 ?floor.n.01_1)
+        )
+    )
+)

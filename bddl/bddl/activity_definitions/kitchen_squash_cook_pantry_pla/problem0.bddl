@@ -1,0 +1,35 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_butternut_squash.n.01_from_the_reception_desk_put_it_inside_the_pressure_cooker.n.01_and_cook_it_then_go_to_the_pantry_room_0_pick_up_the_platter.n.01_from_the_shelf_and_bring_it_to_the_living_room_0_place_the_platter.n.01_on_the_conference_table-0)
+    (:domain omnigibson)
+    (:objects
+        butternut_squash.n.01_1 - butternut_squash.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        stove.n.01_1 - stove.n.01
+        platter.n.01_1 - platter.n.01
+        shelf.n.01_1 - shelf.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop butternut_squash.n.01_1 reception_desk.n.01_1) 
+        (ontop pressure_cooker.n.01_1 stove.n.01_1) 
+        (not (toggled_on stove.n.01_1))
+        (inside platter.n.01_1 shelf.n.01_1) 
+        (inroom reception_desk.n.01_1 kitchen_0) 
+        (inroom pressure_cooker.n.01_1 kitchen_0) 
+        (inroom stove.n.01_1 kitchen_0) 
+        (inroom shelf.n.01_1 pantry_room_0) 
+        (inroom conference_table.n.01_1 living_room_0) 
+        (inroom floor.n.01_1 kitchen_0) 
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (cooked ?butternut_squash.n.01_1)
+            (ontop ?platter.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

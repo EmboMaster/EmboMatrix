@@ -1,0 +1,28 @@
+(define (problem go_to_the_living_room_0_pick_up_the_toy_figure_from_the_floor_and_place_it_on_top_of_the_coffee_table_go_to_the_utility_room_0_toggle_on_the_washer.n.03_and_ensure_it_is_running_for_the_laundry_task)
+    (:domain omnigibson)
+    (:objects
+        toy_figure.n.01_1 - toy_figure.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        washer.n.03_1 - washer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop toy_figure.n.01_1 floor.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 living_room_0)
+        (inroom washer.n.03_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on washer.n.03_1)
+        )
+    )
+
+    (:goal
+        (and
+            (ontop ?toy_figure.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?washer.n.03_1)
+        )
+    )
+)

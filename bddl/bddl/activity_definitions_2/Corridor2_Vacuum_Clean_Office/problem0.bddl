@@ -1,0 +1,33 @@
+(define (problem Go_to_the_corridor_2_pick_up_the_vacuum.n.04_near_the_stone_wall_and_clean_the_dusty_carpet_sweeper_in_the_office_large)
+    (:domain omnigibson)
+    (:objects
+        vacuum.n.04_1 - vacuum.n.04
+        stone_wall.n.01_1 - stone_wall.n.01
+        carpet_sweeper.n.01_1 - carpet_sweeper.n.01
+        sink.n.01_1 - sink.n.01
+        rag.n.01_1 - rag.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (nextto vacuum.n.04_1 stone_wall.n.01_1)
+        (dusty carpet_sweeper.n.01_1)
+        (inroom vacuum.n.04_1 corridor_2)
+        (inroom stone_wall.n.01_1 corridor_2)
+        (inroom carpet_sweeper.n.01_1 bathroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom rag.n.01_1 bathroom_0)
+        (not (soaked rag.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_2)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?carpet_sweeper.n.01_1))
+            (soaked ?rag.n.01_1)
+            (not (ontop ?vacuum.n.04_1 ?floor.n.01_1))
+        )
+    )
+)

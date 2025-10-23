@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_digital_camera.n.01_from_the_pedestal_table_in_the_bedroom_0_and_put_it_inside_the_backpack.n.01_located_on_the_straight_chair_in_the_bedroom_0_then_open_the_backpack.n.01_to_ensure_it_is_stored_properly)
+    (:domain omnigibson)
+    (:objects
+        digital_camera.n.01_1 - digital_camera.n.01
+        backpack.n.01_1 - backpack.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop digital_camera.n.01_1 pedestal_table.n.01_1)
+        (ontop backpack.n.01_1 straight_chair.n.01_1)
+        (not (open backpack.n.01_1))
+        (inroom digital_camera.n.01_1 bedroom_0)
+        (inroom backpack.n.01_1 bedroom_0)
+        (inroom straight_chair.n.01_1 bedroom_0)
+        (inroom pedestal_table.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?digital_camera.n.01_1 ?backpack.n.01_1)
+            (open ?backpack.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,36 @@
+(define (problem Go_to_the_living_room_0_toggle_on_the_electric_kettle.n.01_on_the_coffee_table_and_wait_until_it_finishes_boiling_Then_pick_up_the_water_glass.n.02_from_the_shelf_in_the_living_room_0_and_put_it_on_top_of_the_coffee_table_Finally_go_to_the_sauna_0_and_toggle_on_the_sauna_heater.n.01_for_relaxation_preparation)
+    (:domain omnigibson)
+    (:objects
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        water_glass.n.02_1 - water_glass.n.02
+        shelf.n.01_1 - shelf.n.01
+        sauna_heater.n.01_1 - sauna_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop electric_kettle.n.01_1 coffee_table.n.01_1)
+        (not
+            (toggled_on electric_kettle.n.01_1)
+        )
+        (inside water_glass.n.02_1 shelf.n.01_1)
+        (not
+            (toggled_on sauna_heater.n.01_1)
+        )
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 living_room_0)
+        (inroom sauna_heater.n.01_1 sauna_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?electric_kettle.n.01_1)
+            (ontop ?water_glass.n.02_1 ?coffee_table.n.01_1)
+            (toggled_on ?sauna_heater.n.01_1)
+        )
+    )
+)

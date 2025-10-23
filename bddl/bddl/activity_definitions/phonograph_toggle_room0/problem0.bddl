@@ -1,0 +1,23 @@
+(define (problem pick_up_the_phonograph_record_from_the_shelf_in_the_television_room_0_and_toggle_on_the_phonograph_record_in_the_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        phonograph_record.n.01_1 - phonograph_record.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop phonograph_record.n.01_1 shelf.n.01_1)
+        (inroom phonograph_record.n.01_1 television_room_0)
+        (inroom shelf.n.01_1 television_room_0)
+        (inroom floor.n.01_1 television_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?phonograph_record.n.01_1)
+        )
+    )
+)

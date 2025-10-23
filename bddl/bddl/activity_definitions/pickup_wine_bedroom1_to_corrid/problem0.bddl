@@ -1,0 +1,27 @@
+(define (problem pick_up_the_wine_bottle.n.01_from_bedroom_1_go_to_corridor_0_and_place_the_wine_bottle.n.01_inside_the_cooler.n.01_in_corridor_0_then_pick_up_the_tray.n.01_from_closet_1_go_to_bedroom_1_and_put_the_tray.n.01_on_top_of_the_desk)
+    (:domain omnigibson)
+    (:objects
+        wine_bottle.n.01_1 - wine_bottle.n.01
+        cooler.n.01_1 - cooler.n.01
+        tray.n.01_1 - tray.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom wine_bottle.n.01_1 bedroom_1)
+        (inroom cooler.n.01_1 corridor_0)
+        (inroom tray.n.01_1 closet_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?wine_bottle.n.01_1 ?cooler.n.01_1)
+            (ontop ?tray.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

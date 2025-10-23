@@ -1,0 +1,24 @@
+(define (problem pick_up_the_carton_in_empty_room_0_open_the_carton_and_place_the_toothbrush_from_bathroom_0_inside_the_carton-0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        toothbrush.n.01_1 - toothbrush.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom carton.n.02_1 empty_room_0)
+        (not (open carton.n.02_1))
+        (inroom toothbrush.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?toothbrush.n.01_1 ?carton.n.02_1)
+        )
+    )
+)

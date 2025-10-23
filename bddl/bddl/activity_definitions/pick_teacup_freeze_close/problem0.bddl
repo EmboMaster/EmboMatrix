@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_teacup.n.02_from_the_desk_in_the_childs_room_0_freeze_it_by_putting_it_in_the_cooler.n.01_in_the_kitchen_0_and_close_the_microwave.n.02_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        teacup.n.02_1 - teacup.n.02
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop teacup.n.02_1 desk.n.01_1)
+        (open microwave.n.02_1)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 childs_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?teacup.n.02_1)
+            (not
+                (open ?microwave.n.02_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,33 @@
+(define (problem pick_up_the_french_fries.n.02_from_the_tray.n.01_in_the_kitchen_0_freeze_it_by_placing_it_inside_the_cooler.n.01_in_the_kitchen_0_then_go_to_the_living_room_0_and_toggle_on_the_jukebox.n.01_near_the_sofa-0)
+    (:domain omnigibson)
+    (:objects
+        french_fries.n.02_1 - french_fries.n.02
+        tray.n.01_1 - tray.n.01
+        cooler.n.01_1 - cooler.n.01
+        jukebox.n.01_1 - jukebox.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop french_fries.n.02_1 tray.n.01_1)
+        (inroom tray.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom jukebox.n.01_1 living_room_0)
+        (inroom sofa.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (not
+            (frozen french_fries.n.02_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (frozen ?french_fries.n.02_1)
+            (inside ?french_fries.n.02_1 ?cooler.n.01_1)
+            (toggled_on ?jukebox.n.01_1)
+        )
+    )
+)

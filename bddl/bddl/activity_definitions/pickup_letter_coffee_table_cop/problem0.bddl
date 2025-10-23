@@ -1,0 +1,30 @@
+(define (problem pick_up_the_letter_from_the_coffee_table_in_the_copy_room_0_and_deliver_them_to_the_desk_in_the_private_office_1_then_toggle_on_the_printer.n.03_in_the_copy_room_0_to_prepare_for_the_next_printing_task-0)
+    (:domain omnigibson)
+    (:objects
+        letter.n.01_1 - letter.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        desk.n.01_1 - desk.n.01
+        printer.n.03_1 - printer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop letter.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 copy_room_0)
+        (inroom desk.n.01_1 private_office_1)
+        (inroom printer.n.03_1 copy_room_0)
+        (not
+            (toggled_on printer.n.03_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 copy_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?letter.n.01_1 ?desk.n.01_1)
+            (toggled_on ?printer.n.03_1)
+        )
+    )
+)

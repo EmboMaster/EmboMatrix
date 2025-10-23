@@ -1,0 +1,40 @@
+(define (problem go_to_the_childs_room_0_toggle_on_the_table_lamp.n.01_on_the_nightstand_pick_up_the_rag.n.01_from_the_bed_put_it_inside_the_clothes_dryer.n.01_in_the_bathroom_0_then_go_to_the_bathroom_0_and_toggle_on_the_air_conditioner.n.01_to_adjust_the_temperature-0)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        alarm_clock.n.01_1 - alarm_clock.n.01
+        rag.n.01_1 - rag.n.01
+        bed.n.01_1 - bed.n.01
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop table_lamp.n.01_1 alarm_clock.n.01_1)
+        (ontop rag.n.01_1 bed.n.01_1)
+        (not 
+            (toggled_on table_lamp.n.01_1)
+        )
+        (not 
+            (toggled_on air_conditioner.n.01_1)
+        )
+        (inroom table_lamp.n.01_1 childs_room_0)
+        (inroom alarm_clock.n.01_1 childs_room_0)
+        (inroom rag.n.01_1 childs_room_0)
+        (inroom bed.n.01_1 childs_room_0)
+        (inroom clothes_dryer.n.01_1 bathroom_0)
+        (inroom air_conditioner.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 childs_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (inside ?rag.n.01_1 ?clothes_dryer.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,22 @@
+(define (problem bring_blanket_to_armchair-0)
+    (:domain omnigibson)    (:objects
+        blanket.n.01_1 - blanket.n.01
+        armchair.n.01_1 - armchair.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop blanket.n.01_1 floor.n.01_1)
+        (inroom blanket.n.01_1 utility_room_0)
+        (inroom armchair.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?blanket.n.01_1 ?armchair.n.01_1)
+        )
+    )
+)
+

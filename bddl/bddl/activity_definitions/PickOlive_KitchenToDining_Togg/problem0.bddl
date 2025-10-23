@@ -1,0 +1,34 @@
+(define (problem Please_pick_up_the_olive_from_the_countertop_in_the_kitchen_0_put_the_olive_inside_the_gravy_boat_on_the_coffee_table_in_the_dining_room_0_and_toggle_on_the_toaster_oven.n.01_on_the_shelf_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        olive.n.04_1 - olive.n.04
+        gravy_boat.n.01_1 - gravy_boat.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        countertop.n.01_1 - countertop.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop olive.n.04_1 countertop.n.01_1)
+        (ontop gravy_boat.n.01_1 coffee_table.n.01_1)
+        (ontop toaster_oven.n.01_1 shelf.n.01_1)
+        (not
+            (toggled_on toaster_oven.n.01_1)
+        )
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom coffee_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?olive.n.04_1 ?gravy_boat.n.01_1)
+            (toggled_on ?toaster_oven.n.01_1)
+        )
+    )
+)

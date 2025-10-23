@@ -1,0 +1,25 @@
+(define (problem go_to_room_chemistry_lab_0_pick_up_the_test_tube_from_the_breakfast_table_in_the_chemistry_lab_0_go_to_room_corridor_1_put_the_test_tube_inside_the_cooler.n.01_in_the_corridor_1_for_me)
+    (:domain omnigibson)
+    (:objects
+        test_tube.n.01_1 - test_tube.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop test_tube.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 chemistry_lab_0)
+        (inroom cooler.n.01_1 corridor_1)
+        (inroom floor.n.01_1 chemistry_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?test_tube.n.01_1 ?cooler.n.01_1)
+            (frozen ?test_tube.n.01_1)
+        )
+    )
+)

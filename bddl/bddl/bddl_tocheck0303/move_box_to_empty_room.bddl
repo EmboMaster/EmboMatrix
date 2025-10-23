@@ -1,0 +1,21 @@
+(define (problem move_box_to_empty_room)
+    (:domain omnigibson)    (:objects
+        mailbox.n.01_1 - mailbox.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom mailbox.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (inroom ?mailbox.n.01_1 empty_room_0)
+            (ontop ?mailbox.n.01_1 ?floor.n.01_1)
+        )
+    )
+)
+

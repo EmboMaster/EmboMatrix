@@ -1,0 +1,25 @@
+(define (problem pick_up_the_cucumber.n.02_from_the_cabinet_base_in_the_bedroom_0_go_to_the_closet_0_and_place_the_cucumber.n.02_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        cucumber.n.02_1 - cucumber.n.02
+        cabinet_base.n.01_1 - cabinet_base.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop cucumber.n.02_1 cabinet_base.n.01_1)
+        (inroom cabinet_base.n.01_1 bedroom_0)
+        (inroom cooler.n.01_1 closet_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?cucumber.n.02_1 ?cooler.n.01_1)
+            (frozen ?cucumber.n.02_1)
+        )
+    )
+)

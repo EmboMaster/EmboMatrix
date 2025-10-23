@@ -1,0 +1,30 @@
+(define (problem go_to_room_lobby_0_pick_up_the_folder.n.02_from_the_reception_desk_in_lobby_0_go_to_room_meeting_room_0_put_the_folder.n.02_on_top_of_the_conference_table_in_meeting_room_0_go_to_room_private_office_1_toggle_on_the_air_conditioner.n.01_in_private_office_1)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop folder.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 lobby_0)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom air_conditioner.n.01_1 private_office_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 lobby_0)
+        (not
+            (toggled_on air_conditioner.n.01_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (ontop ?folder.n.02_1 ?conference_table.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

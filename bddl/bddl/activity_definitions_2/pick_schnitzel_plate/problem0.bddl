@@ -1,0 +1,28 @@
+(define (problem pick_up_the_schnitzel.n.01_from_the_countertop_in_the_kitchen_0_heat_it_in_the_frying_pan.n.01_in_the_kitchen_0_and_place_it_on_a_plate_in_the_dining_room_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        schnitzel.n.01_1 - schnitzel.n.01
+        countertop.n.01_1 - countertop.n.01
+        frying_pan.n.01_1 - frying_pan.n.01
+        plate.n.04_1 - plate.n.04
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop schnitzel.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom frying_pan.n.01_1 kitchen_0)
+        (inroom plate.n.04_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (ontop schnitzel.n.01_1 countertop.n.01_1)
+        (and
+            (ontop schnitzel.n.01_1 plate.n.04_1)
+            (cooked schnitzel.n.01_1)
+        )
+    )
+)

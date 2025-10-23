@@ -1,0 +1,31 @@
+(define (problem go_to_the_shared_office_0_pick_up_the_letter_from_the_desk_and_deliver_it_to_the_meeting_room_0_place_the_documents_on_the_pedestal_table_in_the_meeting_room_0_open_the_recycling_bin_n_01_in_the_meeting_room_0_and_put_the_empty_envelope_inside_the_recycling_bin_n_01-0)
+    (:domain omnigibson)
+    (:objects
+        letter.n.01_1 - letter.n.01
+        envelope.n.01_1 - envelope.n.01
+        desk.n.01_1 - desk.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop letter.n.01_1 desk.n.01_1)
+        (ontop envelope.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom pedestal_table.n.01_1 meeting_room_0)
+        (inroom recycling_bin.n.01_1 meeting_room_0)
+        (not (open recycling_bin.n.01_1))
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?letter.n.01_1 ?pedestal_table.n.01_1)
+            (inside ?envelope.n.01_1 ?recycling_bin.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

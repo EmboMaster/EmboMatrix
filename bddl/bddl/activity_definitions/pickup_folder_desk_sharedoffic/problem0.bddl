@@ -1,0 +1,28 @@
+(define (problem pick_up_the_folder_from_the_desk_in_the_shared_office_0_and_put_it_inside_the_shelf_in_the_private_office_2_then_go_to_the_meeting_room_0_and_toggle_on_the_scanner.n.02_to_prepare_for_document_scanning)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        desk.n.01_1 - desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        scanner.n.02_1 - scanner.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 private_office_2)
+        (inroom scanner.n.02_1 meeting_room_0)
+        (not (toggled_on scanner.n.02_1))
+    )
+
+    (:goal
+        (and
+            (inside ?folder.n.02_1 ?shelf.n.01_1)
+            (toggled_on ?scanner.n.02_1)
+        )
+    )
+)

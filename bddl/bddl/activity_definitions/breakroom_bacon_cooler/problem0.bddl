@@ -1,0 +1,27 @@
+(define (problem go_to_break_room_0_pick_up_the_bacon.n.01_from_the_plate.n.04_on_the_conference_table_in_break_room_0_put_it_inside_the_cooler.n.01_in_break_room_0_and_ensure_it_is_frozen_for_me)
+    (:domain omnigibson)
+    (:objects
+        bacon.n.01_1 - bacon.n.01
+        plate.n.04_1 - plate.n.04
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bacon.n.01_1 plate.n.04_1)
+        (ontop plate.n.04_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?bacon.n.01_1 ?cooler.n.01_1)
+            (frozen ?bacon.n.01_1)
+        )
+    )
+)

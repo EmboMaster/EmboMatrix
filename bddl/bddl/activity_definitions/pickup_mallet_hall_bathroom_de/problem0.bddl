@@ -1,0 +1,24 @@
+(define (problem pick_up_the_mallet_from_hall_arch_wood_empty_room_0_go_to_bathroom_0_and_place_it_on_top_of_the_reception_desk_near_the_urinal_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        mallet.n.01_1 - mallet.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        urinal.n.01_1 - urinal.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom mallet.n.01_1 empty_room_0)
+        (inroom reception_desk.n.01_1 bathroom_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?mallet.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

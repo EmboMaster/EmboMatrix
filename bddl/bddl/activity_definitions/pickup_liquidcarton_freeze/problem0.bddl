@@ -1,0 +1,31 @@
+(define (problem Pick_up_the_liquid_carton.n.01_from_the_shelf_in_the_pantry_room_0_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it_and_close_the_cooler.n.01_after_placing_the_liquid_carton.n.01_inside)
+    (:domain omnigibson)
+    (:objects
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop liquid_carton.n.01_1 shelf.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom floor.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (not
+            (open cooler.n.01_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (inside ?liquid_carton.n.01_1 ?cooler.n.01_1)
+            (frozen ?liquid_carton.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

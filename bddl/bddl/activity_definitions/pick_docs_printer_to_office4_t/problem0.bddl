@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_stack_of_legal_documents_from_the_printer_in_the_copy_room_0_and_deliver_them_to_the_desk_in_the_private_office_4_then_toggle_on_the_space_heater.n.01_in_the_private_office_4_to_warm_up_the_room_for_the_manager-0)
+    (:domain omnigibson)
+    (:objects
+        legal_document.n.01_1 - legal_document.n.01
+        printer.n.03_1 - printer.n.03
+        desk.n.01_1 - desk.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop legal_document.n.01_1 printer.n.03_1)
+        (inroom printer.n.03_1 copy_room_0)
+        (inroom desk.n.01_1 private_office_4)
+        (inroom space_heater.n.01_1 private_office_4)
+        (not
+            (toggled_on space_heater.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 copy_room_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?legal_document.n.01_1 ?desk.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

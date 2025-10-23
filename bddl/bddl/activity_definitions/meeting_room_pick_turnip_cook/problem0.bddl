@@ -1,0 +1,28 @@
+(define (problem go_to_the_meeting_room_0_pick_up_the_white_turnip.n.02_from_the_pedestal_table_put_it_in_the_pressure_cooker.n.01_in_the_shared_office_0_and_toggle_on_the_pressure_cooker.n.01_to_cook_the_white_turnip.n.02)
+    (:domain omnigibson)
+    (:objects
+        white_turnip.n.02_1 - white_turnip.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop white_turnip.n.02_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 meeting_room_0)
+        (inroom white_turnip.n.02_1 meeting_room_0)
+        (inroom pressure_cooker.n.01_1 shared_office_0)
+        (not (toggled_on pressure_cooker.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 meeting_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?white_turnip.n.02_1 ?pressure_cooker.n.01_1)
+            (toggled_on ?pressure_cooker.n.01_1)
+            (cooked ?white_turnip.n.02_1)
+        )
+    )
+)

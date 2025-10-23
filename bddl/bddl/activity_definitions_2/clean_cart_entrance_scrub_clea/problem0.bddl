@@ -1,0 +1,29 @@
+(define (problem clean_all_2_shopping_cart.n.01_near_the_entrance_in_the_grocery_store_0_with_the_scrub_brush.n.01_from_the_cleaning_aisle_in_the_grocery_store_0)
+    (:domain omnigibson)
+    (:objects
+        shopping_cart.n.01_1 shopping_cart.n.01_2 - shopping_cart.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty shopping_cart.n.01_1)
+        (dusty shopping_cart.n.01_2)
+        (inroom shopping_cart.n.01_1 grocery_store_0)
+        (inroom shopping_cart.n.01_2 grocery_store_0)
+        (inroom scrub_brush.n.01_1 grocery_store_0)
+        (inroom sink.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (soaked scrub_brush.n.01_1)
+            (not (dusty ?shopping_cart.n.01_1))
+            (not (dusty ?shopping_cart.n.01_2))
+        )
+    )
+)

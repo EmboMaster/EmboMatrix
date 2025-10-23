@@ -1,0 +1,29 @@
+(define (problem please_bring_the_soccer_ball_from_the_corner_in_corridor_1_and_the_headset_from_the_desk_in_the_computer_lab_0_to_the_sofa_in_corridor_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        soccer_ball.n.01_1 - soccer_ball.n.01
+        headset.n.01_1 - headset.n.01
+        desk.n.01_1 - desk.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop soccer_ball.n.01_1 floor.n.01_1)
+        (ontop headset.n.01_1 desk.n.01_1)
+        (inroom soccer_ball.n.01_1 corridor_1)
+        (inroom headset.n.01_1 computer_lab_0)
+        (inroom desk.n.01_1 computer_lab_0)
+        (inroom sofa.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_1)
+    )
+
+    (:goal
+        (and
+            (inside ?soccer_ball.n.01_1 ?sofa.n.01_1)
+            (inside ?headset.n.01_1 ?sofa.n.01_1)
+        )
+    )
+)

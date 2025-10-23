@@ -1,0 +1,28 @@
+(define (problem Please_toggle_on_the_router.n.02_in_the_bedroom_0_and_ensure_it_is_operational_Then_go_to_the_closet_1_open_the_backpack.n.01_and_put_the_water_bottle.n.01_inside_it)
+    (:domain omnigibson)
+    (:objects
+        router.n.02_1 - router.n.02
+        backpack.n.01_1 - backpack.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on router.n.02_1))
+        (inroom router.n.02_1 bedroom_0)
+        (not (open backpack.n.01_1))
+        (inroom backpack.n.01_1 closet_1)
+        (inroom water_bottle.n.01_1 closet_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?router.n.02_1)
+            (open ?backpack.n.01_1)
+            (inside ?water_bottle.n.01_1 ?backpack.n.01_1)
+        )
+    )
+)

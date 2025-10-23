@@ -1,0 +1,25 @@
+(define (problem pick_up_the_taco.n.02_from_the_conference_table_in_the_dining_room_0_go_to_the_storage_room_0_and_put_the_taco.n.02_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        taco.n.02_1 - taco.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop taco.n.02_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?taco.n.02_1)
+            (inside ?taco.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

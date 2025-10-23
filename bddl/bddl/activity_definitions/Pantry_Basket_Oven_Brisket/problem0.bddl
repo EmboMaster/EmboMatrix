@@ -1,0 +1,36 @@
+(define (problem Go_to_the_pantry_room_0_pick_up_the_wicker_basket_from_the_shelf_and_place_it_on_top_of_the_booth_in_the_kitchen_0_Open_the_oven_in_the_kitchen_0_heat_the_brisket_using_the_oven_and_close_the_oven_after_heating-0)
+    (:domain omnigibson)
+    (:objects
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        shelf.n.01_1 - shelf.n.01
+        booth.n.01_1 - booth.n.01
+        oven.n.01_1 - oven.n.01
+        brisket.n.01_1 - brisket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop wicker_basket.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inside brisket.n.01_1 oven.n.01_1)
+        (not (toggled_on oven.n.01_1))
+        (not (open oven.n.01_1))
+        (inroom floor.n.01_1 pantry_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?wicker_basket.n.01_1 ?booth.n.01_1)
+            (and
+                (toggled_on ?oven.n.01_1)
+                (cooked ?brisket.n.01_1)
+                (inside ?brisket.n.01_1 ?oven.n.01_1)
+                (not (open ?oven.n.01_1))
+            )
+        )
+    )
+)

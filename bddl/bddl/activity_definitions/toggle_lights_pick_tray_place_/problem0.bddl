@@ -1,0 +1,28 @@
+(define (problem Please_toggle_on_the_icicle_lights.n.01_in_the_corridor_0_then_pick_up_the_tray.n.01_from_the_decorative_sign_in_the_grocery_store_0_and_place_the_tray.n.01_on_top_of_the_reception_desk_in_the_grocery_store_0-0)
+    (:domain omnigibson)
+    (:objects
+        icicle_lights.n.01_1 - icicle_lights.n.01
+        tray.n.01_1 - tray.n.01
+        decorative_sign.n.01_1 - decorative_sign.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom icicle_lights.n.01_1 corridor_0)
+        (not (toggled_on icicle_lights.n.01_1))
+        (ontop tray.n.01_1 decorative_sign.n.01_1)
+        (inroom decorative_sign.n.01_1 grocery_store_0)
+        (inroom reception_desk.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?icicle_lights.n.01_1)
+            (ontop ?tray.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

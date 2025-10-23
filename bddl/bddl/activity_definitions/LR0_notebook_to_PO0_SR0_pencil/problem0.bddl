@@ -1,0 +1,31 @@
+(define (problem Go_to_living_room_0_pick_up_the_notebook_from_the_coffee_table_and_place_it_on_the_desk_in_private_office_0_Then_go_to_storage_room_0_pick_up_the_pencil_box_n_01_from_the_shelf_and_put_it_inside_the_wicker_basket_n_01_in_storage_room_1-0)
+    (:domain omnigibson)
+    (:objects
+        notebook.n.01_1 - notebook.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        desk.n.01_1 - desk.n.01
+        pencil_box.n.01_1 - pencil_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop notebook.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom desk.n.01_1 private_office_0)
+        (ontop pencil_box.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom wicker_basket.n.01_1 storage_room_1)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?notebook.n.01_1 ?desk.n.01_1)
+            (inside ?pencil_box.n.01_1 ?wicker_basket.n.01_1)
+        )
+    )
+)

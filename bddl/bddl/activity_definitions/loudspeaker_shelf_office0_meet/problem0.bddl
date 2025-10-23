@@ -1,0 +1,29 @@
+(define (problem Toggle_on_the_loudspeaker.n.01_located_on_the_shelf_in_shared_office_0_then_go_to_meeting_room_0_and_toggle_off_the_facsimile.n.02_machine_on_the_console_table)
+    (:domain omnigibson)
+    (:objects
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        shelf.n.01_1 - shelf.n.01
+        facsimile.n.02_1 - facsimile.n.02
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop loudspeaker.n.01_1 shelf.n.01_1)
+        (not (toggled_on loudspeaker.n.01_1))
+        (inroom shelf.n.01_1 shared_office_0)
+        (ontop facsimile.n.02_1 console_table.n.01_1)
+        (toggled_on facsimile.n.02_1)
+        (inroom console_table.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?loudspeaker.n.01_1)
+            (not (toggled_on ?facsimile.n.02_1))
+        )
+    )
+)

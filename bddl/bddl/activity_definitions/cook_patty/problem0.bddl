@@ -1,0 +1,31 @@
+(define (problem go_to_the_grocery_store_0_pick_up_the_patty.n.01_from_the_shelf.n.01_place_it_inside_the_microwave.n.02_toggle_on_the_microwave.n.02_and_cook_the_patty.n.01_once_done_toggle_off_the_microwave.n.02_and_place_the_cooked_patty.n.01_back_on_the_shelf.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        patty.n.01_1 - patty.n.01
+        shelf.n.01_1 - shelf.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop patty.n.01_1 shelf.n.01_1)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom microwave.n.02_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?patty.n.01_1)
+            (not
+                (toggled_on ?microwave.n.02_1)
+            )
+            (ontop ?patty.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

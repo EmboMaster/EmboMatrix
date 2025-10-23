@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_tray_from_the_conference_table_in_the_conference_hall_0_and_place_it_on_top_of_the_desk_in_the_private_office_2._Then_go_to_the_copy_room_0,_pick_up_the_legal_document_from_the_printer.n.03_and_deliver_it_to_the_administrative_assistant's_desk_in_the_shared_office_0.)
+    (:domain omnigibson)
+    (:objects
+        tray.n.01_1 - tray.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        desk.n.01_1 desk.n.01_2 - desk.n.01
+        legal_document.n.01_1 - legal_document.n.01
+        printer.n.03_1 - printer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tray.n.01_1 conference_table.n.01_1)
+        (ontop legal_document.n.01_1 printer.n.03_1)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (inroom desk.n.01_1 private_office_2)
+        (inroom printer.n.03_1 copy_room_0)
+        (inroom desk.n.01_2 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 conference_hall_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?tray.n.01_1 ?desk.n.01_1)
+            (ontop ?legal_document.n.01_1 ?desk.n.01_2)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"cooler.n.01_1": {"open": true}}, "relation": [["mango.n.02_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["cooler.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"mango.n.02_1": {"frozen": true}, "cooler.n.01_1": {"open": false}}, "relation": []}

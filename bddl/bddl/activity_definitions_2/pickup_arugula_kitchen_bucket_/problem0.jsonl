@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["arugula.n.02_1", "ontop", "booth.n.01_1"], ["arugula.n.02_2", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["bucket.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"arugula.n.02_1": {"soaked": true}, "arugula.n.02_2": {"soaked": true}}, "relation": [["arugula.n.02_1", "inside", "bucket.n.01_1"], ["arugula.n.02_2", "inside", "bucket.n.01_1"]]}

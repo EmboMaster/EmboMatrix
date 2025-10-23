@@ -1,0 +1,29 @@
+(define (problem please_place_the_allen_wrench_and_screwdriver_from_the_bench_in_the_garage_0_onto_the_shelf_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        allen_wrench.n.01_1 - allen_wrench.n.01
+        screwdriver.n.01_1 - screwdriver.n.01
+        bench.n.01_1 - bench.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop allen_wrench.n.01_1 bench.n.01_1)
+        (ontop screwdriver.n.01_1 bench.n.01_1)
+        (inroom bench.n.01_1 garage_0)
+        (inroom allen_wrench.n.01_1 garage_0)
+        (inroom screwdriver.n.01_1 garage_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?allen_wrench.n.01_1 ?shelf.n.01_1)
+            (ontop ?screwdriver.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

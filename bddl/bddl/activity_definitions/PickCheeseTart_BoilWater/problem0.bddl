@@ -1,0 +1,29 @@
+(define (problem Please_pick_up_the_cheese_tart_from_the_conference_table_in_shared_office_0_go_to_break_room_0_and_place_it_on_the_reception_desk_next_to_the_electric_kettle.n.01_Toggle_on_the_electric_kettle.n.01_to_boil_water_for_tea_preparation-0)
+    (:domain omnigibson)
+    (:objects
+        cheese_tart.n.01_1 - cheese_tart.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop cheese_tart.n.01_1 conference_table.n.01_1)
+        (not (toggled_on electric_kettle.n.01_1))
+        (inroom conference_table.n.01_1 shared_office_0)
+        (inroom cheese_tart.n.01_1 shared_office_0)
+        (inroom electric_kettle.n.01_1 break_room_0)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?cheese_tart.n.01_1 ?reception_desk.n.01_1)
+            (toggled_on ?electric_kettle.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,23 @@
+(define (problem pick_up_the_laptop_from_the_board_in_conference_hall_0_open_it_and_toggle_it_on-0)
+    (:domain omnigibson)
+    (:objects
+        laptop.n.01_1 - laptop.n.01
+        board.n.02_1 - board.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop laptop.n.01_1 board.n.02_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom board.n.02_1 conference_hall_0)
+        (inroom floor.n.01_1 conference_hall_0)
+    )
+
+    (:goal
+        (and
+            (open ?laptop.n.01_1)
+            (toggled_on ?laptop.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"carton.n.02_1": {"open": false}}, "relation": [["carton.n.02_1", "ontop", "desk.n.01_1"], ["water_bottle.n.01_1", "inside", "carton.n.02_1"], ["desk.n.01_1", "inroom", "bedroom_0"], ["table_lamp.n.01_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"carton.n.02_1": {"open": true}}, "relation": [["water_bottle.n.01_1", "ontop", "table_lamp.n.01_1"]]}

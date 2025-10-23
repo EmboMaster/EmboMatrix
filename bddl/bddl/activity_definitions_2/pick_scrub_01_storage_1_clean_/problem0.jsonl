@@ -1,0 +1,2 @@
+{"state": {"treadmill.n.01_1": {"dusty": true}, "countertop.n.01_1": {"stained": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["scrub_brush.n.01_1", "inroom", "storage_room_1"], ["treadmill.n.01_1", "inroom", "exercise_room_0"], ["countertop.n.01_1", "inroom", "corridor_0"], ["sink.n.01_1", "inroom", "exercise_room_0"], ["floor.n.01_1", "inroom", "storage_room_1"]]}
+{"state": {"scrub_brush.n.01_1": {"soaked": true}, "treadmill.n.01_1": {"dusty": false}, "countertop.n.01_1": {"stained": false}}, "relation": []}

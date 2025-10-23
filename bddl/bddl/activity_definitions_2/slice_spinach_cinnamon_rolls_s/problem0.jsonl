@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["spinach.n.02_1", "inroom", "grocery_store_0"], ["cinnamon_roll.n.01_1", "inroom", "grocery_store_0"], ["cleaver.n.01_1", "inroom", "grocery_store_0"], ["shelf.n.01_1", "inroom", "grocery_store_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "grocery_store_0"]]}
+{"state": {"spinach.n.02_1": {"sliced": true}, "cinnamon_roll.n.01_1": {"sliced": true}}, "relation": [["spinach.n.02_1", "ontop", "shelf.n.01_1"], ["cinnamon_roll.n.01_1", "ontop", "shelf.n.01_1"]]}

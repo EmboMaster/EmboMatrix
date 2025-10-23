@@ -1,0 +1,24 @@
+(define (problem go_to_empty_room_0_pick_up_the_coffee_cup.n.01_from_the_floor_and_put_it_inside_the_compost_bin.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        coffee_cup.n.01_1 - coffee_cup.n.01
+        compost_bin.n.01_1 - compost_bin.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop coffee_cup.n.01_1 floor.n.01_1)
+        (inroom coffee_cup.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom compost_bin.n.01_1 bathroom_0)
+        (inroom floor.n.01_2 bathroom_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?coffee_cup.n.01_1 ?compost_bin.n.01_1)
+        )
+    )
+)

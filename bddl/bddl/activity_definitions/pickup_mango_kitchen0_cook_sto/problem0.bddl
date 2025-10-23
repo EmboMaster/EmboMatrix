@@ -1,0 +1,34 @@
+(define (problem pick_up_mango_from_reception_desk_in_kitchen_0_place_mango_inside_oven_in_kitchen_0_cook_mango_using_oven_next_go_to_storage_room_0_pick_up_tupperware_from_shelf_place_tupperware_inside_cooler_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        mango.n.02_1 - mango.n.02
+        oven.n.01_1 - oven.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mango.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (not (toggled_on oven.n.01_1))
+        (ontop tupperware.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom floor.n.01_2 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?mango.n.02_1)
+            (inside ?tupperware.n.01_1 ?cooler.n.01_1)
+            (frozen ?tupperware.n.01_1)
+        )
+    )
+)

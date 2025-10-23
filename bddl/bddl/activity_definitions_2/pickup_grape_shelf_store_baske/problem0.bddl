@@ -1,0 +1,25 @@
+(define (problem pick_up_the_grape.n.01_from_the_shelf_in_the_grocery_store_0_and_place_it_inside_the_shopping_basket.n.01_in_the_corridor_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        grape.n.01_1 - grape.n.01
+        shelf.n.01_1 - shelf.n.01
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop grape.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom shopping_basket.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (ontop grape.n.01_1 shelf.n.01_1)
+        (and
+            (inside ?grape.n.01_1 ?shopping_basket.n.01_1)
+        )
+    )
+)

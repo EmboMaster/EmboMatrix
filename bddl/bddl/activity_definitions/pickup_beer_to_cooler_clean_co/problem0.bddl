@@ -1,0 +1,30 @@
+(define (problem pick_up_the_beer_bottle.n.01_from_the_bench_in_the_garage_0_carry_it_to_the_cooler.n.01_in_the_garage_0_and_place_it_inside_the_cooler.n.01_to_freeze_the_beer_bottle.n.01_afterward_return_to_the_corridor_0_and_ensure_the_corridor_is_free_of_clutter_by_picking_up_the_shopping_basket.n.01_from_the_ground_and_placing_it_on_the_shelf_in_the_storage_room_1-0)
+    (:domain omnigibson)
+    (:objects
+        beer_bottle.n.01_1 - beer_bottle.n.01
+        cooler.n.01_1 - cooler.n.01
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        shelf.n.01_1 - shelf.n.01
+        bench.n.01_1 - bench.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop beer_bottle.n.01_1 bench.n.01_1)
+        (inroom bench.n.01_1 garage_0)
+        (inroom cooler.n.01_1 garage_0)
+        (inroom shopping_basket.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom shelf.n.01_1 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?beer_bottle.n.01_1)
+            (inside ?beer_bottle.n.01_1 ?cooler.n.01_1)
+            (ontop ?shopping_basket.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

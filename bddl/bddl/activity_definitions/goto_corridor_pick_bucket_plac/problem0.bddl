@@ -1,0 +1,26 @@
+(define (problem go_to_the_corridor_0_pick_up_the_bucket.n.01_from_the_ground_and_place_it_on_top_of_the_shelf.n.01_in_the_hall_arch_wood_then_toggle_on_the_space_heater.n.01_in_the_hall_arch_wood_to_prepare_for_the_exhibition-0)
+    (:domain omnigibson)
+    (:objects
+        bucket.n.01_1 - bucket.n.01
+        shelf.n.01_1 - shelf.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bucket.n.01_1 floor.n.01_1)
+        (inroom bucket.n.01_1 corridor_0)
+        (inroom shelf.n.01_1 corridor_0)
+        (inroom space_heater.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on space_heater.n.01_1))
+    )
+
+    (:goal
+        (and
+            (ontop ?bucket.n.01_1 ?shelf.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

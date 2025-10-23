@@ -1,0 +1,32 @@
+(define (problem pick_up_the_spinach_from_the_breakfast_table_in_the_dining_room_0_and_go_to_the_garage_0_put_the_spinach_inside_the_cooler_to_freeze_it_then_return_to_the_living_room_0_pick_up_the_security_camera_from_the_sofa_and_place_it_on_the_coffee_table-0)
+    (:domain omnigibson)
+    (:objects
+        spinach.n.02_1 - spinach.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        security_camera.n.01_1 - security_camera.n.01
+        sofa.n.01_1 - sofa.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop spinach.n.02_1 breakfast_table.n.01_1)
+        (ontop security_camera.n.01_1 sofa.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 garage_0)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?spinach.n.02_1)
+            (inside ?spinach.n.02_1 ?cooler.n.01_1)
+            (ontop ?security_camera.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

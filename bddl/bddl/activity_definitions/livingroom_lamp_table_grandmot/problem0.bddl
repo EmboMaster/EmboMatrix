@@ -1,0 +1,35 @@
+(define (problem please_go_to_the_living_room_0_toggle_on_the_table_lamp_n_01_on_the_console_table_for_the_grandmother_then_go_to_the_childs_room_0_pick_up_the_toy_car_from_the_bed_and_place_it_on_top_of_the_desk_in_the_childs_room_0_finally_head_to_the_bathroom_0_and_ensure_the_bucket_n_01_is_placed_under_the_urinal_for_me-0)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        console_table.n.01_1 - console_table.n.01
+        toy_car.n.01_1 - toy_car.n.01
+        bed.n.01_1 - bed.n.01
+        desk.n.01_1 - desk.n.01
+        bucket.n.01_1 - bucket.n.01
+        urinal.n.01_1 - urinal.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop table_lamp.n.01_1 console_table.n.01_1)
+        (not (toggled_on table_lamp.n.01_1))
+        (inroom console_table.n.01_1 living_room_0)
+        (ontop toy_car.n.01_1 bed.n.01_1)
+        (inroom bed.n.01_1 childs_room_0)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom bucket.n.01_1 bathroom_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (ontop ?toy_car.n.01_1 ?desk.n.01_1)
+            (under ?bucket.n.01_1 ?urinal.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,23 @@
+(define (problem toggle_on_the_air_conditioner.n.01_near_the_waiting_area_in_the_hall_train_station_to_improve_comfort_for_the_family)
+    (:domain omnigibson)
+    (:objects
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        bench.n.01_1 - bench.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on air_conditioner.n.01_1))
+        (inroom air_conditioner.n.01_1 empty_room_0)
+        (inroom bench.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

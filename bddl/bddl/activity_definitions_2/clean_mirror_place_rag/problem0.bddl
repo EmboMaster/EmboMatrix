@@ -1,0 +1,30 @@
+(define (problem Please_clean_the_dusty_mirror_with_the_rag.n.01_in_the_bathroom_1_then_pick_up_the_rag.n.01_and_place_it_inside_the_wardrobe.n.01_in_closet_0-0)
+    (:domain omnigibson)
+    (:objects
+        mirror.n.01_1 - mirror.n.01
+        rag.n.01_1 - rag.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (dusty mirror.n.01_1)
+        (not (soaked rag.n.01_1))
+        (inroom mirror.n.01_1 bathroom_1)
+        (inroom rag.n.01_1 bathroom_1)
+        (inroom sink.n.01_1 bathroom_1)
+        (inroom wardrobe.n.01_1 closet_0)
+        (inroom floor.n.01_1 bathroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (soaked rag.n.01_1)
+            (not (dusty mirror.n.01_1))
+            (inside rag.n.01_1 wardrobe.n.01_1)
+        )
+    )
+)

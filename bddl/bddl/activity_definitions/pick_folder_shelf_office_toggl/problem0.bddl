@@ -1,0 +1,28 @@
+(define (problem Please_pick_up_the_folder.n.02_from_the_shelf_in_the_private_office_0_put_the_folder_inside_the_backpack.n.01_in_the_corridor_0_and_toggle_on_the_monitor.n.04_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        shelf.n.01_1 - shelf.n.01
+        backpack.n.01_1 - backpack.n.01
+        monitor.n.04_1 - monitor.n.04
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 private_office_0)
+        (inroom monitor.n.04_1 private_office_0)
+        (not (toggled_on monitor.n.04_1))
+        (inroom backpack.n.01_1 corridor_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?folder.n.02_1 ?backpack.n.01_1)
+            (toggled_on ?monitor.n.04_1)
+        )
+    )
+)

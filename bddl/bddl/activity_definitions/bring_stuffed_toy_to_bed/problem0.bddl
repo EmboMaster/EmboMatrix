@@ -1,0 +1,21 @@
+(define (problem bring_stuffed_toy_to_bed-0)
+    (:domain omnigibson)    (:objects
+        teddy.n.01_1 - teddy.n.01
+        bed.n.01_1 - bed.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop teddy.n.01_1 floor.n.01_1)
+        (inroom teddy.n.01_1 childs_room_0)
+        (inroom bed.n.01_1 childs_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    (:goal
+        (and
+            (ontop ?teddy.n.01_1 ?bed.n.01_1)
+        )
+    )
+)
+

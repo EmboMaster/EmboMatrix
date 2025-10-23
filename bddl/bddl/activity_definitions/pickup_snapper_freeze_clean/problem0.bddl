@@ -1,0 +1,33 @@
+(define (problem Pick_up_the_snapper.n.02_from_the_lab_exhaust_hood_in_chemistry_lab_0_go_to_room_corridor_1_and_put_it_inside_the_cooler.n.01_to_freeze_it_Afterward_return_to_chemistry_lab_0_and_close_the_recycling_bin.n.01_near_the_flat_bench_to_maintain_cleanliness-0)
+    (:domain omnigibson)
+    (:objects
+        snapper.n.02_1 - snapper.n.02
+        lab_exhaust_hood.n.01_1 - lab_exhaust_hood.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        flat_bench.n.02_1 - flat_bench.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop snapper.n.02_1 lab_exhaust_hood.n.01_1)
+        (inroom lab_exhaust_hood.n.01_1 chemistry_lab_0)
+        (inroom recycling_bin.n.01_1 chemistry_lab_0)
+        (inroom flat_bench.n.02_1 chemistry_lab_0)
+        (inroom cooler.n.01_1 corridor_1)
+        (inroom floor.n.01_1 chemistry_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (open recycling_bin.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?snapper.n.02_1)
+            (inside ?snapper.n.02_1 ?cooler.n.01_1)
+            (not
+                (open ?recycling_bin.n.01_1)
+            )
+        )
+    )
+)

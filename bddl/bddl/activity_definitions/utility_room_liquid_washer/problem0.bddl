@@ -1,0 +1,28 @@
+(define (problem go_to_utility_room_0_pick_up_the_liquid_carton.n.01_from_the_shelf_put_the_liquid_carton.n.01_inside_the_washer.n.03_close_the_washer.n.03_for_me)
+    (:domain omnigibson)
+    (:objects
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        washer.n.03_1 - washer.n.03
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop liquid_carton.n.01_1 shelf.n.01_1)
+        (open washer.n.03_1)
+        (inroom shelf.n.01_1 utility_room_0)
+        (inroom washer.n.03_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?liquid_carton.n.01_1 ?washer.n.03_1)
+            (not
+                (open ?washer.n.03_1)
+            )
+        )
+    )
+)

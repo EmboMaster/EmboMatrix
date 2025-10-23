@@ -1,0 +1,26 @@
+(define (problem Pick_up_the_espresso_machine.n.01_from_the_booth_in_the_kitchen_0_toggle_it_on_and_place_it_back_on_the_booth)
+    (:domain omnigibson)
+    (:objects
+        espresso_machine.n.01_1 - espresso_machine.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop espresso_machine.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 storage_room_0)
+        (inroom espresso_machine.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (not (toggled_on espresso_machine.n.01_1))
+    )
+
+    (:goal
+        (ontop espresso_machine.n.01_1 booth.n.01_1)
+        (and
+            (ontop ?espresso_machine.n.01_1 ?booth.n.01_1)
+            (toggled_on ?espresso_machine.n.01_1)
+        )
+    )
+)

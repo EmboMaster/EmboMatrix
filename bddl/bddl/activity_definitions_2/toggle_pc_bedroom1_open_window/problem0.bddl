@@ -1,0 +1,25 @@
+(define (problem please_toggle_on_the_desktop_computer.n.01_in_bedroom_1_then_open_the_window.n.01_in_living_room_0_to_let_fresh_air_circulate)
+    (:domain omnigibson)
+    (:objects
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on desktop_computer.n.01_1))
+        (not (open window.n.01_1))
+        (inroom desktop_computer.n.01_1 bedroom_1)
+        (inroom window.n.01_1 living_room_0)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?desktop_computer.n.01_1)
+            (open ?window.n.01_1)
+        )
+    )
+)

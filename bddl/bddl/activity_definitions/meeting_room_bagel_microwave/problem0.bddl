@@ -1,0 +1,28 @@
+(define (problem go_to_room_meeting_room_0_pick_up_bagel_dough.n.01_from_the_reception_desk_in_meeting_room_0_open_microwave.n.02_in_meeting_room_0_put_bagel_dough.n.01_inside_microwave.n.02_in_meeting_room_0_close_microwave.n.02_in_meeting_room_0_toggle_on_microwave.n.02_in_meeting_room_0)
+    (:domain omnigibson)
+    (:objects
+        bagel_dough.n.01_1 - bagel_dough.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bagel_dough.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 meeting_room_0)
+        (inroom microwave.n.02_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 meeting_room_0)
+        (not (open microwave.n.02_1))
+        (not (toggled_on microwave.n.02_1))
+    )
+
+    (:goal
+        (and
+            (inside ?bagel_dough.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (not (open ?microwave.n.02_1))
+        )
+    )
+)

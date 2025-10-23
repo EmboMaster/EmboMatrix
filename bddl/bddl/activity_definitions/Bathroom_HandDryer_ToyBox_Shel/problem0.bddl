@@ -1,0 +1,26 @@
+(define (problem Go_to_the_bathroom_0_toggle_off_the_hand_dryer_n_01_and_then_pick_up_the_toy_box_n_01_from_the_floor_in_the_corridor_0_and_place_it_on_top_of_the_shelf_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        hand_dryer.n.01_1 - hand_dryer.n.01
+        toy_box.n.01_1 - toy_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (toggled_on hand_dryer.n.01_1)
+        (inroom hand_dryer.n.01_1 bathroom_0)
+        (inroom toy_box.n.01_1 corridor_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (not (toggled_on ?hand_dryer.n.01_1))
+            (ontop ?toy_box.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

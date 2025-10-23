@@ -1,0 +1,29 @@
+(define (problem please_bring_the_soup_ladle_from_the_breakfast_table_in_dining_room_0_and_the_bottle_of_olive_oil_from_the_booth_in_kitchen_0_to_the_snack_rack_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        soup_ladle.n.01_1 - soup_ladle.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        olive.n.04_1 - olive.n.04
+        booth.n.01_1 - booth.n.01
+        snack_rack.n.01_1 - snack_rack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop soup_ladle.n.01_1 breakfast_table.n.01_1)
+        (ontop olive.n.04_1 booth.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom snack_rack.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (inside ?soup_ladle.n.01_1 ?snack_rack.n.01_1)
+            (inside ?olive.n.04_1 ?snack_rack.n.01_1)
+        )
+    )
+)

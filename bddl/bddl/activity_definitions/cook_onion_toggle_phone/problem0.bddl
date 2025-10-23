@@ -1,0 +1,36 @@
+(define (problem pick_up_the_vidalia_onion.n.01_from_the_periodic_table_in_the_dining_room_0_and_cook_it_using_the_stove.n.01_in_the_kitchen_0_then_toggle_on_the_desk_phone.n.01_in_the_bathroom_0_then_put_the_cooked_onion_on_top_of_the_counter_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        vidalia_onion.n.01_1 - vidalia_onion.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        stove.n.01_1 - stove.n.01
+        countertop.n.01_1 - countertop.n.01
+        desk_phone.n.01_1 - desk_phone.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop vidalia_onion.n.01_1 periodic_table.n.01_1)
+        (inroom periodic_table.n.01_1 dining_room_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom desk_phone.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on stove.n.01_1)
+        )
+        (not
+            (toggled_on desk_phone.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (cooked ?vidalia_onion.n.01_1)
+            (ontop ?vidalia_onion.n.01_1 ?countertop.n.01_1)
+            (toggled_on ?desk_phone.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,33 @@
+(define (problem go_to_kitchen_0_pick_up_the_zucchini.n.02_from_the_reception_desk_in_kitchen_0_put_the_zucchini.n.02_inside_the_oven.n.01_in_kitchen_0_toggle_on_the_oven.n.01_in_kitchen_0_cook_the_zucchini.n.02_in_the_oven.n.01_in_kitchen_0_go_to_corridor_0_pick_up_the_tupperware.n.01_from_the_shelf_in_corridor_0_go_to_kitchen_0_put_the_cooked_zucchini.n.02_in_the_tupperware.n.01_on_the_reception_desk_in_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        zucchini.n.02_1 - zucchini.n.02
+        oven.n.01_1 - oven.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop zucchini.n.02_1 reception_desk.n.01_1)
+        (ontop tupperware.n.01_1 shelf.n.01_1)
+        (not 
+            (toggled_on oven.n.01_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 corridor_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?zucchini.n.02_1)
+            (inside ?zucchini.n.02_1 ?tupperware.n.01_1)
+            (ontop ?tupperware.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem go_to_the_living_room_0_toggle_on_the_loudspeaker.n.01_near_the_sofa_go_to_the_kitchen_0_pick_up_the_rutabaga.n.01_from_the_reception_desk_go_to_the_closet_0_and_put_the_rutabaga.n.01_inside_the_cooler.n.01_to_freeze_it_for_me)
+    (:domain omnigibson)
+    (:objects
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        sofa.n.01_1 - sofa.n.01
+        rutabaga.n.01_1 - rutabaga.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not (toggled_on loudspeaker.n.01_1))
+        (inroom loudspeaker.n.01_1 living_room_0)
+        (inroom sofa.n.01_1 living_room_0)
+        (ontop rutabaga.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 closet_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?loudspeaker.n.01_1)
+            (frozen ?rutabaga.n.01_1)
+        )
+    )
+)

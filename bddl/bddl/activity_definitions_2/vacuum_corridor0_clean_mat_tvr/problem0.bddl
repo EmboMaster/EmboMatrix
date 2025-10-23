@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_vacuum.n.04_from_the_corner_in_the_corridor_0_and_clean_the_stained_mat_in_the_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        vacuum.n.04_1 - vacuum.n.04
+        mat.n.03_1 - mat.n.03
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom vacuum.n.04_1 corridor_0)
+        (inroom mat.n.03_1 television_room_0)
+        (inroom sink.n.01_1 television_room_0)
+        (stained mat.n.03_1)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (stained mat.n.03_1))
+        )
+    )
+)

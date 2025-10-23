@@ -1,0 +1,28 @@
+(define (problem go_to_the_shared_office_0_toggle_on_the_printer.n.03_pick_up_the_water_glass.n.02_from_the_desk_and_place_it_on_top_of_the_vending_machine_in_the_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        printer.n.03_1 - printer.n.03
+        water_glass.n.02_1 - water_glass.n.02
+        desk.n.01_1 - desk.n.01
+        vending_machine.n.01_1 - vending_machine.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on printer.n.03_1))
+        (ontop water_glass.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom printer.n.03_1 shared_office_0)
+        (inroom vending_machine.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?printer.n.03_1)
+            (ontop ?water_glass.n.02_1 ?vending_machine.n.01_1)
+        )
+    )
+)

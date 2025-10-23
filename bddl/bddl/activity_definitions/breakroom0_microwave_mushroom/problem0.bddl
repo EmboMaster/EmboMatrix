@@ -1,0 +1,32 @@
+(define (problem Please_go_to_break_room_0_and_toggle_on_the_microwave.n.02_for_heating._Then_pick_up_the_mushroom.n.05_from_the_console_table_in_shared_office_0_and_cook_it_using_the_microwave.n.02_in_break_room_0._After_cooking,_pick_up_the_cooked_mushroom.n.05_and_place_it_on_the_pedestal_table_in_break_room_0.-0)
+    (:domain omnigibson)
+    (:objects
+        microwave.n.02_1 - microwave.n.02
+        mushroom.n.05_1 - mushroom.n.05
+        console_table.n.01_1 - console_table.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (ontop mushroom.n.05_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 shared_office_0)
+        (inroom mushroom.n.05_1 shared_office_0)
+        (inroom microwave.n.02_1 break_room_0)
+        (inroom pedestal_table.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?microwave.n.02_1)
+            (cooked ?mushroom.n.05_1)
+            (ontop ?mushroom.n.05_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

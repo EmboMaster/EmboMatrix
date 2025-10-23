@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_cooler.n.01_from_storage_room_1_go_to_childs_room_1_and_freeze_all_four_chanterelle.n.01_mushrooms_inside_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        cooler.n.01_1 - cooler.n.01
+        chanterelle.n.01_1 chanterelle.n.01_2 chanterelle.n.01_3 chanterelle.n.01_4 - chanterelle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom cooler.n.01_1 storage_room_1)
+        (inroom chanterelle.n.01_1 childs_room_1)
+        (inroom chanterelle.n.01_2 childs_room_1)
+        (inroom chanterelle.n.01_3 childs_room_1)
+        (inroom chanterelle.n.01_4 childs_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (forall
+                (?chanterelle.n.01 - chanterelle.n.01)
+                (and
+                    (frozen ?chanterelle.n.01)
+                    (inside ?chanterelle.n.01 cooler.n.01_1)
+                )
+            )
+        )
+    )
+)

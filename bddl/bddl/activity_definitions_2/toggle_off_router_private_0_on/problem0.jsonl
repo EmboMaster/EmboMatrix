@@ -1,0 +1,2 @@
+{"state": {"router.n.02_1": {"toggled_on": true}, "table_lamp.n.01_1": {"toggled_on": false}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["router.n.02_1", "inroom", "private_office_0"], ["table_lamp.n.01_1", "inroom", "private_office_0"], ["floor.n.01_1", "inroom", "private_office_0"]]}
+{"state": {"router.n.02_1": {"toggled_on": false}, "table_lamp.n.01_1": {"toggled_on": true}}, "relation": []}

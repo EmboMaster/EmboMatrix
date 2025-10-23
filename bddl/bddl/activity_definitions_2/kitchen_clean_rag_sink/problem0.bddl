@@ -1,0 +1,26 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_rag.n.01_soak_it_in_the_sink.n.01_and_clean_the_counter_top_in_the_kitchen_0-0)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        sink.n.01_1 - sink.n.01
+        countertop.n.01_1 - countertop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom rag.n.01_1 kitchen_0)
+        (inroom sink.n.01_1 kitchen_0)
+        (inroom countertop.n.01_1 kitchen_0)
+        (dusty countertop.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (soaked ?rag.n.01_1)
+            (not (dusty ?countertop.n.01_1))
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_ham_hock_from_the_booth_in_the_kitchen_0_place_it_inside_the_oven_in_the_kitchen_0_toggle_on_the_oven_and_cook_the_ham_hock-0)
+    (:domain omnigibson)
+    (:objects
+        ham_hock.n.01_1 - ham_hock.n.01
+        booth.n.01_1 - booth.n.01
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop ham_hock.n.01_1 booth.n.01_1)
+        (not 
+            (toggled_on oven.n.01_1)
+        )
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?ham_hock.n.01_1)
+            (toggled_on ?oven.n.01_1)
+            (inside ?ham_hock.n.01_1 ?oven.n.01_1)
+        )
+    )
+)

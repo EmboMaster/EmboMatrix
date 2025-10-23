@@ -1,0 +1,2 @@
+{"state": {"cooler.n.01_1": {"open": false}}, "relation": [["orange.n.01_1", "ontop", "breakfast_table.n.01_1"], ["cooler.n.01_1", "inroom", "corridor_2"], ["breakfast_table.n.01_1", "inroom", "corridor_2"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_2"]]}
+{"state": {"cooler.n.01_1": {"open": false}}, "relation": [["orange.n.01_1", "inside", "cooler.n.01_1"]]}

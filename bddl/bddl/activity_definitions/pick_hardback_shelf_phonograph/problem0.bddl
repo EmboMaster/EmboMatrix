@@ -1,0 +1,29 @@
+(define (problem Please_pick_up_the_hardback_from_the_pedestal_table_in_the_hall_arch_wood_and_place_it_on_the_shelf_in_the_hall_arch_wood._Then_toggle_on_the_phonograph_record.n.01_on_the_console_table_in_the_hall_arch_wood.)
+    (:domain omnigibson)
+    (:objects
+        hardback.n.01_1 - hardback.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        phonograph_record.n.01_1 - phonograph_record.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop hardback.n.01_1 pedestal_table.n.01_1)
+        (ontop phonograph_record.n.01_1 console_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom pedestal_table.n.01_1 empty_room_0)
+        (inroom shelf.n.01_1 empty_room_0)
+        (inroom console_table.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?hardback.n.01_1 ?shelf.n.01_1)
+            (toggled_on ?phonograph_record.n.01_1)
+        )
+    )
+)

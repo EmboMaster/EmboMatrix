@@ -1,0 +1,22 @@
+(define (problem move_reading_glasses_to_side_table-0)
+    (:domain omnigibson)    (:objects
+        spectacles.n.01_1 - spectacles.n.01
+        desk.n.01_1 - desk.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop spectacles.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom console_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (ontop ?spectacles.n.01_1 ?console_table.n.01_1)
+    )
+)
+

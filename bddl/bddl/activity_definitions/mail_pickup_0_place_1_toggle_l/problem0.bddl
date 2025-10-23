@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_mail_from_the_pedestal_table_in_copy_room_0_go_to_private_office_1_and_place_the_documents_on_the_desk_near_the_laptop_then_toggle_on_the_laptop_n_01_in_private_office_1_for_the_junior_analyst)
+    (:domain omnigibson)
+    (:objects
+        mail.n.04_1 - mail.n.04
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        desk.n.01_1 - desk.n.01
+        laptop.n.01_1 - laptop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mail.n.04_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 copy_room_0)
+        (inroom desk.n.01_1 private_office_1)
+        (inroom laptop.n.01_1 private_office_1)
+        (not
+            (toggled_on laptop.n.01_1)
+        )
+        (inroom floor.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?mail.n.04_1 ?desk.n.01_1)
+            (toggled_on ?laptop.n.01_1)
+        )
+    )
+)

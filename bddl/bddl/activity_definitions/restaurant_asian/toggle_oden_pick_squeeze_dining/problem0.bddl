@@ -1,0 +1,28 @@
+(define (problem toggle_on_the_oden_cooker.n.01_in_the_dining_room_0_pick_up_the_squeeze_bottle.n.01_from_the_shelf_in_the_corridor_0_and_put_it_on_top_of_the_oden_cooker.n.01_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        oden_cooker.n.01_1 - oden_cooker.n.01
+        squeeze_bottle.n.01_1 - squeeze_bottle.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (not 
+            (toggled_on oden_cooker.n.01_1)
+        )
+        (ontop squeeze_bottle.n.01_1 shelf.n.01_1)
+        (inroom oden_cooker.n.01_1 dining_room_0)
+        (inroom shelf.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal 
+        (and 
+            (toggled_on ?oden_cooker.n.01_1)
+            (ontop ?squeeze_bottle.n.01_1 ?oden_cooker.n.01_1)
+        )
+    )
+)

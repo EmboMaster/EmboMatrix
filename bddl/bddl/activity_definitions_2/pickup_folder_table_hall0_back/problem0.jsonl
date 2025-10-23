@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["folder.n.02_1", "ontop", "breakfast_table.n.01_1"], ["backpack.n.01_1", "ontop", "straight_chair.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["breakfast_table.n.01_1", "inroom", "conference_hall_0"], ["straight_chair.n.01_1", "inroom", "corridor_0"], ["floor.n.01_1", "inroom", "conference_hall_0"], ["floor.n.01_2", "inroom", "corridor_0"]]}
+{"state": {}, "relation": [["folder.n.02_1", "inside", "backpack.n.01_1"]]}

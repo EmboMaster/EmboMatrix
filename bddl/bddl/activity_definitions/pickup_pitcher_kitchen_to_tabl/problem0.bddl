@@ -1,0 +1,28 @@
+(define (problem pick_up_the_pitcher_from_the_reception_desk_in_the_kitchen_0_bring_it_to_the_breakfast_table_in_the_beechwood_0_garden_and_place_it_on_top_of_the_breakfast_table_afterward_toggle_on_the_air_conditioner.n.01_in_the_living_room_1)
+    (:domain omnigibson)
+    (:objects
+        pitcher.n.02_1 - pitcher.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pitcher.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 living_room_1)
+        (not (toggled_on air_conditioner.n.01_1))
+        (inroom air_conditioner.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?pitcher.n.02_1 ?breakfast_table.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_white_turnip.n.02_from_the_chopping_board_in_the_kitchen_0_and_cook_it_using_the_oven.n.01_in_the_kitchen_0.once_done,_place_it_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        white_turnip.n.02_1 - white_turnip.n.02
+        chopping_board.n.01_1 - chopping_board.n.01
+        oven.n.01_1 - oven.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop white_turnip.n.02_1 chopping_board.n.01_1)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (not
+            (toggled_on oven.n.01_1)
+        )
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?white_turnip.n.02_1)
+            (ontop ?white_turnip.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

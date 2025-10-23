@@ -1,0 +1,22 @@
+(define (problem fetch_hairbrush_to_bedside_table-0)
+    (:domain omnigibson)    (:objects
+        hairbrush.n.01_1 - hairbrush.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom hairbrush.n.01_1 bathroom_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?hairbrush.n.01_1 ?table_lamp.n.01_1)
+        )
+    )
+)
+

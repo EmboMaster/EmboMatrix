@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["steak.n.01_1", "ontop", "booth.n.01_1"], ["table_knife.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "utility_room_0"], ["saucepot.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "utility_room_0"]]}
+{"state": {"steak.n.01_1": {"sliced": true}}, "relation": [["steak.n.01_1", "inside", "saucepot.n.01_1"]]}

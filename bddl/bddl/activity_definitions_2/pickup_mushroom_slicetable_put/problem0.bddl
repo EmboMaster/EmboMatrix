@@ -1,0 +1,29 @@
+(define (problem pick_up_the_mushroom.n.05_from_the_conference_table_in_the_bedroom_0_slice_it_with_the_conference_table_knife.n.01_on_the_booth_in_the_bathroom_0_and_put_the_sliced_mushroom.n.05_inside_the_casserole.n.02_on_the_booth_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        mushroom.n.05_1 - mushroom.n.05
+        conference_table.n.01_1 - conference_table.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        booth.n.01_1 - booth.n.01
+        casserole.n.02_1 - casserole.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mushroom.n.05_1 conference_table.n.01_1)
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (ontop casserole.n.02_1 booth.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom conference_table.n.01_1 bedroom_0)
+        (inroom booth.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?mushroom.n.05_1)
+            (inside ?mushroom.n.05_1 ?casserole.n.02_1)
+        )
+    )
+)

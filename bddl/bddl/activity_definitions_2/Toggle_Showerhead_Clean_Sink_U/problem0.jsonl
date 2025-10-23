@@ -1,0 +1,2 @@
+{"state": {"showerhead.n.01_1": {"toggled_on": false}, "sink.n.01_1": {"dusty": true}}, "relation": [["rag.n.01_1", "inside", "tray.n.01_1"], ["showerhead.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["tray.n.01_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"showerhead.n.01_1": {"toggled_on": false}, "sink.n.01_1": {"dusty": false}, "rag.n.01_1": {"soaked": true}}, "relation": []}

@@ -1,0 +1,26 @@
+(define (problem pick_up_the_spirit_lamp.n.01_from_the_private_office_0_go_to_the_bedroom_0_toggle_on_the_spirit_lamp.n.01_and_place_it_on_top_of_the_table_lamp_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        spirit_lamp.n.01_1 - spirit_lamp.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom spirit_lamp.n.01_1 private_office_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on spirit_lamp.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (toggled_on ?spirit_lamp.n.01_1)
+            (ontop ?spirit_lamp.n.01_1 ?table_lamp.n.01_1)
+        )
+    )
+)

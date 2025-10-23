@@ -1,0 +1,30 @@
+(define (problem pick_up_the_water_cooler.n.01_from_the_center_in_the_conference_hall_0_and_put_it_on_top_of_the_desk_in_the_meeting_room_0_toggle_on_the_treadmill.n.01_in_the_conference_hall_0_and_open_the_laptop.n.01_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        water_cooler.n.01_1 - water_cooler.n.01
+        desk.n.01_1 - desk.n.01
+        treadmill.n.01_1 - treadmill.n.01
+        laptop.n.01_1 - laptop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom water_cooler.n.01_1 conference_hall_0)
+        (inroom desk.n.01_1 meeting_room_0)
+        (inroom treadmill.n.01_1 conference_hall_0)
+        (not (toggled_on treadmill.n.01_1))
+        (inroom laptop.n.01_1 private_office_0)
+        (not (open laptop.n.01_1))
+        (inroom floor.n.01_1 conference_hall_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?water_cooler.n.01_1 ?desk.n.01_1)
+            (toggled_on ?treadmill.n.01_1)
+            (open ?laptop.n.01_1)
+        )
+    )
+)

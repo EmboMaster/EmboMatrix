@@ -1,0 +1,25 @@
+(define (problem go_to_corridor_2_pick_up_the_banana.n.02_from_the_conference_table_in_corridor_2_go_to_infirmary_0_put_the_banana.n.02_inside_the_cooler.n.01_in_infirmary_0_to_ensure_it_remains_fresh_for_later_use-0)
+    (:domain omnigibson)
+    (:objects
+        banana.n.02_1 - banana.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop banana.n.02_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 corridor_2)
+        (inroom cooler.n.01_1 infirmary_0)
+        (inroom floor.n.01_1 corridor_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?banana.n.02_1 ?cooler.n.01_1)
+            (frozen ?banana.n.02_1)
+        )
+    )
+)

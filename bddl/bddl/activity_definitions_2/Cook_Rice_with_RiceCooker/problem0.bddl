@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_rice_cooker.n.01_from_the_shelf_in_the_kitchen_0_toggle_it_on_and_cook_the_chicken.n.01_in_it_After_cooking_toggle_off_the_rice_cooker.n.01_and_place_it_back_on_the_shelf)
+    (:domain omnigibson)
+    (:objects
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        shelf.n.01_1 - shelf.n.01
+        chicken.n.01_1 - chicken.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rice_cooker.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom chicken.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on rice_cooker.n.01_1))
+        (not (cooked chicken.n.01_1))
+    )
+
+    (:goal
+        (and
+            (ontop rice_cooker.n.01_1 shelf.n.01_1)
+            (not (toggled_on rice_cooker.n.01_1))
+            (cooked chicken.n.01_1)
+        )
+    )
+)

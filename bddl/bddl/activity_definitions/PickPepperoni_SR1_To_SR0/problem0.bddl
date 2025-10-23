@@ -1,0 +1,25 @@
+(define (problem Please_pick_up_the_pepperoni_from_the_shelf_in_storage_room_1_go_to_storage_room_0_and_put_the_pepperoni_inside_the_cooler_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        pepperoni.n.01_1 - pepperoni.n.01
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop pepperoni.n.01_1 shelf.n.01_1) 
+        (inroom shelf.n.01_1 storage_room_1)
+        (inroom cooler.n.01_1 storage_room_0) 
+        (inroom floor.n.01_1 storage_room_1) 
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?pepperoni.n.01_1 ?cooler.n.01_1)
+            (frozen ?pepperoni.n.01_1)
+        )
+    )
+)

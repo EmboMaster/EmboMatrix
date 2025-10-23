@@ -1,0 +1,27 @@
+(define (problem go_to_break_room_0_pick_up_the_hotdog.n.02_from_the_conference_table_in_break_room_0_put_the_hotdog.n.02_inside_the_microwave.n.02_in_break_room_0_toggle_on_the_microwave.n.02_in_break_room_0_cook_the_hotdog.n.02_in_the_microwave.n.02_in_break_room_0_toggle_off_the_microwave.n.02_in_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        hotdog.n.02_1 - hotdog.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop hotdog.n.02_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom microwave.n.02_1 break_room_0)
+        (not (toggled_on microwave.n.02_1))
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (cooked ?hotdog.n.02_1)
+            (inside ?hotdog.n.02_1 ?microwave.n.02_1)
+            (not (toggled_on ?microwave.n.02_1))
+        )
+    )
+)

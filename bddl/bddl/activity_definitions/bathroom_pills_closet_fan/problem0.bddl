@@ -1,0 +1,28 @@
+(define (problem go_to_the_bathroom_0_and_pick_up_the_pill_bottle.n.01_from_the_countertop._then_go_to_the_closet_2_and_put_the_pill_bottle.n.01_inside_the_shelf.n.01._next,_go_to_the_corridor_0_and_toggle_on_the_ceiling_fan.n.01_to_ensure_the_air_circulation_is_comfortable_for_the_grandmother.)
+    (:domain omnigibson)
+    (:objects
+        pill_bottle.n.01_1 - pill_bottle.n.01
+        countertop.n.01_1 - countertop.n.01
+        shelf.n.01_1 - shelf.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pill_bottle.n.01_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 bathroom_0)
+        (inroom shelf.n.01_1 closet_2)
+        (inroom ceiling_fan.n.01_1 corridor_0)
+        (not (toggled_on ceiling_fan.n.01_1))
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?pill_bottle.n.01_1 ?shelf.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+        )
+    )
+)

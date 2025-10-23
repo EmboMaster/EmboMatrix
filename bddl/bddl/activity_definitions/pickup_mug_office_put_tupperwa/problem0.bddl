@@ -1,0 +1,34 @@
+(define (problem pick_up_the_mug_from_the_breakfast_table_in_the_office_large:corridor_2_put_it_inside_the_tupperware.n.01_on_the_console_table_in_the_bathroom_0_and_toggle_off_the_showerhead.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        mug.n.04_1 - mug.n.04
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        console_table.n.01_1 - console_table.n.01
+        showerhead.n.01_1 - showerhead.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mug.n.04_1 breakfast_table.n.01_1)
+        (ontop tupperware.n.01_1 console_table.n.01_1)
+        (toggled_on showerhead.n.01_1)
+        (inroom breakfast_table.n.01_1 corridor_2)
+        (inroom mug.n.04_1 corridor_2)
+        (inroom floor.n.01_1 corridor_2)
+        (inroom console_table.n.01_1 bathroom_0)
+        (inroom tupperware.n.01_1 bathroom_0)
+        (inroom showerhead.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?mug.n.04_1 ?tupperware.n.01_1)
+            (not
+                (toggled_on ?showerhead.n.01_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,26 @@
+(define (problem go_to_the_utility_room_0_open_the_clothes_dryer.n.01_pick_up_the_sock_from_the_clothes_dryer.n.01_and_place_the_sock_inside_the_wardrobe.n.01_in_the_closet_0)
+    (:domain omnigibson)
+    (:objects
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        sock.n.01_1 - sock.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom clothes_dryer.n.01_1 utility_room_0)
+        (inroom wardrobe.n.01_1 closet_0)
+        (inside sock.n.01_1 clothes_dryer.n.01_1)
+        (not (open clothes_dryer.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (open ?clothes_dryer.n.01_1)
+            (inside ?sock.n.01_1 ?wardrobe.n.01_1)
+        )
+    )
+)

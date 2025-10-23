@@ -1,0 +1,32 @@
+(define (problem Please_pick_up_the_artichoke.n.02_from_the_wicker_basket.n.01_in_garden_0_and_place_it_inside_the_cooler.n.01_in_storage_room_0_to_freeze_it_Then_pick_up_the_folder.n.02_from_the_shelf_in_storage_room_0_and_put_it_on_the_desk_in_utility_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        artichoke.n.02_1 - artichoke.n.02
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        folder.n.02_1 - folder.n.02
+        shelf.n.01_1 - shelf.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside artichoke.n.02_1 wicker_basket.n.01_1)
+        (ontop folder.n.02_1 shelf.n.01_1)
+        (inroom wicker_basket.n.01_1 garden_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom desk.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 garden_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (frozen ?artichoke.n.02_1)
+            (inside ?artichoke.n.02_1 ?cooler.n.01_1)
+            (ontop ?folder.n.02_1 ?desk.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,31 @@
+(define (problem pick_up_the_bouillon_cube.n.01_from_the_reception_desk_in_the_kitchen_0_go_to_the_cooler.n.01_in_the_kitchen_0_and_put_the_bouillon_cube.n.01_inside_the_cooler.n.01_to_freeze_it_then_go_to_the_child’s_room_0_pick_up_the_pencil_box.n.01_from_the_desk_and_place_it_inside_the_wardrobe.n.01_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        bouillon_cube.n.01_1 - bouillon_cube.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        pencil_box.n.01_1 - pencil_box.n.01
+        desk.n.01_1 - desk.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop bouillon_cube.n.01_1 reception_desk.n.01_1)
+        (ontop pencil_box.n.01_1 desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom wardrobe.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?bouillon_cube.n.01_1)
+            (inside ?pencil_box.n.01_1 ?wardrobe.n.01_1)
+        )
+    )
+)

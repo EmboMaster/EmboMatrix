@@ -1,0 +1,28 @@
+(define (problem please_go_to_the_soap_dispenser_in_the_bathroom_0_and_toggle_it_on_then_pick_up_the_bucket_from_the_bathroom_0_go_to_the_corridor_0_and_put_the_bucket_on_top_of_the_pedestal_table_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        bucket.n.01_1 - bucket.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (toggled_on soap_dispenser.n.01_1)
+        )
+        (inroom soap_dispenser.n.01_1 bathroom_0)
+        (inroom bucket.n.01_1 bathroom_0)
+        (inroom pedestal_table.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?soap_dispenser.n.01_1)
+            (ontop ?bucket.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

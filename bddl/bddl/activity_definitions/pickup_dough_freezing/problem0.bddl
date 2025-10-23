@@ -1,0 +1,25 @@
+(define (problem pick_up_the_roll_dough.n.01_from_the_tray_in_corridor_1_go_to_chemistry_lab_0_and_put_the_roll_dough.n.01_inside_the_cooler.n.01_to_demonstrate_freezing_as_part_of_the_experiment-0)
+    (:domain omnigibson)
+    (:objects
+        roll_dough.n.01_1 - roll_dough.n.01
+        tray.n.01_1 - tray.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop roll_dough.n.01_1 tray.n.01_1)
+        (inroom tray.n.01_1 corridor_1)
+        (inroom cooler.n.01_1 chemistry_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?roll_dough.n.01_1)
+            (inside ?roll_dough.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"loudspeaker.n.01_1": {"toggled_on": false}, "thermostat.n.01_1": {"toggled_on": true}}, "relation": [["loudspeaker.n.01_1", "inroom", "gym_0"], ["thermostat.n.01_1", "inroom", "sauna_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "gym_0"]]}
+{"state": {"loudspeaker.n.01_1": {"toggled_on": true}, "thermostat.n.01_1": {"toggled_on": false}}, "relation": []}

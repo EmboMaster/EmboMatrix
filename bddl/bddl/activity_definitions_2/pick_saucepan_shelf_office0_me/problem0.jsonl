@@ -1,0 +1,2 @@
+{"state": {"space_heater.n.01_1": {"toggled_on": false}}, "relation": [["saucepan.n.01_1", "ontop", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "shared_office_0"], ["chili.n.02_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "meeting_room_0"], ["space_heater.n.01_1", "inroom", "meeting_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "shared_office_0"]]}
+{"state": {"space_heater.n.01_1": {"toggled_on": true}}, "relation": [["chili.n.02_1", "inside", "saucepan.n.01_1"], ["saucepan.n.01_1", "ontop", "shelf.n.01_1"]]}

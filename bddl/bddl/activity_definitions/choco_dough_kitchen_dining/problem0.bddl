@@ -1,0 +1,28 @@
+(define (problem pick_up_the_chocolate_cookie_dough.n.01_from_the_reception_desk_in_the_kitchen_0_and_place_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_after_freezing_take_the_chocolate_cookie_dough.n.01_out_of_the_cooler.n.01_and_bring_it_to_the_dining_room_0_place_it_on_the_baseboard_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cookie_dough.n.01_1 - chocolate_cookie_dough.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        baseboard.n.01_1 - baseboard.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cookie_dough.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom baseboard.n.01_1 dining_room_0)
+        (inroom floor.n.01_2 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?chocolate_cookie_dough.n.01_1)
+            (ontop ?chocolate_cookie_dough.n.01_1 ?baseboard.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem Please_pick_up_the_chocolate_cookie_dough.n.01_from_the_reception_desk_in_shared_office_0_and_put_it_inside_the_cooler.n.01_in_copy_room_0_to_freeze_it_Then_open_the_recycling_bin.n.01_in_lobby_0_to_dispose_of_shredded_papers-0)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cookie_dough.n.01_1 - chocolate_cookie_dough.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cookie_dough.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 copy_room_0)
+        (inroom recycling_bin.n.01_1 lobby_0)
+        (not (open recycling_bin.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?chocolate_cookie_dough.n.01_1)
+            (inside ?chocolate_cookie_dough.n.01_1 ?cooler.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_test_tube_from_the_reception_desk_in_chemistry_lab_0_and_place_it_inside_the_recycling_bin.n.01_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        test_tube.n.01_1 - test_tube.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop test_tube.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 chemistry_lab_0)
+        (inroom recycling_bin.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 chemistry_lab_0)
+        (inroom floor.n.01_2 bathroom_0)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?test_tube.n.01_1 ?recycling_bin.n.01_1)
+        )
+    )
+)

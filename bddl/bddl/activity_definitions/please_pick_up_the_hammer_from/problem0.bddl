@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_hammer_from_the_floor_in_garage_0_and_the_newspaper_from_the_eames_chair_in_living_room_0_and_move_them_to_the_periodic_table_in_storage_room_1)
+    (:domain omnigibson)
+    (:objects
+        hammer.n.02_1 - hammer.n.02
+        newspaper.n.03_1 - newspaper.n.03
+        eames_chair.n.01_1 - eames_chair.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop hammer.n.02_1 floor.n.01_1)
+        (ontop newspaper.n.03_1 eames_chair.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom hammer.n.02_1 garage_0)
+        (inroom floor.n.01_1 garage_0)
+        (inroom newspaper.n.03_1 living_room_0)
+        (inroom eames_chair.n.01_1 living_room_0)
+        (inroom periodic_table.n.01_1 storage_room_1)
+        (inroom floor.n.01_2 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?hammer.n.02_1 ?periodic_table.n.01_1)
+            (ontop ?newspaper.n.03_1 ?periodic_table.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,32 @@
+(define (problem pick_up_the_leek_from_the_countertop_in_corridor_0_go_to_closet_1_in_benevolence_2_int_and_place_it_on_top_of_the_cooler_to_freeze_then_pick_up_the_sugar_cookie_from_the_shelf_in_bedroom_0_and_place_it_inside_the_wicker_basket_in_bathroom_0-0)
+    (:domain omnigibson)
+    (:objects
+        leek.n.02_1 - leek.n.02
+        cooler.n.01_1 - cooler.n.01
+        sugar_cookie.n.01_1 - sugar_cookie.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        countertop.n.01_1 - countertop.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop leek.n.02_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 corridor_0)
+        (inroom cooler.n.01_1 closet_1)
+        (inside sugar_cookie.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bedroom_0)
+        (inroom wicker_basket.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?leek.n.02_1)
+            (ontop ?leek.n.02_1 ?cooler.n.01_1)
+            (inside ?sugar_cookie.n.01_1 ?wicker_basket.n.01_1)
+        )
+    )
+)

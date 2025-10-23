@@ -1,0 +1,32 @@
+(define (problem go_to_break_room_0_pick_up_the_tortilla.n.01_from_the_booth_put_it_inside_the_microwave.n.02_and_heat_it_for_30_seconds_then_pick_up_the_heated_tortilla.n.01_and_place_it_on_the_saucer.n.02_on_the_conference_table_in_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        tortilla.n.01_1 - tortilla.n.01
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        saucer.n.02_1 - saucer.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop tortilla.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 break_room_0)
+        (inroom microwave.n.02_1 break_room_0)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (ontop saucer.n.02_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (cooked ?tortilla.n.01_1)
+            (ontop ?tortilla.n.01_1 ?saucer.n.02_1)
+        )
+    )
+)

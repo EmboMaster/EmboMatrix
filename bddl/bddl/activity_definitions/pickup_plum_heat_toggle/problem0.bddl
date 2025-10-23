@@ -1,0 +1,27 @@
+(define (problem Pick_up_the_plum.n.02_from_the_shelf_in_the_biology_lab_0,_place_it_on_top_of_the_burner.n.02_in_the_biology_lab_0,_and_heat_it._After_that,_toggle_off_the_burner.n.02.)
+    (:domain omnigibson)
+    (:objects
+        plum.n.02_1 - plum.n.02
+        shelf.n.01_1 - shelf.n.01
+        burner.n.02_1 - burner.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop plum.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 biology_lab_0)
+        (inroom burner.n.02_1 biology_lab_0)
+        (inroom floor.n.01_1 biology_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on burner.n.02_1))
+    )
+
+    (:goal
+        (and
+            (ontop ?plum.n.02_1 ?burner.n.02_1)
+            (cooked ?plum.n.02_1)
+            (not (toggled_on ?burner.n.02_1))
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem Go_to_private_office_3_toggle_on_the_desk_phone_and_open_the_laptop_to_start_a_video_conference)
+    (:domain omnigibson)
+    (:objects
+        desk_phone.n.01_1 - desk_phone.n.01
+        laptop.n.01_1 - laptop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (toggled_on desk_phone.n.01_1)
+        )
+        (not 
+            (open laptop.n.01_1)
+        )
+        (inroom desk_phone.n.01_1 private_office_3)
+        (inroom laptop.n.01_1 private_office_3)
+        (inroom floor.n.01_1 private_office_3)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?desk_phone.n.01_1)
+            (open ?laptop.n.01_1)
+        )
+    )
+)

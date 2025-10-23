@@ -1,0 +1,28 @@
+(define (problem toggle_on_the_desk_phone_in_shared_office_0_and_bring_the_toolbox_from_meeting_room_0_to_the_coffee_table_in_copy_room_0)
+    (:domain omnigibson)
+    (:objects
+        desk_phone.n.01_1 - desk_phone.n.01
+        toolbox.n.01_1 - toolbox.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom desk_phone.n.01_1 shared_office_0)
+        (inroom toolbox.n.01_1 meeting_room_0)
+        (inroom coffee_table.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+        (not 
+            (toggled_on desk_phone.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (toggled_on ?desk_phone.n.01_1)
+            (ontop ?toolbox.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

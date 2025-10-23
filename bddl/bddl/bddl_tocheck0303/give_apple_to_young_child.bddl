@@ -1,0 +1,22 @@
+(define (problem give_apple_to_young_child)
+    (:domain omnigibson)    (:objects
+        apple.n.01_1 - apple.n.01
+        kid_glove.n.01_1 - kid_glove.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom apple.n.01_1 kitchen_0)
+        (inroom kid_glove.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (grasped ?apple.n.01_1 ?kid_glove.n.01_1)
+        )
+    )
+)
+

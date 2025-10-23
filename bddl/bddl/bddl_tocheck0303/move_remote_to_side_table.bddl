@@ -1,0 +1,25 @@
+(define (problem move_remote_to_side_table-0)
+    (:domain omnigibson)    (:objects
+        security_camera.n.01_1 - security_camera.n.01
+        sofa.n.01_1 - sofa.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop security_camera.n.01_1 sofa.n.01_1)
+        (inroom sofa.n.01_1 living_room_1)
+        (ontop console_table.n.01_1 floor.n.01_1)
+        (inroom console_table.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?security_camera.n.01_1 ?console_table.n.01_1)
+        )
+    )
+)
+

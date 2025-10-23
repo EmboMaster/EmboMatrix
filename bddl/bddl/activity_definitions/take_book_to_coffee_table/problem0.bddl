@@ -1,0 +1,22 @@
+(define (problem take_book_to_coffee_table)
+    (:domain omnigibson)    (:objects
+        textbook.n.01_1 - textbook.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop textbook.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (ontop ?textbook.n.01_1 ?coffee_table.n.01_1)
+    )
+)
+

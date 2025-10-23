@@ -1,0 +1,27 @@
+(define (problem pick_up_the_icicle_lights.n.01_from_the_shelf_in_living_room_2_go_to_living_room_1_toggle_on_the_icicle_lights.n.01_and_then_place_them_on_top_of_the_console_table_next_to_the_sofa)
+    (:domain omnigibson)
+    (:objects
+        icicle_lights.n.01_1 - icicle_lights.n.01
+        shelf.n.01_1 - shelf.n.01
+        console_table.n.01_1 - console_table.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside icicle_lights.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 living_room_2)
+        (inroom console_table.n.01_1 living_room_1)
+        (inroom sofa.n.01_1 living_room_1)
+        (inroom floor.n.01_1 living_room_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?icicle_lights.n.01_1)
+            (ontop ?icicle_lights.n.01_1 ?console_table.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"recycling_bin.n.01_1": {"open": false}, "window.n.01_1": {"open": true}}, "relation": [["recycling_bin.n.01_1", "inroom", "corridor_0"], ["window.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"]]}
+{"state": {"recycling_bin.n.01_1": {"open": true}, "window.n.01_1": {"open": false}}, "relation": []}

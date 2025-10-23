@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_vidalia_onion.n.01_from_the_shelf.n.01_in_the_storage_room_0_go_to_the_private_office_0_and_heat_it_using_the_microwave.n.02)
+    (:domain omnigibson)
+    (:objects
+        vidalia_onion.n.01_1 - vidalia_onion.n.01
+        shelf.n.01_1 - shelf.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside vidalia_onion.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom microwave.n.02_1 private_office_0)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?vidalia_onion.n.01_1)
+            (inside ?vidalia_onion.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+        )
+    )
+)

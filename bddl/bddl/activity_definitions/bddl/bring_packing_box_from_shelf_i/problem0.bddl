@@ -1,0 +1,29 @@
+(define (problem bring_packing_box_from_shelf_in_pantry_room_0_and_liquid_carton_from_cooler_in_kitchen_0_to_breakfast_table_in_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        packing_box.n.02_1 - packing_box.n.02
+        shelf.n.01_1 - shelf.n.01
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        cooler.n.01_1 - cooler.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop packing_box.n.02_1 shelf.n.01_1)
+        (ontop liquid_carton.n.01_1 cooler.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 pantry_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?packing_box.n.02_1 ?breakfast_table.n.01_1)
+            (ontop ?liquid_carton.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

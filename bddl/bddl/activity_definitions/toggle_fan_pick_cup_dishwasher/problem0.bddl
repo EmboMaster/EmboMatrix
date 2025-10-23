@@ -1,0 +1,30 @@
+(define (problem Please_toggle_on_the_ceiling_fan.n.01_in_living_room_0_pick_up_the_coffee_cup.n.01_from_the_pedestal_table_in_dining_room_0_and_put_it_inside_the_dishwasher.n.01_in_storage_room_1)
+    (:domain omnigibson)
+    (:objects
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        coffee_cup.n.01_1 - coffee_cup.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        dishwasher.n.01_1 - dishwasher.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on ceiling_fan.n.01_1)
+        )
+        (ontop coffee_cup.n.01_1 pedestal_table.n.01_1)
+        (inroom ceiling_fan.n.01_1 living_room_0)
+        (inroom pedestal_table.n.01_1 dining_room_0)
+        (inroom dishwasher.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?ceiling_fan.n.01_1)
+            (inside ?coffee_cup.n.01_1 ?dishwasher.n.01_1)
+        )
+    )
+)

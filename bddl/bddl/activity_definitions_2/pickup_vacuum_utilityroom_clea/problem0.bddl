@@ -1,0 +1,33 @@
+(define (problem please_pick_up_the_vacuum.n.04_from_the_corner_in_the_utility_room_0_go_to_the_living_room_0_and_clean_all_3_dusty_space_heaters_on_the_sofa_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        vacuum.n.04_1 - vacuum.n.04
+        space_heater.n.01_1 space_heater.n.01_2 space_heater.n.01_3 - space_heater.n.01
+        sofa.n.01_1 - sofa.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom vacuum.n.04_1 utility_room_0)
+        (ontop space_heater.n.01_1 sofa.n.01_1)
+        (ontop space_heater.n.01_2 sofa.n.01_1)
+        (ontop space_heater.n.01_3 sofa.n.01_1)
+        (dusty space_heater.n.01_1)
+        (dusty space_heater.n.01_2)
+        (dusty space_heater.n.01_3)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom sink.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?space_heater.n.01_1))
+            (not (dusty ?space_heater.n.01_2))
+            (not (dusty ?space_heater.n.01_3))
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_sweet_corn.n.02_from_the_reception_desk_in_the_shared_office_0_put_it_inside_the_cooler.n.01_located_in_the_meeting_room_0_to_freeze_it_and_ensure_the_cooler_door_is_closed_afterward)
+    (:domain omnigibson)
+    (:objects
+        sweet_corn.n.02_1 - sweet_corn.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop sweet_corn.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (frozen sweet_corn.n.02_1))
+        (open cooler.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?sweet_corn.n.02_1 ?cooler.n.01_1)
+            (frozen ?sweet_corn.n.02_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

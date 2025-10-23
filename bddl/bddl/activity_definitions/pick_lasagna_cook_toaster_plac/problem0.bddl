@@ -1,0 +1,33 @@
+(define (problem please_pick_up_the_lasagna.n.01_from_the_countertop_in_shared_office_0_then_cook_it_using_the_toaster_oven.n.01_in_shared_office_0_and_finally_put_the_cooked_lasagna.n.01_on_top_of_the_conference_table_in_meeting_room_0)
+    (:domain omnigibson)
+    (:objects
+        lasagna.n.01_1 - lasagna.n.01
+        countertop.n.01_1 - countertop.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lasagna.n.01_1 countertop.n.01_1)
+        (not
+            (cooked lasagna.n.01_1)
+        )
+        (inroom countertop.n.01_1 shared_office_0)
+        (inroom toaster_oven.n.01_1 shared_office_0)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on toaster_oven.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (cooked ?lasagna.n.01_1)
+            (ontop ?lasagna.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

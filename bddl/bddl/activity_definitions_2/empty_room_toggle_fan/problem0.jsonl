@@ -1,0 +1,2 @@
+{"state": {"ceiling_fan.n.01_1": {"toggled_on": false}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["ceiling_fan.n.01_1", "inroom", "empty_room_0"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"ceiling_fan.n.01_1": {"toggled_on": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"]]}

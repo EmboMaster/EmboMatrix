@@ -1,0 +1,28 @@
+(define (problem go_to_the_pantry_room_0_pick_up_the_canteen.n.01_from_the_shelf_go_to_the_living_room_0_and_place_the_canteen.n.01_on_top_of_the_coffee_table_in_the_living_room_0_then_go_to_the_living_room_0_toggle_on_the_router.n.02_and_ensure_it_is_functioning)
+    (:domain omnigibson)
+    (:objects
+        canteen.n.01_1 - canteen.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        router.n.02_1 - router.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop canteen.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom router.n.02_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+        (not (toggled_on router.n.02_1))
+    )
+
+    (:goal
+        (and
+            (ontop ?canteen.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?router.n.02_1)
+        )
+    )
+)

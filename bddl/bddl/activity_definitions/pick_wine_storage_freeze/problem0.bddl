@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_wine_bottle.n.01_from_the_wardrobe.n.01_in_the_bedroom_0_go_to_the_storage_room_0_and_put_the_wine_bottle.n.01_inside_the_cooler.n.01_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        wine_bottle.n.01_1 - wine_bottle.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside wine_bottle.n.01_1 wardrobe.n.01_1)
+        (inroom wardrobe.n.01_1 bedroom_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?wine_bottle.n.01_1 ?cooler.n.01_1)
+            (frozen ?wine_bottle.n.01_1)
+        )
+    )
+)

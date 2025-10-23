@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["gravy_boat.n.01_1", "ontop", "reception_desk.n.01_1"], ["reception_desk.n.01_1", "inroom", "kitchen_0"], ["cooler.n.01_1", "inroom", "pantry_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {}, "relation": [["gravy_boat.n.01_1", "ontop", "reception_desk.n.01_1"], ["gravy_boat.n.01_1", "inside", "cooler.n.01_1"]]}

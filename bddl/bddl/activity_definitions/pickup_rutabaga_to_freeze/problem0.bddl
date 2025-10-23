@@ -1,0 +1,23 @@
+(define (problem pick_up_the_rutabaga.n.01_from_the_utility_room_0_carry_it_to_the_storage_room_0_and_place_it_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        rutabaga.n.01_1 - rutabaga.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom rutabaga.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?rutabaga.n.01_1)
+            (inside ?rutabaga.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

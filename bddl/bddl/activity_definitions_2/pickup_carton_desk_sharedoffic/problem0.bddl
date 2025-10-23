@@ -1,0 +1,35 @@
+(define (problem Pick_up_the_carton.n.02_from_the_desk_in_the_shared_office_0_open_the_carton.n.02_and_put_all_5_gingerbread.n.01_from_the_carton.n.02_onto_the_booth_in_the_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        desk.n.01_1 - desk.n.01
+        gingerbread.n.01_1 gingerbread.n.01_2 gingerbread.n.01_3 gingerbread.n.01_4 gingerbread.n.01_5 - gingerbread.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 desk.n.01_1)
+        (inside gingerbread.n.01_1 carton.n.02_1)
+        (inside gingerbread.n.01_2 carton.n.02_1)
+        (inside gingerbread.n.01_3 carton.n.02_1)
+        (inside gingerbread.n.01_4 carton.n.02_1)
+        (inside gingerbread.n.01_5 carton.n.02_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom booth.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (ontop ?gingerbread.n.01_1 ?booth.n.01_1)
+            (ontop ?gingerbread.n.01_2 ?booth.n.01_1)
+            (ontop ?gingerbread.n.01_3 ?booth.n.01_1)
+            (ontop ?gingerbread.n.01_4 ?booth.n.01_1)
+            (ontop ?gingerbread.n.01_5 ?booth.n.01_1)
+        )
+    )
+)

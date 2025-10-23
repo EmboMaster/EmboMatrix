@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_hotdog.n.02_from_the_countertop_in_the_kitchen_0_toggle_on_the_oven.n.01_in_the_kitchen_0_cook_the_hotdog.n.02_in_the_oven.n.01_and_place_the_cooked_hotdog.n.02_on_the_serving_cart_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        hotdog.n.02_1 - hotdog.n.02
+        countertop.n.01_1 - countertop.n.01
+        oven.n.01_1 - oven.n.01
+        serving_cart.n.01_1 - serving_cart.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop hotdog.n.02_1 countertop.n.01_1)
+        (not (toggled_on oven.n.01_1))
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom serving_cart.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?hotdog.n.02_1)
+            (ontop ?hotdog.n.02_1 ?serving_cart.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,29 @@
+(define (problem Please_pick_up_the_chicken_from_the_garage_0_and_put_it_inside_the_cooler_in_the_same_room_to_freeze_it_Then_toggle_on_the_lawn_mower_in_the_garage_0_for_maintenance)
+    (:domain omnigibson)
+    (:objects
+        chicken.n.01_1 - chicken.n.01
+        cooler.n.01_1 - cooler.n.01
+        lawn_mower.n.01_1 - lawn_mower.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom chicken.n.01_1 garage_0)
+        (inroom cooler.n.01_1 garage_0)
+        (not
+            (toggled_on lawn_mower.n.01_1)
+        )
+        (inroom lawn_mower.n.01_1 garage_0)
+        (inroom floor.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (frozen ?chicken.n.01_1)
+            (inside ?chicken.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?lawn_mower.n.01_1)
+        )
+    )
+)

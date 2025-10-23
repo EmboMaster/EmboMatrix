@@ -1,0 +1,33 @@
+(define (problem please_pick_up_the_chicken_leg.n.01_from_the_console_table_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_to_freeze_it_then_toggle_on_the_food_processor.n.01_in_the_kitchen_0_to_prepare_spinach.n.02_for_cooking)
+    (:domain omnigibson)
+    (:objects
+        chicken_leg.n.01_1 - chicken_leg.n.01
+        cooler.n.01_1 - cooler.n.01
+        food_processor.n.01_1 - food_processor.n.01
+        spinach.n.02_1 - spinach.n.02
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chicken_leg.n.01_1 console_table.n.01_1)
+        (ontop spinach.n.02_1 console_table.n.01_1)
+        (not
+            (toggled_on food_processor.n.01_1)
+        )
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom food_processor.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?chicken_leg.n.01_1)
+            (inside ?chicken_leg.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?food_processor.n.01_1)
+        )
+    )
+)

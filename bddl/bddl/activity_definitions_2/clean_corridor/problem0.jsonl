@@ -1,0 +1,2 @@
+{"state": {"floor.n.01_1": {"stained": true, "dusty": true}}, "relation": [["bucket.n.01_1", "ontop", "floor.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "corridor_0"], ["bucket.n.01_1", "inroom", "corridor_0"], ["sink.n.01_1", "inroom", "corridor_0"]]}
+{"state": {"bucket.n.01_1": {"soaked": true}, "floor.n.01_1": {"stained": false, "dusty": false}}, "relation": []}

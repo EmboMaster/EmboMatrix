@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["muffin.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "bedroom_1"], ["cooler.n.01_1", "inroom", "bathroom_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bedroom_1"]]}
+{"state": {"muffin.n.01_1": {"frozen": true}}, "relation": [["muffin.n.01_1", "inside", "cooler.n.01_1"]]}

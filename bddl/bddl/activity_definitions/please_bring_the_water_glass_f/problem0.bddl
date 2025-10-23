@@ -1,0 +1,29 @@
+(define (problem please_bring_the_water_glass_from_the_sink_in_the_kitchen_0_and_the_bowl_from_the_breakfast_table_in_the_dining_room_0_to_the_coffee_table_in_the_living_room_1_for_me)
+    (:domain omnigibson)
+    (:objects
+        water_glass.n.02_1 - water_glass.n.02
+        sink.n.01_1 - sink.n.01
+        bowl.n.01_1 - bowl.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside water_glass.n.02_1 sink.n.01_1)
+        (ontop bowl.n.01_1 breakfast_table.n.01_1)
+        (inroom sink.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom coffee_table.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?water_glass.n.02_1 ?coffee_table.n.01_1)
+            (ontop ?bowl.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

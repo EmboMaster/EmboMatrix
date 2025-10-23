@@ -1,0 +1,32 @@
+(define (problem put_all_three_pomegranate.n.02_from_the_shopping_basket_in_the_break_room_0_into_the_cooler.n.01_in_the_shared_office_0_to_freeze_them-0)
+    (:domain omnigibson)
+    (:objects
+        pomegranate.n.02_1 pomegranate.n.02_2 pomegranate.n.02_3 - pomegranate.n.02
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside pomegranate.n.02_1 shopping_basket.n.01_1)
+        (inside pomegranate.n.02_2 shopping_basket.n.01_1)
+        (inside pomegranate.n.02_3 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 break_room_0)
+    )
+
+    (:goal
+        (and
+            (forall
+                (?pomegranate.n.02 - pomegranate.n.02)
+                (and
+                    (inside ?pomegranate.n.02 cooler.n.01_1)
+                    (frozen ?pomegranate.n.02)
+                )
+            )
+        )
+    )
+)

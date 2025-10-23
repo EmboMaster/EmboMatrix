@@ -1,0 +1,26 @@
+(define (problem Please_pick_up_the_water_glass.n.02_from_the_desk_in_the_shared_office_0_go_to_the_break_room_0_and_put_it_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        water_glass.n.02_1 - water_glass.n.02
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop water_glass.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+        (inroom floor.n.01_2 break_room_0)
+    )
+    
+    (:goal
+        (and
+            (inside ?water_glass.n.02_1 ?cooler.n.01_1)
+            (frozen ?water_glass.n.02_1)
+        )
+    )
+)

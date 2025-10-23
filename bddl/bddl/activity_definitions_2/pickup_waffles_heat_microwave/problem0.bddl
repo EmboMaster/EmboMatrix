@@ -1,0 +1,33 @@
+(define (problem Please_pick_up_the_two_waffle.n.01_from_the_cooler.n.01_in_the_conference_hall_0_and_put_them_inside_the_microwave.n.02_in_the_conference_hall_0_to_heat_them_for_2_minutes-0)
+    (:domain omnigibson)
+    (:objects
+        waffle.n.01_1 waffle.n.01_2 - waffle.n.01
+        cooler.n.01_1 - cooler.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside waffle.n.01_1 cooler.n.01_1)
+        (inside waffle.n.01_2 cooler.n.01_1)
+        (inroom cooler.n.01_1 conference_hall_0)
+        (inroom microwave.n.02_1 conference_hall_0)
+        (not (toggled_on microwave.n.02_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 conference_hall_0)
+    )
+
+    (:goal
+        (and
+            (forall
+                (?waffle.n.01 - waffle.n.01)
+                (and
+                    (inside ?waffle.n.01 microwave.n.02_1)
+                    (cooked ?waffle.n.01)
+                )
+            )
+            (toggled_on microwave.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem pick_up_the_cinnamon_roll.n.01_from_the_desk_in_chemistry_lab_0_and_put_it_inside_the_cooler.n.01_in_corridor_0_then_pick_up_the_backpack.n.01_from_the_floor_in_bathroom_0_and_close_the_backpack.n.01)
+    (:domain omnigibson)
+    (:objects
+        cinnamon_roll.n.01_1 - cinnamon_roll.n.01
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        backpack.n.01_1 - backpack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cinnamon_roll.n.01_1 desk.n.01_1)
+        (open cooler.n.01_1)
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (inroom desk.n.01_1 chemistry_lab_0)
+        (inroom cooler.n.01_1 corridor_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?cinnamon_roll.n.01_1 ?cooler.n.01_1)
+            (not (open ?backpack.n.01_1))
+        )
+    )
+)

@@ -1,0 +1,38 @@
+(define (problem Please_pick_up_the_avocado.n.01_from_the_reception_desk_in_the_kitchen_0_go_to_the_cooler.n.01_in_the_kitchen_0_and_put_the_avocado.n.01_inside_the_cooler.n.01_Then_toggle_on_the_ceiling_fan.n.01_in_the_living_room_0_Finally_pick_up_the_measuring_cup.n.01_from_the_breakfast_table_in_the_dining_room_0_and_place_it_on_the_coffee_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        avocado.n.01_1 - avocado.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        measuring_cup.n.01_1 - measuring_cup.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop avocado.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (not
+            (toggled_on ceiling_fan.n.01_1)
+        )
+        (inroom ceiling_fan.n.01_1 living_room_0)
+        (ontop measuring_cup.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?avocado.n.01_1)
+            (inside ?avocado.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+            (ontop ?measuring_cup.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

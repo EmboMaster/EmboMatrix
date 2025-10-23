@@ -1,0 +1,32 @@
+(define (problem please_bring_the_tea_bag_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_teapot_on_the_coffee_table_in_the_living_room_0_also_toggle_on_the_loudspeaker_in_the_living_room_0_for_entertainment-0)
+    (:domain omnigibson)
+    (:objects
+        tea_bag.n.01_1 - tea_bag.n.01
+        teapot.n.01_1 - teapot.n.01
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tea_bag.n.01_1 reception_desk.n.01_1)
+        (ontop teapot.n.01_1 coffee_table.n.01_1)
+        (not (toggled_on loudspeaker.n.01_1))
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom tea_bag.n.01_1 kitchen_0)
+        (inroom teapot.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom loudspeaker.n.01_1 living_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?tea_bag.n.01_1 ?teapot.n.01_1)
+            (toggled_on ?loudspeaker.n.01_1)
+        )
+    )
+)

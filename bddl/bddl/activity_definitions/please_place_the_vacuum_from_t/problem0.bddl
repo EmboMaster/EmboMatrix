@@ -1,0 +1,25 @@
+(define (problem please_place_the_vacuum_from_the_storage_room_3_and_the_box_of_tissues_from_the_bathroom_0_onto_the_shelf_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        vacuum.n.04_1 - vacuum.n.04
+        tissue_dispenser.n.01_1 - tissue_dispenser.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom vacuum.n.04_1 storage_room_3)
+        (inroom tissue_dispenser.n.01_1 bathroom_0)
+        (inroom shelf.n.01_1 corridor_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?vacuum.n.04_1 ?shelf.n.01_1)
+            (ontop ?tissue_dispenser.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

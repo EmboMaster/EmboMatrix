@@ -1,0 +1,33 @@
+(define (problem go_to_the_utility_room_0_pick_up_the_pomegranate.n.02_from_the_countertop_in_the_utility_room_0_and_cook_the_pomegranate.n.02_using_the_oven.n.01_in_utility_room_0_then_pick_up_the_peach.n.03_from_the_countertop_in_utility_room_0_and_put_the_peach.n.03_inside_the_cooler.n.01_in_utility_room_0_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        pomegranate.n.02_1 - pomegranate.n.02
+        peach.n.03_1 - peach.n.03
+        oven.n.01_1 - oven.n.01
+        cooler.n.01_1 - cooler.n.01
+        countertop.n.01_1 - countertop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pomegranate.n.02_1 countertop.n.01_1)
+        (ontop peach.n.03_1 countertop.n.01_1)
+        (not (toggled_on oven.n.01_1))
+        (inroom countertop.n.01_1 utility_room_0)
+        (inroom oven.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?pomegranate.n.02_1)
+            (and
+                (frozen ?peach.n.03_1)
+                (inside ?peach.n.03_1 ?cooler.n.01_1)
+            )
+        )
+    )
+)

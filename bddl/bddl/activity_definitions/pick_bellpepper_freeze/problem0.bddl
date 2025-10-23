@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_bell_pepper_from_the_chopping_board_in_the_kitchen_0_go_to_the_cooler_in_the_kitchen_0_and_place_the_bell_pepper_inside_the_cooler_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        bell_pepper.n.02_1 - bell_pepper.n.02
+        chopping_board.n.01_1 - chopping_board.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bell_pepper.n.02_1 chopping_board.n.01_1)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?bell_pepper.n.02_1)
+            (inside ?bell_pepper.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

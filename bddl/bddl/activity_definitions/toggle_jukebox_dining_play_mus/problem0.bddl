@@ -1,0 +1,32 @@
+(define (problem please_toggle_on_the_jukebox_in_the_dining_room_0_to_play_music_then_pick_up_the_pitcher_from_the_reception_desk_in_the_kitchen_0_and_place_it_on_top_of_the_breakfast_table_in_the_dining_room_0_next_go_to_the_lobby_0_and_toggle_on_the_desk_phone_for_the_restaurant_manager)
+    (:domain omnigibson)
+    (:objects
+        jukebox.n.01_1 - jukebox.n.01
+        pitcher.n.02_1 - pitcher.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        desk_phone.n.01_1 - desk_phone.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on jukebox.n.01_1))
+        (ontop pitcher.n.02_1 reception_desk.n.01_1)
+        (not (toggled_on desk_phone.n.01_1))
+        (inroom jukebox.n.01_1 dining_room_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom desk_phone.n.01_1 lobby_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?jukebox.n.01_1)
+            (ontop ?pitcher.n.02_1 ?breakfast_table.n.01_1)
+            (toggled_on ?desk_phone.n.01_1)
+        )
+    )
+)

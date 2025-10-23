@@ -1,0 +1,44 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_feta.n.01_from_the_counter_in_the_kitchen_0_put_the_feta.n.01_inside_the_toaster_oven.n.01_in_the_kitchen_0_cook_the_feta.n.01_using_the_toaster_oven.n.01_in_the_kitchen_0_go_to_the_storage_room_2_pick_up_the_grape.n.01_from_the_shelf_in_the_storage_room_2_go_to_the_utility_room_0_put_the_grape.n.01_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_it_for_me-0)
+    (:domain omnigibson)
+    (:objects
+        feta.n.01_1 - feta.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        grape.n.01_1 - grape.n.01
+        cooler.n.01_1 - cooler.n.01
+        shelf.n.01_1 - shelf.n.01
+        cabinet_base.n.01_1 - cabinet_base.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        ;; Feta cheese is on the counter in the kitchen (bathroom_0).
+        (ontop feta.n.01_1 cabinet_base.n.01_1)
+        (inroom cabinet_base.n.01_1 bathroom_0)
+
+        ;; Toaster oven is in the kitchen (bathroom_0), toggled off.
+        (inroom toaster_oven.n.01_1 bathroom_0)
+        (not (toggled_on toaster_oven.n.01_1))
+
+        ;; Grapes are on the shelf in the storage room (storage_room_2).
+        (ontop grape.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_2)
+
+        ;; Cooler is in the utility room (utility_room_0).
+        (inroom cooler.n.01_1 utility_room_0)
+
+        ;; Agent is on the floor in the kitchen (bathroom_0).
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            ;; Feta cheese must be cooked.
+            (cooked ?feta.n.01_1)
+
+            ;; Grapes must be frozen.
+            (frozen ?grape.n.01_1)
+        )
+    )
+)

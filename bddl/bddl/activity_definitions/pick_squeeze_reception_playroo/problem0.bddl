@@ -1,0 +1,27 @@
+(define (problem pick_up_the_squeeze_bottle_from_the_reception_desk_in_playroom_0_and_place_it_in_the_recycling_bin_in_storage_room_2_then_open_the_recycling_bin_in_storage_room_2-0)
+    (:domain omnigibson)
+    (:objects
+        squeeze_bottle.n.01_1 - squeeze_bottle.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop squeeze_bottle.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 playroom_0)
+        (inroom recycling_bin.n.01_1 storage_room_2)
+        (not (open recycling_bin.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+        (inroom floor.n.01_2 storage_room_2)
+    )
+    
+    (:goal
+        (and
+            (inside ?squeeze_bottle.n.01_1 ?recycling_bin.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

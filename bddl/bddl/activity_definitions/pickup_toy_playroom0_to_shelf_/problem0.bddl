@@ -1,0 +1,28 @@
+(define (problem pick_up_the_toy_figure_from_the_corner_in_the_playroom_0_and_place_it_on_top_of_the_shelf_in_the_storage_room_0_then_toggle_on_the_room_light_n_01_in_the_playroom_0)
+    (:domain omnigibson)
+    (:objects
+        toy_figure.n.01_1 - toy_figure.n.01
+        shelf.n.01_1 - shelf.n.01
+        room_light.n.01_1 - room_light.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom toy_figure.n.01_1 playroom_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom room_light.n.01_1 playroom_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on room_light.n.01_1)
+        )
+    )
+
+    (:goal 
+        (and 
+            (ontop ?toy_figure.n.01_1 ?shelf.n.01_1)
+            (toggled_on ?room_light.n.01_1)
+        )
+    )
+)

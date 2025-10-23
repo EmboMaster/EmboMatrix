@@ -1,0 +1,29 @@
+(define (problem please_toggle_on_the_space_heater.n.01_in_the_bedroom_0_pick_up_the_sandal_from_the_floor_in_the_bedroom_0_and_place_them_inside_the_shopping_basket.n.01_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        sandal.n.01_1 - sandal.n.01
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on space_heater.n.01_1)
+        )
+        (ontop sandal.n.01_1 floor.n.01_1)
+        (inroom space_heater.n.01_1 bedroom_0)
+        (inroom sandal.n.01_1 bedroom_0)
+        (inroom shopping_basket.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?space_heater.n.01_1)
+            (inside ?sandal.n.01_1 ?shopping_basket.n.01_1)
+        )
+    )
+)

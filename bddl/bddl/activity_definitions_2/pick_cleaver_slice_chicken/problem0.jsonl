@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cleaver.n.01_1", "inroom", "kitchen_0"], ["chicken_leg.n.01_1", "ontop", "countertop.n.01_1"], ["countertop.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"chicken_leg.n.01_1": {"sliced": true}}, "relation": []}

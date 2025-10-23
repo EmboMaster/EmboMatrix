@@ -1,0 +1,28 @@
+(define (problem please_retrieve_the_juice_bottles_from_spa_1_and_place_them_on_the_booth_in_sauna_0_and_the_periodic_table_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        canteen.n.01_1 canteen.n.01_2 canteen.n.01_3 - canteen.n.01
+        booth.n.01_1 - booth.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom canteen.n.01_1 spa_1)
+        (inroom canteen.n.01_2 spa_1)
+        (inroom canteen.n.01_3 spa_1)
+        (inroom booth.n.01_1 sauna_0)
+        (inroom periodic_table.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 sauna_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?canteen.n.01_1 ?booth.n.01_1)
+            (ontop ?canteen.n.01_2 ?booth.n.01_1)
+            (ontop ?canteen.n.01_3 ?periodic_table.n.01_1)
+        )
+    )
+)

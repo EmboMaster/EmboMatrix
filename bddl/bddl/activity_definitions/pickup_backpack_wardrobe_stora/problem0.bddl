@@ -1,0 +1,30 @@
+(define (problem Pick_up_the_backpack.n.01_from_the_wardrobe.n.01_in_the_storage_room_0_go_to_the_private_office_0_and_place_the_backpack.n.01_on_the_desk_in_the_private_office_0_then_toggle_on_the_printer.n.03_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        desk.n.01_1 - desk.n.01
+        printer.n.03_1 - printer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside backpack.n.01_1 wardrobe.n.01_1)
+        (inroom wardrobe.n.01_1 storage_room_0)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom printer.n.03_1 private_office_0)
+        (not
+            (toggled_on printer.n.03_1)
+        )
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?backpack.n.01_1 ?desk.n.01_1)
+            (toggled_on ?printer.n.03_1)
+        )
+    )
+)

@@ -1,0 +1,26 @@
+(define (problem pick_up_the_arugula.n.02_from_the_booth_in_the_bedroom_0_and_put_it_inside_the_cooler.n.01_on_the_floor_in_the_bedroom_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        arugula.n.02_1 - arugula.n.02
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop arugula.n.02_1 booth.n.01_1)
+        (ontop cooler.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+        (inroom booth.n.01_1 bedroom_0)
+        (inroom cooler.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?arugula.n.02_1 ?cooler.n.01_1)
+            (frozen ?arugula.n.02_1)
+        )
+    )
+)

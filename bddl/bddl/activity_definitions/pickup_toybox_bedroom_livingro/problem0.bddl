@@ -1,0 +1,30 @@
+(define (problem pick_up_the_toy_box.n.01_from_the_bed_in_the_bedroom_0_go_to_the_living_room_0_and_place_the_toy_box_on_top_of_the_coffee_table.n.01_in_the_living_room_0_then_toggle_on_the_radiator.n.02_in_the_living_room_0_to_keep_the_children_warm_while_playing)
+    (:domain omnigibson)
+    (:objects
+        toy_box.n.01_1 - toy_box.n.01
+        bed.n.01_1 - bed.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        radiator.n.02_1 - radiator.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop toy_box.n.01_1 bed.n.01_1)
+        (inroom bed.n.01_1 bedroom_0)
+        (inroom radiator.n.02_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on radiator.n.02_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (ontop ?toy_box.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?radiator.n.02_1)
+        )
+    )
+)

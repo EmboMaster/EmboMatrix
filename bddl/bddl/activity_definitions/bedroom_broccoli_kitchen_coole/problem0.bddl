@@ -1,0 +1,28 @@
+(define (problem go_to_the_bedroom_1_pick_up_the_broccoli.n.02_from_the_coffee_table_go_to_the_kitchen_0_open_the_cooler.n.01_put_the_broccoli.n.02_inside_the_cooler.n.01_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        coffee_table.n.01_1 - coffee_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop broccoli.n.02_1 coffee_table.n.01_1)
+        (open cooler.n.01_1)
+        (inroom coffee_table.n.01_1 bedroom_1)
+        (inroom cooler.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?broccoli.n.02_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

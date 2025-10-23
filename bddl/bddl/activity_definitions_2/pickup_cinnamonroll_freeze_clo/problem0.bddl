@@ -1,0 +1,27 @@
+(define (problem Pick_up_the_cinnamon_roll.n.01_from_the_booth_in_the_grocery_store_0_put_it_inside_the_cooler.n.01_in_the_grocery_store_0_to_freeze_it_and_ensure_the_cooler.n.01_door_is_closed_afterward)
+    (:domain omnigibson)
+    (:objects
+        cinnamon_roll.n.01_1 - cinnamon_roll.n.01
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cinnamon_roll.n.01_1 booth.n.01_1)
+        (not (open cooler.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom booth.n.01_1 grocery_store_0)
+        (inroom cooler.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (inside ?cinnamon_roll.n.01_1 ?cooler.n.01_1)
+            (frozen ?cinnamon_roll.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

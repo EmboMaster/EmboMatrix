@@ -1,0 +1,29 @@
+(define (problem pick_up_the_radish.n.01_from_the_countertop_in_the_lobby_0_go_to_the_cooler.n.01_in_the_shared_office_0_put_the_radish.n.01_inside_the_cooler.n.01_to_freeze_it_and_then_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        radish.n.01_1 - radish.n.01
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop radish.n.01_1 countertop.n.01_1)
+        (open cooler.n.01_1)
+        (inroom countertop.n.01_1 lobby_0)
+        (inroom cooler.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 lobby_0)
+    )
+    
+    (:goal
+        (and
+            (frozen ?radish.n.01_1)
+            (inside ?radish.n.01_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["peach.n.03_1", "inroom", "storage_room_1"], ["cooler.n.01_1", "inroom", "storage_room_1"], ["desk.n.01_1", "inroom", "childs_room_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_1"]]}
+{"state": {"peach.n.03_1": {"frozen": true}}, "relation": [["peach.n.03_1", "ontop", "desk.n.01_1"]]}

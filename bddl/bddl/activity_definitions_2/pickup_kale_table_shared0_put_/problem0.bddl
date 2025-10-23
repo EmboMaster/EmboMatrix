@@ -1,0 +1,29 @@
+(define (problem pick_up_the_freezable_kale.n.03_from_the_conference_table_in_shared_office_0_put_it_inside_the_cooler.n.01_in_break_room_0_and_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        kale.n.03_1 - kale.n.03
+        cooler.n.01_1 - cooler.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kale.n.03_1 conference_table.n.01_1)
+        (open cooler.n.01_1)
+        (inroom conference_table.n.01_1 shared_office_0)
+        (inroom kale.n.03_1 shared_office_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (inroom floor.n.01_2 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?kale.n.03_1)
+            (inside ?kale.n.03_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

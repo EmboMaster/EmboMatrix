@@ -1,0 +1,31 @@
+(define (problem go_to_the_demonstration_area_in_grocery_store_0_and_toggle_on_the_espresso_machine.n.01_then_pick_up_the_vidalia_onion.n.01_from_the_shelf_baseboard_in_grocery_store_0_and_put_it_inside_the_electric_kettle.n.01_also_located_in_grocery_store_0-0)
+    (:domain omnigibson)
+    (:objects
+        espresso_machine.n.01_1 - espresso_machine.n.01
+        vidalia_onion.n.01_1 - vidalia_onion.n.01
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        shelf_baseboard.n.01_1 - shelf_baseboard.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not
+            (toggled_on espresso_machine.n.01_1)
+        )
+        (ontop vidalia_onion.n.01_1 shelf_baseboard.n.01_1)
+        (inroom espresso_machine.n.01_1 grocery_store_0)
+        (inroom vidalia_onion.n.01_1 grocery_store_0)
+        (inroom electric_kettle.n.01_1 grocery_store_0)
+        (inroom shelf_baseboard.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?espresso_machine.n.01_1)
+            (inside ?vidalia_onion.n.01_1 ?electric_kettle.n.01_1)
+        )
+    )
+)

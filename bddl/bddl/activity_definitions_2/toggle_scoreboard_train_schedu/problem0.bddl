@@ -1,0 +1,23 @@
+(define (problem toggle_on_the_scoreboard_in_the_hall_train_station_and_ensure_it_displays_the_correct_train_schedule_for_me-0)
+    (:domain omnigibson)
+    (:objects
+        scoreboard.n.01_1 - scoreboard.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on scoreboard.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom scoreboard.n.01_1 corridor_0)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (not (toggled_on scoreboard.n.01_1))
+        (and
+            (toggled_on ?scoreboard.n.01_1)
+            (real ?scoreboard.n.01_1)
+        )
+    )
+)

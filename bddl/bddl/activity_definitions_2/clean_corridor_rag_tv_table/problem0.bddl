@@ -1,0 +1,28 @@
+(define (problem go_to_the_corridor_0_pick_up_the_rag.n.01_from_the_pedestal_table_in_the_corridor_0_go_to_the_television_room_0_and_clean_the_stained_coffee_table_in_the_television_room_0_until_the_glass_is_spotless-0)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop rag.n.01_1 pedestal_table.n.01_1)
+        (stained coffee_table.n.01_1)
+        (inroom pedestal_table.n.01_1 corridor_0)
+        (inroom sink.n.01_1 corridor_0)
+        (inroom coffee_table.n.01_1 television_room_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (soaked rag.n.01_1)
+            (not (stained coffee_table.n.01_1))
+        )
+    )
+)

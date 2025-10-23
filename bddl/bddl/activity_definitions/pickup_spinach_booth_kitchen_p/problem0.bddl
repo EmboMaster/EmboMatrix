@@ -1,0 +1,29 @@
+(define (problem pick_up_the_spinach.n.02_from_the_booth_in_the_kitchen_0_put_it_inside_the_cooler.n.01_in_the_kitchen_0_and_then_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        spinach.n.02_1 - spinach.n.02
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop spinach.n.02_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (open cooler.n.01_1)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?spinach.n.02_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+            (frozen ?spinach.n.02_1)
+        )
+    )
+)

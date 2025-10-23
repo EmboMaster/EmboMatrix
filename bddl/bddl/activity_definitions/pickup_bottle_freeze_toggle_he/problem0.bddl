@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_water_bottle.n.01_from_the_coffee_table_in_the_living_room_0_and_put_it_inside_the_cooler.n.01_in_the_storage_room_0_to_freeze_it_Then_go_to_the_corridor_0_and_toggle_on_the_space_heater.n.01_to_warm_the_space_for_the_grandmother)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop water_bottle.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom space_heater.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?water_bottle.n.01_1)
+            (inside ?water_bottle.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

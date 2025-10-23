@@ -1,0 +1,2 @@
+{"state": {"sink.n.01_1": {"dusty": true}, "apron.n.01_1": {"stained": true}, "rag.n.01_1": {"soaked": false}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["apron.n.01_1", "inroom", "bathroom_0"], ["rag.n.01_1", "inroom", "bathroom_0"]]}
+{"state": {"sink.n.01_1": {"dusty": false}, "apron.n.01_1": {"stained": false}, "rag.n.01_1": {"soaked": true}}, "relation": []}

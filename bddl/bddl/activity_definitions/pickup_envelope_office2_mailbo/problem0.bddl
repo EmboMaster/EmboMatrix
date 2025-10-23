@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_envelope_from_the_desk_in_private_office_2_go_to_lobby_0_and_put_it_inside_the_mailbox_near_the_entrance_then_toggle_off_the_electric_fan_next_to_the_seating_area_in_lobby_0-0)
+    (:domain omnigibson)
+    (:objects
+        envelope.n.01_1 - envelope.n.01
+        desk.n.01_1 - desk.n.01
+        mailbox.n.01_1 - mailbox.n.01
+        electric_fan.n.01_1 - electric_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop envelope.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_2)
+        (inroom mailbox.n.01_1 lobby_0)
+        (toggled_on electric_fan.n.01_1)
+        (inroom electric_fan.n.01_1 lobby_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_2)
+    )
+
+    (:goal
+        (and
+            (inside ?envelope.n.01_1 ?mailbox.n.01_1)
+            (not
+                (toggled_on ?electric_fan.n.01_1)
+            )
+        )
+    )
+)

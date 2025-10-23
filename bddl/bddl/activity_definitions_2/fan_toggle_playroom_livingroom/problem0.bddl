@@ -1,0 +1,25 @@
+(define (problem Toggle_off_the_electric_fan.n.01_in_the_playroom_0_and_toggle_on_the_electric_fan.n.01_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        electric_fan.n.01_1 electric_fan.n.01_2 - electric_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (toggled_on electric_fan.n.01_1)
+        (not (toggled_on electric_fan.n.01_2))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom electric_fan.n.01_1 playroom_0)
+        (inroom electric_fan.n.01_2 living_room_0)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (toggled_on electric_fan.n.01_1)
+        (and
+            (not (toggled_on ?electric_fan.n.01_1))
+            (toggled_on ?electric_fan.n.01_2)
+        )
+    )
+)

@@ -1,0 +1,23 @@
+task_generation:
+  model: "gpt-4o"
+  api_key: ""  
+  base_url: ""
+  command_num: 3 
+  output_dir: "src/data/tasks/generated_tasks_0520"
+  max_workers: 1
+  range: [0, 46]
+
+scene_generation:
+  model: "gpt-4o"
+  api_key: ""
+  base_url: ""
+  task_definitions_dir: "src/data/tasks/generated_tasks_0520"
+  preprocessed_task_list_path: "src/data/bddl_files.txt"
+  output_dir: "src/data/scenes/generated_scenes_0520"
+  available_gpus: [0, 1, 2, 3]
+
+verification:
+  feasible_file_path: "src/data/feasible_scenes.json"
+  llmplan_path: "generated_scenes"
+  posecache_path: "omnigibson/plannerdemo/simulation_tools/posecache_test-eai"
+  logs_path: "logs/verification"

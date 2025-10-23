@@ -1,0 +1,30 @@
+(define (problem unpacking_recreational_vehicle_for_trip-0)
+    (:domain omnigibson)
+
+    (:objects
+        recreational_vehicle.n.01_1 - recreational_vehicle.n.01
+        floor.n.01_1 - floor.n.01
+        bicycle.n.01_1 - bicycle.n.01
+        bicycle_rack.n.01_1 - bicycle_rack.n.01
+        shelf.n.01_1 - shelf.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop recreational_vehicle.n.01_1 floor.n.01_1)
+        (attached bicycle.n.01_1 bicycle_rack.n.01_1) 
+        (attached bicycle_rack.n.01_1 recreational_vehicle.n.01_1)
+        (inroom floor.n.01_1 living_room)
+        (inroom shelf.n.01_1 living_room) 
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (forall 
+                (?bicycle.n.01 - bicycle.n.01) 
+                (nextto ?bicycle.n.01 ?shelf.n.01_1)
+            )
+        )
+    )
+)

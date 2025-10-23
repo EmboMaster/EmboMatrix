@@ -1,0 +1,51 @@
+(define (problem bring_shopping_basket_from_booth_to_breakfast_table_banana_bread_from_shelf_to_booth_security_camera_from_coffee_table_to_shelf_water_bottle_from_shelf_to_console_table_notebook_from_breakfast_table_to_shelf_toy_boxes_from_floor_to_shelf)
+    (:domain omnigibson)    
+    (:objects
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        booth.n.01_1 - booth.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        banana_bread.n.01_1 - banana_bread.n.01
+        shelf.n.01_1 - shelf.n.01
+        security_camera.n.01_1 - security_camera.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        console_table.n.01_1 - console_table.n.01
+        notebook.n.01_1 - notebook.n.01
+        toy_box.n.01_1 toy_box.n.01_2 - toy_box.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop shopping_basket.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (ontop banana_bread.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (ontop security_camera.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop water_bottle.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (ontop notebook.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop toy_box.n.01_1 floor.n.01_1)
+        (ontop toy_box.n.01_2 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom console_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?shopping_basket.n.01_1 ?breakfast_table.n.01_1)
+            (ontop ?banana_bread.n.01_1 ?booth.n.01_1)
+            (ontop ?security_camera.n.01_1 ?shelf.n.01_1)
+            (ontop ?water_bottle.n.01_1 ?console_table.n.01_1)
+            (ontop ?notebook.n.01_1 ?shelf.n.01_1)
+            (forall
+                (?toy_box.n.01 - toy_box.n.01)
+                (inside ?toy_box.n.01 ?shelf.n.01_1)
+            )
+        )
+    )
+)

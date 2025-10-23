@@ -1,0 +1,25 @@
+(define (problem place_the_toy_figure_from_the_playroom_0_and_the_pillow_from_the_bedroom_0_onto_the_bed_in_the_bedroom_1)
+    (:domain omnigibson)
+    (:objects
+        toy_figure.n.01_1 - toy_figure.n.01
+        pillow.n.01_1 - pillow.n.01
+        bed.n.01_1 - bed.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom toy_figure.n.01_1 playroom_0)
+        (inroom pillow.n.01_1 bedroom_0)
+        (inroom bed.n.01_1 bedroom_1)
+        (inroom floor.n.01_1 bedroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?toy_figure.n.01_1 ?bed.n.01_1)
+            (ontop ?pillow.n.01_1 ?bed.n.01_1)
+        )
+    )
+)

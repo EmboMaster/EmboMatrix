@@ -1,0 +1,148 @@
+env:
+  device: null                 # (None or str): specifies the device to be used if running on the gpu with torch backend
+  automatic_reset: false                # (bool): whether to automatic reset after an episode finishes
+  flatten_action_space: false           # (bool): whether to flatten the action space as a sinle 1D-array
+  flatten_obs_space: false              # (bool): whether the observation space should be flattened when generated
+  use_external_obs: false               # (bool): Whether to use external observations or not
+  initial_pos_z_offset: 0.1
+  external_sensors:                     # (None or list): If specified list of sensor configurations for external sensors to add. Should specify sensor "type" and any additional kwargs to instantiate the sensor. Each entry should be the kwargs passed to @create_sensor in addition to position orientation
+    - sensor_type: VisionSensor
+      name: external_sensor_nav
+      relative_prim_path: /external_sensor_nav
+      modalities: [rgb, depth, seg_instance]
+      sensor_kwargs:
+        image_height: 224
+        image_width: 384
+      position: [-5.648791313171387, 0, 2.0]
+      orientation: [0.707, 0.0, 0.0, 0.707]
+      pose_frame: parent
+    - sensor_type: VisionSensor
+      name: external_sensor_manip
+      relative_prim_path: /external_sensor_manip
+      modalities: [rgb, depth, seg_instance]
+      sensor_kwargs:
+        image_height: 224
+        image_width: 384
+      position: [-5.648791313171387, 0, 2.0]
+      orientation: [0.707, 0.0, 0.0, 0.707]
+      pose_frame: parent
+    - sensor_type: VisionSensor
+      name: external_sensor
+      relative_prim_path: /external_sensor
+      modalities: [rgb, depth, seg_instance]
+      sensor_kwargs:
+        image_height: 384
+        image_width: 384
+      position: [-5.648791313171387, 0, 2.0]
+      orientation: [0, 0.0, 0.0, 1]
+      pose_frame: parent
+
+
+render:
+  viewer_width: 1280
+  viewer_height: 720
+
+scene:
+  type: InteractiveTraversableScene
+  scene_model: Pomaria_0_int
+  trav_map_resolution: 0.1
+  default_erosion_radius: 0.0
+  trav_map_with_objects: true
+  num_waypoints: 1
+  waypoint_resolution: 0.2
+  not_load_object_categories: null
+  load_room_types: null
+  load_room_instances: null
+  seg_map_resolution: 0.1
+  scene_source: OG
+  include_robots: true
+
+robots:
+  - type: Fetch_fixedcamera
+    name: robot0
+    # obs_modalities: [scan rgb depth]
+    obs_modalities: [rgb, seg_instance, priprio]
+    proprio_obs: [base_qpos, camera_qpos, arm_0_qpos, gripper_0_qpos]
+    scale: 1.0
+    self_collision: false
+    action_normalize: true
+    action_type: continuous
+    grasping_mode: physical
+    rigid_trunk: false
+    default_trunk_offset: 0.365
+    default_arm_pose: diagonal30
+    default_reset_mode: tuck
+    sensor_config:
+      VisionSensor:
+        sensor_kwargs:
+          image_height: 384
+          image_width: 384
+      ScanSensor:
+          sensor_kwargs:
+            min_range: 0.05
+            max_range: 10.0
+    controller_config:
+      base:
+        name: DifferentialDriveGodController
+      arm_0:
+        name: InverseKinematicsController
+      gripper_0:
+        name: MultiFingerGripperController
+        mode: binary
+      camera:
+        name: JointController
+        use_delta_commands: False
+
+objects: []
+
+planner:
+  model_path: models/DeepSeek-R1-Distill-Qwen-7B
+  caption_prompt: Generate detailed English visual description for robotic action planning. \nFocus on object positions, spatial relationships, material properties, and environmental context.\nKeep sentences concise and factual.
+
+  task_description: collecting aluminum cans
+  sample_num: 4
+task:
+  type: BehaviorTask
+  activity_definition_id: 0
+  activity_instance_id: 0
+  predefined_problem: null
+  online_object_sampling: false
+  debug_object_sampling: null
+  highlight_task_relevant_objects: false
+  termination_config:
+    max_steps: 500
+  reward_config:
+    r_potential: 1.0
+  subgoals: false
+  subgoal_configs:
+    - type: "navigation"
+      reward_class: "NewPointGoalReward"
+      alpha: 10.0
+      r_detect: 1.0
+      r_approach_threshold: 10.0
+      approach_distance_threshold: 1.0
+      grasp_distance_threshold: 0.1
+    - type: "grasp"
+      reward_class: "GraspReward"
+      dist_coeff: 0.0
+      grasp_reward: 10.0
+      collision_penalty: 1.0
+      eef_position_penalty_coef: 0.05
+      eef_orientation_penalty_coef: 0.05
+      regularization_coef: 0.1
+    - type: "put"
+      reward_class: "PutReward"
+      alpha: 1.0
+      r_precision: 10.0
+      r_penalty: -5.0
+    - type: "carry"
+      reward_class: "NewPointGoalReward"
+      r_carry: 5.0
+      r_penalty_separation: 10.0
+      carry_threshold: 0.2
+      eef_distance_threshold: 0.1
+      alpha: 1.0
+      r_detect: 5.0
+      r_approach_threshold: 10.0
+      approach_distance_threshold: 1.0
+      grasp_distance_threshold: 0.1

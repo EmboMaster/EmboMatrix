@@ -1,0 +1,35 @@
+(define (problem please_pick_up_the_bratwurst.n.01_from_the_shelf_in_the_kitchen_0_and_place_it_inside_the_electric_cauldron.n.01_in_the_dining_room_0_then_toggle_on_the_electric_cauldron.n.01_in_the_dining_room_0_to_cook_the_bratwurst.n.01_also_open_the_recycling_bin.n.01_in_the_kitchen_0_to_dispose_of_scraps)
+    (:domain omnigibson)
+    (:objects
+        bratwurst.n.01_1 - bratwurst.n.01
+        shelf.n.01_1 - shelf.n.01
+        electric_cauldron.n.01_1 - electric_cauldron.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (inside bratwurst.n.01_1 shelf.n.01_1) 
+        (not 
+            (toggled_on electric_cauldron.n.01_1)
+        )
+        (not 
+            (open recycling_bin.n.01_1)
+        )
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom recycling_bin.n.01_1 kitchen_0)
+        (inroom electric_cauldron.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?bratwurst.n.01_1 ?electric_cauldron.n.01_1)
+            (cooked ?bratwurst.n.01_1)
+            (toggled_on ?electric_cauldron.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

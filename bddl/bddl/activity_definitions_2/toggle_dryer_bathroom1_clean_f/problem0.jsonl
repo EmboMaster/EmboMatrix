@@ -1,0 +1,2 @@
+{"state": {"hand_dryer.n.01_1": {"toggled_on": false}, "floor.n.01_1": {"dusty": true}}, "relation": [["hand_dryer.n.01_1", "inroom", "bathroom_1"], ["sink.n.01_1", "inroom", "bathroom_1"], ["rag.n.01_1", "inroom", "corridor_0"], ["floor.n.01_1", "inroom", "corridor_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"hand_dryer.n.01_1": {"toggled_on": true}, "rag.n.01_1": {"soaked": true}, "floor.n.01_1": {"dusty": false}}, "relation": []}

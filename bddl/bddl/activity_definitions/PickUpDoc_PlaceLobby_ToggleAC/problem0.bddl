@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_legal_document_from_the_printer_in_copy_room_0_and_place_it_on_the_reception_desk_in_lobby_0._Then_toggle_on_the_air_conditioner.n.01_in_lobby_0.)
+    (:domain omnigibson)
+    (:objects
+        legal_document.n.01_1 - legal_document.n.01
+        printer.n.03_1 - printer.n.03
+        reception_desk.n.01_1 - reception_desk.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop legal_document.n.01_1 printer.n.03_1)
+        (inroom printer.n.03_1 copy_room_0)
+        (inroom reception_desk.n.01_1 lobby_0)
+        (inroom air_conditioner.n.01_1 lobby_0)
+        (not
+            (toggled_on air_conditioner.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 copy_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?legal_document.n.01_1 ?reception_desk.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

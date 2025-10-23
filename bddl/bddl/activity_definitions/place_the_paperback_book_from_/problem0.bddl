@@ -1,0 +1,31 @@
+(define (problem place_the_paperback_book_from_the_periodic_table_in_the_empty_room_0_on_the_reception_desk_in_the_bathroom_0_then_place_the_toothbrush_from_the_shelf_in_the_bathroom_0_on_the_eames_chair_in_the_empty_room_0)
+    (:domain omnigibson)    
+    (:objects
+        paperback_book.n.01_1 - paperback_book.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        toothbrush.n.01_1 - toothbrush.n.01
+        shelf.n.01_1 - shelf.n.01
+        eames_chair.n.01_1 - eames_chair.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+
+    (:init
+        (ontop paperback_book.n.01_1 periodic_table.n.01_1)
+        (ontop toothbrush.n.01_1 shelf.n.01_1)
+        (inroom periodic_table.n.01_1 empty_room_0)
+        (inroom eames_chair.n.01_1 empty_room_0)
+        (inroom reception_desk.n.01_1 bathroom_0)
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?paperback_book.n.01_1 ?reception_desk.n.01_1)
+            (ontop ?toothbrush.n.01_1 ?eames_chair.n.01_1)
+        )
+    )
+)

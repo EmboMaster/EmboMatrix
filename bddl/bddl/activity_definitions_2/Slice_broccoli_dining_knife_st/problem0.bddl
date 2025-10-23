@@ -1,0 +1,28 @@
+(define (problem Slice_the_broccoli.n.02_on_the_breakfast_table_in_dining_room_0_using_the_table_knife.n.01_from_storage_room_0_and_place_the_sliced_pieces_on_the_plate_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        table_knife.n.01_1 - table_knife.n.01
+        plate.n.04_1 - plate.n.04
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop broccoli.n.02_1 breakfast_table.n.01_1)
+        (ontop plate.n.04_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom plate.n.04_1 dining_room_0)
+        (inroom table_knife.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?broccoli.n.02_1)
+            (inside ?broccoli.n.02_1 ?plate.n.04_1)
+        )
+    )
+)

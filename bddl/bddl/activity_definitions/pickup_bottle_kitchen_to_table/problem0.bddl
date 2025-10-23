@@ -1,0 +1,30 @@
+(define (problem pick_up_the_squeeze_bottle_from_the_booth_in_the_kitchen_0_and_bring_it_to_the_breakfast_table_in_the_dining_room_0_then_toggle_off_the_stove_n.01_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        squeeze_bottle.n.01_1 - squeeze_bottle.n.01
+        booth.n.01_1 - booth.n.01
+        stove.n.01_1 - stove.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop squeeze_bottle.n.01_1 booth.n.01_1)
+        (toggled_on stove.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?squeeze_bottle.n.01_1 ?breakfast_table.n.01_1)
+            (not
+                (toggled_on ?stove.n.01_1)
+            )
+        )
+    )
+)

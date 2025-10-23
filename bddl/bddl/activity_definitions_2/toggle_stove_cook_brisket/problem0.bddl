@@ -1,0 +1,31 @@
+(define (problem toggle_on_the_stove.n.01_in_the_kitchen_0_cook_the_brisket.n.01_in_the_frying_pan.n.01_on_the_stove.n.01_in_the_kitchen_0_and_toggle_off_the_stove.n.01_after_cooking)
+    (:domain omnigibson)
+    (:objects
+        stove.n.01_1 - stove.n.01
+        brisket.n.01_1 - brisket.n.01
+        frying_pan.n.01_1 - frying_pan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on stove.n.01_1))  ; Stove is off initially
+        (ontop frying_pan.n.01_1 stove.n.01_1)  ; Frying pan is on the stove
+        (inside brisket.n.01_1 frying_pan.n.01_1)  ; Brisket is inside the frying pan
+        (inroom stove.n.01_1 kitchen_0)  ; Stove is in the kitchen
+        (inroom frying_pan.n.01_1 kitchen_0)  ; Frying pan is in the kitchen
+        (inroom brisket.n.01_1 kitchen_0)  ; Brisket is in the kitchen
+        (ontop agent.n.01_1 floor.n.01_1)  ; Agent is on the floor
+        (inroom floor.n.01_1 kitchen_0)  ; Floor is in the kitchen
+    )
+
+    (:goal
+        (and
+            (toggled_on ?stove.n.01_1)  ; Stove is toggled on
+            (inside ?brisket.n.01_1 ?frying_pan.n.01_1)  ; Brisket is inside the frying pan
+            (ontop ?frying_pan.n.01_1 ?stove.n.01_1)  ; Frying pan is on the stove
+            (cooked ?brisket.n.01_1)  ; Brisket is cooked
+            (not (toggled_on ?stove.n.01_1))  ; Stove is toggled off after cooking
+        )
+    )
+)

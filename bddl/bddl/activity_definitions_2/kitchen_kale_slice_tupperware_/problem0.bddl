@@ -1,0 +1,30 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_kale.n.03_from_the_reception_desk_slice_it_using_the_cleaver.n.01_on_the_chopping_board_in_the_utility_room_0_then_place_the_sliced_kale_inside_the_tupperware.n.01_in_the_storage_room_2)
+    (:domain omnigibson)
+    (:objects
+        kale.n.03_1 - kale.n.03
+        reception_desk.n.01_1 - reception_desk.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kale.n.03_1 reception_desk.n.01_1)
+        (ontop cleaver.n.01_1 chopping_board.n.01_1)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (inroom chopping_board.n.01_1 utility_room_0)
+        (inroom cleaver.n.01_1 utility_room_0)
+        (inroom tupperware.n.01_1 storage_room_2)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?kale.n.03_1)
+            (inside ?kale.n.03_1 ?tupperware.n.01_1)
+        )
+    )
+)

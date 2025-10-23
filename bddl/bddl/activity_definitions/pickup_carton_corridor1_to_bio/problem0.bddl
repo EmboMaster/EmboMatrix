@@ -1,0 +1,23 @@
+(define (problem pick_up_the_carton.n.02_from_the_floor_in_corridor_1_bring_the_carton.n.02_to_biology_lab_0_and_put_the_carton.n.02_inside_the_cooler.n.01_in_the_biology_lab_0_to_freeze_biological_specimens-0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_1)
+        (inroom cooler.n.01_1 biology_lab_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?carton.n.02_1)
+            (inside ?carton.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem pick_up_the_cinnamon_roll_from_the_reception_desk_in_the_kitchen_0_slice_it_using_the_table_knife.n.01_on_the_chopping_board_in_the_kitchen_0_and_clean_the_table_knife.n.01_with_the_sink.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        cinnamon_roll.n.01_1 - cinnamon_roll.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cinnamon_roll.n.01_1 reception_desk.n.01_1)
+        (ontop table_knife.n.01_1 reception_desk.n.01_1)
+        (ontop chopping_board.n.01_1 reception_desk.n.01_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?cinnamon_roll.n.01_1)
+            (not (stained ?table_knife.n.01_1))
+        )
+    )
+)

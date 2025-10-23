@@ -1,0 +1,28 @@
+(define (problem go_to_the_entryway_0_open_the_mailbox_n_01_pick_up_the_letter_from_inside_the_mailbox_and_place_the_letter_on_top_of_the_coffee_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        mailbox.n.01_1 - mailbox.n.01
+        letter.n.01_1 - letter.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not 
+            (open mailbox.n.01_1)
+        )
+        (inside letter.n.01_1 mailbox.n.01_1)
+        (inroom mailbox.n.01_1 entryway_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 entryway_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (open ?mailbox.n.01_1)
+            (ontop ?letter.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

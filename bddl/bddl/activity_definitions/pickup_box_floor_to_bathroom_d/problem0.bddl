@@ -1,0 +1,23 @@
+(define (problem Pick_up_the_packing_box.n.02_from_the_floor_in_empty_room_0_go_to_bathroom_0_and_put_the_packing_box.n.02_on_top_of_the_reception_desk)
+    (:domain omnigibson)
+    (:objects
+        packing_box.n.02_1 - packing_box.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop packing_box.n.02_1 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom packing_box.n.02_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (inroom reception_desk.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?packing_box.n.02_1 ?reception_desk.n.01_1)
+        )
+    )
+)

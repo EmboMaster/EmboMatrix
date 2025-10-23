@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_electric_fan.n.01_from_the_coffee_table_in_the_living_room_0_and_place_it_on_top_of_the_shelf_in_the_storage_room_0._Then_go_to_the_utility_room_0_and_close_the_recycling_bin.n.01._for_me.)
+    (:domain omnigibson)
+    (:objects
+        electric_fan.n.01_1 - electric_fan.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop electric_fan.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (open recycling_bin.n.01_1)
+        (inroom recycling_bin.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?electric_fan.n.01_1 ?shelf.n.01_1)
+            (not
+                (open ?recycling_bin.n.01_1)
+            )
+        )
+    )
+)

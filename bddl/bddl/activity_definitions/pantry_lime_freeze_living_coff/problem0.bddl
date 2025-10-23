@@ -1,0 +1,27 @@
+(define (problem go_to_the_pantry_room_0_pick_up_the_lime.n.06_from_the_wicker_basket_and_bring_it_to_the_cooler.n.01_in_the_same_room_put_the_lime.n.06_inside_the_cooler.n.01_to_freeze_it_after_freezing_pick_up_the_lime.n.06_from_the_cooler.n.01_go_to_the_living_room_0_and_place_it_on_the_coffee_table)
+    (:domain omnigibson)
+    (:objects
+        lime.n.06_1 - lime.n.06
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside lime.n.06_1 wicker_basket.n.01_1)
+        (inroom wicker_basket.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 pantry_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?lime.n.06_1)
+            (ontop ?lime.n.06_1 ?coffee_table.n.01_1)
+        )
+    )
+)

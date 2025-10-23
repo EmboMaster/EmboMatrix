@@ -1,0 +1,37 @@
+(define (problem go_to_room_break_room_0_pick_up_the_brussels_sprouts.n.01_from_the_pedestal_table_in_the_break_room_0_cook_the_brussels_sprouts.n.01_using_the_stove.n.01_in_the_break_room_0_pick_up_the_pitcher.n.02_from_the_shelf_in_the_break_room_0_go_to_room_shared_office_0_put_the_pitcher.n.02_on_top_of_the_desk_in_the_shared_office_0_open_the_laptop.n.01_on_the_desk_in_the_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        brussels_sprouts.n.01_1 - brussels_sprouts.n.01
+        stove.n.01_1 - stove.n.01
+        pitcher.n.02_1 - pitcher.n.02
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        laptop.n.01_1 - laptop.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (ontop brussels_sprouts.n.01_1 pedestal_table.n.01_1)
+        (not 
+            (toggled_on stove.n.01_1)
+        )
+        (inside pitcher.n.02_1 shelf.n.01_1)
+        (inroom pedestal_table.n.01_1 break_room_0)
+        (inroom shelf.n.01_1 break_room_0)
+        (inroom stove.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom laptop.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal 
+        (and 
+            (cooked ?brussels_sprouts.n.01_1)
+            (ontop ?pitcher.n.02_1 ?desk.n.01_1)
+            (open ?laptop.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,26 @@
+(define (problem fetch_children_toys_and_place_them_in_storage_box)
+    (:domain omnigibson)    (:objects
+        toy_box.n.01_1 toy_box.n.01_2 toy_box.n.01_3 - toy_box.n.01
+        storage_container.n.01_1 - storage_container.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+
+    (:init
+        (inroom toy_box.n.01_1 playroom_0)
+        (inroom toy_box.n.01_2 playroom_0)
+        (inroom toy_box.n.01_3 playroom_0)
+        (inroom storage_container.n.01_1 childs_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?toy_box.n.01_1 ?storage_container.n.01_1)
+            (inside ?toy_box.n.01_2 ?storage_container.n.01_1)
+            (inside ?toy_box.n.01_3 ?storage_container.n.01_1)
+        )
+    )
+)
+

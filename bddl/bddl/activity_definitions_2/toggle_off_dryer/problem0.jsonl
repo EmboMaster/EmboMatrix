@@ -1,0 +1,2 @@
+{"state": {"hand_dryer.n.01_1": {"toggled_on": true}}, "relation": [["hand_dryer.n.01_1", "inroom", "break_room_0"], ["floor.n.01_1", "inroom", "break_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"hand_dryer.n.01_1": {"toggled_on": false}}, "relation": []}

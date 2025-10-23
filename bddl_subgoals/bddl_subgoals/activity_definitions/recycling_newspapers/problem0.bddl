@@ -1,0 +1,101 @@
+(define (problem recycling_office_papers-0)
+    (:domain omnigibson)
+
+    (:objects
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        legal_document.n.01_1 legal_document.n.01_2 legal_document.n.01_3 - legal_document.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init 
+        (ontop recycling_bin.n.01_1 floor.n.01_1) 
+        (ontop legal_document.n.01_1 floor.n.01_1) 
+        (ontop legal_document.n.01_2 floor.n.01_1)
+        (ontop legal_document.n.01_3 breakfast_table.n.01_1)
+        (inroom floor.n.01_1 private_office) 
+        (inroom breakfast_table.n.01_1 private_office)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:subgoal1 "Find legal_document.n.01_1"
+        (:and
+            (NextTo ?legal_document.n.01_1 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal2 "Grasp legal_document.n.01_1"
+        (:and
+            (AttachedTo ?legal_document.n.01_1 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal3 "Find recycling_bin.n.01_1"
+        (:and
+            (NextTo ?recycling_bin.n.01_1 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal4 "Put legal_document.n.01_1 inside recycling_bin.n.01_1"
+        (:and
+            (Inside ?legal_document.n.01_1 ?recycling_bin.n.01_1)
+        )
+    )
+
+    (:subgoal5 "Find legal_document.n.01_2"
+        (:and
+            (NextTo ?legal_document.n.01_2 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal6 "Grasp legal_document.n.01_2"
+        (:and
+            (AttachedTo ?legal_document.n.01_2 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal7 "Find recycling_bin.n.01_1"
+        (:and
+            (NextTo ?recycling_bin.n.01_1 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal8 "Put legal_document.n.01_2 inside recycling_bin.n.01_1"
+        (:and
+            (Inside ?legal_document.n.01_2 ?recycling_bin.n.01_1)
+        )
+    )
+
+    (:subgoal9 "Find legal_document.n.01_3"
+        (:and
+            (NextTo ?legal_document.n.01_3 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal10 "Grasp legal_document.n.01_3"
+        (:and
+            (AttachedTo ?legal_document.n.01_3 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal11 "Find recycling_bin.n.01_1"
+        (:and
+            (NextTo ?recycling_bin.n.01_1 ?agent.n.01_1)
+        )
+    )
+
+    (:subgoal12 "Put legal_document.n.01_3 inside recycling_bin.n.01_1"
+        (:and
+            (Inside ?legal_document.n.01_3 ?recycling_bin.n.01_1)
+        )
+    )
+
+    ;; Object type descriptions:
+    ;; recycling_bin.n.01: A container used for collecting recyclable materials.
+    ;; floor.n.01: A flat surface forming the base of a room.
+    ;; legal_document.n.01: A sheet of paper with legally relevant information.
+    ;; breakfast_table.n.01: A piece of furniture typically used for placing items on.
+    ;; agent.n.01: An autonomous entity capable of navigation and manipulation.
+    ;; private_office (roomtype): A type of room designated as a personal office space.
+)

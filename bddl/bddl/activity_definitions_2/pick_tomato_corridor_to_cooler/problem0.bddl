@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_cherry_tomato.n.02_from_the_board_in_the_corridor_0_and_put_it_inside_the_cooler.n.01_in_the_hall_arch_wood:empty_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        cherry_tomato.n.02_1 - cherry_tomato.n.02
+        board.n.02_1 - board.n.02
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cherry_tomato.n.02_1 board.n.02_1)
+        (inroom board.n.02_1 corridor_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?cherry_tomato.n.02_1 ?cooler.n.01_1)
+            (frozen ?cherry_tomato.n.02_1)
+        )
+    )
+)

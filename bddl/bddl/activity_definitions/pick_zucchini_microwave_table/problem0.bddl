@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_zucchini.n.02_from_the_booth_in_the_kitchen_0_heat_it_using_the_microwave.n.02_and_bring_it_to_the_breakfast_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        zucchini.n.02_1 - zucchini.n.02
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop zucchini.n.02_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (not (toggled_on microwave.n.02_1))
+        (inroom breakfast_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?zucchini.n.02_1)
+            (ontop ?zucchini.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

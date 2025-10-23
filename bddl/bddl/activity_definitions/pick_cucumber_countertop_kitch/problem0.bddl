@@ -1,0 +1,31 @@
+(define (problem please_pick_up_the_cucumber.n.02_from_the_countertop_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_utility_room_0_then_open_the_backpack.n.01_in_the_storage_room_1_and_place_the_carafe.n.01_inside_it)
+    (:domain omnigibson)
+    (:objects
+        cucumber.n.02_1 - cucumber.n.02
+        cooler.n.01_1 - cooler.n.01
+        countertop.n.01_1 - countertop.n.01
+        backpack.n.01_1 - backpack.n.01
+        carafe.n.01_1 - carafe.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cucumber.n.02_1 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (not (open backpack.n.01_1))
+        (inroom backpack.n.01_1 storage_room_1)
+        (inroom carafe.n.01_1 storage_room_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?cucumber.n.02_1 ?cooler.n.01_1)
+            (open ?backpack.n.01_1)
+            (inside ?carafe.n.01_1 ?backpack.n.01_1)
+        )
+    )
+)

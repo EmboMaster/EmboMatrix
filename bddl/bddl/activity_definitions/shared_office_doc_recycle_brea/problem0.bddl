@@ -1,0 +1,31 @@
+(define (problem go_to_room_shared_office_0_pick_up_the_legal_document_from_the_desk_in_the_shared_office_0_put_legal_document_inside_recycling_bin.n.01_in_the_shared_office_0_go_to_room_break_room_0_pick_up_the_canned_food_from_the_booth_in_the_break_room_0_put_canned_food_on_top_of_the_coffee_table_in_the_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        legal_document.n.01_1 - legal_document.n.01
+        desk.n.01_1 - desk.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        canned_food.n.01_1 - canned_food.n.01
+        booth.n.01_1 - booth.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop legal_document.n.01_1 desk.n.01_1)
+        (ontop canned_food.n.01_1 booth.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom recycling_bin.n.01_1 shared_office_0)
+        (inroom booth.n.01_1 break_room_0)
+        (inroom coffee_table.n.01_1 break_room_0)
+        (inroom floor.n.01_1 shared_office_0) ; necessary for agent placement
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?legal_document.n.01_1 ?recycling_bin.n.01_1)
+            (ontop ?canned_food.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

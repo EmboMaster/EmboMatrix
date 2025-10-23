@@ -1,0 +1,28 @@
+(define (problem toggle_on_table_lamp_pick_up_biscuit_and_place_in_toy_box)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        biscuit.n.01_1 - biscuit.n.01
+        toy_box.n.01_1 - toy_box.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on table_lamp.n.01_1))
+        (ontop biscuit.n.01_1 coffee_table.n.01_1)
+        (inroom table_lamp.n.01_1 bedroom_1)
+        (inroom coffee_table.n.01_1 corridor_0)
+        (inroom toy_box.n.01_1 closet_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (inside ?biscuit.n.01_1 ?toy_box.n.01_1)
+        )
+    )
+)

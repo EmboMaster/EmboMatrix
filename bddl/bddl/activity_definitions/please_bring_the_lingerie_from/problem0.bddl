@@ -1,0 +1,29 @@
+(define (problem please_bring_the_lingerie_from_the_eames_chair_in_the_bedroom_0_and_the_comb_from_the_shelf_in_the_bathroom_0_to_the_alarm_clock_in_the_bedroom_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        lingerie.n.01_1 - lingerie.n.01
+        comb.n.01_1 - comb.n.01
+        eames_chair.n.01_1 - eames_chair.n.01
+        shelf.n.01_1 - shelf.n.01
+        alarm_clock.n.01_1 - alarm_clock.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lingerie.n.01_1 eames_chair.n.01_1)
+        (ontop comb.n.01_1 shelf.n.01_1)
+        (inroom eames_chair.n.01_1 bedroom_0)
+        (inroom alarm_clock.n.01_1 bedroom_0)
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?lingerie.n.01_1 ?alarm_clock.n.01_1)
+            (inside ?comb.n.01_1 ?alarm_clock.n.01_1)
+        )
+    )
+)

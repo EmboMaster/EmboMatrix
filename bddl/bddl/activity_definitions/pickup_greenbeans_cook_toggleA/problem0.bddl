@@ -1,0 +1,31 @@
+(define (problem pick_up_the_green_beans_from_the_reception_desk_in_the_kitchen_0_put_them_inside_the_pressure_cooker_in_the_kitchen_0_and_cook_the_green_beans_using_the_pressure_cooker_then_toggle_off_the_air_conditioner_in_the_living_room_1)
+    (:domain omnigibson)
+    (:objects
+        green_bean.n.01_1 - green_bean.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop green_bean.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom pressure_cooker.n.01_1 kitchen_0)
+        (not (toggled_on pressure_cooker.n.01_1))
+        (inroom air_conditioner.n.01_1 living_room_1)
+        (toggled_on air_conditioner.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?green_bean.n.01_1)
+            (inside ?green_bean.n.01_1 ?pressure_cooker.n.01_1)
+            (toggled_on ?pressure_cooker.n.01_1)
+            (not (toggled_on ?air_conditioner.n.01_1))
+        )
+    )
+)

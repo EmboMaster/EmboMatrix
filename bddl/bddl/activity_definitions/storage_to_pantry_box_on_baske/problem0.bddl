@@ -1,0 +1,25 @@
+(define (problem Please_go_to_the_storage_room_0_pick_up_the_packing_box.n.02_from_the_corner_bring_it_to_the_pantry_room_0_and_put_it_on_top_of_the_wicker_basket.n.01_near_the_shelf-0)
+    (:domain omnigibson)
+    (:objects
+        packing_box.n.02_1 - packing_box.n.02
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom packing_box.n.02_1 storage_room_0)
+        (inroom wicker_basket.n.01_1 pantry_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (real packing_box.n.02_1)
+        (real wicker_basket.n.01_1)
+        (real floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?packing_box.n.02_1 ?wicker_basket.n.01_1)
+        )
+    )
+)

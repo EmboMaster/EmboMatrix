@@ -1,0 +1,26 @@
+(define (problem please_pick_up_the_venison.n.01_from_the_console_table_in_the_grocery_store_0_go_to_the_bathroom_0_and_place_it_inside_the_cooler.n.01_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        venison.n.01_1 - venison.n.01
+        console_table.n.01_1 - console_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop venison.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 grocery_store_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+        (inroom floor.n.01_2 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?venison.n.01_1)
+            (inside ?venison.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,36 @@
+(define (problem Go_to_bathroom_0_and_pick_up_the_soap_dispenser.n.01_from_the_shelf.n.01_in_bathroom_0._Then,_place_the_soap_dispenser.n.01_on_top_of_the_urinal_in_bathroom_0._After_that,_toggle_off_the_ceiling_fan.n.01_in_bathroom_0.-0)
+    (:domain omnigibson)
+    (:objects
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        shelf.n.01_1 - shelf.n.01
+        urinal.n.01_1 - urinal.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        ;; Spatial and state relationships
+        (ontop soap_dispenser.n.01_1 shelf.n.01_1)
+        (toggled_on ceiling_fan.n.01_1)
+
+        ;; Room relationships
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom ceiling_fan.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+
+        ;; Agent location
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            ;; Goal relationships
+            (ontop ?soap_dispenser.n.01_1 ?urinal.n.01_1)
+            (not
+                (toggled_on ?ceiling_fan.n.01_1)
+            )
+        )
+    )
+)

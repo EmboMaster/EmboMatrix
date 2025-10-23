@@ -1,0 +1,30 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_banana_bread.n.01_from_the_lunch_box.n.01_in_the_storage_room_0_and_put_the_banana_bread.n.01_inside_the_microwave.n.02_in_the_storage_room_0_to_cook_it_after_cooking_pick_up_the_banana_bread.n.01_from_the_microwave.n.02_in_the_storage_room_0_and_place_it_on_top_of_the_desk_in_the_private_office_0-0)
+    (:domain omnigibson)
+    (:objects
+        banana_bread.n.01_1 - banana_bread.n.01
+        lunch_box.n.01_1 - lunch_box.n.01
+        microwave.n.02_1 - microwave.n.02
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside banana_bread.n.01_1 lunch_box.n.01_1)
+        (inroom lunch_box.n.01_1 storage_room_0)
+        (inroom microwave.n.02_1 storage_room_0)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom desk.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?banana_bread.n.01_1)
+            (ontop ?banana_bread.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

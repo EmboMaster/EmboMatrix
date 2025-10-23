@@ -1,0 +1,2 @@
+{"state": {"espresso_machine.n.01_1": {"toggled_on": false}}, "relation": [["espresso_machine.n.01_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "storage_room_0"], ["espresso_machine.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_0"]]}
+{"state": {"espresso_machine.n.01_1": {"toggled_on": true}}, "relation": [["espresso_machine.n.01_1", "ontop", "booth.n.01_1"], ["espresso_machine.n.01_1", "ontop", "booth.n.01_1"]]}

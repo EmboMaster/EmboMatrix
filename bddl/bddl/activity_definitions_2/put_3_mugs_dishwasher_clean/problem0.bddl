@@ -1,0 +1,33 @@
+(define (problem put_all_3_stained_mugs_from_the_kitchen_0_inside_the_dishwasher.n.01_in_the_storage_room_1_and_toggle_on_the_washer.n.03_to_clean_them)
+    (:domain omnigibson)
+    (:objects
+        mug.n.04_1 mug.n.04_2 mug.n.04_3 - mug.n.04
+        dishwasher.n.01_1 - dishwasher.n.01
+        washer.n.03_1 - washer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (stained mug.n.04_1)
+        (stained mug.n.04_2)
+        (stained mug.n.04_3)
+        (inroom mug.n.04_1 kitchen_0)
+        (inroom mug.n.04_2 kitchen_0)
+        (inroom mug.n.04_3 kitchen_0)
+        (inroom dishwasher.n.01_1 storage_room_1)
+        (inroom washer.n.03_1 storage_room_1)
+        (inroom floor.n.01_1 storage_room_1)
+        (not (toggled_on washer.n.03_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?mug.n.04_1 ?dishwasher.n.01_1)
+            (inside ?mug.n.04_2 ?dishwasher.n.01_1)
+            (inside ?mug.n.04_3 ?dishwasher.n.01_1)
+            (toggled_on ?washer.n.03_1)
+        )
+    )
+)

@@ -1,0 +1,22 @@
+(define (problem move_laundry_basket_to_corridor_corner-0)
+    (:domain omnigibson)    (:objects
+        storage_container.n.01_1 - storage_container.n.01
+        marker.n.03_1 - marker.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom storage_container.n.01_1 bathroom_0)
+        (inroom marker.n.03_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?storage_container.n.01_1 ?marker.n.03_1)
+        )
+    )
+)
+

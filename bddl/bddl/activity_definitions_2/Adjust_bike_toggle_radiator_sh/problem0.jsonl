@@ -1,0 +1,2 @@
+{"state": {"radiator.n.02_1": {"toggled_on": false}}, "relation": [["exercise_bike.n.01_1", "inroom", "shared_office_0"], ["radiator.n.02_1", "inroom", "shared_office_0"], ["desk.n.01_1", "inroom", "shared_office_0"], ["floor.n.01_1", "inroom", "shared_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"radiator.n.02_1": {"toggled_on": true}}, "relation": []}

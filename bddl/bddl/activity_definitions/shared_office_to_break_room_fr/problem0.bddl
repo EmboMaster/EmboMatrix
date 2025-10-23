@@ -1,0 +1,25 @@
+(define (problem go_to_room_shared_office_0_pick_up_the_nectarine.n.02_from_the_desk_in_shared_office_0_go_to_room_break_room_0_put_the_nectarine.n.02_inside_the_cooler.n.01_in_break_room_0_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        nectarine.n.02_1 - nectarine.n.02
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop nectarine.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?nectarine.n.02_1)
+            (inside ?nectarine.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,32 @@
+(define (problem go_to_room_infirmary_0_pick_up_the_water_bottle.n.01_from_the_reception_desk_in_the_infirmary_0_go_to_room_infirmary_0_put_the_water_bottle.n.01_inside_the_cooler.n.01_to_freeze_it_go_to_room_corridor_1_pick_up_the_tray.n.01_from_the_shelf_in_the_corridor_1_go_to_room_infirmary_0_place_the_tray.n.01_on_top_of_the_desk_in_the_infirmary_0-0)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        tray.n.01_1 - tray.n.01
+        shelf.n.01_1 - shelf.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop water_bottle.n.01_1 reception_desk.n.01_1)
+        (ontop tray.n.01_1 shelf.n.01_1)
+        (inroom reception_desk.n.01_1 infirmary_0)
+        (inroom cooler.n.01_1 infirmary_0)
+        (inroom desk.n.01_1 infirmary_0)
+        (inroom shelf.n.01_1 corridor_1)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?water_bottle.n.01_1)
+            (inside ?water_bottle.n.01_1 ?cooler.n.01_1)
+            (ontop ?tray.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

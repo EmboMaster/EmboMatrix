@@ -1,0 +1,29 @@
+(define (problem please_move_to_the_playroom_0_and_toggle_on_the_water_cooler.n.01_then_go_to_the_garden_0_and_open_the_recycling_bin.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        water_cooler.n.01_1 - water_cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (toggled_on water_cooler.n.01_1)
+        )
+        (not 
+            (open recycling_bin.n.01_1)
+        )
+        (inroom water_cooler.n.01_1 playroom_0)
+        (inroom recycling_bin.n.01_1 garden_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?water_cooler.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

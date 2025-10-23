@@ -1,0 +1,27 @@
+(define (problem bring_the_hairbrush_from_the_tray_in_the_bathroom_0_and_the_toy_car_from_the_corner_of_the_bedroom_0_to_the_periodic_table_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        hairbrush.n.01_1 - hairbrush.n.01
+        tray.n.01_1 - tray.n.01
+        toy_car.n.01_1 - toy_car.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside hairbrush.n.01_1 tray.n.01_1)
+        (inroom tray.n.01_1 bathroom_0)
+        (inroom toy_car.n.01_1 bedroom_0)
+        (inroom periodic_table.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?hairbrush.n.01_1 ?periodic_table.n.01_1)
+            (ontop ?toy_car.n.01_1 ?periodic_table.n.01_1)
+        )
+    )
+)

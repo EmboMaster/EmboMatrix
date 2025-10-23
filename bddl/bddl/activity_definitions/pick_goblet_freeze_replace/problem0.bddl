@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_goblet.n.01_from_the_booth_in_the_living_room_0_go_to_the_garage_0_and_freeze_it_by_placing_it_in_the_cooler.n.01_once_frozen_retrieve_the_goblet.n.01_and_place_it_back_on_the_booth_in_the_living_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        goblet.n.01_1 - goblet.n.01
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop goblet.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 living_room_0)
+        (inroom cooler.n.01_1 garage_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?goblet.n.01_1)
+            (ontop ?goblet.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

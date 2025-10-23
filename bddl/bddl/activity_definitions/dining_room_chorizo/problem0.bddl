@@ -1,0 +1,33 @@
+(define (problem go_to_the_dining_room_0_pick_up_the_chorizo.n.01_from_the_breakfast_table_and_bring_it_to_the_kitchen_0_cook_the_chorizo.n.01_using_the_oven.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        chorizo.n.01_1 - chorizo.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chorizo.n.01_1 breakfast_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (not (toggled_on oven.n.01_1))
+    )
+
+    (:goal
+        (and
+            (cooked ?chorizo.n.01_1)
+            (not (toggled_on ?oven.n.01_1))
+        )
+    )
+
+    ;; Object Type Descriptions
+    ;; chorizo.n.01 - A type of sausage.
+    ;; breakfast_table.n.01 - A table used for dining purposes.
+    ;; oven.n.01 - An appliance for baking or roasting food.
+    ;; floor.n.01 - The bottom surface of a room.
+    ;; agent.n.01 - The entity performing actions.
+)

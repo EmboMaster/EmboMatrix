@@ -1,0 +1,37 @@
+(define (problem please_pick_up_the_carton.n.02_from_the_floor_in_empty_room_0_then_open_the_carton.n.02_and_place_the_roll_dough.n.01_inside_the_cooler.n.01_in_empty_room_0_finally_please_go_to_bathroom_0_and_toggle_on_the_hand_dryer.n.01)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        roll_dough.n.01_1 - roll_dough.n.01
+        cooler.n.01_1 - cooler.n.01
+        hand_dryer.n.01_1 - hand_dryer.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 floor.n.01_1)
+        (not
+            (open carton.n.02_1)
+        )
+        (not
+            (inside roll_dough.n.01_1 cooler.n.01_1)
+        )
+        (inroom cooler.n.01_1 empty_room_0)
+        (inroom hand_dryer.n.01_1 bathroom_0)
+        (not
+            (toggled_on hand_dryer.n.01_1)
+        )
+        (inroom floor.n.01_1 empty_room_0)
+        (inroom floor.n.01_2 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?roll_dough.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?hand_dryer.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,25 @@
+(define (problem Pick up the laptop.n.01 from the desk in private_office_0 and place it on the meeting table in meeting_room_0.)
+    (:domain omnigibson)
+    (:objects
+        laptop.n.01_1 - laptop.n.01
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom floor.n.01_1 private_office_0)
+    )
+
+    (:goal
+        (ontop laptop.n.01_1 desk.n.01_1)
+        (and
+            (ontop ?laptop.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

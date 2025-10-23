@@ -1,0 +1,2 @@
+{"state": {"cooler.n.01_1": {"open": true}}, "relation": [["beer_glass.n.01_1", "inside", "sink.n.01_1"], ["sink.n.01_1", "inroom", "kitchen_0"], ["cooler.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"beer_glass.n.01_1": {"frozen": true}, "cooler.n.01_1": {"open": false}}, "relation": [["beer_glass.n.01_1", "inside", "cooler.n.01_1"]]}

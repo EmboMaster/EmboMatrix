@@ -1,0 +1,2 @@
+{"state": {"coffee_maker.n.01_1": {"dusty": true}}, "relation": [["coffee_maker.n.01_1", "inroom", "shared_office_0"], ["rag.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "shared_office_0"], ["floor.n.01_2", "inroom", "bathroom_0"]]}
+{"state": {"rag.n.01_1": {"soaked": true}, "coffee_maker.n.01_1": {"dusty": false, "toggled_on": true}}, "relation": []}

@@ -1,0 +1,26 @@
+(define (problem go_to_computer_lab_0_toggle_on_the_coffee_maker.n.01_on_the_reception_desk_and_prepare_it_for_the_teacher)
+    (:domain omnigibson)
+    (:objects
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop coffee_maker.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 computer_lab_0)
+        (inroom floor.n.01_1 computer_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on coffee_maker.n.01_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?coffee_maker.n.01_1)
+            (ontop ?coffee_maker.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

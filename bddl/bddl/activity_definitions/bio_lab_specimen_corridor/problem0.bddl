@@ -1,0 +1,24 @@
+(define (problem go_to_biology_lab_0_pick_up_the_specimen_bottle.n.01_from_the_lab_exhaust_hood_in_the_biology_lab_0_go_to_corridor_0_put_the_specimen_bottle.n.01_inside_the_cooler.n.01_in_the_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        specimen_bottle.n.01_1 - specimen_bottle.n.01
+        lab_exhaust_hood.n.01_1 - lab_exhaust_hood.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop specimen_bottle.n.01_1 lab_exhaust_hood.n.01_1)
+        (inroom lab_exhaust_hood.n.01_1 biology_lab_0)
+        (inroom cooler.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 biology_lab_0)
+    )
+
+    (:goal
+        (and
+            (inside ?specimen_bottle.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

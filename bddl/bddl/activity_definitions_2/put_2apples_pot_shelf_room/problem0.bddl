@@ -1,0 +1,26 @@
+(define (problem put_all_2_apples.n.01_inside_the_copper_pot.n.01_on_the_shelf_in_the_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        apple.n.01_1 apple.n.01_2 - apple.n.01
+        copper_pot.n.01_1 - copper_pot.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop copper_pot.n.01_1 shelf.n.01_1)
+        (inroom apple.n.01_1 empty_room_0)
+        (inroom apple.n.01_2 empty_room_0)
+        (inroom shelf.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?apple.n.01_1 ?copper_pot.n.01_1)
+            (inside ?apple.n.01_2 ?copper_pot.n.01_1)
+        )
+    )
+)

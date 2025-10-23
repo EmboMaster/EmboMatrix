@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_brussels_sprouts.n.01_from_the_shopping_basket.n.01_in_the_bedroom_0_go_to_the_bathroom_1_and_freeze_them_inside_the_cooler.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        brussels_sprouts.n.01_1 - brussels_sprouts.n.01
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (inside brussels_sprouts.n.01_1 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 bedroom_0)
+        (inroom cooler.n.01_1 bathroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?brussels_sprouts.n.01_1)
+            (inside ?brussels_sprouts.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

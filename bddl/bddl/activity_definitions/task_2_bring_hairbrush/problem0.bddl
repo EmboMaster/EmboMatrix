@@ -1,0 +1,22 @@
+(define (problem task_2_bring_hairbrush-0)
+    (:domain omnigibson)    (:objects
+        hairbrush.n.01_1 - hairbrush.n.01
+        shelf.n.01_1 - shelf.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop hairbrush.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 bathroom_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_1)
+    )
+
+    (:goal
+        (ontop ?hairbrush.n.01_1 ?sink.n.01_1)
+    )
+)
+

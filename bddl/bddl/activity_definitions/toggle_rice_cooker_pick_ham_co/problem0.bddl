@@ -1,0 +1,28 @@
+(define (problem please_toggle_on_the_rice_cooker.n.01_in_the_kitchen_0_then_pick_up_the_virginia_ham.n.01_from_the_console_table_in_the_kitchen_0_and_cook_it_using_the_rice_cooker.n.01)
+    (:domain omnigibson)
+    (:objects
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        virginia_ham.n.01_1 - virginia_ham.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (toggled_on rice_cooker.n.01_1)
+        )
+        (ontop virginia_ham.n.01_1 console_table.n.01_1)
+        (inroom rice_cooker.n.01_1 kitchen_0)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?rice_cooker.n.01_1)
+            (cooked ?virginia_ham.n.01_1)
+        )
+    )
+)

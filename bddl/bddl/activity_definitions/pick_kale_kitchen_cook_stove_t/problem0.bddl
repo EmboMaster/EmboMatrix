@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_kale_from_the_booth_in_the_kitchen_0_cook_it_using_the_stove.n.01_in_the_kitchen_0_and_place_the_cooked_kale_on_the_breakfast_table_in_the_dining_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        kale.n.03_1 - kale.n.03
+        booth.n.01_1 - booth.n.01
+        stove.n.01_1 - stove.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop kale.n.03_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on stove.n.01_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (cooked ?kale.n.03_1)
+            (ontop ?kale.n.03_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

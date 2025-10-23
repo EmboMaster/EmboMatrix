@@ -1,0 +1,25 @@
+(define (problem please_pick_up_the_kielbasa.n.01_from_the_conference_table_in_shared_office_0_go_to_copy_room_0_put_the_kielbasa.n.01_inside_the_cooler.n.01_and_freeze_the_kielbasa.n.01)
+    (:domain omnigibson)
+    (:objects
+        kielbasa.n.01_1 - kielbasa.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kielbasa.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?kielbasa.n.01_1)
+            (inside ?kielbasa.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_green_beans_from_the_booth_in_the_kitchen_0_and_cook_them_using_the_food_processor.n.01_in_the_kitchen_0_then_toggle_off_the_food_processor.n.01_when_cooking_is_complete)
+    (:domain omnigibson)
+    (:objects
+        green_bean.n.01_1 - green_bean.n.01
+        booth.n.01_1 - booth.n.01
+        food_processor.n.01_1 - food_processor.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop green_bean.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (not 
+            (toggled_on food_processor.n.01_1)
+        )
+        (inroom food_processor.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?green_bean.n.01_1)
+            (not 
+                (toggled_on ?food_processor.n.01_1)
+            )
+        )
+    )
+)

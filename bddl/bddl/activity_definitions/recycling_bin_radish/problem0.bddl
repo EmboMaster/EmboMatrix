@@ -1,0 +1,28 @@
+(define (problem open_the_recycling_bin.n.01_in_the_bathroom_0_put_the_radish.n.01_inside_it_and_close_the_recycling_bin.n.01)
+    (:domain omnigibson)
+    (:objects
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        radish.n.01_1 - radish.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not
+            (open recycling_bin.n.01_1)
+        )
+        (inroom recycling_bin.n.01_1 bathroom_0)
+        (inroom radish.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?radish.n.01_1 ?recycling_bin.n.01_1)
+            (not
+                (open ?recycling_bin.n.01_1)
+            )
+        )
+    )
+)

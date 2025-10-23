@@ -1,0 +1,34 @@
+(define (problem Please_pick_up_the_comic_book_from_the_sofa_in_the_living_room_0_and_place_it_on_the_coffee_table_in_the_living_room_0._Then_pick_up_the_carton_from_the_corner_in_the_pantry_room_0_open_it_and_place_it_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        comic_book.n.01_1 - comic_book.n.01
+        sofa.n.01_1 - sofa.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        carton.n.02_1 - carton.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop comic_book.n.01_1 sofa.n.01_1)
+        (ontop carton.n.02_1 floor.n.01_1)
+        (not
+            (open carton.n.02_1)
+        )
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom carton.n.02_1 pantry_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 pantry_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?comic_book.n.01_1 ?coffee_table.n.01_1)
+            (ontop ?carton.n.02_1 ?breakfast_table.n.01_1)
+            (open ?carton.n.02_1)
+        )
+    )
+)

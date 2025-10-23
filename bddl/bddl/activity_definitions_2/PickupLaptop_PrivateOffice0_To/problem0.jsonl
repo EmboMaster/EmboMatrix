@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["laptop.n.01_1", "ontop", "desk.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["desk.n.01_1", "inroom", "private_office_0"], ["conference_table.n.01_1", "inroom", "meeting_room_0"], ["floor.n.01_1", "inroom", "private_office_0"]]}
+{"state": {}, "relation": [["laptop.n.01_1", "ontop", "desk.n.01_1"], ["laptop.n.01_1", "ontop", "conference_table.n.01_1"]]}

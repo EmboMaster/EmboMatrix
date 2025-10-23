@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_letter_from_the_desk_in_private_office_0_and_place_them_on_the_conference_table_in_conference_hall_0)
+    (:domain omnigibson)
+    (:objects
+        letter.n.01_1 - letter.n.01
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop letter.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_0)
+    )
+
+    (:goal
+        (ontop letter.n.01_1 desk.n.01_1)
+        (and
+            (ontop ?letter.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

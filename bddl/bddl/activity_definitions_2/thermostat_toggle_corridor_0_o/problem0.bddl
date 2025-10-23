@@ -1,0 +1,23 @@
+(define (problem check_the_thermostat_in_the_corridor_0_and_toggle_it_off_if_it_is_currently_on-0)
+    (:domain omnigibson)
+    (:objects
+        thermostat.n.01_1 - thermostat.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (toggled_on thermostat.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (toggled_on thermostat.n.01_1)
+        (and
+            (not
+                (toggled_on ?thermostat.n.01_1)
+            )
+        )
+    )
+)

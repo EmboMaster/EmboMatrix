@@ -1,0 +1,23 @@
+(define (problem go_to_the_television_room_0_and_toggle_off_the_microphone.n.01)
+    (:domain omnigibson)
+    (:objects
+        microphone.n.01_1 - microphone.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom microphone.n.01_1 television_room_0)
+        (toggled_on microphone.n.01_1)
+    )
+
+    (:goal
+        (ontop agent.n.01_1 floor.n.01_1)
+        (and
+            (not
+                (toggled_on ?microphone.n.01_1)
+            )
+        )
+    )
+)

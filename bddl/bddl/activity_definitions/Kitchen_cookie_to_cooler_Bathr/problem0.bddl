@@ -1,0 +1,31 @@
+(define (problem Head_to_the_kitchen_0_pick_up_the_chocolate_cookie_dough.n.01_from_the_reception_desk_and_put_it_inside_the_cooler.n.01_to_freeze_it._Then_go_to_the_bathroom_0_and_close_the_window.n.01_to_keep_the_temperature_constant.-0)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cookie_dough.n.01_1 - chocolate_cookie_dough.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cookie_dough.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 corridor_0)
+        (inroom cooler.n.01_1 corridor_0)
+        (open window.n.01_1)
+        (inroom window.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?chocolate_cookie_dough.n.01_1)
+            (inside ?chocolate_cookie_dough.n.01_1 ?cooler.n.01_1)
+            (not
+                (open ?window.n.01_1)
+            )
+        )
+    )
+)

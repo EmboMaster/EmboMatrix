@@ -1,0 +1,28 @@
+(define (problem pick_up_the_cheesecake.n.01_from_the_reception_desk_in_the_television_room_0_bring_it_to_the_toaster_oven.n.01_in_the_private_office_0_and_heat_the_cheesecake.n.01_after_heating_put_the_cheesecake.n.01_on_top_of_the_desk_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        cheesecake.n.01_1 - cheesecake.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cheesecake.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 television_room_0)
+        (inroom toaster_oven.n.01_1 private_office_0)
+        (inroom desk.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 television_room_0)
+        (not (toggled_on toaster_oven.n.01_1))
+    )
+
+    (:goal
+        (and
+            (cooked ?cheesecake.n.01_1)
+            (ontop ?cheesecake.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"alarm_clock.n.01_1": {"dusty": true}}, "relation": [["rag.n.01_1", "inside", "wardrobe.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["wardrobe.n.01_1", "inroom", "bedroom_0"], ["alarm_clock.n.01_1", "inroom", "bedroom_0"], ["sink.n.01_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"]]}
+{"state": {"alarm_clock.n.01_1": {"dusty": false}, "rag.n.01_1": {"soaked": true}}, "relation": []}

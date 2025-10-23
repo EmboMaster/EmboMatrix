@@ -1,0 +1,2 @@
+{"state": {"chorizo.n.01_1": {"cooked": false}, "oven.n.01_1": {"toggled_on": false}}, "relation": [["chorizo.n.01_1", "inside", "oven.n.01_1"], ["oven.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"chorizo.n.01_1": {"cooked": true}, "oven.n.01_1": {"toggled_on": true}}, "relation": [["chorizo.n.01_1", "inside", "oven.n.01_1"], ["chorizo.n.01_1", "inside", "oven.n.01_1"]]}

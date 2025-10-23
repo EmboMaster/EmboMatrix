@@ -1,0 +1,38 @@
+(define (problem pick_up_carton_from_shelf_and_bring_to_storage_room_1_open_retrieve_turkey_leg_and_heat_in_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        turkey_leg.n.01_1 - turkey_leg.n.01
+        shelf.n.01_1 - shelf.n.01
+        microwave.n.02_1 - microwave.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (inside turkey_leg.n.01_1 carton.n.02_1)
+        (not
+            (open carton.n.02_1)
+        )
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom microwave.n.02_1 kitchen_0)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom reception_desk.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?turkey_leg.n.01_1 ?microwave.n.02_1)
+            (cooked ?turkey_leg.n.01_1)
+            (ontop ?turkey_leg.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

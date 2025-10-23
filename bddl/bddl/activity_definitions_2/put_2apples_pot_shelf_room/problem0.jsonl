@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["copper_pot.n.01_1", "ontop", "shelf.n.01_1"], ["apple.n.01_1", "inroom", "empty_room_0"], ["apple.n.01_2", "inroom", "empty_room_0"], ["shelf.n.01_1", "inroom", "empty_room_0"], ["floor.n.01_1", "inroom", "empty_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {}, "relation": [["apple.n.01_1", "inside", "copper_pot.n.01_1"], ["apple.n.01_2", "inside", "copper_pot.n.01_1"]]}

@@ -1,0 +1,2 @@
+{"state": {"table_lamp.n.01_1": {"toggled_on": false}}, "relation": [["table_lamp.n.01_1", "inroom", "living_room_0"], ["pitcher.n.02_1", "inroom", "storage_room_1"], ["coffee_table.n.01_1", "inroom", "living_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "living_room_0"]]}
+{"state": {"table_lamp.n.01_1": {"toggled_on": true}}, "relation": [["pitcher.n.02_1", "ontop", "coffee_table.n.01_1"]]}

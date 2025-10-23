@@ -1,0 +1,28 @@
+(define (problem please_get_the_packing_box_from_the_recycling_bin_in_bathroom_0_and_the_folder_from_the_desk_in_shared_office_0_and_put_them_on_the_console_table_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        packing_box.n.02_1 - packing_box.n.02
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        folder.n.02_1 - folder.n.02
+        desk.n.01_1 - desk.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside packing_box.n.02_1 recycling_bin.n.01_1)
+        (ontop folder.n.02_1 desk.n.01_1)
+        (inroom recycling_bin.n.01_1 bathroom_0)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom console_table.n.01_1 corridor_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    (:goal
+        (and
+            (ontop ?packing_box.n.02_1 ?console_table.n.01_1)
+            (ontop ?folder.n.02_1 ?console_table.n.01_1)
+        )
+    )
+)

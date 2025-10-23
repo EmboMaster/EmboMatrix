@@ -1,0 +1,29 @@
+(define (problem please_move_the_backpack_from_the_straight_chair_in_the_bedroom_0_and_the_banana_bread_from_the_counter_in_the_kitchen_0_to_the_floor_near_the_entryway_0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        banana_bread.n.01_1 - banana_bread.n.01
+        countertop.n.01_1 - countertop.n.01
+        floor.n.01_1 - floor.n.01
+        floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 straight_chair.n.01_1)
+        (ontop banana_bread.n.01_1 countertop.n.01_1)
+        (inroom straight_chair.n.01_1 bedroom_0)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (inroom floor.n.01_2 entryway_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?backpack.n.01_1 ?floor.n.01_2)
+            (ontop ?banana_bread.n.01_1 ?floor.n.01_2)
+        )
+    )
+)

@@ -1,0 +1,27 @@
+(define (problem please_move_the_stack_of_books_from_the_coffee_table_in_living_room_0_and_the_soccer_ball_from_the_floor_in_storage_room_0_to_the_desk_in_corridor_0)
+    (:domain omnigibson)
+    (:objects
+        notebook.n.01_1 - notebook.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        soccer_ball.n.01_1 - soccer_ball.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop notebook.n.01_1 coffee_table.n.01_1)
+        (ontop soccer_ball.n.01_1 floor.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom desk.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?notebook.n.01_1 ?desk.n.01_1)
+            (ontop ?soccer_ball.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

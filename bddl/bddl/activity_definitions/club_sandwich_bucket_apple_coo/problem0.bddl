@@ -1,0 +1,32 @@
+(define (problem pick_up_the_club_sandwich.n.01_from_the_pedestal_table_in_empty_room_0_go_to_bathroom_0_put_club_sandwich.n.01_inside_the_bucket.n.01_in_bathroom_0_pick_up_the_apple.n.01_from_the_reception_desk_in_empty_room_0_go_to_bathroom_0_put_the_apple.n.01_inside_the_cooler.n.01_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        club_sandwich.n.01_1 - club_sandwich.n.01
+        apple.n.01_1 - apple.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        bucket.n.01_1 - bucket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop club_sandwich.n.01_1 pedestal_table.n.01_1)
+        (ontop apple.n.01_1 reception_desk.n.01_1)
+        (inroom pedestal_table.n.01_1 empty_room_0)
+        (inroom reception_desk.n.01_1 empty_room_0)
+        (inroom bucket.n.01_1 bathroom_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?club_sandwich.n.01_1 ?bucket.n.01_1)
+            (inside ?apple.n.01_1 ?cooler.n.01_1)
+            (frozen ?apple.n.01_1)
+        )
+    )
+)

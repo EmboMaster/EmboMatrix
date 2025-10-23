@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_green_bean.n.01_from_the_conference_table_in_break_room_0_go_to_shared_office_0_and_put_the_green_bean.n.01_inside_the_cooler.n.01_in_shared_office_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        green_bean.n.01_1 - green_bean.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop green_bean.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (inroom cooler.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?green_bean.n.01_1 ?cooler.n.01_1)
+            (frozen ?green_bean.n.01_1)
+        )
+    )
+)

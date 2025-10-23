@@ -1,0 +1,26 @@
+(define (problem please_transport_the_model_frail_from_the_biology_lab_0_to_the_shelf_side_in_the_corridor_0_and_the_goggles_from_the_bathroom_0_to_the_desk_in_the_biology_lab_0)
+    (:domain omnigibson)
+    (:objects
+        frail.n.02_1 - frail.n.02
+        goggles.n.02_1 - goggles.n.02
+        desk.n.01_1 - desk.n.01
+        shelf_side.n.01_1 - shelf_side.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom frail.n.02_1 biology_lab_0)
+        (inroom goggles.n.02_1 bathroom_0)
+        (inroom desk.n.01_1 biology_lab_0)
+        (inroom shelf_side.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 biology_lab_0)
+    )
+    (:goal
+        (and
+            (inside ?frail.n.02_1 ?shelf_side.n.01_1)
+            (inside ?goggles.n.02_1 ?desk.n.01_1)
+        )
+    )
+)

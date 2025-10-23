@@ -1,0 +1,26 @@
+(define (problem take_bread_to_dining_table)
+    (:domain omnigibson)    (:objects
+        pack__of__bread.n.01_1 - pack__of__bread.n.01
+        shelf.n.01_1 - shelf.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pack__of__bread.n.01_1 shelf.n.01_1)
+        (ontop shelf.n.01_1 floor.n.01_1)
+        (ontop breakfast_table.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom breakfast_table.n.01_1 pantry_room_0)
+        (inroom floor.n.01_1 pantry_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?pack__of__bread.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)
+

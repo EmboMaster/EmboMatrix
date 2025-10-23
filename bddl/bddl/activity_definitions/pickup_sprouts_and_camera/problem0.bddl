@@ -1,0 +1,32 @@
+(define (problem pick_up_the_brussels_sprouts.n.01_from_the_reception_desk_in_the_utility_room_0_and_put_them_inside_the_cooler.n.01_in_the_utility_room_0_then_go_to_the_living_room_0_and_pick_up_the_security_camera_from_the_coffee_table_bring_the_security_camera_to_the_childs_room_0_and_place_it_on_the_desk)
+    (:domain omnigibson)
+    (:objects
+        brussels_sprouts.n.01_1 - brussels_sprouts.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        security_camera.n.01_1 - security_camera.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brussels_sprouts.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (ontop security_camera.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?brussels_sprouts.n.01_1)
+            (inside ?brussels_sprouts.n.01_1 ?cooler.n.01_1)
+            (ontop ?security_camera.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

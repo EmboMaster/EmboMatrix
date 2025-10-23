@@ -1,0 +1,28 @@
+(define (problem Please_pick_up_the_lemon_peel.n.01_from_the_reception_desk_in_the_kitchen_0_toggle_on_the_rice_cooker.n.01_in_the_utility_room_0_and_cook_the_lemon_peel.n.01_in_the_rice_cooker.n.01)
+    (:domain omnigibson)
+    (:objects
+        lemon_peel.n.01_1 - lemon_peel.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lemon_peel.n.01_1 reception_desk.n.01_1)
+        (not (toggled_on rice_cooker.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom lemon_peel.n.01_1 utility_room_0)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (inroom rice_cooker.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?lemon_peel.n.01_1)
+            (toggled_on ?rice_cooker.n.01_1)
+            (inside ?lemon_peel.n.01_1 ?rice_cooker.n.01_1)
+        )
+    )
+)

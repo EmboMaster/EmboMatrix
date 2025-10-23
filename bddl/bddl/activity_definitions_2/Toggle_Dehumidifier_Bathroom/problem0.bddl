@@ -1,0 +1,22 @@
+(define (problem Toggle_on_the_dehumidifier.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        dehumidifier.n.01_1 - dehumidifier.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on dehumidifier.n.01_1))
+        (inroom dehumidifier.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (not (toggled_on dehumidifier.n.01_1))
+        (and
+            (toggled_on ?dehumidifier.n.01_1)
+        )
+    )
+)

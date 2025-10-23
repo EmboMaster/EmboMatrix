@@ -1,0 +1,2 @@
+{"state": {"dehumidifier.n.01_1": {"toggled_on": false}}, "relation": [["dehumidifier.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bathroom_0"]]}
+{"state": {"dehumidifier.n.01_1": {"toggled_on": true}}, "relation": []}

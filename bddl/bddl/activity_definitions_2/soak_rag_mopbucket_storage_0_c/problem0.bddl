@@ -1,0 +1,29 @@
+(define (problem please_soak_the_rag_in_the_mop_bucket_in_the_storage_room_0_and_then_clean_the_dusty_shelf_baseboard_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        rag.n.01_1 - rag.n.01
+        mop_bucket.n.01_1 - mop_bucket.n.01
+        sink.n.01_1 - sink.n.01
+        shelf_baseboard.n.01_1 - shelf_baseboard.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom rag.n.01_1 storage_room_0)
+        (inroom mop_bucket.n.01_1 storage_room_0)
+        (inroom sink.n.01_1 storage_room_0)
+        (inroom shelf_baseboard.n.01_1 private_office_0)
+        (dusty shelf_baseboard.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom floor.n.01_2 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (soaked rag.n.01_1)
+            (not (dusty shelf_baseboard.n.01_1))
+        )
+    )
+)

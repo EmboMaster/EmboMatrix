@@ -1,0 +1,2 @@
+{"state": {"dress_shirt.n.01_1": {"stained": true}, "dress_shirt.n.01_2": {"stained": true}, "washer.n.03_1": {"toggled_on": false}}, "relation": [["dress_shirt.n.01_1", "ontop", "floor.n.01_1"], ["dress_shirt.n.01_2", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "childs_room_0"], ["washer.n.03_1", "inroom", "utility_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"washer.n.03_1": {"toggled_on": true}}, "relation": [["dress_shirt.n.01_1", "inside", "washer.n.03_1"], ["dress_shirt.n.01_2", "inside", "washer.n.03_1"]]}

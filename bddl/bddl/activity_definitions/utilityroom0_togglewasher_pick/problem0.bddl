@@ -1,0 +1,28 @@
+(define (problem go_to_the_utility_room_0_toggle_on_the_washer.n.03_then_pick_up_the_laundry_basket_from_the_floor_in_the_utility_room_0_and_place_it_on_top_of_the_arbor.n.03_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        washer.n.03_1 - washer.n.03
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        arbor.n.03_1 - arbor.n.03
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on washer.n.03_1))
+        (ontop clothes_dryer.n.01_1 floor.n.01_1)
+        (inroom washer.n.03_1 utility_room_0)
+        (inroom clothes_dryer.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (inroom arbor.n.03_1 storage_room_0)
+        (inroom floor.n.01_2 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?washer.n.03_1)
+            (ontop ?clothes_dryer.n.01_1 ?arbor.n.03_1)
+        )
+    )
+)

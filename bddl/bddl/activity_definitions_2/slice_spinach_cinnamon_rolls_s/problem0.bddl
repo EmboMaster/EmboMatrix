@@ -1,0 +1,29 @@
+(define (problem slice_the_spinach_and_cinnamon_rolls_using_the_cleaver_in_the_grocery_store_0_and_place_them_on_the_shelf)
+    (:domain omnigibson)
+    (:objects
+        spinach.n.02_1 - spinach.n.02
+        cinnamon_roll.n.01_1 - cinnamon_roll.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom spinach.n.02_1 grocery_store_0)
+        (inroom cinnamon_roll.n.01_1 grocery_store_0)
+        (inroom cleaver.n.01_1 grocery_store_0)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 grocery_store_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?spinach.n.02_1)
+            (sliced ?cinnamon_roll.n.01_1)
+            (ontop ?spinach.n.02_1 ?shelf.n.01_1)
+            (ontop ?cinnamon_roll.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

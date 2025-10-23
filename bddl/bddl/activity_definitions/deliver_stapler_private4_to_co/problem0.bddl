@@ -1,0 +1,30 @@
+(define (problem Please_deliver_the_stapler_from_the_desk_in_private_office_4_to_the_conference_table_in_conference_hall_0_and_then_toggle_on_the_air_conditioner.n.01_in_the_conference_hall_0)
+    (:domain omnigibson)
+    (:objects
+        stapler.n.01_1 - stapler.n.01
+        desk.n.01_1 - desk.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        air_conditioner.n.01_1 - air_conditioner.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop stapler.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_4)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (inroom air_conditioner.n.01_1 conference_hall_0)
+        (not
+            (toggled_on air_conditioner.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 private_office_4)
+    )
+    
+    (:goal
+        (and
+            (ontop ?stapler.n.01_1 ?conference_table.n.01_1)
+            (toggled_on ?air_conditioner.n.01_1)
+        )
+    )
+)

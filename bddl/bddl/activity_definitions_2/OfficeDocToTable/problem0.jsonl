@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["legal_document.n.01_1", "ontop", "desk.n.01_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["desk.n.01_1", "inroom", "shared_office_0"], ["coffee_table.n.01_1", "inroom", "meeting_room_0"], ["floor.n.01_1", "inroom", "shared_office_0"], ["floor.n.01_2", "inroom", "meeting_room_0"]]}
+{"state": {}, "relation": [["legal_document.n.01_1", "ontop", "desk.n.01_1"], ["legal_document.n.01_1", "ontop", "coffee_table.n.01_1"]]}

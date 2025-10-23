@@ -1,0 +1,34 @@
+(define (problem Please_put_all_4_mango.n.02_from_the_countertop_in_the_kitchen_0_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_them)
+    (:domain omnigibson)
+    (:objects
+        mango.n.02_1 mango.n.02_2 mango.n.02_3 mango.n.02_4 - mango.n.02
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mango.n.02_1 countertop.n.01_1)
+        (ontop mango.n.02_2 countertop.n.01_1)
+        (ontop mango.n.02_3 countertop.n.01_1)
+        (ontop mango.n.02_4 countertop.n.01_1)
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (inside ?mango.n.02_1 ?cooler.n.01_1)
+            (inside ?mango.n.02_2 ?cooler.n.01_1)
+            (inside ?mango.n.02_3 ?cooler.n.01_1)
+            (inside ?mango.n.02_4 ?cooler.n.01_1)
+            (frozen ?mango.n.02_1)
+            (frozen ?mango.n.02_2)
+            (frozen ?mango.n.02_3)
+            (frozen ?mango.n.02_4)
+        )
+    )
+)

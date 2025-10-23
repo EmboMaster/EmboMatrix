@@ -1,0 +1,33 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_apple.n.01_from_the_shelf_and_put_it_inside_the_cooler.n.01_in_the_storage_room_0_to_freeze_it_then_go_to_the_utility_room_0_open_the_microwave.n.02_and_place_the_coffee_cup.n.01_inside_it-0)
+    (:domain omnigibson)
+    (:objects
+        apple.n.01_1 - apple.n.01
+        cooler.n.01_1 - cooler.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_cup.n.01_1 - coffee_cup.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop apple.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (not (frozen apple.n.01_1))
+        (inroom coffee_cup.n.01_1 utility_room_0)
+        (inroom microwave.n.02_1 utility_room_0)
+        (not (open microwave.n.02_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?apple.n.01_1)
+            (inside ?apple.n.01_1 ?cooler.n.01_1)
+            (open ?microwave.n.02_1)
+            (inside ?coffee_cup.n.01_1 ?microwave.n.02_1)
+        )
+    )
+)

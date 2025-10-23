@@ -1,0 +1,2 @@
+{"state": {"oven.n.01_1": {"toggled_on": false}}, "relation": [["frying_pan.n.01_1", "ontop", "oven.n.01_1"], ["arepa.n.01_1", "inside", "frying_pan.n.01_1"], ["platter.n.01_1", "ontop", "coffee_table.n.01_1"], ["oven.n.01_1", "inroom", "utility_room_0"], ["coffee_table.n.01_1", "inroom", "living_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "utility_room_0"]]}
+{"state": {"oven.n.01_1": {"toggled_on": true}, "arepa.n.01_1": {"cooked": true}}, "relation": [["arepa.n.01_1", "ontop", "platter.n.01_1"]]}

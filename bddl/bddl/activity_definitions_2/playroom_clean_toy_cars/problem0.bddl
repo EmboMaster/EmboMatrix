@@ -1,0 +1,35 @@
+(define (problem go_to_the_playroom_0_pick_up_all_4_dusty_toy_cars_from_the_floor_then_clean_them_using_the_scrub_brush.n.01_in_the_utility_room_0_sink-0)
+    (:domain omnigibson)
+    (:objects
+        toy_car.n.01_1 toy_car.n.01_2 toy_car.n.01_3 toy_car.n.01_4 - toy_car.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop toy_car.n.01_1 floor.n.01_1)
+        (ontop toy_car.n.01_2 floor.n.01_1)
+        (ontop toy_car.n.01_3 floor.n.01_1)
+        (ontop toy_car.n.01_4 floor.n.01_1)
+        (dusty toy_car.n.01_1)
+        (dusty toy_car.n.01_2)
+        (dusty toy_car.n.01_3)
+        (dusty toy_car.n.01_4)
+        (inroom floor.n.01_1 playroom_0)
+        (inroom scrub_brush.n.01_1 utility_room_0)
+        (inroom sink.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?toy_car.n.01_1))
+            (not (dusty ?toy_car.n.01_2))
+            (not (dusty ?toy_car.n.01_3))
+            (not (dusty ?toy_car.n.01_4))
+            (soaked ?scrub_brush.n.01_1)
+        )
+    )
+)

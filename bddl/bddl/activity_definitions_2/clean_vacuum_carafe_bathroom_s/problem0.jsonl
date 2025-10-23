@@ -1,0 +1,2 @@
+{"state": {"vacuum.n.04_1": {"dusty": true}, "carafe.n.01_1": {"dusty": true}}, "relation": [["vacuum.n.04_1", "inroom", "bathroom_0"], ["carafe.n.01_1", "inroom", "bathroom_0"], ["bathtub.n.01_1", "inroom", "bathroom_0"], ["scrub_brush.n.01_1", "inroom", "bathroom_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bathroom_0"]]}
+{"state": {"scrub_brush.n.01_1": {"soaked": true}, "vacuum.n.04_1": {"dusty": false}, "carafe.n.01_1": {"dusty": false}}, "relation": []}

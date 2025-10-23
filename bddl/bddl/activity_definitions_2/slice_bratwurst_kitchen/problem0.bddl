@@ -1,0 +1,27 @@
+(define (problem please_slice_the_bratwurst.n.01_on_the_console_table_in_the_kitchen_0_using_the_cleaver.n.01_then_put_the_sliced_pieces_inside_the_microwave.n.02_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        bratwurst.n.01_1 - bratwurst.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        microwave.n.02_1 - microwave.n.02
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bratwurst.n.01_1 console_table.n.01_1)
+        (ontop cleaver.n.01_1 console_table.n.01_1)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom console_table.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?bratwurst.n.01_1)
+            (inside ?bratwurst.n.01_1 ?microwave.n.02_1)
+        )
+    )
+)

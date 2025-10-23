@@ -1,0 +1,29 @@
+(define (problem pick_up_the_kiwi_and_lemon_peel_from_the_conference_table_in_the_empty_room_0_then_put_them_inside_the_cooler_in_the_empty_room_0_to_freeze)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 - kiwi.n.03
+        lemon_peel.n.01_1 - lemon_peel.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kiwi.n.03_1 conference_table.n.01_1)
+        (ontop lemon_peel.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?kiwi.n.03_1)
+            (frozen ?lemon_peel.n.01_1)
+            (inside ?kiwi.n.03_1 ?cooler.n.01_1)
+            (inside ?lemon_peel.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

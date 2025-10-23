@@ -1,0 +1,27 @@
+(define (problem go_to_corridor_1_toggle_on_the_dehumidifier_in_the_corridor_1_go_to_biology_lab_0_pick_up_the_carton_from_the_lab_exhaust_hood_in_the_biology_lab_0_open_the_carton_in_the_biology_lab_0)
+    (:domain omnigibson)
+    (:objects
+        dehumidifier.n.01_1 - dehumidifier.n.01
+        carton.n.02_1 - carton.n.02
+        lab_exhaust_hood.n.01_1 - lab_exhaust_hood.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom dehumidifier.n.01_1 corridor_1)
+        (inroom lab_exhaust_hood.n.01_1 biology_lab_0)
+        (ontop carton.n.02_1 lab_exhaust_hood.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_1)
+        (not (toggled_on dehumidifier.n.01_1))
+        (not (open carton.n.02_1))
+    )
+
+    (:goal
+        (and
+            (toggled_on ?dehumidifier.n.01_1)
+            (open ?carton.n.02_1)
+        )
+    )
+)

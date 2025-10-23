@@ -1,0 +1,32 @@
+(define (problem pick_up_the_electric_kettle.n.01_from_the_shelf_in_the_kitchen_0_and_toggle_it_on_then_pick_up_the_watermelon.n.02_from_the_reception_desk_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_dining_room_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        shelf.n.01_1 - shelf.n.01
+        watermelon.n.02_1 - watermelon.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop electric_kettle.n.01_1 shelf.n.01_1)
+        (ontop watermelon.n.02_1 reception_desk.n.01_1)
+        (not 
+            (toggled_on electric_kettle.n.01_1)
+        )
+        (inroom shelf.n.01_1 kitchen_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?electric_kettle.n.01_1)
+            (inside ?watermelon.n.02_1 ?cooler.n.01_1)
+        )
+    )
+)

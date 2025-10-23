@@ -1,0 +1,33 @@
+(define (problem please_slice_all_3_kiwi.n.03_with_the_table_knife.n.01_on_the_breakfast_table_in_the_corridor_0_and_then_put_the_sliced_kiwi.n.03_inside_the_mixing_bowl.n.01_in_the_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 kiwi.n.03_2 kiwi.n.03_3 - kiwi.n.03
+        table_knife.n.01_1 - table_knife.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop kiwi.n.03_1 breakfast_table.n.01_1)
+        (ontop kiwi.n.03_2 breakfast_table.n.01_1)
+        (ontop kiwi.n.03_3 breakfast_table.n.01_1)
+        (ontop table_knife.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 corridor_0)
+        (inroom mixing_bowl.n.01_1 television_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+    )
+    
+    (:goal
+        (and
+            (sliced kiwi.n.03_1)
+            (sliced kiwi.n.03_2)
+            (sliced kiwi.n.03_3)
+            (inside kiwi.n.03_1 mixing_bowl.n.01_1)
+            (inside kiwi.n.03_2 mixing_bowl.n.01_1)
+            (inside kiwi.n.03_3 mixing_bowl.n.01_1)
+        )
+    )
+)

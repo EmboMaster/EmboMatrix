@@ -1,0 +1,24 @@
+(define (problem pick_up_the_olive.n.04_from_the_shelf_in_grocery_store_0_move_forward_to_the_backpack.n.01_near_the_entrance_in_grocery_store_0_and_put_the_olive.n.04_inside_the_backpack.n.01)
+    (:domain omnigibson)
+    (:objects
+        olive.n.04_1 - olive.n.04
+        shelf.n.01_1 - shelf.n.01
+        backpack.n.01_1 - backpack.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop olive.n.04_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 grocery_store_0)
+        (inroom backpack.n.01_1 grocery_store_0)
+        (inroom floor.n.01_1 grocery_store_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?olive.n.04_1 ?backpack.n.01_1)
+        )
+    )
+)

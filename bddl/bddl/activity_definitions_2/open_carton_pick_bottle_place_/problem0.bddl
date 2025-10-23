@@ -1,0 +1,28 @@
+(define (problem open_the_carton_on_the_desk_in_the_bedroom_0_pick_up_the_water_bottle_from_inside_the_carton_and_place_the_water_bottle_on_top_of_the_table_lamp_in_the_bedroom_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        water_bottle.n.01_1 - water_bottle.n.01
+        desk.n.01_1 - desk.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop carton.n.02_1 desk.n.01_1)
+        (inside water_bottle.n.01_1 carton.n.02_1)
+        (not (open carton.n.02_1))
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (ontop ?water_bottle.n.01_1 ?table_lamp.n.01_1)
+        )
+    )
+)

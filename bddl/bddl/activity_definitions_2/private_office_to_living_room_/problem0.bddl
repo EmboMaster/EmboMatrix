@@ -1,0 +1,26 @@
+(define (problem go_to_the_private_office_0_pick_up_the_desk_phone.n.01_from_the_desk_go_to_living_room_1_place_the_desk_phone.n.01_on_the_coffee_table_in_the_living_room_1_and_toggle_on_the_desk_phone.n.01)
+    (:domain omnigibson)
+    (:objects
+        desk_phone.n.01_1 - desk_phone.n.01
+        desk.n.01_1 - desk.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop desk_phone.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom coffee_table.n.01_1 living_room_1)
+        (inroom floor.n.01_1 private_office_0)
+        (inroom floor.n.01_2 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?desk_phone.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?desk_phone.n.01_1)
+        )
+    )
+)

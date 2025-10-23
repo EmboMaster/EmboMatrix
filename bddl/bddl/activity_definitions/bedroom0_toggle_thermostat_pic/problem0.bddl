@@ -1,0 +1,32 @@
+(define (problem go_to_bedroom_0_toggle_on_the_thermostat.n.01_in_bedroom_0_pick_up_the_basil.n.03_from_the_desk_in_bedroom_0_go_to_bathroom_0_put_the_basil.n.03_inside_the_cooler.n.01_in_bathroom_0_close_the_cooler.n.01_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        thermostat.n.01_1 - thermostat.n.01
+        basil.n.03_1 - basil.n.03
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on thermostat.n.01_1))
+        (ontop basil.n.03_1 desk.n.01_1)
+        (open cooler.n.01_1)
+        (inroom thermostat.n.01_1 bedroom_0)
+        (inroom basil.n.03_1 bedroom_0)
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?thermostat.n.01_1)
+            (inside ?basil.n.03_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+            (frozen ?basil.n.03_1)
+        )
+    )
+)

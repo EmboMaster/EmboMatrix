@@ -1,0 +1,27 @@
+(define (problem Pick_up_the_chives.n.01_from_the_wicker_basket_in_the_spa_1_place_it_inside_the_cooler.n.01_in_the_corridor_0_to_freeze_it_and_then_close_the_cooler.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        chives.n.01_1 - chives.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside chives.n.01_1 wicker_basket.n.01_1)
+        (inroom wicker_basket.n.01_1 spa_1)
+        (inroom cooler.n.01_1 corridor_0)
+        (open cooler.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 spa_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?chives.n.01_1)
+            (inside ?chives.n.01_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

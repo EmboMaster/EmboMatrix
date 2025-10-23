@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_scone.n.01_from_the_breakfast_table_in_the_dining_room_0_then_go_to_the_kitchen_0_and_place_the_scone.n.01_in_the_cooler.n.01_Afterward_go_to_the_living_room_0_and_toggle_on_the_space_heater.n.01_to_maintain_a_comfortable_temperature_for_the_family-0)
+    (:domain omnigibson)
+    (:objects
+        scone.n.01_1 - scone.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop scone.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom space_heater.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?scone.n.01_1 ?cooler.n.01_1)
+            (frozen ?scone.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

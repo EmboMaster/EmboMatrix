@@ -1,0 +1,31 @@
+(define (problem Please_pick_up_the_tray_from_the_dining_pedestal_table_in_dining_room_0_and_put_the_bell_pepper_inside_the_pressure_cooker_in_kitchen_0_Then_cook_the_bell_pepper_using_the_pressure_cooker_in_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        tray.n.01_1 - tray.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        bell_pepper.n.02_1 - bell_pepper.n.02
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop tray.n.01_1 pedestal_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom tray.n.01_1 dining_room_0)
+        (inroom pedestal_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (inroom bell_pepper.n.02_1 kitchen_0)
+        (inroom pressure_cooker.n.01_1 kitchen_0)
+        (not (toggled_on pressure_cooker.n.01_1))
+    )
+
+    (:goal
+        (and
+            (not (ontop ?tray.n.01_1 ?pedestal_table.n.01_1))
+            (inside ?bell_pepper.n.02_1 ?pressure_cooker.n.01_1)
+            (toggled_on ?pressure_cooker.n.01_1)
+            (cooked ?bell_pepper.n.02_1)
+        )
+    )
+)

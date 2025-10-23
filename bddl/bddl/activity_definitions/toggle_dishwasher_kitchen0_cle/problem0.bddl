@@ -1,0 +1,34 @@
+(define (problem please_toggle_on_the_dishwasher_in_kitchen_0_to_clean_the_petri_dish_then_go_to_bathroom_0_and_pick_up_the_soap_dispenser_from_the_urinal_counter_and_place_it_on_the_cabinet_base_in_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        dishwasher.n.01_1 - dishwasher.n.01
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        cabinet_base.n.01_1 - cabinet_base.n.01
+        urinal.n.01_1 - urinal.n.01
+        petri_dish.n.01_1 - petri_dish.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on dishwasher.n.01_1)
+        )
+        (inside petri_dish.n.01_1 dishwasher.n.01_1)
+        (ontop soap_dispenser.n.01_1 urinal.n.01_1)
+        (inroom dishwasher.n.01_1 kitchen_0)
+        (inroom petri_dish.n.01_1 kitchen_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom soap_dispenser.n.01_1 bathroom_0)
+        (inroom cabinet_base.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?dishwasher.n.01_1)
+            (ontop ?soap_dispenser.n.01_1 ?cabinet_base.n.01_1)
+        )
+    )
+)

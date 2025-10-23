@@ -1,0 +1,32 @@
+(define (problem please_pick_up_the_lunch_box_from_the_shelf_in_the_pantry_room_0_and_place_it_on_the_booth_in_the_kitchen_0_then_open_the_microwave_in_the_kitchen_0_and_heat_the_chocolate_cake.n.01_inside)
+    (:domain omnigibson)
+    (:objects
+        lunch_box.n.01_1 - lunch_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        chocolate_cake.n.01_1 - chocolate_cake.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop lunch_box.n.01_1 shelf.n.01_1)
+        (inside chocolate_cake.n.01_1 microwave.n.02_1)
+        (not (open microwave.n.02_1))
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?lunch_box.n.01_1 ?booth.n.01_1)
+            (open ?microwave.n.02_1)
+            (hot ?chocolate_cake.n.01_1)
+            (inside ?chocolate_cake.n.01_1 ?microwave.n.02_1)
+        )
+    )
+)

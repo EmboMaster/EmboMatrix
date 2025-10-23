@@ -1,0 +1,27 @@
+(define (problem pick_up_the_chocolate_cookie_dough.n.01_from_the_booth_in_the_kitchen_0_place_it_inside_the_oven.n.01_in_the_kitchen_0_toggle_on_the_oven.n.01_cook_the_chocolate_cookie_dough.n.01)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cookie_dough.n.01_1 - chocolate_cookie_dough.n.01
+        booth.n.01_1 - booth.n.01
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cookie_dough.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (not (toggled_on oven.n.01_1))
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?chocolate_cookie_dough.n.01_1)
+            (inside ?chocolate_cookie_dough.n.01_1 ?oven.n.01_1)
+            (toggled_on ?oven.n.01_1)
+        )
+    )
+)

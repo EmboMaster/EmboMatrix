@@ -1,0 +1,2 @@
+{"state": {"desktop_computer.n.01_1": {"toggled_on": false}, "modem.n.01_1": {"toggled_on": false}}, "relation": [["desktop_computer.n.01_1", "inroom", "private_office_0"], ["modem.n.01_1", "inroom", "private_office_0"], ["floor.n.01_1", "inroom", "private_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"desktop_computer.n.01_1": {"toggled_on": true}, "modem.n.01_1": {"toggled_on": true}}, "relation": []}

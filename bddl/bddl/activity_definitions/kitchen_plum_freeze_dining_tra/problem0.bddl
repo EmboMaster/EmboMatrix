@@ -1,0 +1,27 @@
+(define (problem go_to_kitchen_0_pick_up_the_plum.n.02_from_the_reception_desk_put_it_inside_the_cooler.n.01_to_freeze_it_then_pick_it_up_from_the_cooler.n.01_and_take_it_to_dining_room_0_placing_it_on_the_tray-0)
+    (:domain omnigibson)
+    (:objects
+        plum.n.02_1 - plum.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        tray.n.01_1 - tray.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop plum.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom tray.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?plum.n.02_1)
+            (ontop ?plum.n.02_1 ?tray.n.01_1)
+        )
+    )
+)

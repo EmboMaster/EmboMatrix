@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_folder_from_the_desk_in_private_office_1_and_deliver_it_to_the_pedestal_table_in_meeting_room_0_Then_toggle_on_the_pedestal_table_lamp.n.01_in_meeting_room_0_to_illuminate_the_workspace)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        desk.n.01_1 - desk.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 desk.n.01_1)
+        (ontop table_lamp.n.01_1 pedestal_table.n.01_1)
+        (inroom desk.n.01_1 private_office_1)
+        (inroom pedestal_table.n.01_1 meeting_room_0)
+        (not
+            (toggled_on table_lamp.n.01_1)
+        )
+        (inroom floor.n.01_1 private_office_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?folder.n.02_1 ?pedestal_table.n.01_1)
+            (toggled_on ?table_lamp.n.01_1)
+        )
+    )
+)

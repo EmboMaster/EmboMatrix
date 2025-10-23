@@ -1,0 +1,29 @@
+(define (problem Pick_up_the_broccoli_rabe.n.02_from_the_conference_table_in_the_shared_office_0_and_go_to_the_break_room_0.Place_the_broccoli_rabe.n.02_inside_the_cooler.n.01_in_the_break_room_0_to_freeze_it.Then_open_the_window.n.01_in_the_break_room_0_to_let_fresh_air_in-0)
+    (:domain omnigibson)
+    (:objects
+        broccoli_rabe.n.02_1 - broccoli_rabe.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        window.n.01_1 - window.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop broccoli_rabe.n.02_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 shared_office_0)
+        (inroom cooler.n.01_1 break_room_0)
+        (not (open window.n.01_1))
+        (inroom window.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?broccoli_rabe.n.02_1)
+            (inside ?broccoli_rabe.n.02_1 ?cooler.n.01_1)
+            (open ?window.n.01_1)
+        )
+    )
+)

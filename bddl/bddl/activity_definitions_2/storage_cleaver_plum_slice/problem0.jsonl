@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cleaver.n.01_1", "ontop", "free_weight_rack.n.01_1"], ["free_weight_rack.n.01_1", "inroom", "storage_room_0"], ["plum.n.02_1", "ontop", "desk.n.01_1"], ["desk.n.01_1", "inroom", "private_office_0"], ["chopping_board.n.01_1", "ontop", "desk.n.01_1"], ["chopping_board.n.01_1", "inroom", "private_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_0"], ["floor.n.01_2", "inroom", "private_office_0"]]}
+{"state": {"plum.n.02_1": {"sliced": true}}, "relation": []}

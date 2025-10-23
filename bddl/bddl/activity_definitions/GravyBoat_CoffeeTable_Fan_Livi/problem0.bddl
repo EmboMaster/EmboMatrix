@@ -1,0 +1,32 @@
+(define (problem Please_pick_up_the_gravy_boat_from_the_breakfast_table_in_the_dining_room_0_and_place_it_on_the_coffee_table_in_the_living_room_0_Then_toggle_on_the_ceiling_fan_in_the_living_room_0_to_circulate_air_Afterward_go_to_corridor_0_to_deliver_the_wicker_basket_to_storage_room_1_and_place_it_on_top_of_the_shelf)
+    (:domain omnigibson)
+    (:objects
+        gravy_boat.n.01_1 - gravy_boat.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop gravy_boat.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom ceiling_fan.n.01_1 living_room_0)
+        (ontop wicker_basket.n.01_1 floor.n.01_1)
+        (inroom shelf.n.01_1 storage_room_1)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?gravy_boat.n.01_1 ?coffee_table.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+            (ontop ?wicker_basket.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

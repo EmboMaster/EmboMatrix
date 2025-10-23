@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_stack_of_sticky_note_from_the_shelf_in_the_shared_office_0_and_place_them_on_the_project_manager's_desk_in_the_shared_office_0._Then,_toggle_on_the_ceiling_fan.n.01_in_the_shared_office_0_to_cool_the_room.)
+    (:domain omnigibson)
+    (:objects
+        sticky_note.n.01_1 - sticky_note.n.01
+        shelf.n.01_1 - shelf.n.01
+        desk.n.01_1 - desk.n.01
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop sticky_note.n.01_1 shelf.n.01_1)
+        (not (toggled_on ceiling_fan.n.01_1))
+        (inroom shelf.n.01_1 shared_office_0)
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom ceiling_fan.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?sticky_note.n.01_1 ?desk.n.01_1)
+            (toggled_on ?ceiling_fan.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,34 @@
+(define (problem please_pick_up_the_textbook_from_the_coffee_table_in_the_living_room_0_and_put_it_on_top_of_the_textshelf_in_the_living_room_0_then_go_to_the_playroom_0_and_pick_up_the_apple_from_the_flat_bench_go_to_the_utility_room_0_and_cook_it_using_the_toaster_oven)
+    (:domain omnigibson)
+    (:objects
+        textbook.n.01_1 - textbook.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        apple.n.01_1 - apple.n.01
+        flat_bench.n.02_1 - flat_bench.n.02
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop textbook.n.01_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom shelf.n.01_1 living_room_0)
+        (ontop apple.n.01_1 flat_bench.n.02_1)
+        (inroom flat_bench.n.02_1 playroom_0)
+        (inroom toaster_oven.n.01_1 utility_room_0)
+        (not
+            (toggled_on toaster_oven.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?textbook.n.01_1 ?shelf.n.01_1)
+            (cooked ?apple.n.01_1)
+        )
+    )
+)

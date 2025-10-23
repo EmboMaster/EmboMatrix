@@ -1,0 +1,33 @@
+(define (problem pick_up_the_cherry_tomato_from_the_booth_in_the_kitchen_0_and_cook_it_in_the_electric_cauldron.n.01_then_place_it_in_the_crock_pot.n.01_on_the_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        cherry_tomato.n.02_1 - cherry_tomato.n.02
+        booth.n.01_1 - booth.n.01
+        electric_cauldron.n.01_1 - electric_cauldron.n.01
+        crock_pot.n.01_1 - crock_pot.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cherry_tomato.n.02_1 booth.n.01_1)
+        (not 
+            (toggled_on electric_cauldron.n.01_1)
+        )
+        (ontop crock_pot.n.01_1 breakfast_table.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom electric_cauldron.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom crock_pot.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?cherry_tomato.n.02_1)
+            (inside ?cherry_tomato.n.02_1 ?crock_pot.n.01_1)
+        )
+    )
+)

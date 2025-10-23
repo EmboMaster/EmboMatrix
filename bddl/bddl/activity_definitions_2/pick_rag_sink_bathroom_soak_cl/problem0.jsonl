@@ -1,0 +1,2 @@
+{"state": {"burner.n.02_1": {"dusty": true}}, "relation": [["rag.n.01_1", "inside", "sink.n.01_1"], ["sink.n.01_1", "inroom", "bathroom_0"], ["burner.n.02_1", "inroom", "chemistry_lab_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bathroom_0"]]}
+{"state": {"rag.n.01_1": {"soaked": true}, "burner.n.02_1": {"dusty": false}}, "relation": [["rag.n.01_1", "inside", "sink.n.01_1"]]}

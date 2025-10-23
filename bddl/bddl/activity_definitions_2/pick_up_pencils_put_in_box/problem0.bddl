@@ -1,0 +1,32 @@
+(define (problem pick_up_all_four_drawing_pencils_from_the_desk_in_the_playroom_0_and_put_them_inside_the_pencil_box.n.01_on_the_reception_desk_in_the_utility_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        pencil.n.01_1 pencil.n.01_2 pencil.n.01_3 pencil.n.01_4 - pencil.n.01
+        pencil_box.n.01_1 - pencil_box.n.01
+        desk.n.01_1 - desk.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pencil.n.01_1 desk.n.01_1)
+        (ontop pencil.n.01_2 desk.n.01_1)
+        (ontop pencil.n.01_3 desk.n.01_1)
+        (ontop pencil.n.01_4 desk.n.01_1)
+        (ontop pencil_box.n.01_1 reception_desk.n.01_1)
+        (inroom desk.n.01_1 playroom_0)
+        (inroom reception_desk.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?pencil.n.01_1 ?pencil_box.n.01_1)
+            (inside ?pencil.n.01_2 ?pencil_box.n.01_1)
+            (inside ?pencil.n.01_3 ?pencil_box.n.01_1)
+            (inside ?pencil.n.01_4 ?pencil_box.n.01_1)
+        )
+    )
+)

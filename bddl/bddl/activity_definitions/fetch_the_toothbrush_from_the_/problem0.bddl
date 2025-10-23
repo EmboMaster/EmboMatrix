@@ -1,0 +1,34 @@
+(define (problem fetch_the_toothbrush_from_the_sink_in_the_bathroom_0_and_the_apples_from_the_wicker_basket_in_the_kitchen_0_to_the_shelf_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        toothbrush.n.01_1 - toothbrush.n.01
+        sink.n.01_1 - sink.n.01
+        apple.n.01_1 apple.n.01_2 apple.n.01_3 - apple.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside toothbrush.n.01_1 sink.n.01_1)
+        (inside apple.n.01_1 wicker_basket.n.01_1)
+        (inside apple.n.01_2 wicker_basket.n.01_1)
+        (inside apple.n.01_3 wicker_basket.n.01_1)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom wicker_basket.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?toothbrush.n.01_1 ?shelf.n.01_1)
+            (forall
+                (?apple.n.01 - apple.n.01)
+                (inside ?apple.n.01 ?shelf.n.01_1)
+            )
+        )
+    )
+)

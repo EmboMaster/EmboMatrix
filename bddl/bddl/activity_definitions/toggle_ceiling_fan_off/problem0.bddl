@@ -1,0 +1,23 @@
+(define (problem toggle_off_appliance_ceiling_fan.n.01_in_bar_0-0)
+    (:domain omnigibson)
+    (:objects
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (toggled_on ceiling_fan.n.01_1)
+        (inroom ceiling_fan.n.01_1 bar_0)
+        (inroom floor.n.01_1 bar_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (not 
+                (toggled_on ?ceiling_fan.n.01_1)
+            )
+        )
+    )
+)

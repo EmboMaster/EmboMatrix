@@ -1,0 +1,23 @@
+(define (problem Please_pick_up_the_backpack.n.01_from_the_floor_in_corridor_0,_go_to_chemistry_lab_0,_and_place_it_on_the_desk_near_the_students_for_them_to_retrieve_their_notes.)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom floor.n.01_2 chemistry_lab_0)
+        (inroom desk.n.01_1 chemistry_lab_0)
+    )
+    
+    (:goal
+        (and
+            (ontop ?backpack.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,25 @@
+(define (problem Pick_up_the_backpack.n.01_from_the_floor_in_the_empty_room_0_open_it_and_put_the_two_notebooks_from_the_floor_inside_it)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        notebook.n.01_1 notebook.n.01_2 - notebook.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 floor.n.01_1)
+        (ontop notebook.n.01_1 floor.n.01_1)
+        (ontop notebook.n.01_2 floor.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (open ?backpack.n.01_1)
+            (inside ?notebook.n.01_1 ?backpack.n.01_1)
+            (inside ?notebook.n.01_2 ?backpack.n.01_1)
+        )
+    )
+)

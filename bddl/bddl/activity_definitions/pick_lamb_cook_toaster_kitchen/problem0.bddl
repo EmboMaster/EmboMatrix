@@ -1,0 +1,30 @@
+(define (problem pick_up_the_lamb.n.05_from_the_cooler.n.01_in_the_storage_room_0_go_to_the_kitchen_0_and_cook_the_lamb.n.05_using_the_toaster_oven.n.01_near_the_reception_desk_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        lamb.n.05_1 - lamb.n.05
+        cooler.n.01_1 - cooler.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside lamb.n.05_1 cooler.n.01_1)
+        (frozen lamb.n.05_1)
+        (not (toggled_on toaster_oven.n.01_1))
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom toaster_oven.n.01_1 kitchen_0)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?lamb.n.05_1)
+            (inside ?lamb.n.05_1 ?toaster_oven.n.01_1)
+            (toggled_on ?toaster_oven.n.01_1)
+        )
+    )
+)

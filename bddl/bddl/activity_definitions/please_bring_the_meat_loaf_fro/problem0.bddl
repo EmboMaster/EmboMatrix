@@ -1,0 +1,29 @@
+(define (problem please_bring_the_meat_loaf_from_the_pantry_room_0_to_the_breakfast_table_in_the_dining_room_0_and_the_shaker_from_the_console_table_in_the_kitchen_0_to_the_cabinet_base_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        meat_loaf.n.01_1 - meat_loaf.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        shaker.n.03_1 - shaker.n.03
+        console_table.n.01_1 - console_table.n.01
+        cabinet_base.n.01_1 - cabinet_base.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom meat_loaf.n.01_1 pantry_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop shaker.n.03_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom cabinet_base.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?meat_loaf.n.01_1 ?breakfast_table.n.01_1)
+            (inside ?shaker.n.03_1 ?cabinet_base.n.01_1)
+        )
+    )
+)

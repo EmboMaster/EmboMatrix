@@ -1,0 +1,29 @@
+(define (problem toggle_on_the_hand_dryer_in_the_bathroom_0_clean_the_stained_sink_using_the_rag_from_the_bathroom_0_and_toggle_off_the_hand_dryer_in_the_bathroom_0_after_drying_the_cleaned_sink)
+    (:domain omnigibson)
+    (:objects
+        hand_dryer.n.01_1 - hand_dryer.n.01
+        sink.n.01_1 - sink.n.01
+        rag.n.01_1 - rag.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not (toggled_on hand_dryer.n.01_1))
+        (stained sink.n.01_1)
+        (inroom hand_dryer.n.01_1 bathroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom rag.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?hand_dryer.n.01_1)
+            (not (stained ?sink.n.01_1))
+            (soaked ?rag.n.01_1)
+            (not (toggled_on ?hand_dryer.n.01_1))
+        )
+    )
+)

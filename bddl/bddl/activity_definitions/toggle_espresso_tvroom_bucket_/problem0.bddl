@@ -1,0 +1,28 @@
+(define (problem Please_toggle_on_the_espresso_machine.n.01_in_the_television_room_0_pick_up_the_bucket.n.01_from_the_storage_room_1_and_place_it_on_top_of_the_reception_desk_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        espresso_machine.n.01_1 - espresso_machine.n.01
+        bucket.n.01_1 - bucket.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not 
+            (toggled_on espresso_machine.n.01_1)
+        )
+        (inroom espresso_machine.n.01_1 television_room_0)
+        (inroom bucket.n.01_1 storage_room_1)
+        (inroom reception_desk.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 television_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (toggled_on ?espresso_machine.n.01_1)
+            (ontop ?bucket.n.01_1 ?reception_desk.n.01_1)
+        )
+    )
+)

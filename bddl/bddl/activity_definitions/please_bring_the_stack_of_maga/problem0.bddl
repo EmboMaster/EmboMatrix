@@ -1,0 +1,34 @@
+(define (problem please_bring_the_stack_of_magazines_from_the_sofa_in_living_room_0_and_the_vase_from_the_console_table_in_living_room_2_to_the_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        sofa.n.01_1 - sofa.n.01
+        magazine.n.02_1 magazine.n.02_2 magazine.n.02_3 - magazine.n.02
+        console_table.n.01_1 - console_table.n.01
+        vase.n.01_1 - vase.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop magazine.n.02_1 sofa.n.01_1)
+        (ontop magazine.n.02_2 sofa.n.01_1)
+        (ontop magazine.n.02_3 sofa.n.01_1)
+        (ontop vase.n.01_1 console_table.n.01_1)
+        (inroom sofa.n.01_1 living_room_0)
+        (inroom console_table.n.01_1 living_room_2)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (forall
+                (?magazine.n.02 - magazine.n.02)
+                (ontop ?magazine.n.02 ?breakfast_table.n.01_1)
+            )
+            (ontop ?vase.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

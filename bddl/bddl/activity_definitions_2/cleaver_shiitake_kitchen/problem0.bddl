@@ -1,0 +1,35 @@
+(define (problem pick_up_the_cleaver_from_the_counter_in_the_kitchen_0_slice_all_3_shiitake_on_the_chopping_board_in_the_kitchen_0_and_place_the_cleaver_back_on_the_counter_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        cleaver.n.01_1 - cleaver.n.01
+        console_table.n.01_1 - console_table.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        shiitake.n.01_1 shiitake.n.01_2 shiitake.n.01_3 - shiitake.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cleaver.n.01_1 console_table.n.01_1)
+        (ontop shiitake.n.01_1 chopping_board.n.01_1)
+        (ontop shiitake.n.01_2 chopping_board.n.01_1)
+        (ontop shiitake.n.01_3 chopping_board.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom cleaver.n.01_1 kitchen_0)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom shiitake.n.01_1 kitchen_0)
+        (inroom shiitake.n.01_2 kitchen_0)
+        (inroom shiitake.n.01_3 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?cleaver.n.01_1 ?console_table.n.01_1)
+            (sliced ?shiitake.n.01_1)
+            (sliced ?shiitake.n.01_2)
+            (sliced ?shiitake.n.01_3)
+        )
+    )
+)

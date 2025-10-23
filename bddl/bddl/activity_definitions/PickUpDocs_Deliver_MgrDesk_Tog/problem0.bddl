@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_legal_documents_from_the_pedestal_table_in_copy_room_0_and_deliver_them_to_the_manager's_desk_in_private_office_4._Then_toggle_on_the_monitor.n.04_in_shared_office_0_for_the_software_engineer's_use.)
+    (:domain omnigibson)
+    (:objects
+        legal_document.n.01_1 - legal_document.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        desk.n.01_1 - desk.n.01
+        monitor.n.04_1 - monitor.n.04
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop legal_document.n.01_1 pedestal_table.n.01_1)
+        (not
+            (toggled_on monitor.n.04_1)
+        )
+        (inroom pedestal_table.n.01_1 copy_room_0)
+        (inroom desk.n.01_1 private_office_4)
+        (inroom monitor.n.04_1 shared_office_0)
+        (inroom floor.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?legal_document.n.01_1 ?desk.n.01_1)
+            (toggled_on ?monitor.n.04_1)
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_asparagus_from_the_booth_in_the_kitchen_0_cook_it_using_the_oven.n.01_in_the_kitchen_0_and_place_the_cooked_asparagus_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        asparagus.n.02_1 - asparagus.n.02
+        booth.n.01_1 - booth.n.01
+        oven.n.01_1 - oven.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop asparagus.n.02_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (not
+            (toggled_on oven.n.01_1)
+        )
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?asparagus.n.02_1)
+            (ontop ?asparagus.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

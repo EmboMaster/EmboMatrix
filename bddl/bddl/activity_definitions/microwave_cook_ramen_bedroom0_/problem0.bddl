@@ -1,0 +1,29 @@
+(define (problem please_toggle_on_the_microwave_in_bedroom_0_pick_up_the_ramen_from_the_bed_in_bedroom_0_cook_the_ramen_using_the_microwave_and_then_place_the_cooked_ramen_on_the_desk_in_closet_1-0)
+    (:domain omnigibson)
+    (:objects
+        microwave.n.02_1 - microwave.n.02
+        ramen.n.01_1 - ramen.n.01
+        bed.n.01_1 - bed.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on microwave.n.02_1))
+        (ontop ramen.n.01_1 bed.n.01_1)
+        (inroom microwave.n.02_1 bedroom_0)
+        (inroom bed.n.01_1 bedroom_0)
+        (inroom desk.n.01_1 closet_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?microwave.n.02_1)
+            (cooked ?ramen.n.01_1)
+            (ontop ?ramen.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

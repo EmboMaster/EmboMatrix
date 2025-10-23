@@ -1,0 +1,28 @@
+(define (problem go_to_the_storage_room_0_pick_up_the_mop_bucket.n.01_and_bring_it_to_the_bathroom_0_place_it_next_to_the_urinal_then_toggle_on_the_space_heater.n.01_in_the_bathroom_0_to_warm_the_room_for_cleaning)
+    (:domain omnigibson)
+    (:objects
+        mop_bucket.n.01_1 - mop_bucket.n.01
+        urinal.n.01_1 - urinal.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom mop_bucket.n.01_1 storage_room_0)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom space_heater.n.01_1 bathroom_0)
+        (not
+            (toggled_on space_heater.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (under ?mop_bucket.n.01_1 ?urinal.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

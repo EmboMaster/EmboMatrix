@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["broccoli.n.02_1", "ontop", "breakfast_table.n.01_1"], ["plate.n.04_1", "ontop", "breakfast_table.n.01_1"], ["breakfast_table.n.01_1", "inroom", "dining_room_0"], ["plate.n.04_1", "inroom", "dining_room_0"], ["table_knife.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "dining_room_0"]]}
+{"state": {"broccoli.n.02_1": {"sliced": true}}, "relation": [["broccoli.n.02_1", "inside", "plate.n.04_1"]]}

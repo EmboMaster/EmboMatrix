@@ -1,0 +1,26 @@
+(define (problem go_to_storage_room_1_pick_up_the_backpack.n.01_from_the_shelf_open_the_backpack.n.01_and_put_the_pill_bottle.n.01_inside_it-0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        shelf.n.01_1 - shelf.n.01
+        pill_bottle.n.01_1 - pill_bottle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_1)
+        (inroom pill_bottle.n.01_1 storage_room_1)
+        (inroom floor.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (open backpack.n.01_1))
+    )
+
+    (:goal
+        (and
+            (inside ?pill_bottle.n.01_1 ?backpack.n.01_1)
+            (open ?backpack.n.01_1)
+        )
+    )
+)

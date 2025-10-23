@@ -1,0 +1,27 @@
+(define (problem pick_up_the_folder.n.02_from_the_desk_in_private_office_3_go_to_the_copy_room_0_toggle_on_the_photocopier.n.01_and_put_the_folder.n.02_inside_the_tray.n.01_in_the_copy_room_0)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        desk.n.01_1 - desk.n.01
+        photocopier.n.01_1 - photocopier.n.01
+        tray.n.01_1 - tray.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_3)
+        (inroom photocopier.n.01_1 copy_room_0)
+        (inroom tray.n.01_1 copy_room_0)
+        (inroom floor.n.01_1 private_office_3)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?photocopier.n.01_1)
+            (inside ?folder.n.02_1 ?tray.n.01_1)
+        )
+    )
+)

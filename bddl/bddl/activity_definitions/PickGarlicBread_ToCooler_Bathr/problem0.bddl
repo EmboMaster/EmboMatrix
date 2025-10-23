@@ -1,0 +1,27 @@
+(define (problem Please_pick_up_the_garlic_bread.n.01_from_the_empty_room_0_and_put_it_inside_the_cooler.n.01_in_the_bathroom_0_to_freeze_it_Then_close_the_cooler.n.01_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        garlic_bread.n.01_1 - garlic_bread.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom garlic_bread.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 bathroom_0)
+        (open cooler.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?garlic_bread.n.01_1 ?cooler.n.01_1)
+            (frozen ?garlic_bread.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

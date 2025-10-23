@@ -1,0 +1,27 @@
+(define (problem go_to_entryway_0_open_the_mailbox.n.01_in_entryway_0_pick_up_the_liquid_carton.n.01_from_the_mailbox.n.01_in_entryway_0_go_to_kitchen_0_freeze_the_liquid_carton.n.01_in_the_cooler.n.01_in_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        mailbox.n.01_1 - mailbox.n.01
+        liquid_carton.n.01_1 - liquid_carton.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside liquid_carton.n.01_1 mailbox.n.01_1)
+        (not (open mailbox.n.01_1))
+        (inroom mailbox.n.01_1 entryway_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 entryway_0)
+    )
+    
+    (:goal
+        (and
+            (open ?mailbox.n.01_1)
+            (inside ?liquid_carton.n.01_1 ?cooler.n.01_1)
+            (frozen ?liquid_carton.n.01_1)
+        )
+    )
+)

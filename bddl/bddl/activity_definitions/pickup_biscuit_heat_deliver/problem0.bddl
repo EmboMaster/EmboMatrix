@@ -1,0 +1,28 @@
+(define (problem Pick_up_the_biscuit.n.01_from_the_booth_in_shared_office_0_and_heat_it_using_the_toaster_oven.n.01_in_private_office_2.Once_heated,_deliver_the_biscuit.n.01_to_the_conference_table_in_conference_hall_0)
+    (:domain omnigibson)
+    (:objects
+        biscuit.n.01_1 - biscuit.n.01
+        booth.n.01_1 - booth.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop biscuit.n.01_1 booth.n.01_1)
+        (not (toggled_on toaster_oven.n.01_1))
+        (inroom booth.n.01_1 shared_office_0)
+        (inroom toaster_oven.n.01_1 private_office_2)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?biscuit.n.01_1)
+            (ontop ?biscuit.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

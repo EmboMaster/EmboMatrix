@@ -1,0 +1,30 @@
+(define (problem Please_pick_up_the_virginia_ham.n.01_from_the_conference_table_in_the_lobby_0_and_put_it_inside_the_cooler.n.01_in_the_meeting_room_0_to_freeze_it_Then_go_to_private_office_5_and_toggle_on_the_space_heater.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        virginia_ham.n.01_1 - virginia_ham.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop virginia_ham.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 lobby_0)
+        (inroom virginia_ham.n.01_1 lobby_0)
+        (inroom cooler.n.01_1 meeting_room_0)
+        (inroom space_heater.n.01_1 private_office_5)
+        (not (toggled_on space_heater.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 lobby_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?virginia_ham.n.01_1)
+            (inside ?virginia_ham.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,26 @@
+(define (problem pick_up_the_electric_mixer.n.01_from_the_shelf_in_the_storage_room_0_and_bring_it_to_the_countertop_in_the_kitchen_0_then_toggle_on_the_electric_mixer.n.01)
+    (:domain omnigibson)
+    (:objects
+        electric_mixer.n.01_1 - electric_mixer.n.01
+        shelf.n.01_1 - shelf.n.01
+        countertop.n.01_1 - countertop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop electric_mixer.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom countertop.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (not (toggled_on electric_mixer.n.01_1))
+    )
+
+    (:goal
+        (and
+            (ontop ?electric_mixer.n.01_1 ?countertop.n.01_1)
+            (toggled_on ?electric_mixer.n.01_1)
+        )
+    )
+)

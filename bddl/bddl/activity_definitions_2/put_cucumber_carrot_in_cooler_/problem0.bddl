@@ -1,0 +1,31 @@
+(define (problem please_put_the_cucumber.n.02_and_the_carrot.n.03_into_the_cooler.n.01_in_the_storage_room_0_ensure_they_are_frozen_then_bring_the_frozen_cucumber_and_carrot_to_the_private_office_0_and_place_them_on_the_desk)
+    (:domain omnigibson)
+    (:objects
+        cucumber.n.02_1 - cucumber.n.02
+        carrot.n.03_1 - carrot.n.03
+        cooler.n.01_1 - cooler.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom cucumber.n.02_1 storage_room_0)
+        (inroom carrot.n.03_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom desk.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+        (not (frozen cucumber.n.02_1))
+        (not (frozen carrot.n.03_1))
+    )
+
+    (:goal
+        (and
+            (frozen ?cucumber.n.02_1)
+            (frozen ?carrot.n.03_1)
+            (ontop ?cucumber.n.02_1 ?desk.n.01_1)
+            (ontop ?carrot.n.03_1 ?desk.n.01_1)
+        )
+    )
+)

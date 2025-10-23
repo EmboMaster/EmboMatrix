@@ -1,0 +1,23 @@
+(define (problem pick_up_the_carton.n.02_from_the_storage_room_0_and_go_to_the_utility_room_0_open_the_washer.n.03_and_put_the_carton.n.02_inside_the_washer.n.03_then_toggle_on_the_washer.n.03_to_start_the_laundry_process-0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        washer.n.03_1 - washer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom washer.n.03_1 utility_room_0)
+        (not (toggled_on washer.n.03_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?carton.n.02_1 ?washer.n.03_1)
+            (toggled_on ?washer.n.03_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem go_to_the_garage_0_pick_up_the_broccoli_rabe.n.02_from_the_reception_desk_put_it_inside_the_cooler.n.01_and_frozen_it_then_go_to_the_living_room_0_and_pick_up_the_fire_alarm.n.02_from_the_corner_toggle_on_the_fire_alarm.n.02-0)
+    (:domain omnigibson)
+    (:objects
+        broccoli_rabe.n.02_1 - broccoli_rabe.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        fire_alarm.n.02_1 - fire_alarm.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop broccoli_rabe.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 garage_0)
+        (inroom cooler.n.01_1 garage_0)
+        (inroom fire_alarm.n.02_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 garage_0)
+    )
+
+    (:goal
+        (and
+            (inside ?broccoli_rabe.n.02_1 ?cooler.n.01_1)
+            (frozen ?broccoli_rabe.n.02_1)
+            (toggled_on ?fire_alarm.n.02_1)
+        )
+    )
+)

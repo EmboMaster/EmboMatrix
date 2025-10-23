@@ -1,0 +1,24 @@
+(define (problem please_pick_up_the_granola_bar.n.01_from_the_shelf.n.01_in_storage_room_0_go_to_television_room_0_and_put_the_granola_bar.n.01_on_top_of_the_board_in_television_room_0)
+    (:domain omnigibson)
+    (:objects
+        granola_bar.n.01_1 - granola_bar.n.01
+        shelf.n.01_1 - shelf.n.01
+        board.n.02_1 - board.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside granola_bar.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (inroom board.n.02_1 television_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?granola_bar.n.01_1 ?board.n.02_1)
+        )
+    )
+)

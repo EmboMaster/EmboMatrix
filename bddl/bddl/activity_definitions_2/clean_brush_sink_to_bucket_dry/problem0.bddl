@@ -1,0 +1,31 @@
+(define (problem clean_the_3_scrub_brush.n.01_from_the_sink_in_the_kitchen_0_and_place_them_inside_the_bucket.n.01_in_the_corridor_0_ensuring_they_are_dry_before_placing-0)
+    (:domain omnigibson)
+    (:objects
+        scrub_brush.n.01_1 scrub_brush.n.01_2 scrub_brush.n.01_3 - scrub_brush.n.01
+        sink.n.01_1 - sink.n.01
+        bucket.n.01_1 - bucket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside scrub_brush.n.01_1 sink.n.01_1)
+        (inside scrub_brush.n.01_2 sink.n.01_1)
+        (inside scrub_brush.n.01_3 sink.n.01_1)
+        (inroom sink.n.01_1 kitchen_0)
+        (inroom bucket.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (not (soaked ?scrub_brush.n.01_1))
+            (not (soaked ?scrub_brush.n.01_2))
+            (not (soaked ?scrub_brush.n.01_3))
+            (inside ?scrub_brush.n.01_1 ?bucket.n.01_1)
+            (inside ?scrub_brush.n.01_2 ?bucket.n.01_1)
+            (inside ?scrub_brush.n.01_3 ?bucket.n.01_1)
+        )
+    )
+)

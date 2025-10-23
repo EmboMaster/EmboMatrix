@@ -1,0 +1,30 @@
+(define (problem go_to_the_television_room_0_toggle_on_the_chandelier.n.01_for_additional_lighting_pick_up_the_beer_bottle.n.01_from_the_coffee_table_in_the_television_room_0_and_move_it_to_the_private_office_0_put_the_beer_bottle.n.01_on_top_of_the_desk_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        chandelier.n.01_1 - chandelier.n.01
+        beer_bottle.n.01_1 - beer_bottle.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop beer_bottle.n.01_1 coffee_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on chandelier.n.01_1)
+        )
+        (inroom coffee_table.n.01_1 television_room_0)
+        (inroom chandelier.n.01_1 television_room_0)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom floor.n.01_1 television_room_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?chandelier.n.01_1)
+            (ontop ?beer_bottle.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

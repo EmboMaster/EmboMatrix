@@ -1,0 +1,2 @@
+{"state": {"washer.n.03_1": {"toggled_on": false}}, "relation": [["rag.n.01_1", "ontop", "floor.n.01_1"], ["rag.n.01_2", "ontop", "floor.n.01_1"], ["rag.n.01_3", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "bathroom_0"], ["washer.n.03_1", "inroom", "bathroom_1"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"washer.n.03_1": {"toggled_on": true}}, "relation": [["rag.n.01_1", "inside", "washer.n.03_1"], ["rag.n.01_2", "inside", "washer.n.03_1"], ["rag.n.01_3", "inside", "washer.n.03_1"]]}

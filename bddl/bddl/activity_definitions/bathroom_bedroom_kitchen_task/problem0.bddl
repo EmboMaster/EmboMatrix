@@ -1,0 +1,52 @@
+(define (problem go_to_the_bathroom_0_pick_up_the_soap_dispenser_from_the_urinal_and_put_it_inside_the_bucket.n.01_near_the_bathtub_then_go_to_the_bedroom_0_pick_up_the_laptop.n.01_from_the_bed_open_it_and_place_it_on_top_of_the_desk_finally_go_to_the_kitchen_0_toggle_on_the_espresso_machine.n.01_for_making_coffee-0)
+    (:domain omnigibson)
+    (:objects
+        soap_dispenser.n.01_1 - soap_dispenser.n.01
+        urinal.n.01_1 - urinal.n.01
+        bucket.n.01_1 - bucket.n.01
+        bathtub.n.01_1 - bathtub.n.01
+        laptop.n.01_1 - laptop.n.01
+        bed.n.01_1 - bed.n.01
+        desk.n.01_1 - desk.n.01
+        espresso_machine.n.01_1 - espresso_machine.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        ;; Bathroom initial states
+        (ontop soap_dispenser.n.01_1 urinal.n.01_1)
+        (inroom urinal.n.01_1 bathroom_0)
+        (inroom bucket.n.01_1 bathroom_0)
+        (inroom bathtub.n.01_1 bathroom_0)
+
+        ;; Bedroom initial states
+        (ontop laptop.n.01_1 bed.n.01_1)
+        (inroom bed.n.01_1 bedroom_0)
+        (inroom desk.n.01_1 bedroom_0)
+
+        ;; Kitchen initial states
+        (not
+            (toggled_on espresso_machine.n.01_1)
+        )
+        (inroom espresso_machine.n.01_1 kitchen_0)
+
+        ;; Agent initial position
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            ;; Step 1: Bathroom goal states
+            (inside ?soap_dispenser.n.01_1 ?bucket.n.01_1)
+
+            ;; Step 2: Bedroom goal states
+            (ontop ?laptop.n.01_1 ?desk.n.01_1)
+            (open ?laptop.n.01_1)
+
+            ;; Step 3: Kitchen goal states
+            (toggled_on ?espresso_machine.n.01_1)
+        )
+    )
+)

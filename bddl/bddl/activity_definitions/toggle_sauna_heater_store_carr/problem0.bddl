@@ -1,0 +1,34 @@
+(define (problem Please_toggle_on_the_sauna_heater.n.01_in_the_sauna_0_for_the_grandmother._Then_go_to_the_storage_room_0,_pick_up_the_carrot.n.03_from_the_shelf,_and_put_it_inside_the_cooler.n.01_for_freezing.)
+    (:domain omnigibson)
+    (:objects
+        sauna_heater.n.01_1 - sauna_heater.n.01
+        carrot.n.03_1 - carrot.n.03
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on sauna_heater.n.01_1)
+        )
+        (inside carrot.n.03_1 shelf.n.01_1)
+        (not
+            (frozen carrot.n.03_1)
+        )
+        (inroom sauna_heater.n.01_1 sauna_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 sauna_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?sauna_heater.n.01_1)
+            (frozen ?carrot.n.03_1)
+            (inside ?carrot.n.03_1 ?cooler.n.01_1)
+        )
+    )
+)

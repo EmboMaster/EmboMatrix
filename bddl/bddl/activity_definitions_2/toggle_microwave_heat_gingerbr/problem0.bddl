@@ -1,0 +1,29 @@
+(define (problem toggle_on_the_microwave.n.02_in_the_kitchen_0_and_heat_the_gingerbread.n.01_placed_in_the_saucepan.n.01_on_the_booth_in_the_kitchen_0_for_2_minutes)
+    (:domain omnigibson)
+    (:objects
+        microwave.n.02_1 - microwave.n.02
+        gingerbread.n.01_1 - gingerbread.n.01
+        saucepan.n.01_1 - saucepan.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on microwave.n.02_1))
+        (inside gingerbread.n.01_1 saucepan.n.01_1)
+        (ontop saucepan.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?microwave.n.02_1)
+            (inside ?gingerbread.n.01_1 ?saucepan.n.01_1)
+            (cooked ?gingerbread.n.01_1)
+        )
+    )
+)

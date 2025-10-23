@@ -1,0 +1,26 @@
+(define (problem go_to_the_kitchen_0_pick_up_the_grape.n.01_from_the_counter_and_put_it_inside_the_cooler.n.01_to_freeze)
+    (:domain omnigibson)
+    (:objects
+        grape.n.01_1 - grape.n.01
+        cooler.n.01_1 - cooler.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop grape.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (ontop grape.n.01_1 conference_table.n.01_1)
+        (and
+            (frozen grape.n.01_1)
+            (inside grape.n.01_1 cooler.n.01_1)
+        )
+    )
+)

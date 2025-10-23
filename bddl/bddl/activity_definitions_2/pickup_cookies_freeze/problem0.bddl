@@ -1,0 +1,28 @@
+(define (problem pick_up_2_chocolate_chip_cookies.n.01_from_the_console_table_in_the_kitchen_0_put_them_inside_the_cooler.n.01_in_the_kitchen_0_and_ensure_they_are_frozen)
+    (:domain omnigibson)
+    (:objects
+        chocolate_chip_cookie.n.01_1 chocolate_chip_cookie.n.01_2 - chocolate_chip_cookie.n.01
+        console_table.n.01_1 - console_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_chip_cookie.n.01_1 console_table.n.01_1)
+        (ontop chocolate_chip_cookie.n.01_2 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chocolate_chip_cookie.n.01_1 ?cooler.n.01_1)
+            (inside ?chocolate_chip_cookie.n.01_2 ?cooler.n.01_1)
+            (frozen ?chocolate_chip_cookie.n.01_1)
+            (frozen ?chocolate_chip_cookie.n.01_2)
+        )
+    )
+)

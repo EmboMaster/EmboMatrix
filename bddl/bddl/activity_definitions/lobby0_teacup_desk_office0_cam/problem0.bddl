@@ -1,0 +1,30 @@
+(define (problem please_go_to_lobby_0_and_pick_up_the_teacup.n.02_from_the_shelf.n.01_then_place_the_teacup.n.02_on_the_desk_in_private_office_0_after_that_toggle_on_the_security_camera.n.01_in_lobby_0_to_ensure_the_area_is_monitored-0)
+    (:domain omnigibson)
+    (:objects
+        teacup.n.02_1 - teacup.n.02
+        shelf.n.01_1 - shelf.n.01
+        desk.n.01_1 - desk.n.01
+        security_camera.n.01_1 - security_camera.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop teacup.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 lobby_0)
+        (inroom desk.n.01_1 private_office_0)
+        (not 
+            (toggled_on security_camera.n.01_1)
+        )
+        (inroom security_camera.n.01_1 lobby_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 lobby_0)
+    )
+    
+    (:goal 
+        (and 
+            (ontop ?teacup.n.02_1 ?desk.n.01_1)
+            (toggled_on ?security_camera.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem Go_to_the_playroom_0_pick_up_the_piano_from_the_bench_and_place_it_on_top_of_the_desk_in_the_childs_room_0_Then_toggle_on_the_electric_fan.n.01_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        piano.n.01_1 - piano.n.01
+        bench.n.01_1 - bench.n.01
+        desk.n.01_1 - desk.n.01
+        electric_fan.n.01_1 - electric_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop piano.n.01_1 bench.n.01_1)
+        (inroom bench.n.01_1 playroom_0)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom electric_fan.n.01_1 living_room_0)
+        (not (toggled_on electric_fan.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?piano.n.01_1 ?desk.n.01_1)
+            (toggled_on ?electric_fan.n.01_1)
+        )
+    )
+)

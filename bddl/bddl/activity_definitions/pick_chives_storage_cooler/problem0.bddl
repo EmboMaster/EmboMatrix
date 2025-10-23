@@ -1,0 +1,26 @@
+(define (problem please_pick_up_the_chives.n.01_from_the_tupperware.n.01_in_the_pantry_room_0_go_to_the_storage_room_0_open_the_cooler.n.01_put_the_chives.n.01_inside_the_cooler.n.01_and_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        chives.n.01_1 - chives.n.01
+        tupperware.n.01_1 - tupperware.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside chives.n.01_1 tupperware.n.01_1)
+        (inroom tupperware.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (not (open cooler.n.01_1))
+        (inroom floor.n.01_1 pantry_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chives.n.01_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

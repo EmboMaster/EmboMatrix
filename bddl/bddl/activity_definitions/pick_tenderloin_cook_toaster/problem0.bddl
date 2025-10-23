@@ -1,0 +1,26 @@
+(define (problem please_pick_up_the_tenderloin_from_the_refrigerator_in_break_room_0_go_to_shared_office_0_and_cook_it_using_the_toaster_oven_on_the_console_table_in_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        tenderloin.n.02_1 - tenderloin.n.02
+        cooler.n.01_1 - cooler.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside tenderloin.n.02_1 cooler.n.01_1)
+        (inroom cooler.n.01_1 break_room_0)
+        (ontop toaster_oven.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 break_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?tenderloin.n.02_1)
+        )
+    )
+)

@@ -1,0 +1,22 @@
+(define (problem bring_remote_control_to_grandparents-0)
+    (:domain omnigibson)    (:objects
+        security_camera.n.01_1 - security_camera.n.01
+        storage_container.n.01_1 - storage_container.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside security_camera.n.01_1 storage_container.n.01_1)
+        (inroom storage_container.n.01_1 storage_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?security_camera.n.01_1 grandparents)
+        )
+    )
+)
+

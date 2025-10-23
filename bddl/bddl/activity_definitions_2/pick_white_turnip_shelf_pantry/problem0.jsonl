@@ -1,0 +1,2 @@
+{"state": {"burner.n.02_1": {"toggled_on": false}}, "relation": [["white_turnip.n.02_1", "inside", "shelf.n.01_1"], ["stockpot.n.01_1", "ontop", "burner.n.02_1"], ["shelf.n.01_1", "inroom", "pantry_room_0"], ["floor.n.01_1", "inroom", "pantry_room_0"], ["stockpot.n.01_1", "inroom", "kitchen_0"], ["burner.n.02_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"burner.n.02_1": {"toggled_on": true}, "white_turnip.n.02_1": {"cooked": true}}, "relation": [["white_turnip.n.02_1", "inside", "stockpot.n.01_1"]]}

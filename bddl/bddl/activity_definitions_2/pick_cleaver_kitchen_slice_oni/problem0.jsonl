@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cleaver.n.01_1", "ontop", "booth.n.01_1"], ["green_onion.n.01_1", "ontop", "chopping_board.n.01_1"], ["bowl.n.01_1", "ontop", "breakfast_table.n.01_1"], ["booth.n.01_1", "inroom", "kitchen_0"], ["breakfast_table.n.01_1", "inroom", "kitchen_0"], ["chopping_board.n.01_1", "inroom", "pantry_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "kitchen_0"]]}
+{"state": {"green_onion.n.01_1": {"sliced": true}}, "relation": [["green_onion.n.01_1", "inside", "bowl.n.01_1"]]}

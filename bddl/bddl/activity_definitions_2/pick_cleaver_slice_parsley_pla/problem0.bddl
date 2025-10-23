@@ -1,0 +1,31 @@
+(define (problem pick_up_the_cleaver.n.01_from_the_booth_in_the_utility_room_0_slice_the_parsley.n.02_on_the_chopping_board_in_the_utility_room_0_and_place_the_sliced_parsley_in_the_lunch_box.n.01_on_the_shelf_in_the_utility_room_0)
+    (:domain omnigibson)
+    (:objects
+        cleaver.n.01_1 - cleaver.n.01
+        parsley.n.02_1 - parsley.n.02
+        chopping_board.n.01_1 - chopping_board.n.01
+        lunch_box.n.01_1 - lunch_box.n.01
+        shelf.n.01_1 - shelf.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cleaver.n.01_1 booth.n.01_1)
+        (ontop parsley.n.02_1 chopping_board.n.01_1)
+        (ontop lunch_box.n.01_1 shelf.n.01_1)
+        (inroom booth.n.01_1 utility_room_0)
+        (inroom chopping_board.n.01_1 utility_room_0)
+        (inroom shelf.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced parsley.n.02_1)
+            (inside parsley.n.02_1 lunch_box.n.01_1)
+        )
+    )
+)

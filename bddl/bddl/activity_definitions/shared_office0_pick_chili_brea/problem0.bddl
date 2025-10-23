@@ -1,0 +1,31 @@
+(define (problem go_to_room_shared_office_0_pick_up_the_chili.n.02_from_the_breakfast_table_in_shared_office_0_go_to_room_private_office_4_put_the_chili.n.02_inside_the_microwave.n.02_in_private_office_4_heat_the_chili.n.02_go_to_room_corridor_0_toggle_on_the_electric_fan.n.01_in_corridor_0_for_me)
+    (:domain omnigibson)
+    (:objects
+        chili.n.02_1 - chili.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        microwave.n.02_1 - microwave.n.02
+        electric_fan.n.01_1 - electric_fan.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chili.n.02_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 shared_office_0)
+        (inroom microwave.n.02_1 private_office_4)
+        (not (toggled_on microwave.n.02_1))
+        (inroom electric_fan.n.01_1 corridor_0)
+        (not (toggled_on electric_fan.n.01_1))
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chili.n.02_1 ?microwave.n.02_1)
+            (cooked ?chili.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (toggled_on ?electric_fan.n.01_1)
+        )
+    )
+)

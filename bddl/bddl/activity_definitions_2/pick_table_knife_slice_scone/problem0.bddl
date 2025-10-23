@@ -1,0 +1,27 @@
+(define (problem pick_up_the_table_knife.n.01_from_the_booth_in_the_kitchen_0_slice_the_scone.n.01_on_the_chopping_board_in_the_kitchen_0_and_place_the_sliced_scone_back_on_the_booth)
+    (:domain omnigibson)
+    (:objects
+        table_knife.n.01_1 - table_knife.n.01
+        scone.n.01_1 - scone.n.01
+        booth.n.01_1 - booth.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (ontop scone.n.01_1 chopping_board.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?scone.n.01_1)
+            (ontop ?scone.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

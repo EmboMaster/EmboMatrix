@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_nectarine_from_the_reception_desk_in_the_chemistry_lab_0_and_heat_it_using_the_pressure_cooker_in_the_chemistry_lab_0_after_heating_pick_up_the_nectarine_and_put_it_inside_the_cooler_in_the_chemistry_lab_0_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        nectarine.n.02_1 - nectarine.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        pressure_cooker.n.01_1 - pressure_cooker.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop nectarine.n.02_1 reception_desk.n.01_1)
+        (not (toggled_on pressure_cooker.n.01_1))
+        (inroom cooler.n.01_1 chemistry_lab_0)
+        (inroom pressure_cooker.n.01_1 chemistry_lab_0)
+        (inroom reception_desk.n.01_1 chemistry_lab_0)
+        (inroom floor.n.01_1 chemistry_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?nectarine.n.02_1)
+            (frozen ?nectarine.n.02_1)
+        )
+    )
+)

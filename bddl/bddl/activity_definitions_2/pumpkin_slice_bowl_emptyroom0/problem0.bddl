@@ -1,0 +1,31 @@
+(define (problem pick_up_the_pumpkin_from_the_console_table_in_the_empty_room_0_slice_it_using_the_cleaver_on_the_chopping_board_on_the_conference_table_in_the_empty_room_0_and_place_the_sliced_pieces_in_the_bowl_on_the_same_conference_table)
+    (:domain omnigibson)
+    (:objects
+        pumpkin.n.02_1 - pumpkin.n.02
+        cleaver.n.01_1 - cleaver.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        bowl.n.01_1 - bowl.n.01
+        console_table.n.01_1 - console_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pumpkin.n.02_1 console_table.n.01_1)
+        (ontop cleaver.n.01_1 chopping_board.n.01_1)
+        (ontop chopping_board.n.01_1 conference_table.n.01_1)
+        (ontop bowl.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (inroom console_table.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (sliced ?pumpkin.n.02_1)
+            (inside ?pumpkin.n.02_1 ?bowl.n.01_1)
+        )
+    )
+)

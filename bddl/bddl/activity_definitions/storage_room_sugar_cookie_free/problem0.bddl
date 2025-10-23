@@ -1,0 +1,28 @@
+(define (problem go_to_the_storage_room_1_pick_up_the_sugar_cookie.n.01_from_the_tray.n.01_bring_it_to_the_kitchen_0_and_put_it_inside_the_cooler.n.01_to_freeze_it_then_go_to_the_living_room_1_and_toggle_on_the_table_lamp.n.01)
+    (:domain omnigibson)
+    (:objects
+        sugar_cookie.n.01_1 - sugar_cookie.n.01
+        tray.n.01_1 - tray.n.01
+        cooler.n.01_1 - cooler.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside sugar_cookie.n.01_1 tray.n.01_1)
+        (inroom tray.n.01_1 storage_room_1)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom table_lamp.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?sugar_cookie.n.01_1)
+            (inside ?sugar_cookie.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?table_lamp.n.01_1)
+        )
+    )
+)

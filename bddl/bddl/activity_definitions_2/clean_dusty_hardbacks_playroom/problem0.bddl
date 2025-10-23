@@ -1,0 +1,33 @@
+(define (problem please_clean_all_2_dusty_hardbacks_in_the_hardbackshelf_in_the_playroom_0_using_the_scrub_brush.n.01_from_the_storage_room_0_and_put_them_back_on_the_hardbackshelf_in_the_playroom_0_after_cleaning)
+    (:domain omnigibson)
+    (:objects
+        hardback.n.01_1 hardback.n.01_2 - hardback.n.01
+        shelf.n.01_1 - shelf.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty hardback.n.01_1)
+        (dusty hardback.n.01_2)
+        (inside hardback.n.01_1 shelf.n.01_1)
+        (inside hardback.n.01_2 shelf.n.01_1)
+        (inroom shelf.n.01_1 playroom_0)
+        (inroom scrub_brush.n.01_1 storage_room_0)
+        (inroom sink.n.01_1 playroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?hardback.n.01_1))
+            (not (dusty ?hardback.n.01_2))
+            (inside ?hardback.n.01_1 ?shelf.n.01_1)
+            (inside ?hardback.n.01_2 ?shelf.n.01_1)
+            (soaked ?scrub_brush.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"sink.n.01_1": {"stained": true}}, "relation": [["rag.n.01_1", "ontop", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "storage_room_0"], ["sink.n.01_1", "inroom", "bathroom_0"], ["floor.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"sink.n.01_1": {"stained": false}, "rag.n.01_1": {"soaked": true}}, "relation": [["rag.n.01_1", "ontop", "shelf.n.01_1"]]}

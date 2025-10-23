@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["water_glass.n.02_1", "ontop", "desk.n.01_1"], ["desk.n.01_1", "inroom", "shared_office_0"], ["cooler.n.01_1", "inroom", "break_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "shared_office_0"], ["floor.n.01_2", "inroom", "break_room_0"]]}
+{"state": {"water_glass.n.02_1": {"frozen": true}}, "relation": [["water_glass.n.02_1", "inside", "cooler.n.01_1"]]}

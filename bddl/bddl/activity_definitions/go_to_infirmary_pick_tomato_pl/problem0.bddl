@@ -1,0 +1,30 @@
+(define (problem go_to_infirmary_0_pick_up_the_cherry_tomato_from_the_reception_desk_place_it_inside_the_bowl_on_the_shelf_in_infirmary_0_and_toggle_on_the_space_heater_next_to_the_shelf-0)
+    (:domain omnigibson)
+    (:objects
+        cherry_tomato.n.02_1 - cherry_tomato.n.02
+        bowl.n.01_1 - bowl.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        shelf.n.01_1 - shelf.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cherry_tomato.n.02_1 reception_desk.n.01_1)
+        (ontop bowl.n.01_1 shelf.n.01_1)
+        (inroom reception_desk.n.01_1 infirmary_0)
+        (inroom shelf.n.01_1 infirmary_0)
+        (inroom space_heater.n.01_1 infirmary_0)
+        (not (toggled_on space_heater.n.01_1))
+        (inroom floor.n.01_1 infirmary_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?cherry_tomato.n.02_1 ?bowl.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

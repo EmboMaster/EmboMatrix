@@ -1,0 +1,2 @@
+{"state": {"shopping_cart.n.01_1": {"dusty": true}, "shopping_cart.n.01_2": {"dusty": true}}, "relation": [["shopping_cart.n.01_1", "inroom", "grocery_store_0"], ["shopping_cart.n.01_2", "inroom", "grocery_store_0"], ["scrub_brush.n.01_1", "inroom", "grocery_store_0"], ["sink.n.01_1", "inroom", "grocery_store_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "grocery_store_0"]]}
+{"state": {"scrub_brush.n.01_1": {"soaked": true}, "shopping_cart.n.01_1": {"dusty": false}, "shopping_cart.n.01_2": {"dusty": false}}, "relation": []}

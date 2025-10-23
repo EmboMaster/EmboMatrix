@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["electric_kettle.n.01_1", "ontop", "countertop.n.01_1"], ["countertop.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "kitchen_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"electric_kettle.n.01_1": {"toggled_on": true}}, "relation": [["electric_kettle.n.01_1", "ontop", "countertop.n.01_1"]]}

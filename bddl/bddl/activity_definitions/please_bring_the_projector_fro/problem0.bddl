@@ -1,0 +1,29 @@
+(define (problem please_bring_the_projector_from_the_coffee_table_in_the_living_room_0_and_the_small_shelf_from_the_straight_chair_in_the_private_office_0_to_the_sofa_in_the_living_room_1_for_me)
+    (:domain omnigibson)
+    (:objects
+        projector.n.02_1 - projector.n.02
+        coffee_table.n.01_1 - coffee_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        sofa.n.01_1 - sofa.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop projector.n.02_1 coffee_table.n.01_1)
+        (ontop shelf.n.01_1 straight_chair.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom straight_chair.n.01_1 private_office_0)
+        (inroom sofa.n.01_1 living_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?projector.n.02_1 ?sofa.n.01_1)
+            (ontop ?shelf.n.01_1 ?sofa.n.01_1)
+        )
+    )
+)

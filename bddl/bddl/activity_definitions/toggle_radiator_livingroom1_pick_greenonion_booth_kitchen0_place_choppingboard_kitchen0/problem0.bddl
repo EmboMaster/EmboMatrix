@@ -1,0 +1,28 @@
+(define (problem toggle_on_the_radiator_in_living_room_1_pick_up_the_green_onion_from_the_booth_in_kitchen_0_and_place_the_green_onion_on_the_chopping_board_in_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        radiator.n.02_1 - radiator.n.02
+        green_onion.n.01_1 - green_onion.n.01
+        booth.n.01_1 - booth.n.01
+        chopping_board.n.01_1 - chopping_board.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not (toggled_on radiator.n.02_1))
+        (inroom radiator.n.02_1 living_room_1)
+        (ontop green_onion.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?radiator.n.02_1)
+            (ontop ?green_onion.n.01_1 ?chopping_board.n.01_1)
+        )
+    )
+)

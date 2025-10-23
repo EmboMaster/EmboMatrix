@@ -1,0 +1,25 @@
+(define (problem please_move_the_bath_towel_from_the_bathroom_0_and_the_bar_soap_from_the_closet_0_to_the_sink_area_in_the_bathroom_1-0)
+    (:domain omnigibson)
+    (:objects
+        bath_towel.n.01_1 - bath_towel.n.01
+        bar_soap.n.01_1 - bar_soap.n.01
+        sink.n.01_1 - sink.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom bath_towel.n.01_1 bathroom_0)
+        (inroom bar_soap.n.01_1 closet_0)
+        (inroom sink.n.01_1 bathroom_1)
+        (inroom floor.n.01_1 bathroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?bath_towel.n.01_1 ?sink.n.01_1)
+            (inside ?bar_soap.n.01_1 ?sink.n.01_1)
+        )
+    )
+)

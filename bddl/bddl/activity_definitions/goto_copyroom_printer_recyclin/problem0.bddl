@@ -1,0 +1,29 @@
+(define (problem go_to_copy_room_toggle_on_printer_open_recycling_bin_put_sticky_note_inside_recycling_bin-0)
+    (:domain omnigibson)
+    (:objects
+        printer.n.03_1 - printer.n.03
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        sticky_note.n.01_1 - sticky_note.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on printer.n.03_1))
+        (not (open recycling_bin.n.01_1))
+        (ontop sticky_note.n.01_1 printer.n.03_1)
+        (inroom printer.n.03_1 copy_room_0)
+        (inroom sticky_note.n.01_1 copy_room_0)
+        (inroom recycling_bin.n.01_1 lobby_0)
+        (inroom floor.n.01_1 copy_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?printer.n.03_1)
+            (open ?recycling_bin.n.01_1)
+            (inside ?sticky_note.n.01_1 ?recycling_bin.n.01_1)
+        )
+    )    
+)

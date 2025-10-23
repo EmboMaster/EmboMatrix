@@ -1,0 +1,28 @@
+(define (problem Please_go_to_garage_0_pick_up_the_chorizo.n.01_from_the_bench_put_the_chorizo.n.01_inside_the_cooler.n.01_and_ensure_the_cooler.n.01_lid_is_closed-0)
+    (:domain omnigibson)
+    (:objects
+        chorizo.n.01_1 - chorizo.n.01
+        bench.n.01_1 - bench.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chorizo.n.01_1 bench.n.01_1)
+        (inroom bench.n.01_1 garage_0)
+        (inroom cooler.n.01_1 garage_0)
+        (open cooler.n.01_1)
+        (inroom floor.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?chorizo.n.01_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem please_slice_the_chocolate_cake.n.01_with_the_cleaver.n.01_on_the_booth_in_the_kitchen_0_then_put_the_sliced_chocolate_cake.n.01_on_the_plate.n.04_on_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cake.n.01_1 - chocolate_cake.n.01
+        cleaver.n.01_1 - cleaver.n.01
+        booth.n.01_1 - booth.n.01
+        plate.n.04_1 - plate.n.04
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cake.n.01_1 booth.n.01_1)
+        (ontop cleaver.n.01_1 booth.n.01_1)
+        (ontop plate.n.04_1 breakfast_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom plate.n.04_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?chocolate_cake.n.01_1)
+            (ontop ?chocolate_cake.n.01_1 ?plate.n.04_1)
+        )
+    )
+)

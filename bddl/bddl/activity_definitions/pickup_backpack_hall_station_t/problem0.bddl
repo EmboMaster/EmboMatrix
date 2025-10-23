@@ -1,0 +1,32 @@
+(define (problem pick_up_the_backpack_from_the_straight_chair_in_the_hall_train_station_and_open_the_backpack_to_retrieve_the_water_bottle_place_the_water_bottle_on_top_of_the_conference_table_in_the_hall_train_station_and_close_the_backpack-0)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop backpack.n.01_1 straight_chair.n.01_1)
+        (inside water_bottle.n.01_1 backpack.n.01_1)
+        (not
+            (open backpack.n.01_1)
+        )
+        (inroom straight_chair.n.01_1 empty_room_0)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?water_bottle.n.01_1 ?conference_table.n.01_1)
+            (not
+                (open ?backpack.n.01_1)
+            )
+        )
+    )
+)

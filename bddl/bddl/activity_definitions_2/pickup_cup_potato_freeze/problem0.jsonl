@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["measuring_cup.n.01_1", "inside", "shelf.n.01_1"], ["potato.n.01_1", "inside", "shelf.n.01_1"], ["shelf.n.01_1", "inroom", "storage_room_0"], ["cooler.n.01_1", "inroom", "kitchen_0"], ["floor.n.01_1", "inroom", "storage_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"measuring_cup.n.01_1": {"frozen": true}, "potato.n.01_1": {"frozen": true}}, "relation": [["measuring_cup.n.01_1", "inside", "cooler.n.01_1"], ["potato.n.01_1", "inside", "cooler.n.01_1"]]}

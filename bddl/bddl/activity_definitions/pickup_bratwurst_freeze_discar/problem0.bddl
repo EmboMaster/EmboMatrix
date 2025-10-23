@@ -1,0 +1,29 @@
+(define (problem pick_up_the_bratwurst.n.01_from_the_countertop_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_kitchen_0_to_freeze_it_then_open_the_recycling_bin.n.01_in_the_kitchen_0_to_discard_the_empty_packaging)
+    (:domain omnigibson)
+    (:objects
+        bratwurst.n.01_1 - bratwurst.n.01
+        countertop.n.01_1 - countertop.n.01
+        cooler.n.01_1 - cooler.n.01
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bratwurst.n.01_1 countertop.n.01_1)
+        (not (open recycling_bin.n.01_1))
+        (inroom countertop.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom recycling_bin.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?bratwurst.n.01_1)
+            (inside ?bratwurst.n.01_1 ?cooler.n.01_1)
+            (open ?recycling_bin.n.01_1)
+        )
+    )
+)

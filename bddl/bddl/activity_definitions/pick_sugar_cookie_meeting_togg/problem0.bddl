@@ -1,0 +1,31 @@
+(define (problem pick_up_the_sugar_cookie.n.01_from_the_desk_in_the_meeting_room_0_toggle_on_the_toaster.n.02_in_the_shared_office_0_heat_the_sugar_cookie.n.01_in_the_toaster.n.02_and_place_the_sugar_cookie.n.01_on_the_conference_table_in_the_conference_hall_0)
+    (:domain omnigibson)
+    (:objects
+        sugar_cookie.n.01_1 - sugar_cookie.n.01
+        desk.n.01_1 - desk.n.01
+        toaster.n.02_1 - toaster.n.02
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop sugar_cookie.n.01_1 desk.n.01_1)
+        (not 
+            (toggled_on toaster.n.02_1)
+        )
+        (inroom desk.n.01_1 meeting_room_0)
+        (inroom toaster.n.02_1 shared_office_0)
+        (inroom conference_table.n.01_1 conference_hall_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 meeting_room_0)
+    )
+    
+    (:goal
+        (and
+            (toggled_on ?toaster.n.02_1)
+            (hot ?sugar_cookie.n.01_1)
+            (ontop ?sugar_cookie.n.01_1 ?conference_table.n.01_1)
+        )
+    )
+)

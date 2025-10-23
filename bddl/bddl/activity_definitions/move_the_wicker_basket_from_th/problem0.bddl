@@ -1,0 +1,32 @@
+(define (problem move_the_wicker_basket_from_the_periodic_table_in_the_dining_room_to_the_breakfast_table_in_the_corridor_and_place_the_screwdriver_from_the_storage_organizer_in_the_storage_room_on_the_booth_in_the_garage)
+    (:domain omnigibson)    
+    (:objects
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        periodic_table.n.01_1 - periodic_table.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        screwdriver.n.01_1 - screwdriver.n.01
+        storage_organizer.n.01_1 - storage_organizer.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop wicker_basket.n.01_1 periodic_table.n.01_1)
+        (inroom periodic_table.n.01_1 dining_room_0)
+        (inroom breakfast_table.n.01_1 corridor_0)
+        (ontop screwdriver.n.01_1 storage_organizer.n.01_1)
+        (inroom storage_organizer.n.01_1 storage_room_1)
+        (ontop booth.n.01_1 floor.n.01_1)
+        (inroom booth.n.01_1 garage_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 garage_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?wicker_basket.n.01_1 ?breakfast_table.n.01_1)
+            (ontop ?screwdriver.n.01_1 ?booth.n.01_1)
+        )
+    )
+)

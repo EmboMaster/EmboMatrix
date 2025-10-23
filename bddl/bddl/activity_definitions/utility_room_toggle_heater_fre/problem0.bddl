@@ -1,0 +1,30 @@
+(define (problem go_to_utility_room_0_toggle_on_the_space_heater.n.01_in_utility_room_0_then_pick_up_the_water_bottle.n.01_from_the_conference_table_in_utility_room_0_and_put_it_inside_the_cooler.n.01_in_utility_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        space_heater.n.01_1 - space_heater.n.01
+        water_bottle.n.01_1 - water_bottle.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on space_heater.n.01_1))
+        (ontop water_bottle.n.01_1 conference_table.n.01_1)
+        (inroom space_heater.n.01_1 utility_room_0)
+        (inroom water_bottle.n.01_1 utility_room_0)
+        (inroom conference_table.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (inroom floor.n.01_1 utility_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?space_heater.n.01_1)
+            (inside ?water_bottle.n.01_1 ?cooler.n.01_1)
+            (frozen ?water_bottle.n.01_1)
+        )
+    )
+)

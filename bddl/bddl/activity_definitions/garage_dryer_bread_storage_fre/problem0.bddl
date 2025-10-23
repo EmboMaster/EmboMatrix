@@ -1,0 +1,26 @@
+(define (problem go_to_garage_0_open_the_clothes_dryer.n.01_pick_up_the_bread_slice.n.01_from_inside_go_to_storage_room_1_and_place_the_bread_slice.n.01_inside_the_cooler.n.01_to_freeze-0)
+    (:domain omnigibson)
+    (:objects
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        bread_slice.n.01_1 - bread_slice.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside bread_slice.n.01_1 clothes_dryer.n.01_1)
+        (not (open clothes_dryer.n.01_1))
+        (inroom clothes_dryer.n.01_1 garage_0)
+        (inroom cooler.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 garage_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?bread_slice.n.01_1)
+            (inside ?bread_slice.n.01_1 ?cooler.n.01_1)
+        )
+    )
+)

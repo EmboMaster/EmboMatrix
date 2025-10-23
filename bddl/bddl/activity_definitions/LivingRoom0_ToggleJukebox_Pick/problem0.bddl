@@ -1,0 +1,31 @@
+(define (problem Go_to_living_room_0_toggle_on_the_jukebox.n.01_near_the_corner_then_pick_up_the_notebook_from_the_coffee_table_in_living_room_0_and_put_it_inside_the_backpack.n.01_on_the_straight_chair_in_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        jukebox.n.01_1 - jukebox.n.01
+        notebook.n.01_1 - notebook.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        backpack.n.01_1 - backpack.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on jukebox.n.01_1))
+        (ontop notebook.n.01_1 coffee_table.n.01_1)
+        (ontop backpack.n.01_1 straight_chair.n.01_1)
+        (inroom jukebox.n.01_1 living_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom straight_chair.n.01_1 private_office_0)
+        (inroom backpack.n.01_1 private_office_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?jukebox.n.01_1)
+            (inside ?notebook.n.01_1 ?backpack.n.01_1)
+        )
+    )
+)

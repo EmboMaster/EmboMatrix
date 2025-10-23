@@ -1,0 +1,29 @@
+(define (problem go_to_living_room_0_pick_up_the_fairy_light_from_the_shelf_in_the_living_room_0_toggle_on_fairy_light_in_the_living_room_0_go_to_dining_room_0_pick_up_the_shopping_basket_from_the_breakfast_table_in_the_dining_room_0_go_to_kitchen_0_put_the_shopping_basket_inside_the_cooler_in_the_kitchen_0_frozen_the_shopping_basket_in_the_cooler_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        fairy_light.n.01_1 - fairy_light.n.01
+        shelf.n.01_1 - shelf.n.01
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop fairy_light.n.01_1 shelf.n.01_1)
+        (ontop shopping_basket.n.01_1 breakfast_table.n.01_1)
+        (inroom shelf.n.01_1 living_room_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?fairy_light.n.01_1)
+            (frozen ?shopping_basket.n.01_1)
+        )
+    )
+)

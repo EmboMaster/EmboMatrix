@@ -1,0 +1,24 @@
+(define (problem please_pick_up_the_toolbox.n.01_from_the_shelf_in_the_storage_room_0_go_to_the_living_room_0_and_put_the_toolbox.n.01_on_top_of_the_coffee_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        toolbox.n.01_1 - toolbox.n.01
+        shelf.n.01_1 - shelf.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop toolbox.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+    
+    (:goal 
+        (and 
+            (ontop ?toolbox.n.01_1 ?coffee_table.n.01_1)
+        )
+    )
+)

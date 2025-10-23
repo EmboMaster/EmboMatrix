@@ -1,0 +1,27 @@
+(define (problem Pick_up_the_petri_dish.n.01_from_the_desk_in_the_childs_room_0_go_to_the_storage_room_0_and_place_it_inside_the_cooler.n.01_to_freeze_it_Then_go_to_the_playroom_0_and_toggle_on_the_icicle_lights.n.01)
+    (:domain omnigibson)
+    (:objects
+        petri_dish.n.01_1 - petri_dish.n.01
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        icicle_lights.n.01_1 - icicle_lights.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop petri_dish.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom icicle_lights.n.01_1 playroom_0)
+        (inroom floor.n.01_1 childs_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?petri_dish.n.01_1)
+            (toggled_on ?icicle_lights.n.01_1)
+        )
+    )
+)

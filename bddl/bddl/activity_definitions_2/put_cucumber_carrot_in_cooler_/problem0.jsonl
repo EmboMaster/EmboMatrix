@@ -1,0 +1,2 @@
+{"state": {"cucumber.n.02_1": {"frozen": false}, "carrot.n.03_1": {"frozen": false}}, "relation": [["cucumber.n.02_1", "inroom", "storage_room_0"], ["carrot.n.03_1", "inroom", "storage_room_0"], ["cooler.n.01_1", "inroom", "storage_room_0"], ["desk.n.01_1", "inroom", "private_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "storage_room_0"]]}
+{"state": {"cucumber.n.02_1": {"frozen": true}, "carrot.n.03_1": {"frozen": true}}, "relation": [["cucumber.n.02_1", "ontop", "desk.n.01_1"], ["carrot.n.03_1", "ontop", "desk.n.01_1"]]}

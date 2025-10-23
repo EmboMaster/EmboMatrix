@@ -1,0 +1,24 @@
+(define (problem pick_up_the_brownie.n.03_from_the_conference_table_in_the_empty_room_0_and_slice_it_into_halves_using_the_cleaver.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        brownie.n.03_1 - brownie.n.03
+        cleaver.n.01_1 - cleaver.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop brownie.n.03_1 conference_table.n.01_1)
+        (ontop cleaver.n.01_1 conference_table.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+
+    (:goal
+        (and
+            (sliced ?brownie.n.03_1)
+        )
+    )
+)

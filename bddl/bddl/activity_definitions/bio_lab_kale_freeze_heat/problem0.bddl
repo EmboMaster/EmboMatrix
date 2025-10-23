@@ -1,0 +1,31 @@
+(define (problem go_to_the_biology_lab_0_pick_up_the_kale_from_the_desktop_computer_put_it_inside_the_cooler_in_the_biology_lab_0_to_freeze_it_and_close_the_cooler_then_toggle_on_the_electric_kettle_in_the_biology_lab_0_to_heat_water_for_the_experiment)
+    (:domain omnigibson)
+    (:objects
+        kale.n.03_1 - kale.n.03
+        cooler.n.01_1 - cooler.n.01
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kale.n.03_1 desktop_computer.n.01_1)
+        (open cooler.n.01_1)
+        (not (toggled_on electric_kettle.n.01_1))
+        (inroom cooler.n.01_1 biology_lab_0)
+        (inroom electric_kettle.n.01_1 biology_lab_0)
+        (inroom desktop_computer.n.01_1 biology_lab_0)
+        (inroom floor.n.01_1 biology_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?kale.n.03_1)
+            (inside ?kale.n.03_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+            (toggled_on ?electric_kettle.n.01_1)
+        )
+    )
+)

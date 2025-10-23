@@ -1,0 +1,31 @@
+(define (problem Please_pick_up_the_spice_cookie.n.01_from_the_tray_in_the_bedroom_0_and_put_it_in_the_cooler.n.01_in_the_bedroom_0_to_freeze_it_Then_close_the_cooler.n.01_lid_securely)
+    (:domain omnigibson)
+    (:objects
+        spice_cookie.n.01_1 - spice_cookie.n.01
+        tray.n.01_1 - tray.n.01
+        cooler.n.01_1 - cooler.n.01
+        lid.n.02_1 - lid.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside spice_cookie.n.01_1 tray.n.01_1)
+        (open cooler.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom tray.n.01_1 bedroom_0)
+        (inroom cooler.n.01_1 bedroom_0)
+        (inroom lid.n.02_1 bedroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (frozen ?spice_cookie.n.01_1)
+            (inside ?spice_cookie.n.01_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

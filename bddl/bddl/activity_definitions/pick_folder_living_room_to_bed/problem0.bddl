@@ -1,0 +1,24 @@
+(define (problem please_pick_up_the_folder_from_the_coffee_table_in_the_living_room_0_go_to_the_bedroom_0_and_put_the_folder_on_top_of_the_table_lamp)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        coffee_table.n.01_1 - coffee_table.n.01
+        table_lamp.n.01_1 - table_lamp.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 coffee_table.n.01_1)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (inroom table_lamp.n.01_1 bedroom_0)
+        (inroom floor.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?folder.n.02_1 ?table_lamp.n.01_1)
+        )
+    )
+)

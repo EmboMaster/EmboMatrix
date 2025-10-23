@@ -1,0 +1,33 @@
+(define (problem go_to_kitchen_0_pick_up_the_electric_kettle.n.01_from_the_booth_in_the_kitchen_0_heat_spinach.n.02_using_electric_kettle.n.01_put_spinach.n.02_inside_the_tray.n.01_on_the_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        booth.n.01_1 - booth.n.01
+        spinach.n.02_1 - spinach.n.02
+        tray.n.01_1 - tray.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop electric_kettle.n.01_1 booth.n.01_1)
+        (inside spinach.n.02_1 cooler.n.01_1)
+        (ontop tray.n.01_1 breakfast_table.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom tray.n.01_1 dining_room_0)
+        (not (toggled_on electric_kettle.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?spinach.n.02_1)
+            (inside ?spinach.n.02_1 ?tray.n.01_1)
+        )
+    )
+)

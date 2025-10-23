@@ -1,0 +1,22 @@
+(define (problem bring_toy_car_to_shelf-0)
+    (:domain omnigibson)    (:objects
+        toy_car.n.01_1 - toy_car.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom toy_car.n.01_1 playroom_0)
+        (inroom shelf.n.01_1 childs_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 playroom_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?toy_car.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)
+

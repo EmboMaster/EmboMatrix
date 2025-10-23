@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_bowl_from_the_breakfast_table_in_the_dining_room_0_and_place_it_inside_the_cooler_in_the_kitchen_0_then_toggle_on_the_toaster_in_the_kitchen_0_to_prepare_for_use)
+    (:domain omnigibson)
+    (:objects
+        bowl.n.01_1 - bowl.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        cooler.n.01_1 - cooler.n.01
+        toaster.n.02_1 - toaster.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop bowl.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom bowl.n.01_1 dining_room_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom toaster.n.02_1 kitchen_0)
+        (not (toggled_on toaster.n.02_1))
+        (inroom floor.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?bowl.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?toaster.n.02_1)
+        )
+    )
+)

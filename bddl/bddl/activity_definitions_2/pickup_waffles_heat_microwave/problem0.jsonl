@@ -1,0 +1,2 @@
+{"state": {"microwave.n.02_1": {"toggled_on": false}}, "relation": [["waffle.n.01_1", "inside", "cooler.n.01_1"], ["waffle.n.01_2", "inside", "cooler.n.01_1"], ["cooler.n.01_1", "inroom", "conference_hall_0"], ["microwave.n.02_1", "inroom", "conference_hall_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "conference_hall_0"]]}
+{"state": {"waffle.n.01": {"cooked": true}, "microwave.n.02_1": {"toggled_on": true}}, "relation": [["-", "?waffle.n.01", "waffle.n.01"], ["waffle.n.01", "inside", "microwave.n.02_1"]]}

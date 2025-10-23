@@ -1,0 +1,30 @@
+(define (problem please_pick_up_the_biscuit.n.01_from_the_platter.n.01_in_the_dining_room_0_and_cook_it_using_the_rice_cooker.n.01_in_the_dining_room_0_then_toggle_off_the_rice_cooker.n.01_after_cooking_is_complete-0)
+    (:domain omnigibson)
+    (:objects
+        biscuit.n.01_1 - biscuit.n.01
+        platter.n.01_1 - platter.n.01
+        rice_cooker.n.01_1 - rice_cooker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop biscuit.n.01_1 platter.n.01_1)
+        (inroom platter.n.01_1 dining_room_0)
+        (inroom rice_cooker.n.01_1 dining_room_0)
+        (not
+            (toggled_on rice_cooker.n.01_1)
+        )
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?biscuit.n.01_1)
+            (not 
+                (toggled_on ?rice_cooker.n.01_1)
+            )
+        )
+    )
+)

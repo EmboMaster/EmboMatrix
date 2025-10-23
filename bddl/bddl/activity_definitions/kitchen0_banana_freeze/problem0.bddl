@@ -1,0 +1,27 @@
+(define (problem go_to_kitchen_0_pick_up_the_banana.n.02_from_the_chopping_board_in_kitchen_0_put_the_banana.n.02_inside_the_cooler.n.01_in_kitchen_0_to_freeze_it_then_close_the_cooler.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        banana.n.02_1 - banana.n.02
+        chopping_board.n.01_1 - chopping_board.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop banana.n.02_1 chopping_board.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (open cooler.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (frozen ?banana.n.02_1)
+            (inside ?banana.n.02_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+        )
+    )
+)

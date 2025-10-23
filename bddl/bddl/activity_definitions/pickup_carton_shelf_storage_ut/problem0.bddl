@@ -1,0 +1,32 @@
+(define (problem pick_up_the_carton.n.02_from_the_shelf_in_the_storage_room_0_go_to_the_utility_room_0_open_the_carton.n.02_in_the_utility_room_0_put_the_chestnut.n.03_inside_the_carton.n.02_in_the_utility_room_0_go_to_the_childs_room_0_place_the_carton.n.02_on_top_of_the_desk_in_the_childs_room_0)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        chestnut.n.03_1 - chestnut.n.03
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom carton.n.02_1 storage_room_0)
+        (inroom chestnut.n.03_1 utility_room_0)
+        (inroom desk.n.01_1 childs_room_0)
+        (inroom floor.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (open carton.n.02_1)
+        )
+    )
+    
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?chestnut.n.03_1 ?carton.n.02_1)
+            (ontop ?carton.n.02_1 ?desk.n.01_1)
+        )
+    )
+)

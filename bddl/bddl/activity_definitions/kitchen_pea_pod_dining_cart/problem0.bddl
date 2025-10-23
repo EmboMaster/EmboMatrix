@@ -1,0 +1,30 @@
+(define (problem go_to_room_kitchen_0_pick_up_the_pea_pod.n.01_from_the_booth_in_the_kitchen_0_cook_the_pea_pod.n.01_using_the_burner.n.02_in_the_kitchen_0_pick_up_the_cooked_pea_pod.n.01_from_the_burner.n.02_go_to_room_dining_room_0_put_the_cooked_pea_pod.n.01_on_top_of_the_serving_cart_in_the_dining_room_0-0)
+    (:domain omnigibson)
+    (:objects
+        pea_pod.n.01_1 - pea_pod.n.01
+        booth.n.01_1 - booth.n.01
+        burner.n.02_1 - burner.n.02
+        serving_cart.n.01_1 - serving_cart.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pea_pod.n.01_1 booth.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not 
+            (toggled_on burner.n.02_1)
+        )
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom burner.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom serving_cart.n.01_1 dining_room_0)
+    )
+
+    (:goal
+        (and
+            (cooked ?pea_pod.n.01_1)
+            (ontop ?pea_pod.n.01_1 ?serving_cart.n.01_1)
+        )
+    )
+)

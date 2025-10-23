@@ -1,0 +1,30 @@
+(define (problem open_the_microwave_in_the_break_room_0_put_the_biscuit_inside_the_microwave_cook_the_biscuit_and_close_the_microwave-0)
+    (:domain omnigibson)
+    (:objects
+        microwave.n.02_1 - microwave.n.02
+        biscuit.n.01_1 - biscuit.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (open microwave.n.02_1)
+        )
+        (inroom microwave.n.02_1 break_room_0)
+        (inroom biscuit.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 break_room_0)
+    )
+    
+    (:goal 
+        (and 
+            (inside ?biscuit.n.01_1 ?microwave.n.02_1)
+            (cooked ?biscuit.n.01_1)
+            (not 
+                (open ?microwave.n.02_1)
+            )
+            (toggled_on ?microwave.n.02_1)
+        )
+    )
+)

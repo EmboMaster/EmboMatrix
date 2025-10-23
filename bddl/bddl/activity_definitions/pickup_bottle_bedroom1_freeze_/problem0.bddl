@@ -1,0 +1,33 @@
+(define (problem pick_up_the_water_bottle_from_the_desk_in_bedroom_1_and_go_to_closet_1_put_the_water_bottle_inside_the_cooler_to_freeze_it_then_toggle_on_the_fire_alarm_in_corridor_0_for_safety_checking_close_the_recycling_bin_in_bathroom_0_afterward-0)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        desk.n.01_1 - desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        fire_alarm.n.02_1 - fire_alarm.n.02
+        recycling_bin.n.01_1 - recycling_bin.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop water_bottle.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 bedroom_1)
+        (inroom cooler.n.01_1 closet_1)
+        (not (toggled_on fire_alarm.n.02_1))
+        (inroom fire_alarm.n.02_1 corridor_0)
+        (open recycling_bin.n.01_1)
+        (inroom recycling_bin.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?water_bottle.n.01_1)
+            (inside ?water_bottle.n.01_1 ?cooler.n.01_1)
+            (toggled_on ?fire_alarm.n.02_1)
+            (not (open ?recycling_bin.n.01_1))
+        )
+    )
+)

@@ -1,0 +1,30 @@
+(define (problem Go_to_the_lobby_0_and_toggle_on_the_icicle_lights.n.01_near_the_reception_desk_then_pick_up_the_backpack.n.01_from_the_straight_chair_in_private_office_1_and_place_it_inside_the_wardrobe.n.01_in_private_office_1)
+    (:domain omnigibson)
+    (:objects
+        icicle_lights.n.01_1 - icicle_lights.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        backpack.n.01_1 - backpack.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on icicle_lights.n.01_1))
+        (inroom icicle_lights.n.01_1 lobby_0)
+        (inroom reception_desk.n.01_1 lobby_0)
+        (ontop backpack.n.01_1 straight_chair.n.01_1)
+        (inroom straight_chair.n.01_1 private_office_1)
+        (inroom wardrobe.n.01_1 private_office_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 lobby_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?icicle_lights.n.01_1)
+            (inside ?backpack.n.01_1 ?wardrobe.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,2 @@
+{"state": {"carpet_sweeper.n.01_1": {"dusty": true}}, "relation": [["vacuum.n.04_1", "inroom", "closet_0"], ["carpet_sweeper.n.01_1", "inroom", "living_room_0"], ["sink.n.01_1", "inroom", "closet_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "closet_0"]]}
+{"state": {"carpet_sweeper.n.01_1": {"dusty": false}}, "relation": []}

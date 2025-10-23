@@ -1,0 +1,31 @@
+(define (problem go_to_the_utility_room_0_pick_up_the_broccoli.n.02_from_the_clothes_dryer_and_put_it_inside_the_cooler.n.01_in_the_storage_room_0_to_preserve_it_then_return_to_the_utility_room_0_and_toggle_off_the_washer.n.03)
+    (:domain omnigibson)
+    (:objects
+        broccoli.n.02_1 - broccoli.n.02
+        clothes_dryer.n.01_1 - clothes_dryer.n.01
+        cooler.n.01_1 - cooler.n.01
+        washer.n.03_1 - washer.n.03
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside broccoli.n.02_1 clothes_dryer.n.01_1)
+        (inroom clothes_dryer.n.01_1 utility_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom washer.n.03_1 utility_room_0)
+        (toggled_on washer.n.03_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (inside ?broccoli.n.02_1 ?cooler.n.01_1)
+            (frozen ?broccoli.n.02_1)
+            (not
+                (toggled_on ?washer.n.03_1)
+            )
+        )
+    )
+)

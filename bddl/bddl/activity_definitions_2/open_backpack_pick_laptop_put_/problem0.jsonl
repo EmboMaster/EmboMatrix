@@ -1,0 +1,2 @@
+{"state": {"backpack.n.01_1": {"open": false}}, "relation": [["backpack.n.01_1", "ontop", "straight_chair.n.01_1"], ["laptop.n.01_1", "ontop", "desk.n.01_1"], ["straight_chair.n.01_1", "inroom", "bedroom_0"], ["desk.n.01_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {"backpack.n.01_1": {"open": false}}, "relation": [["laptop.n.01_1", "inside", "backpack.n.01_1"]]}

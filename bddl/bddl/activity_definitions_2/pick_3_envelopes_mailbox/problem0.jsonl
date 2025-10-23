@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["envelope.n.01_1", "ontop", "desk.n.01_1"], ["envelope.n.01_2", "ontop", "desk.n.01_1"], ["envelope.n.01_3", "ontop", "desk.n.01_1"], ["desk.n.01_1", "inroom", "shared_office_0"], ["mailbox.n.01_1", "inroom", "break_room_0"], ["floor.n.01_1", "inroom", "shared_office_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {}, "relation": [["envelope.n.01_1", "inside", "mailbox.n.01_1"], ["envelope.n.01_2", "inside", "mailbox.n.01_1"], ["envelope.n.01_3", "inside", "mailbox.n.01_1"]]}

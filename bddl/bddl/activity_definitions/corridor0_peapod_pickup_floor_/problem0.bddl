@@ -1,0 +1,27 @@
+(define (problem head_to_corridor_0_pick_up_the_pea_pod.n.01_from_the_floor_and_put_it_inside_the_cooler.n.01_in_the_storage_room_0_to_freeze_it_then_go_to_bathroom_0_and_toggle_on_the_space_heater.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        pea_pod.n.01_1 - pea_pod.n.01
+        cooler.n.01_1 - cooler.n.01
+        space_heater.n.01_1 - space_heater.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pea_pod.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 corridor_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (inroom space_heater.n.01_1 bathroom_0)
+        (not (toggled_on space_heater.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?pea_pod.n.01_1 ?cooler.n.01_1)
+            (frozen ?pea_pod.n.01_1)
+            (toggled_on ?space_heater.n.01_1)
+        )
+    )
+)

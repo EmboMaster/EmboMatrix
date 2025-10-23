@@ -1,0 +1,28 @@
+(define (problem go_to_the_meeting_room_0_pick_up_the_coffee_maker.n.01_from_the_conference_table_then_go_to_the_corridor_0_pick_up_the_peppermint.n.01_from_the_trailer_truck_and_put_the_peppermint.n.01_inside_the_coffee_maker.n.01-0)
+    (:domain omnigibson)
+    (:objects
+        coffee_maker.n.01_1 - coffee_maker.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        peppermint.n.01_1 - peppermint.n.01
+        trailer_truck.n.01_1 - trailer_truck.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop coffee_maker.n.01_1 conference_table.n.01_1)
+        (ontop peppermint.n.01_1 trailer_truck.n.01_1)
+        (inroom conference_table.n.01_1 meeting_room_0)
+        (inroom coffee_maker.n.01_1 meeting_room_0)
+        (inroom trailer_truck.n.01_1 corridor_0)
+        (inroom peppermint.n.01_1 corridor_0)
+        (inroom floor.n.01_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?peppermint.n.01_1 ?coffee_maker.n.01_1)
+        )
+    )
+)

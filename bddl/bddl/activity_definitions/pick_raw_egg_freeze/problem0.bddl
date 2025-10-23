@@ -1,0 +1,25 @@
+(define (problem pick_up_the_raw_egg.n.01_from_the_booth_in_the_kitchen_0_go_to_the_cooler.n.01_in_the_closet_1_and_put_the_raw_egg.n.01_inside_the_cooler.n.01_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        raw_egg.n.01_1 - raw_egg.n.01
+        booth.n.01_1 - booth.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop raw_egg.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 closet_1)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?raw_egg.n.01_1 ?cooler.n.01_1)
+            (frozen ?raw_egg.n.01_1)
+        )
+    )
+)

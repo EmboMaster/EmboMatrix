@@ -1,0 +1,34 @@
+(define (problem Please_pick_up_the_folder_from_the_desk_in_shared_office_0_and_put_it_inside_the_backpack.n.01_on_the_reception_desk_in_break_room_0_Then_toggle_on_the_projector.n.02_in_shared_office_0)
+    (:domain omnigibson)
+    (:objects
+        folder.n.02_1 - folder.n.02
+        desk.n.01_1 - desk.n.01
+        backpack.n.01_1 - backpack.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        projector.n.02_1 - projector.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop folder.n.02_1 desk.n.01_1)
+        (ontop backpack.n.01_1 reception_desk.n.01_1)
+        (not 
+            (toggled_on projector.n.02_1)
+        )
+        (inroom desk.n.01_1 shared_office_0)
+        (inroom folder.n.02_1 shared_office_0)
+        (inroom projector.n.02_1 shared_office_0)
+        (inroom reception_desk.n.01_1 break_room_0)
+        (inroom backpack.n.01_1 break_room_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?folder.n.02_1 ?backpack.n.01_1)
+            (toggled_on ?projector.n.02_1)
+        )
+    )
+)

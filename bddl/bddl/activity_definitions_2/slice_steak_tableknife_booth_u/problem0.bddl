@@ -1,0 +1,27 @@
+(define (problem please_slice_the_steak.n.01_with_the_table_knife.n.01_on_the_booth_in_the_utility_room_0_and_put_the_sliced_steak.n.01_inside_the_saucepot.n.01_in_the_storage_room_0)
+    (:domain omnigibson)
+    (:objects
+        steak.n.01_1 - steak.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        booth.n.01_1 - booth.n.01
+        saucepot.n.01_1 - saucepot.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop steak.n.01_1 booth.n.01_1)
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 utility_room_0)
+        (inroom saucepot.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 utility_room_0)
+    )
+
+    (:goal
+        (and
+            (sliced steak.n.01_1)
+            (inside steak.n.01_1 saucepot.n.01_1)
+        )
+    )
+)

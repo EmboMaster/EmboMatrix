@@ -1,0 +1,28 @@
+(define (problem Bring_the_textbook_from_the_desk_in_the_private_office_0_to_the_grandmother's_console_table_in_the_living_room_0_and_toggle_on_the_loudspeaker_in_the_living_room_0_for_her)
+    (:domain omnigibson)
+    (:objects
+        textbook.n.01_1 - textbook.n.01
+        desk.n.01_1 - desk.n.01
+        console_table.n.01_1 - console_table.n.01
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop textbook.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom console_table.n.01_1 living_room_0)
+        (inroom loudspeaker.n.01_1 living_room_0)
+        (not (toggled_on loudspeaker.n.01_1))
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?textbook.n.01_1 ?console_table.n.01_1)
+            (toggled_on ?loudspeaker.n.01_1)
+        )
+    )
+)

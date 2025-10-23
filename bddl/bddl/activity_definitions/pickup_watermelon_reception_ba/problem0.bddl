@@ -1,0 +1,25 @@
+(define (problem pick_up_the_watermelon_n_02_from_the_reception_desk_in_the_bathroom_1_and_put_it_inside_the_cooler_n_01_located_in_the_closet_1_to_freeze_the_watermelon_n_02)
+    (:domain omnigibson)
+    (:objects
+        watermelon.n.02_1 - watermelon.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop watermelon.n.02_1 reception_desk.n.01_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom reception_desk.n.01_1 bathroom_1)
+        (inroom floor.n.01_1 bathroom_1)
+        (inroom cooler.n.01_1 closet_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?watermelon.n.02_1 ?cooler.n.01_1)
+            (frozen ?watermelon.n.02_1)
+        )
+    )
+)

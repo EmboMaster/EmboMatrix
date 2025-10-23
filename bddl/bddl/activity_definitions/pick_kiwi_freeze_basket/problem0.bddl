@@ -1,0 +1,27 @@
+(define (problem Please_pick_up_the_kiwi_from_the_pedestal_table_in_break_room_0_put_it_inside_the_cooler_in_break_room_0_to_freeze_it_and_then_place_the_frozen_kiwi_inside_the_wicker_basket_in_shared_office_0-0)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 - kiwi.n.03
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        water_cooler.n.01_1 - water_cooler.n.01
+        wicker_basket.n.01_1 - wicker_basket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kiwi.n.03_1 pedestal_table.n.01_1)
+        (inroom pedestal_table.n.01_1 break_room_0)
+        (inroom water_cooler.n.01_1 break_room_0)
+        (inroom wicker_basket.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?kiwi.n.03_1)
+            (inside ?kiwi.n.03_1 ?wicker_basket.n.01_1)
+        )
+    )
+)

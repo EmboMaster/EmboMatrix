@@ -1,0 +1,27 @@
+(define (problem pick_up_the_test_tube.n.01_from_the_desk_in_the_biology_lab_0_put_the_test_tube.n.01_inside_the_electric_kettle.n.01_in_the_biology_lab_0_toggle_on_the_electric_kettle.n.01_in_the_biology_lab_0_and_ensure_the_test_tube.n.01_is_heated_for_the_experiment-0)
+    (:domain omnigibson)
+    (:objects
+        test_tube.n.01_1 - test_tube.n.01
+        electric_kettle.n.01_1 - electric_kettle.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop test_tube.n.01_1 desk.n.01_1)
+        (not (toggled_on electric_kettle.n.01_1))
+        (inroom desk.n.01_1 biology_lab_0)
+        (inroom electric_kettle.n.01_1 biology_lab_0)
+        (inroom floor.n.01_1 biology_lab_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?test_tube.n.01_1 ?electric_kettle.n.01_1)
+            (toggled_on ?electric_kettle.n.01_1)
+            (hot ?test_tube.n.01_1)
+        )
+    )
+)

@@ -1,0 +1,28 @@
+(define (problem Open_the_backpack.n.01_in_the_storage_room_0_and_put_the_digital_camera_inside_it._Then,_go_to_the_corridor_0_and_toggle_off_the_icicle_lights.n.01.)
+    (:domain omnigibson)
+    (:objects
+        backpack.n.01_1 - backpack.n.01
+        digital_camera.n.01_1 - digital_camera.n.01
+        icicle_lights.n.01_1 - icicle_lights.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (open backpack.n.01_1))
+        (inroom backpack.n.01_1 storage_room_0)
+        (inroom digital_camera.n.01_1 storage_room_0)
+        (toggled_on icicle_lights.n.01_1)
+        (inroom icicle_lights.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (open ?backpack.n.01_1)
+            (inside ?digital_camera.n.01_1 ?backpack.n.01_1)
+            (not (toggled_on ?icicle_lights.n.01_1))
+        )
+    )
+)

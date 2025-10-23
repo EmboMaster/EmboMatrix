@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["security_camera.n.01_1", "ontop", "coffee_table.n.01_1"], ["coffee_table.n.01_1", "inroom", "television_room_0"], ["shelf.n.01_1", "inroom", "television_room_0"], ["floor.n.01_1", "inroom", "television_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"]]}
+{"state": {}, "relation": [["security_camera.n.01_1", "ontop", "coffee_table.n.01_1"], ["security_camera.n.01_1", "ontop", "shelf.n.01_1"]]}

@@ -1,0 +1,31 @@
+(define (problem toggle_on_ceiling_fan_and_move_mixing_bowl_to_shelf-0)
+    (:domain omnigibson)
+    (:objects
+        ceiling_fan.n.01_1 - ceiling_fan.n.01
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not
+            (toggled_on ceiling_fan.n.01_1)
+        )
+        (ontop mixing_bowl.n.01_1 pedestal_table.n.01_1)
+        (inroom ceiling_fan.n.01_1 living_room_0)
+        (inroom floor.n.01_1 living_room_0)
+        (inroom pedestal_table.n.01_1 dining_room_0)
+        (inroom mixing_bowl.n.01_1 dining_room_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?ceiling_fan.n.01_1)
+            (ontop ?mixing_bowl.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

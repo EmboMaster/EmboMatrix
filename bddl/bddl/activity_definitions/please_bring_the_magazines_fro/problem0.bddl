@@ -1,0 +1,26 @@
+(define (problem please_bring_the_magazines_from_corridor_0_and_place_them_on_the_straight_chair_in_spa_0_and_the_bench_in_locker_room_0)
+    (:domain omnigibson)
+    (:objects
+        magazine.n.02_1 magazine.n.02_2 - magazine.n.02
+        straight_chair.n.01_1 - straight_chair.n.01
+        bench.n.01_1 - bench.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inroom magazine.n.02_1 corridor_0)
+        (inroom magazine.n.02_2 corridor_0)
+        (inroom straight_chair.n.01_1 spa_0)
+        (inroom bench.n.01_1 locker_room_0)
+        (inroom floor.n.01_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (ontop ?magazine.n.02_1 ?straight_chair.n.01_1)
+            (ontop ?magazine.n.02_2 ?bench.n.01_1)
+        )
+    )
+)

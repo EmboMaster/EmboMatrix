@@ -1,0 +1,28 @@
+(define (problem please_pick_up_the_cherry.n.03_from_the_reception_desk_in_the_kitchen_0_place_it_inside_the_cooler.n.01_in_the_storage_room_1_and_close_the_cooler.n.01_in_the_storage_room_1)
+    (:domain omnigibson)
+    (:objects
+        cherry.n.03_1 - cherry.n.03
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop cherry.n.03_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (open cooler.n.01_1)
+        (inroom cooler.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?cherry.n.03_1 ?cooler.n.01_1)
+            (not
+                (open ?cooler.n.01_1)
+            )
+        )
+    )
+)

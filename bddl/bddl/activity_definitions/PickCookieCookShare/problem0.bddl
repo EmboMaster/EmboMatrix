@@ -1,0 +1,31 @@
+(define (problem Please_pick_up_the_chocolate_cookie_dough.n.01_from_the_reception_desk_in_the_shared_office_0_and_cook_it_using_the_microwave.n.02_on_the_shelf_in_the_lobby_0._After_cooking,_place_it_on_the_pedestal_table_in_the_lobby_0_for_the_team_to_enjoy.)
+    (:domain omnigibson)
+    (:objects
+        chocolate_cookie_dough.n.01_1 - chocolate_cookie_dough.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        microwave.n.02_1 - microwave.n.02
+        shelf.n.01_1 - shelf.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chocolate_cookie_dough.n.01_1 reception_desk.n.01_1)
+        (ontop microwave.n.02_1 shelf.n.01_1)
+        (inroom reception_desk.n.01_1 shared_office_0)
+        (inroom floor.n.01_1 shared_office_0)
+        (inroom microwave.n.02_1 lobby_0)
+        (inroom shelf.n.01_1 lobby_0)
+        (inroom pedestal_table.n.01_1 lobby_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on microwave.n.02_1))
+    )
+
+    (:goal
+        (and
+            (cooked ?chocolate_cookie_dough.n.01_1)
+            (ontop ?chocolate_cookie_dough.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

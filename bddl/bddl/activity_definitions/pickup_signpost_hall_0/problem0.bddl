@@ -1,0 +1,24 @@
+(define (problem pick_up_the_signpost_from_the_board_in_hall_arch_wood_empty_room_0_and_place_them_on_the_desk_in_hall_arch_wood_empty_room_0)
+    (:domain omnigibson)
+    (:objects
+        signpost.n.01_1 - signpost.n.01
+        board.n.02_1 - board.n.02
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop signpost.n.01_1 board.n.02_1)
+        (inroom board.n.02_1 empty_room_0)
+        (inroom desk.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?signpost.n.01_1 ?desk.n.01_1)
+        )
+    )
+)

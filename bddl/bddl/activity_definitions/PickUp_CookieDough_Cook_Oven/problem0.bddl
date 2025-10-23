@@ -1,0 +1,28 @@
+(define (problem Please_pick_up_the_edible_cookie_dough.n.01_from_the_flat_bench_in_the_chemistry_lab_0_and_bring_it_to_the_oven.n.01_in_the_corridor_1._Open_the_oven.n.01,_put_the_edible_cookie_dough.n.01_inside,_cook_it,_and_then_close_the_oven.n.01.)
+    (:domain omnigibson)
+    (:objects
+        edible_cookie_dough.n.01_1 - edible_cookie_dough.n.01
+        flat_bench.n.02_1 - flat_bench.n.02
+        oven.n.01_1 - oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop edible_cookie_dough.n.01_1 flat_bench.n.02_1)
+        (inroom flat_bench.n.02_1 chemistry_lab_0)
+        (inroom oven.n.01_1 corridor_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 chemistry_lab_0)
+        (not (open oven.n.01_1))
+        (not (toggled_on oven.n.01_1))
+    )
+
+    (:goal
+        (and
+            (cooked ?edible_cookie_dough.n.01_1)
+            (inside ?edible_cookie_dough.n.01_1 ?oven.n.01_1)
+            (not (open ?oven.n.01_1))
+        )
+    )
+)

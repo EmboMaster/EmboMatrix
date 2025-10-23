@@ -1,0 +1,33 @@
+(define (problem Slice_all_3_oranges_from_the_boothtop_in_the_kitchen_0_using_the_table_knife.n.01_and_place_the_sliced_pieces_into_the_platter.n.01_on_the_booth_in_the_kitchen_0-0)
+    (:domain omnigibson)
+    (:objects
+        orange.n.01_1 orange.n.01_2 orange.n.01_3 - orange.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        platter.n.01_1 - platter.n.01
+        booth.n.01_1 - booth.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop orange.n.01_1 booth.n.01_1)
+        (ontop orange.n.01_2 booth.n.01_1)
+        (ontop orange.n.01_3 booth.n.01_1)
+        (ontop table_knife.n.01_1 booth.n.01_1)
+        (ontop platter.n.01_1 booth.n.01_1)
+        (inroom booth.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (sliced orange.n.01_1)
+            (sliced orange.n.01_2)
+            (sliced orange.n.01_3)
+            (inside orange.n.01_1 platter.n.01_1)
+            (inside orange.n.01_2 platter.n.01_1)
+            (inside orange.n.01_3 platter.n.01_1)
+        )
+    )
+)

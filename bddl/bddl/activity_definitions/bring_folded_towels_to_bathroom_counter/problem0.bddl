@@ -1,0 +1,22 @@
+(define (problem bring_folded_towels_to_bathroom_counter-0)
+    (:domain omnigibson)    (:objects
+        dishtowel.n.01_1 dishtowel.n.01_2 - dishtowel.n.01
+        toilet.n.02_1 - toilet.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    (:init
+        (ontop dishtowel.n.01_1 floor.n.01_1)
+        (ontop dishtowel.n.01_2 floor.n.01_1)
+        (inroom toilet.n.02_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+    (:goal
+        (forall
+            (?dishtowel.n.01 - dishtowel.n.01)
+            (ontop ?dishtowel.n.01 ?toilet.n.02_1)
+        )
+    )
+)
+

@@ -1,0 +1,29 @@
+(define (problem pick_up_the_potato.n.01_from_the_reception_desk_in_the_shared_office_0_go_to_the_meeting_room_0_and_place_it_inside_the_microwave.n.02_cook_the_potato.n.01_using_the_microwave.n.02)
+    (:domain omnigibson)
+    (:objects
+        potato.n.01_1 - potato.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        microwave.n.02_1 - microwave.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop potato.n.01_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 shared_office_0)
+        (inroom microwave.n.02_1 meeting_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 shared_office_0)
+        (not
+            (toggled_on microwave.n.02_1)
+        )
+    )
+
+    (:goal
+        (and
+            (cooked ?potato.n.01_1)
+            (inside ?potato.n.01_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+        )
+    )
+)

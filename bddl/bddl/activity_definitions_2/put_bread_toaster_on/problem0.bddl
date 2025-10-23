@@ -1,0 +1,32 @@
+(define (problem put_all_the_bread_slice.n.01_from_the_shopping_basket.n.01_in_the_pantry_room_0_inside_the_toaster_oven.n.01_in_the_kitchen_0_and_toggle_on_the_toaster_oven.n.01)
+    (:domain omnigibson)
+    (:objects
+        bread_slice.n.01_1 bread_slice.n.01_2 bread_slice.n.01_3 bread_slice.n.01_4 - bread_slice.n.01
+        shopping_basket.n.01_1 - shopping_basket.n.01
+        toaster_oven.n.01_1 - toaster_oven.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inside bread_slice.n.01_1 shopping_basket.n.01_1)
+        (inside bread_slice.n.01_2 shopping_basket.n.01_1)
+        (inside bread_slice.n.01_3 shopping_basket.n.01_1)
+        (inside bread_slice.n.01_4 shopping_basket.n.01_1)
+        (inroom shopping_basket.n.01_1 pantry_room_0)
+        (inroom toaster_oven.n.01_1 kitchen_0)
+        (not (toggled_on toaster_oven.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+
+    (:goal
+        (and
+            (inside bread_slice.n.01_1 toaster_oven.n.01_1)
+            (inside bread_slice.n.01_2 toaster_oven.n.01_1)
+            (inside bread_slice.n.01_3 toaster_oven.n.01_1)
+            (inside bread_slice.n.01_4 toaster_oven.n.01_1)
+            (toggled_on toaster_oven.n.01_1)
+        )
+    )
+)

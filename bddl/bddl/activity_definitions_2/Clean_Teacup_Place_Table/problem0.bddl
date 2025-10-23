@@ -1,0 +1,29 @@
+(define (problem Go_to_the_bathroom_0_and_clean_the_dusty_teacup.n.02_in_the_sink.n.01_After_cleaning_dry_the_teacup_with_the_rag.n.01_and_place_it_on_the_coffee_table_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        teacup.n.02_1 - teacup.n.02
+        sink.n.01_1 - sink.n.01
+        rag.n.01_1 - rag.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (dusty teacup.n.02_1)
+        (inroom teacup.n.02_1 bathroom_0)
+        (inroom sink.n.01_1 bathroom_0)
+        (inroom rag.n.01_1 bathroom_0)
+        (inroom coffee_table.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?teacup.n.02_1))
+            (soaked ?rag.n.01_1)
+            (ontop ?teacup.n.02_1 ?coffee_table.n.01_1)
+        )
+    )
+)

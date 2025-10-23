@@ -1,0 +1,29 @@
+(define (problem please_pick_up_the_carton.n.02_from_the_shelf_in_bathroom_0_and_open_it_then_take_the_rutabaga.n.01_from_inside_the_carton.n.02_and_place_it_inside_the_cooler.n.01_in_empty_room_0_to_freeze_it)
+    (:domain omnigibson)
+    (:objects
+        carton.n.02_1 - carton.n.02
+        shelf.n.01_1 - shelf.n.01
+        rutabaga.n.01_1 - rutabaga.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop carton.n.02_1 shelf.n.01_1)
+        (inside rutabaga.n.01_1 carton.n.02_1)
+        (inroom shelf.n.01_1 bathroom_0)
+        (inroom carton.n.02_1 bathroom_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 bathroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (open ?carton.n.02_1)
+            (inside ?rutabaga.n.01_1 ?cooler.n.01_1)
+            (frozen ?rutabaga.n.01_1)
+        )
+    )
+)

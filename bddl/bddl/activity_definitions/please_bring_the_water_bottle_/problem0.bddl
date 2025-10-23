@@ -1,0 +1,29 @@
+(define (problem please_bring_the_water_bottle_from_the_shelf_in_the_storage_room_0_and_the_package_from_the_coffee_table_in_the_television_room_0_to_the_desk_in_the_private_office_0)
+    (:domain omnigibson)
+    (:objects
+        water_bottle.n.01_1 - water_bottle.n.01
+        package.n.02_1 - package.n.02
+        shelf.n.01_1 - shelf.n.01
+        coffee_table.n.01_1 - coffee_table.n.01
+        desk.n.01_1 - desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop water_bottle.n.01_1 shelf.n.01_1)
+        (ontop package.n.02_1 coffee_table.n.01_1)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom coffee_table.n.01_1 television_room_0)
+        (inroom desk.n.01_1 private_office_0)
+        (inroom floor.n.01_1 private_office_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (ontop ?water_bottle.n.01_1 ?desk.n.01_1)
+            (ontop ?package.n.02_1 ?desk.n.01_1)
+        )
+    )
+)

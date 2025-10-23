@@ -1,0 +1,32 @@
+(define (problem Please_pick_up_the_strawberry.n.01_from_the_console_table_in_the_kitchen_0_cook_it_using_the_stove.n.01_in_the_kitchen_0_and_place_the_cooked_strawberry.n.01_into_the_goblet.n.01_on_the_breakfast_table_in_the_kitchen_0)
+    (:domain omnigibson)
+    (:objects
+        strawberry.n.01_1 - strawberry.n.01
+        console_table.n.01_1 - console_table.n.01
+        stove.n.01_1 - stove.n.01
+        goblet.n.01_1 - goblet.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop strawberry.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (not 
+            (toggled_on stove.n.01_1)
+        )
+        (ontop goblet.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?strawberry.n.01_1)
+            (inside ?strawberry.n.01_1 ?goblet.n.01_1)
+        )
+    )
+)

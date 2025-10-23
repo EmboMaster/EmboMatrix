@@ -1,0 +1,2 @@
+{"state": {"chandelier.n.01_1": {"toggled_on": true}, "window.n.01_1": {"open": true}}, "relation": [["agent.n.01_1", "ontop", "floor.n.01_1"], ["chandelier.n.01_1", "inroom", "bedroom_0"], ["window.n.01_1", "inroom", "bedroom_0"], ["floor.n.01_1", "inroom", "bedroom_0"]]}
+{"state": {"chandelier.n.01_1": {"toggled_on": false}, "window.n.01_1": {"open": false}}, "relation": []}

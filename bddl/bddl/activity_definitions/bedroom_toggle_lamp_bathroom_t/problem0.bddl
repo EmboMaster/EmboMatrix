@@ -1,0 +1,30 @@
+(define (problem go_to_the_bedroom_0_toggle_on_the_table_lamp.n.01_on_the_desk_go_to_the_bathroom_1_pick_up_the_beach_toy_from_the_bathtub_and_place_the_beach_toy_on_top_of_the_shelf_in_the_bathroom_1-0)
+    (:domain omnigibson)
+    (:objects
+        table_lamp.n.01_1 - table_lamp.n.01
+        desk.n.01_1 - desk.n.01
+        beach_toy.n.01_1 - beach_toy.n.01
+        bathtub.n.01_1 - bathtub.n.01
+        shelf.n.01_1 - shelf.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop table_lamp.n.01_1 desk.n.01_1)
+        (not (toggled_on table_lamp.n.01_1))
+        (inroom desk.n.01_1 bedroom_0)
+        (inside beach_toy.n.01_1 bathtub.n.01_1)
+        (inroom bathtub.n.01_1 bathroom_1)
+        (inroom shelf.n.01_1 bathroom_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bedroom_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?table_lamp.n.01_1)
+            (ontop ?beach_toy.n.01_1 ?shelf.n.01_1)
+        )
+    )
+)

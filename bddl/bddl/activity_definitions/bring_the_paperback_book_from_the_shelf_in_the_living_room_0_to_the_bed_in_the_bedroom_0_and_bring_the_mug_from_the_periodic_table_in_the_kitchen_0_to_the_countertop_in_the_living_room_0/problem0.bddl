@@ -1,0 +1,31 @@
+(define (problem bring_the_paperback_book_from_the_shelf_in_the_living_room_0_to_the_bed_in_the_bedroom_0_and_bring_the_mug_from_the_periodic_table_in_the_kitchen_0_to_the_countertop_in_the_living_room_0)
+    (:domain omnigibson)
+    (:objects
+        paperback_book.n.01_1 - paperback_book.n.01
+        shelf.n.01_1 - shelf.n.01
+        bed.n.01_1 - bed.n.01
+        mug.n.04_1 - mug.n.04
+        periodic_table.n.01_1 - periodic_table.n.01
+        countertop.n.01_1 - countertop.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop paperback_book.n.01_1 shelf.n.01_1)
+        (inroom shelf.n.01_1 living_room_0)
+        (inroom bed.n.01_1 bedroom_0)
+        (ontop mug.n.04_1 periodic_table.n.01_1)
+        (inroom periodic_table.n.01_1 kitchen_0)
+        (inroom countertop.n.01_1 living_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room_0)
+    )
+
+    (:goal
+        (and
+            (ontop ?paperback_book.n.01_1 ?bed.n.01_1)
+            (ontop ?mug.n.04_1 ?countertop.n.01_1)
+        )
+    )
+)

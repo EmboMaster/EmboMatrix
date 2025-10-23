@@ -1,0 +1,26 @@
+(define (problem go_to_the_corridor_0_pick_up_the_cookie_stick.n.01_from_the_shelf_open_the_carton.n.02_containing_snacks_and_put_the_cookie_stick.n.01_inside_the_carton.n.02)
+    (:domain omnigibson)
+    (:objects
+        cookie_stick.n.01_1 - cookie_stick.n.01
+        shelf.n.01_1 - shelf.n.01
+        carton.n.02_1 - carton.n.02
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop cookie_stick.n.01_1 shelf.n.01_1)
+        (not (open carton.n.02_1))
+        (inroom shelf.n.01_1 corridor_0)
+        (inroom carton.n.02_1 corridor_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 bathroom_0)
+    )
+
+    (:goal
+        (and
+            (inside ?cookie_stick.n.01_1 ?carton.n.02_1)
+            (open ?carton.n.02_1)
+        )
+    )
+)

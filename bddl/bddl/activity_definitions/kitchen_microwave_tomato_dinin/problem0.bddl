@@ -1,0 +1,29 @@
+(define (problem go_to_room_kitchen_0_toggle_on_the_microwave.n.02_heat_the_cherry_tomato.n.02_using_the_microwave.n.02_in_kitchen_0_toggle_off_the_microwave.n.02_pick_up_the_cherry_tomato.n.02_from_the_microwave.n.02_in_kitchen_0_go_to_room_dining_room_0_put_the_cherry_tomato.n.02_on_top_of_the_breakfast_table-0)
+    (:domain omnigibson)
+    (:objects
+        microwave.n.02_1 - microwave.n.02
+        cherry_tomato.n.02_1 - cherry_tomato.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inside cherry_tomato.n.02_1 microwave.n.02_1)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom cherry_tomato.n.02_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (cooked ?cherry_tomato.n.02_1)
+            (ontop ?cherry_tomato.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

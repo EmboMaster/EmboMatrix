@@ -1,0 +1,25 @@
+(define (problem toggle_on_the_loudspeaker.n.01_on_the_wall_in_the_gym_0_to_play_music_then_go_to_the_sauna_0_and_toggle_off_the_thermostat.n.01_to_adjust_the_temperature)
+    (:domain omnigibson)
+    (:objects
+        loudspeaker.n.01_1 - loudspeaker.n.01
+        thermostat.n.01_1 - thermostat.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (not (toggled_on loudspeaker.n.01_1))
+        (toggled_on thermostat.n.01_1)
+        (inroom loudspeaker.n.01_1 gym_0)
+        (inroom thermostat.n.01_1 sauna_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 gym_0)
+    )
+
+    (:goal
+        (and
+            (toggled_on ?loudspeaker.n.01_1)
+            (not (toggled_on ?thermostat.n.01_1))
+        )
+    )
+)

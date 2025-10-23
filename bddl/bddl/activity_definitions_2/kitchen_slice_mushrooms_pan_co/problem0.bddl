@@ -1,0 +1,41 @@
+(define (problem go_to_the_kitchen_0_slice_3_mushrooms.n.05_on_the_chopping_board_with_the_table_knife.n.01_place_the_sliced_mushrooms_into_the_frying_pan.n.01_on_the_stove_and_heat_them_until_cooked-0)
+    (:domain omnigibson)
+    (:objects
+        mushroom.n.05_1 mushroom.n.05_2 mushroom.n.05_3 - mushroom.n.05
+        chopping_board.n.01_1 - chopping_board.n.01
+        table_knife.n.01_1 - table_knife.n.01
+        frying_pan.n.01_1 - frying_pan.n.01
+        stove.n.01_1 - stove.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop mushroom.n.05_1 chopping_board.n.01_1)
+        (ontop mushroom.n.05_2 chopping_board.n.01_1)
+        (ontop mushroom.n.05_3 chopping_board.n.01_1)
+        (ontop frying_pan.n.01_1 stove.n.01_1)
+        (not (toggled_on stove.n.01_1))
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom chopping_board.n.01_1 kitchen_0)
+        (inroom table_knife.n.01_1 kitchen_0)
+        (inroom frying_pan.n.01_1 kitchen_0)
+        (inroom stove.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+    )
+
+    (:goal
+        (and
+            (sliced mushroom.n.05_1)
+            (sliced mushroom.n.05_2)
+            (sliced mushroom.n.05_3)
+            (inside mushroom.n.05_1 frying_pan.n.01_1)
+            (inside mushroom.n.05_2 frying_pan.n.01_1)
+            (inside mushroom.n.05_3 frying_pan.n.01_1)
+            (toggled_on stove.n.01_1)
+            (cooked mushroom.n.05_1)
+            (cooked mushroom.n.05_2)
+            (cooked mushroom.n.05_3)
+        )
+    )
+)

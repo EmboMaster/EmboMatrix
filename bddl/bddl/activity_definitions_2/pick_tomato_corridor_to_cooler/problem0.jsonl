@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["cherry_tomato.n.02_1", "ontop", "board.n.02_1"], ["board.n.02_1", "inroom", "corridor_0"], ["cooler.n.01_1", "inroom", "empty_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "empty_room_0"]]}
+{"state": {"cherry_tomato.n.02_1": {"frozen": true}}, "relation": [["cherry_tomato.n.02_1", "inside", "cooler.n.01_1"]]}

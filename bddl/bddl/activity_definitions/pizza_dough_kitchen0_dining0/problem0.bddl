@@ -1,0 +1,30 @@
+(define (problem pick_up_pizza_dough_from_console_table_in_kitchen_0_cook_it_using_oven_in_kitchen_0_place_it_onto_breakfast_table_in_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        pizza_dough.n.01_1 - pizza_dough.n.01
+        console_table.n.01_1 - console_table.n.01
+        oven.n.01_1 - oven.n.01
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop pizza_dough.n.01_1 console_table.n.01_1)
+        (inroom console_table.n.01_1 kitchen_0)
+        (inroom oven.n.01_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not
+            (toggled_on oven.n.01_1)
+        )
+    )
+
+    (:goal
+        (and
+            (cooked ?pizza_dough.n.01_1)
+            (ontop ?pizza_dough.n.01_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

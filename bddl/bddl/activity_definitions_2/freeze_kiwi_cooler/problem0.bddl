@@ -1,0 +1,24 @@
+(define (problem freeze_the_kiwi.n.03_by_placing_it_inside_the_cooler.n.01_in_the_break_room_0)
+    (:domain omnigibson)
+    (:objects
+        kiwi.n.03_1 - kiwi.n.03
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop kiwi.n.03_1 floor.n.01_1)
+        (inroom cooler.n.01_1 break_room_0)
+        (inroom floor.n.01_1 break_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (ontop kiwi.n.03_1 floor.n.01_1)
+        (and
+            (inside kiwi.n.03_1 cooler.n.01_1)
+            (frozen kiwi.n.03_1)
+        )
+    )
+)

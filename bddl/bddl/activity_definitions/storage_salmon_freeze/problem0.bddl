@@ -1,0 +1,27 @@
+(define (problem go_to_the_storage_room_1_pick_up_the_salmon.n.03_from_the_packing_box.n.02_go_to_the_storage_room_2_put_the_salmon.n.03_inside_the_cooler.n.01_to_freeze_it_and_close_the_cooler.n.01)
+    (:domain omnigibson)
+    (:objects
+        packing_box.n.02_1 - packing_box.n.02
+        salmon.n.03_1 - salmon.n.03
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (inside salmon.n.03_1 packing_box.n.02_1)
+        (inroom packing_box.n.02_1 storage_room_1)
+        (inroom cooler.n.01_1 storage_room_2)
+        (open cooler.n.01_1)
+        (inroom floor.n.01_1 storage_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?salmon.n.03_1 ?cooler.n.01_1)
+            (not (open ?cooler.n.01_1))
+            (frozen ?salmon.n.03_1)
+        )
+    )
+)

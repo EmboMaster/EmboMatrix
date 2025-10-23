@@ -1,0 +1,28 @@
+(define (problem pick_up_the_shoulder_bag.n.01_from_the_straight_chair_in_private_office_1_go_to_lobby_0_put_the_shoulder_bag.n.01_inside_the_recreational_vehicle.n.01_parked_in_lobby_0_close_the_recreational_vehicle.n.01_for_me)
+    (:domain omnigibson)
+    (:objects
+        shoulder_bag.n.01_1 - shoulder_bag.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        recreational_vehicle.n.01_1 - recreational_vehicle.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop shoulder_bag.n.01_1 straight_chair.n.01_1)
+        (inroom straight_chair.n.01_1 private_office_1)
+        (inroom recreational_vehicle.n.01_1 lobby_0)
+        (open recreational_vehicle.n.01_1)
+        (inroom floor.n.01_1 private_office_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?shoulder_bag.n.01_1 ?recreational_vehicle.n.01_1)
+            (not
+                (open ?recreational_vehicle.n.01_1)
+            )
+        )
+    )
+)

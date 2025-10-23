@@ -1,0 +1,27 @@
+(define (problem go_to_empty_room_0_pick_up_the_desktop_computer.n.01_from_the_desk_place_it_inside_the_wardrobe.n.01_in_empty_room_0_and_toggle_off_the_desktop_computer.n.01_before_leaving-0)
+    (:domain omnigibson)
+    (:objects
+        desktop_computer.n.01_1 - desktop_computer.n.01
+        desk.n.01_1 - desk.n.01
+        wardrobe.n.01_1 - wardrobe.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop desktop_computer.n.01_1 desk.n.01_1)
+        (inroom desk.n.01_1 empty_room_0)
+        (inroom wardrobe.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (inside ?desktop_computer.n.01_1 ?wardrobe.n.01_1)
+            (not
+                (toggled_on ?desktop_computer.n.01_1)
+            )
+        )
+    )
+)

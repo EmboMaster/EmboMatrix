@@ -1,0 +1,36 @@
+(define (problem pick_up_the_chili.n.02_from_the_booth_in_the_kitchen_0_put_it_inside_the_microwave.n.02_in_the_kitchen_0_and_heat_it_using_the_microwave.n.02_until_warm_then_pick_up_the_mixing_bowl.n.01_from_the_shelf.n.01_in_the_storage_room_0_and_place_it_on_the_pedestal_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        chili.n.02_1 - chili.n.02
+        booth.n.01_1 - booth.n.01
+        microwave.n.02_1 - microwave.n.02
+        mixing_bowl.n.01_1 - mixing_bowl.n.01
+        shelf.n.01_1 - shelf.n.01
+        pedestal_table.n.01_1 - pedestal_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop chili.n.02_1 booth.n.01_1)
+        (inside mixing_bowl.n.01_1 shelf.n.01_1)
+        (not 
+            (toggled_on microwave.n.02_1)
+        )
+        (inroom booth.n.01_1 kitchen_0)
+        (inroom microwave.n.02_1 kitchen_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (inroom shelf.n.01_1 storage_room_0)
+        (inroom pedestal_table.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (cooked ?chili.n.02_1)
+            (inside ?chili.n.02_1 ?microwave.n.02_1)
+            (toggled_on ?microwave.n.02_1)
+            (ontop ?mixing_bowl.n.01_1 ?pedestal_table.n.01_1)
+        )
+    )
+)

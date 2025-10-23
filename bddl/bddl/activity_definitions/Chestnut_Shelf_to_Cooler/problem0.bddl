@@ -1,0 +1,25 @@
+(define (problem pick_up_the_chestnut_from_the_shelf_in_the_pantry_room_go_to_the_cooler_in_the_storage_room_and_frozen_the_chestnut_by_putting_it_inside_the_cooler-0)
+    (:domain omnigibson)
+    (:objects
+        chestnut.n.03_1 - chestnut.n.03
+        shelf.n.01_1 - shelf.n.01
+        cooler.n.01_1 - cooler.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop chestnut.n.03_1 shelf.n.01_1) 
+        (inroom shelf.n.01_1 pantry_room_0)
+        (inroom cooler.n.01_1 storage_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 pantry_room_0)
+    )
+    
+    (:goal 
+        (and 
+            (frozen chestnut.n.03_1)
+            (inside chestnut.n.03_1 cooler.n.01_1)
+        )
+    )
+)

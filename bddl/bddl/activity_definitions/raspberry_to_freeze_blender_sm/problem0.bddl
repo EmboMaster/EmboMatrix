@@ -1,0 +1,34 @@
+(define (problem please_pick_up_the_raspberry.n.02_from_the_reception_desktop_in_the_kitchen_0_and_put_it_inside_the_cooler.n.01_in_the_utility_room_0_to_freeze_it_then_toggle_on_the_blender.n.01_on_the_reception_desk_in_kitchen_0_to_prepare_a_smoothie_finally_bring_the_pitcher_from_the_reception_desk_in_the_kitchen_0_to_the_breakfast_table_in_the_dining_room_0)
+    (:domain omnigibson)
+    (:objects
+        raspberry.n.02_1 - raspberry.n.02
+        reception_desk.n.01_1 - reception_desk.n.01
+        cooler.n.01_1 - cooler.n.01
+        blender.n.01_1 - blender.n.01
+        pitcher.n.02_1 - pitcher.n.02
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (ontop raspberry.n.02_1 reception_desk.n.01_1)
+        (inroom reception_desk.n.01_1 kitchen_0)
+        (inroom cooler.n.01_1 utility_room_0)
+        (ontop blender.n.01_1 reception_desk.n.01_1)
+        (not (toggled_on blender.n.01_1))
+        (ontop pitcher.n.02_1 reception_desk.n.01_1)
+        (inroom breakfast_table.n.01_1 dining_room_0)
+        (inroom floor.n.01_1 kitchen_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+
+    (:goal
+        (and
+            (frozen ?raspberry.n.02_1)
+            (inside ?raspberry.n.02_1 ?cooler.n.01_1)
+            (toggled_on ?blender.n.01_1)
+            (ontop ?pitcher.n.02_1 ?breakfast_table.n.01_1)
+        )
+    )
+)

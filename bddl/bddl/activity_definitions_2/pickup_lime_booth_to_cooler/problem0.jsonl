@@ -1,0 +1,2 @@
+{"state": {}, "relation": [["lime.n.06_1", "ontop", "booth.n.01_1"], ["booth.n.01_1", "inroom", "break_room_0"], ["cooler.n.01_1", "inroom", "break_room_0"], ["agent.n.01_1", "ontop", "floor.n.01_1"], ["floor.n.01_1", "inroom", "break_room_0"]]}
+{"state": {"lime.n.06_1": {"frozen": true}}, "relation": [["lime.n.06_1", "inside", "cooler.n.01_1"]]}

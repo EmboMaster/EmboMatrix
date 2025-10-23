@@ -1,0 +1,29 @@
+(define (problem In_empty_room_0_open_the_cooler.n.01_pick_up_the_apple.n.01_from_the_conference_table_nearby_and_put_the_apple.n.01_inside_the_cooler.n.01_to_freeze_it-0)
+    (:domain omnigibson)
+    (:objects
+        cooler.n.01_1 - cooler.n.01
+        apple.n.01_1 - apple.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (not 
+            (open cooler.n.01_1)
+        )
+        (ontop apple.n.01_1 conference_table.n.01_1)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom cooler.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 empty_room_0)
+    )
+    
+    (:goal
+        (and 
+            (open ?cooler.n.01_1)
+            (inside ?apple.n.01_1 ?cooler.n.01_1)
+            (frozen ?apple.n.01_1)
+        )
+    )
+)

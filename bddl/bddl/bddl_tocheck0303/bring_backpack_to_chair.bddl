@@ -1,0 +1,22 @@
+(define (problem bring_backpack_to_chair-0)
+    (:domain omnigibson)    (:objects
+        backpack.n.01_1 - backpack.n.01
+        straight_chair.n.01_1 - straight_chair.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom backpack.n.01_1 storage_room_0)
+        (inroom straight_chair.n.01_1 dining_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 storage_room_0)
+    )
+
+    (:goal
+        (and
+            (nextto ?backpack.n.01_1 ?straight_chair.n.01_1)
+        )
+    )
+)
+

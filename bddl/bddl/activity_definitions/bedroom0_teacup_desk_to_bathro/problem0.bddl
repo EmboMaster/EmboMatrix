@@ -1,0 +1,24 @@
+(define (problem go_to_room_bedroom_0_pick_up_the_teacup_from_the_desk_in_the_bedroom_0_go_to_room_bathroom_0_put_the_teacup_inside_the_mop_bucket_in_the_bathroom_0)
+    (:domain omnigibson)
+    (:objects
+        teacup.n.02_1 - teacup.n.02
+        desk.n.01_1 - desk.n.01
+        mop_bucket.n.01_1 - mop_bucket.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop teacup.n.02_1 desk.n.01_1)
+        (inroom desk.n.01_1 bedroom_0)
+        (inroom mop_bucket.n.01_1 bathroom_0)
+        (inroom floor.n.01_1 bedroom_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal
+        (and
+            (inside ?teacup.n.02_1 ?mop_bucket.n.01_1)
+        )
+    )
+)

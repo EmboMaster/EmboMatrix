@@ -1,0 +1,32 @@
+(define (problem Please_pick_up_the_vase_from_the_conference_table_in_hall_arch_wood_and_place_it_on_the_stand_near_the_arched_windows_in_hall_arch_wood._Then,_toggle_on_the_laptop_on_the_reception_desk_in_hall_arch_wood_to_prepare_for_visitor_check-ins.)
+    (:domain omnigibson)
+    (:objects
+        vase.n.01_1 - vase.n.01
+        conference_table.n.01_1 - conference_table.n.01
+        stand.n.04_1 - stand.n.04
+        laptop.n.01_1 - laptop.n.01
+        reception_desk.n.01_1 - reception_desk.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    
+    (:init
+        (ontop vase.n.01_1 conference_table.n.01_1)
+        (ontop laptop.n.01_1 reception_desk.n.01_1)
+        (inroom vase.n.01_1 empty_room_0)
+        (inroom conference_table.n.01_1 empty_room_0)
+        (inroom stand.n.04_1 empty_room_0)
+        (inroom laptop.n.01_1 empty_room_0)
+        (inroom reception_desk.n.01_1 empty_room_0)
+        (inroom floor.n.01_1 empty_room_0)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (not (toggled_on laptop.n.01_1))
+    )
+    
+    (:goal
+        (and
+            (ontop ?vase.n.01_1 ?stand.n.04_1)
+            (toggled_on ?laptop.n.01_1)
+        )
+    )
+)
