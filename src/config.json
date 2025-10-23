@@ -1,0 +1,8 @@
+{
+    "use_official_api": true,
+    "model":"gpt-4o-2024-08-06",
+    "api_key":"sk-v7I66FctEyK0MD79V874Mt3QWd1qWv6aPVglcGJbbN29WNjZ",
+    "base_url": "http://152.53.53.64:3000/v1",
+    "official_api_key": "sk-v7I66FctEyK0MD79V874Mt3QWd1qWv6aPVglcGJbbN29WNjZ",
+    "official_base_url": "http://152.53.53.64:3000/v1"
+}

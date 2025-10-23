@@ -1,0 +1,46 @@
+Description: A spacious house with 12 rooms, featuring a large garden equipped with multiple sofas, coffee tables, pillows, a hammock, and a variety of plants and trees.
+Description: A spacious 11-room house featuring multiple living areas, a private office, kitchen, dining room, utility room, bathroom, and storage spaces.
+Description: A large house interior with 14 rooms, including bedrooms, bathrooms, a playroom, and a television room, featuring various furniture and objects.
+Description: A scene with four rooms including a bathroom, corridor, empty room, and entryway, featuring doors, a bathtub, and basic amenities.
+Description: A six-room house featuring a well-equipped kitchen, cozy living room with a TV, a dining area, corridor, storage, and pantry.
+Description: Interior of a house with multiple bedrooms, bathrooms, closets, and a corridor. Equipped with household objects such as beds, bathtubs, and appliances.
+Description: A seven-room house featuring a dining room, living room, two storage rooms, a corridor, bathroom, and garage, with a total of 93 objects including tables, chairs, plants, and pictures.
+Description: A multi-room house with bedrooms, a bathroom, kitchen, living and dining areas, corridors, storage, and a staircase.
+Description: A house with nine rooms, featuring a garden with diverse flora, outdoor seating, and a driveway.
+Description: A house with 7 rooms including a playroom with a piano, utility room with washer and dryer, bathroom, child's room, living room, storage room, and closet.
+Description: A 12-room house featuring a bathroom, kitchen, child's room, living room, bedrooms, dining room, corridors, closets, and empty rooms.
+Description: A house with a spacious garden featuring a playground, wading pool, and various outdoor furniture, surrounded by trees and bushes.
+Description: A residential layout featuring 9 rooms, including bedrooms, a bathroom, a private office, a television room, and storage spaces.
+Description: A spacious house with seven rooms, including a kitchen, living room, bathroom, and utility areas. The interior features various cabinets, appliances, and seating, with multiple windows and decorative elements.
+Description: A house with 7 rooms including two bathrooms, a bedroom, a corridor, a storage room, and two closets, featuring a total of 57 objects like beds, bathtubs, and plants.
+Description: A cozy house with six rooms, featuring a spacious garden with numerous trees and bushes, outdoor seating, and a grill area.
+Description: A compact house scene with five rooms including a bedroom, kitchen, entryway, living room, and bathroom, featuring various furniture and appliances.
+Description: A scene featuring a house with 13 rooms and a large, well-furnished garden, including multiple trees, bushes, and seating areas.
+Description: A 12-room house featuring multiple living rooms, a kitchen, dining room, bedrooms, bathrooms, and storage rooms, equipped with various household furniture and appliances.
+Description: A spacious house with 16 rooms, including bedrooms, bathrooms, a playroom, an exercise room, and a private office, featuring varied furnishings and decor.
+Description: A multi-room grocery store with a cafe, featuring various shelves, a dining area, and a bathroom.
+Description: A convenience store with multiple rooms, including a main grocery area, a corridor, and a bathroom, featuring shelves, cash registers, and a variety of goods.
+Description: A half-stocked grocery store with multiple shelves, a checkout counter, and a bathroom, featuring a variety of packaged goods, beverages, and essentials.
+Description: A large hall with arched windows, numerous pillars, and multiple ceiling types, featuring an adjacent corridor and bathroom.
+Description: A large conference hall with tables, chairs, projectors, and a corridor and bathroom, equipped with numerous objects for meetings and presentations.
+Description: A large, ornate hall with numerous arched windows, decorative walls, and a high ceiling, resembling a train station interior.
+Description: A luxurious hotel gym and spa with multiple rooms featuring hot tubs, massage beds, sauna, and fitness equipment.
+Description: A large hotel suite featuring a well-furnished bedroom with two beds, multiple shelves, a desk, and a variety of decorative items, alongside a bathroom equipped with modern amenities.
+Description: A compact hotel suite with a bedroom and bathroom, featuring a bed, desk, TV, and various furnishings for comfort and convenience.
+Description: A single-floor house with 21 rooms, featuring a garden area with a swimming pool, numerous trees, and outdoor furniture.
+Description: A modern office space with a shared office and a break room, featuring multiple desks, swivel chairs, and a bicycle, along with recreational and decorative elements.
+Description: A multi-room office space featuring numerous cubicles, private offices, a conference hall, a meeting room, a lobby, and a copy room, equipped with various office furniture and equipment.
+Description: The scene depicts a multi-room office layout with cubicles, private offices, a conference hall, meeting rooms, a lobby, and a bathroom, characterized by numerous desks, chairs, and office equipment.
+Description: Large office with 25 rooms, including shared offices, private offices, meeting rooms, a lobby, corridors, break room, and bathroom. Features a variety of furniture such as swivel chairs, desks, monitors, and cabinets.
+Description: Modern office with shared workspaces, meeting room, break room, corridor, and bathroom. Features multiple desks, chairs, vending machine, and ample lighting.
+Description: An Asian-themed restaurant with a dining area, corridors, a kitchen, and a bathroom, featuring numerous decorative elements and seating arrangements.
+Description: A stylish restaurant with a dining area, bar, kitchen, and bathroom. Features include abundant seating, decorative plants, and a range of culinary and barware items.
+Description: A spacious restaurant with a large dining area featuring multiple tables and chairs, a well-equipped kitchen, a corridor, and a bathroom.
+Description: A vibrant diner with a bar, dining room, corridor, kitchen, and bathroom. Equipped with booths, tables, a bar, kitchen appliances, and restrooms, creating a classic dining experience.
+Description: A well-equipped dining area with armchairs, tables, and extensive tableware, complemented by a kitchen and lobby, indicating a restaurant setting.
+Description: A modern urban restaurant with a large dining area featuring numerous tables and chairs, a corridor, a bar, a bathroom, and a kitchen equipped with various appliances and utensils.
+Description: A school setting featuring corridors with lockers, a biology lab equipped with microscopes and lab tables, and a bathroom with multiple fixtures.
+Description: A school chemistry lab with corridors and a bathroom, featuring lab equipment, lockers, and safety features.
+null
+Description: A school scene featuring 7 rooms, including classrooms and corridors, with numerous desks, chairs, lockers, maps, and educational tools.
+Description: A school gymnasium complex with multiple corridors, classrooms, a gym, locker rooms, and a bathroom. The gym is equipped with sports facilities like basketball hoops, volleyball nets, gym mats, and stadium seating.

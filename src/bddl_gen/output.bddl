@@ -1,0 +1,25 @@
+
+(define (problem Clean_all_3_benches_in_gym_0_using_the_rag_from_locker_room_1-0)
+    (:domain omnigibson)
+    (:objects
+        bench.n.01_1 bench.n.01_2 bench.n.01_3 - bench.n.01
+        rag.n.01_1 - rag.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+
+    (:init
+        (inroom rag.n.01_1 locker_room_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 gym_0)
+    )
+
+    (:goal
+        (and
+            (not (dusty ?bench.n.01_1))
+            (not (dusty ?bench.n.01_2))
+            (not (dusty ?bench.n.01_3))
+            (soaked ?rag.n.01_1)
+        )
+    )
+)

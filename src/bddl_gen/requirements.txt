@@ -1,0 +1,2 @@
+camel-ai[all]
+python-dotenv
