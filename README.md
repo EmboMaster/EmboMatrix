@@ -3,9 +3,9 @@ Code repository of the paper **EmboMatrix: A Scalable Training-Ground for Embodi
 
 # Open Source Timeline
 
-- [ ] **Multi-Agent Driven Automated Data Factory** — Target: by 2025-10-31
-- [ ] **Scalable Training Backend** — Target: by 2025-11-31
-- [ ] **RL Training Architecture for EmboMatrix** — Target: by 2025-11-31
+- [✅] **Multi-Agent Driven Automated Data Factory** — Target: by 2025-10-31
+- [  ] **Scalable Training Backend** — Target: by 2025-11-31
+- [  ] **RL Training Architecture for EmboMatrix** — Target: by 2025-11-31
 
 ## Overview
 
@@ -69,11 +69,4 @@ python src/bddl_gen/generate_tasks.py
 - Ensure NVIDIA Isaac Sim is properly installed and configured before running scene generation.
 - The parallel scene generation step requires sufficient GPU resources.
 - Generated data will be saved in the `src/data/` directory by default.
-
-## Citation
-
-If you use EmboMatrix in your research, please cite:  
-
 ---
-
-*EmboMatrix is developed by [Your Team/Institution]. For issues or contributions, please visit the [GitHub repository](https://github.com/your-repo/embomatrix).*
