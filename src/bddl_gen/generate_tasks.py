@@ -13,7 +13,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 
 import openai
 
-import bddl_modify_object  # 你自己的模块
+import bddl_modify_object  
 
 
 import yaml
@@ -116,7 +116,6 @@ def main():
 
         for i, future in enumerate(as_completed(futures)):
             try:
-                # 获取工作函数 (process_scene_task) 的返回值
                 scene_index, status = future.result()
                 
                 if status == "Success":
@@ -125,7 +124,6 @@ def main():
                     results["failed"].append((scene_index, status))
                     
             except Exception as e:
-                # 捕获工作进程本身可能发生的崩溃 (例如，OOM 错误)
                 logging.error(f"一个工作进程意外崩溃: {e}")
                 results["failed"].append(("Unknown", f"WorkerCrash: {e}"))
             

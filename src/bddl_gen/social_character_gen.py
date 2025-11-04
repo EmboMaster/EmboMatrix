@@ -7,6 +7,7 @@ current_dir = os.path.dirname(current_file_path)
 src_dir = os.path.dirname(current_dir)
 if src_dir not in sys.path:
     sys.path.append(src_dir)
+from prompts.templates import SOCIAL_CHARACTER_GEN_PROMPT_IN_DETAIL,SOCIAL_CHARACTER_GEN_PROMPT
 from src.utils.config_loader import config
 api_key = config['task_generation']['api_key']
 base_url = config['task_generation']['base_url']
@@ -22,11 +23,10 @@ def social_character_generation(scene_description,room_description):
             {
             "role": "user",
             "content": [
-                    {"type": "text", "text": f'''I need you to help me to generate a social description to a scene description, Here is an example. This is a description of a scene:"A multi-room office space featuring numerous cubicles, private offices, a conference hall, a meeting room, a lobby, and a copy room, equipped with various office furniture and equipment.". Generate a social description of this scene, such as:"In this scene, there is a family of four: a father, a mother, a 14-year-old girl, and an 8-year-old boy. They have a mobile robot (composed of a mobile platform and a simple gripper) as their household assistant. These five characters will give simple commands to the robot throughout the day." The social description should be related to the scene and there must be more than two humanbeings and only one robot to serve the humans.
-                     Here is an other example:
-                     scene description:A school scene featuring 7 rooms, including classrooms and corridors, with numerous desks, chairs, lockers, maps, and educational tools.
-                     social description:In this scene, there is a dedicated teacher and a diligent school administrator, who work together to ensure the smooth operation of the school. They are assisted by a single educational robot that navigates through the classrooms and corridors. 
-                     Here is a scene description:{scene_description}. This is the room list you can use :{room_description}, Please MARK:the generated social description can't include other rooms, only the rooms in the room list can be used to Generate the social description. Generate the social description.'''},
+                    {"type": "text", "text": SOCIAL_CHARACTER_GEN_PROMPT.format(
+                        scene_description=scene_description,
+                        room_description=room_description
+                    )}
             ],
             }
         ],
@@ -48,29 +48,10 @@ def social_character_generation_in_detail(room_description):
             {
             "role": "user",
             "content": [
-                    {"type": "text", "text": 
-                f'''I need you to help me generate a social description for a simulated scene.
-
-                These are the rooms in this scene: {room_description}.
-
-                Your job is to write a detailed social description that:
-                1. Describes at least two human characters (name in [], with age, gender, occupation, and vivid hobbies);
-                2. Clearly assigns typical **daily activities** to **multiple rooms** in the list;
-                3. Ensures that **every room** in the list appears with a relevant activity;
-                4. Avoids generic sentences — be specific and creative (e.g. “they often fold towels in the bathroom while chatting”, “they prepare fruit platters in the kitchen and bring them to the dining room”);
-                5. The humans can be friends, family, or coworkers — but must live/interact together in the space.
-
-                Important:
-                - **Do not include rooms not in the list**.
-                - **Do not describe the robot.** Only the humans and their use of the rooms.
-                - The robot exists and will be controlled later, but is not mentioned in this social description.
-
-                Here's an example of the kind of description I want:
-
-                "In this scene, [Wang Lei], a 40-year-old hotel manager who enjoys classical music and wine tasting, works alongside [Liu Fang], a 32-year-old front desk supervisor passionate about floral arrangement and interior decor. In the lobby, they prepare welcome baskets and arrange flowers for VIP guests. In the kitchen, they coordinate meal prep with the chef. The dining room is where they occasionally sample dishes and check table setups. The bathroom is used for quick grooming before events. The corridor serves as the path for moving supplies and decorations."
-
-                Your goal is to create a similar detailed description for this room list: {room_description}. Remember: each room must appear. Make it vivid, grounded, and specific. Only output the description. Do not include any explanation or list.'''}
-
+                    {"type": "text", "text": SOCIAL_CHARACTER_GEN_PROMPT_IN_DETAIL.format(
+                        room_description=room_description
+                    )}
+                
             ],
             }
         ],

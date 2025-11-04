@@ -9,7 +9,7 @@ import importlib.resources
 import io
 import command_gen
 import command_gen2
-import command_gen3
+# import command_gen3
 import read_files
 import bddl_format_check
 from src.utils.config_loader import config
@@ -17,7 +17,6 @@ api_key = config['task_generation']['api_key']
 base_url = config['task_generation']['base_url']
 model = config['task_generation']['model']
 def call_gpt(model, prompt, system_prompt="You are a helpful assistant.", temperature=0.7, max_tokens=4096):
-    # 确保在此处替换为你的实际 API 密钥
 
     client = OpenAI(api_key=api_key, base_url=base_url)
     response = client.chat.completions.create(
@@ -38,8 +37,7 @@ def extract_objects(bddl_problem):
         raise TypeError("Input must be a string.")
     match = re.search(r"\(:objects\s+(.*?)\)", bddl_problem, re.DOTALL)
     if match:
-        objects_str = match.group(1).strip() #去除首尾空格和换行
-        # 用更精确的正则表达式匹配，并处理多余的空格和换行符
+        objects_str = match.group(1).strip() 
         object_names = re.findall(r"([a-zA-Z0-9_.-]+)(?:\s*-\s*[a-zA-Z0-9_.-]+)?(?=\s|$)", objects_str)
         unique_object_names = []
         for name in object_names:
@@ -226,20 +224,20 @@ def generate_bddl(scene_index,task='',path='bddl_data',roomids = ''):
         f.write(test)
     return test
 
-def generate_bddl2(scene_index,task='',path='bddl_data',roomids = ''):
-    problems = bddl_generation.bddl_generation_dialogue(task,path,roomids=roomids)
-    lis=[]
-    test=''
-    print(f"problems = {problems}") 
-    for p in problems:
+# def generate_bddl2(scene_index,task='',path='bddl_data',roomids = ''):
+#     problems = bddl_generation.bddl_generation_dialogue(task,path,roomids=roomids)
+#     lis=[]
+#     test=''
+#     print(f"problems = {problems}") 
+#     for p in problems:
 
-        test=test+change_bddl(p["content"],f"{path}/{read_files.read_lines_to_array('room_names.txt')[scene_index-1]}")+'\n'    
-    filename = f"{path}/txt/final_bddl.txt"
-    directory = os.path.dirname(filename)
-    os.makedirs(directory, exist_ok=True)
-    with open(filename, 'w', encoding='utf-8') as f:  # 指定 utf-8 编码，处理中文等特殊字符
-        f.write(test)
-    return test
+#         test=test+change_bddl(p["content"],f"{path}/{read_files.read_lines_to_array('room_names.txt')[scene_index-1]}")+'\n'    
+#     filename = f"{path}/txt/final_bddl.txt"
+#     directory = os.path.dirname(filename)
+#     os.makedirs(directory, exist_ok=True)
+#     with open(filename, 'w', encoding='utf-8') as f:  # 指定 utf-8 编码，处理中文等特殊字符
+#         f.write(test)
+#     return test
 
 #这是给用户直接调用的
 #结果会直接输出到final_bddl.txt中，然后bddl文件会被分别放在problem里面，是常规的bddl格式和命名
@@ -247,9 +245,8 @@ def generate_bddl_api(scene_index,command_num,command_difficulty,save_path):
     generate_bddl(scene_index=scene_index,task=command_gen2.command_gen(sceneid=scene_index,command_num=command_num,command_difficulty=command_difficulty),path=save_path,roomids=read_files.read_lines_to_array("src/bddl_gen/extracted_rooms.txt")[scene_index-1])
 
 #使用对话来获取命令的api
-def generate_bddl_api2(scene_index,dialogue_turns,save_path):
-    generate_bddl2(scene_index=scene_index,task=command_gen3.command_generation_from_dialogue(sceneid=scene_index,chat_turn_limit=dialogue_turns,model=None),path=save_path,roomids=read_files.read_lines_to_array("extracted_rooms.txt")[scene_index-1])
-
+# def generate_bddl_api2(scene_index,dialogue_turns,save_path):
+#     generate_bddl2(scene_index=scene_index,task=command_gen3.command_generation_from_dialogue(sceneid=scene_index,chat_turn_limit=dialogue_turns,model=None),path=save_path,roomids=read_files.read_lines_to_array("extracted_rooms.txt")[scene_index-1])
 def if_already_exist_problem(problem, problems):
 
 
