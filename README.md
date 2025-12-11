@@ -4,8 +4,8 @@ Code repository of the paper **EmboMatrix: A Scalable Training-Ground for Embodi
 # Open Source Timeline
 
 - [✅] **Multi-Agent Driven Automated Data Factory** — Target: by 2025-10-31
-- [  ] **Scalable Training Backend** — Target: by 2025-11-31
-- [  ] **RL Training Architecture for EmboMatrix** — Target: by 2025-11-31
+- [  ] **Scalable Training Backend** — Target: by 2026-01-31
+- [  ] **RL Training Architecture for EmboMatrix** — Target: by 2026-01-31
 
 ## Overview
 
